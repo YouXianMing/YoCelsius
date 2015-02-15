@@ -25,6 +25,10 @@
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 #import "Networking.h"
+#import "GONMarkupParser_All.h"
+#import "AppColor.h"
+#import "UIView+SetRect.h"
+#import "WxHxD.h"
 #endif
 
 #endif

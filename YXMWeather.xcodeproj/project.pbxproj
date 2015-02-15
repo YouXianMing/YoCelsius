@@ -36,6 +36,37 @@
 		10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28CF1A908F3F00CE545D /* WeatherInfo.m */; };
 		10AB28DC1A908F3F00CE545D /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28D11A908F3F00CE545D /* Wind.m */; };
 		10AB28DF1A908FA400CE545D /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28DE1A908FA400CE545D /* Networking.m */; };
+		10AB28E31A9095C000CE545D /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28E21A9095C000CE545D /* MapManager.m */; };
+		10AB29251A90B87D00CE545D /* GONMarkup+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28EB1A90B87D00CE545D /* GONMarkup+Private.m */; };
+		10AB29261A90B87D00CE545D /* GONMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28ED1A90B87D00CE545D /* GONMarkup.m */; };
+		10AB29271A90B87D00CE545D /* GONMarkupAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28EF1A90B87D00CE545D /* GONMarkupAlignment.m */; };
+		10AB29281A90B87D00CE545D /* GONMarkupAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28F11A90B87D00CE545D /* GONMarkupAnchor.m */; };
+		10AB29291A90B87D00CE545D /* GONMarkupBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28F31A90B87D00CE545D /* GONMarkupBlock.m */; };
+		10AB292A1A90B87D00CE545D /* GONMarkupBold.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28F51A90B87D00CE545D /* GONMarkupBold.m */; };
+		10AB292B1A90B87D00CE545D /* GONMarkupColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28F71A90B87D00CE545D /* GONMarkupColor.m */; };
+		10AB292C1A90B87D00CE545D /* GONMarkupDec.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28F91A90B87D00CE545D /* GONMarkupDec.m */; };
+		10AB292D1A90B87D00CE545D /* GONMarkupFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28FC1A90B87D00CE545D /* GONMarkupFont.m */; };
+		10AB292E1A90B87D00CE545D /* GONMarkupFontTraits.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28FE1A90B87D00CE545D /* GONMarkupFontTraits.m */; };
+		10AB292F1A90B87D00CE545D /* GONMarkupInc.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29001A90B87D00CE545D /* GONMarkupInc.m */; };
+		10AB29301A90B87D00CE545D /* GONMarkupItalic.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29021A90B87D00CE545D /* GONMarkupItalic.m */; };
+		10AB29311A90B87D00CE545D /* GONMarkupLineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29041A90B87D00CE545D /* GONMarkupLineBreak.m */; };
+		10AB29321A90B87D00CE545D /* GONMarkupLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29061A90B87D00CE545D /* GONMarkupLineStyle.m */; };
+		10AB29331A90B87D00CE545D /* GONMarkupList.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29081A90B87D00CE545D /* GONMarkupList.m */; };
+		10AB29341A90B87D00CE545D /* GONMarkupListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB290A1A90B87D00CE545D /* GONMarkupListItem.m */; };
+		10AB29351A90B87D00CE545D /* GONMarkupNamedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB290C1A90B87D00CE545D /* GONMarkupNamedColor.m */; };
+		10AB29361A90B87D00CE545D /* GONMarkupNamedFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB290E1A90B87D00CE545D /* GONMarkupNamedFont.m */; };
+		10AB29371A90B87D00CE545D /* GONMarkupParagrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29101A90B87D00CE545D /* GONMarkupParagrap.m */; };
+		10AB29381A90B87D00CE545D /* GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29121A90B87D00CE545D /* GONMarkupParser.m */; };
+		10AB29391A90B87D00CE545D /* GONMarkupParserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29161A90B87D00CE545D /* GONMarkupParserManager.m */; };
+		10AB293A1A90B87D00CE545D /* GONMarkupParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29181A90B87D00CE545D /* GONMarkupParserUtils.m */; };
+		10AB293B1A90B87D00CE545D /* GONMarkupReset.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB291A1A90B87D00CE545D /* GONMarkupReset.m */; };
+		10AB293C1A90B87D00CE545D /* GONMarkupSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB291C1A90B87D00CE545D /* GONMarkupSimple.m */; };
+		10AB293D1A90B87D00CE545D /* GONMarkupTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB291E1A90B87D00CE545D /* GONMarkupTextStyle.m */; };
+		10AB293E1A90B87D00CE545D /* UILabel+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29201A90B87D00CE545D /* UILabel+GONMarkupParser.m */; };
+		10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29221A90B87D00CE545D /* UITextField+GONMarkupParser.m */; };
+		10AB29401A90B87D00CE545D /* UITextView+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29241A90B87D00CE545D /* UITextView+GONMarkupParser.m */; };
+		10AB29431A90B8C300CE545D /* NSString+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29421A90B8C300CE545D /* NSString+Color.m */; };
+		10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29461A90BCBB00CE545D /* UIView+SetRect.m */; };
 		10E1F5321A908C3200AED5D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5311A908C3200AED5D6 /* main.m */; };
 		10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5341A908C3200AED5D6 /* AppDelegate.m */; };
 		10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5371A908C3200AED5D6 /* ViewController.m */; };
@@ -115,6 +146,73 @@
 		10AB28D11A908F3F00CE545D /* Wind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wind.m; sourceTree = "<group>"; };
 		10AB28DD1A908FA400CE545D /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		10AB28DE1A908FA400CE545D /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		10AB28E11A9095C000CE545D /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		10AB28E21A9095C000CE545D /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
+		10AB28E51A90B01100CE545D /* AppColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppColor.h; sourceTree = "<group>"; };
+		10AB28EA1A90B87D00CE545D /* GONMarkup+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GONMarkup+Private.h"; sourceTree = "<group>"; };
+		10AB28EB1A90B87D00CE545D /* GONMarkup+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GONMarkup+Private.m"; sourceTree = "<group>"; };
+		10AB28EC1A90B87D00CE545D /* GONMarkup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkup.h; sourceTree = "<group>"; };
+		10AB28ED1A90B87D00CE545D /* GONMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkup.m; sourceTree = "<group>"; };
+		10AB28EE1A90B87D00CE545D /* GONMarkupAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupAlignment.h; sourceTree = "<group>"; };
+		10AB28EF1A90B87D00CE545D /* GONMarkupAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupAlignment.m; sourceTree = "<group>"; };
+		10AB28F01A90B87D00CE545D /* GONMarkupAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupAnchor.h; sourceTree = "<group>"; };
+		10AB28F11A90B87D00CE545D /* GONMarkupAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupAnchor.m; sourceTree = "<group>"; };
+		10AB28F21A90B87D00CE545D /* GONMarkupBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupBlock.h; sourceTree = "<group>"; };
+		10AB28F31A90B87D00CE545D /* GONMarkupBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupBlock.m; sourceTree = "<group>"; };
+		10AB28F41A90B87D00CE545D /* GONMarkupBold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupBold.h; sourceTree = "<group>"; };
+		10AB28F51A90B87D00CE545D /* GONMarkupBold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupBold.m; sourceTree = "<group>"; };
+		10AB28F61A90B87D00CE545D /* GONMarkupColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupColor.h; sourceTree = "<group>"; };
+		10AB28F71A90B87D00CE545D /* GONMarkupColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupColor.m; sourceTree = "<group>"; };
+		10AB28F81A90B87D00CE545D /* GONMarkupDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupDec.h; sourceTree = "<group>"; };
+		10AB28F91A90B87D00CE545D /* GONMarkupDec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupDec.m; sourceTree = "<group>"; };
+		10AB28FA1A90B87D00CE545D /* GONMarkupDefaultMarkups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupDefaultMarkups.h; sourceTree = "<group>"; };
+		10AB28FB1A90B87D00CE545D /* GONMarkupFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupFont.h; sourceTree = "<group>"; };
+		10AB28FC1A90B87D00CE545D /* GONMarkupFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupFont.m; sourceTree = "<group>"; };
+		10AB28FD1A90B87D00CE545D /* GONMarkupFontTraits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupFontTraits.h; sourceTree = "<group>"; };
+		10AB28FE1A90B87D00CE545D /* GONMarkupFontTraits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupFontTraits.m; sourceTree = "<group>"; };
+		10AB28FF1A90B87D00CE545D /* GONMarkupInc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupInc.h; sourceTree = "<group>"; };
+		10AB29001A90B87D00CE545D /* GONMarkupInc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupInc.m; sourceTree = "<group>"; };
+		10AB29011A90B87D00CE545D /* GONMarkupItalic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupItalic.h; sourceTree = "<group>"; };
+		10AB29021A90B87D00CE545D /* GONMarkupItalic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupItalic.m; sourceTree = "<group>"; };
+		10AB29031A90B87D00CE545D /* GONMarkupLineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupLineBreak.h; sourceTree = "<group>"; };
+		10AB29041A90B87D00CE545D /* GONMarkupLineBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupLineBreak.m; sourceTree = "<group>"; };
+		10AB29051A90B87D00CE545D /* GONMarkupLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupLineStyle.h; sourceTree = "<group>"; };
+		10AB29061A90B87D00CE545D /* GONMarkupLineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupLineStyle.m; sourceTree = "<group>"; };
+		10AB29071A90B87D00CE545D /* GONMarkupList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupList.h; sourceTree = "<group>"; };
+		10AB29081A90B87D00CE545D /* GONMarkupList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupList.m; sourceTree = "<group>"; };
+		10AB29091A90B87D00CE545D /* GONMarkupListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupListItem.h; sourceTree = "<group>"; };
+		10AB290A1A90B87D00CE545D /* GONMarkupListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupListItem.m; sourceTree = "<group>"; };
+		10AB290B1A90B87D00CE545D /* GONMarkupNamedColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupNamedColor.h; sourceTree = "<group>"; };
+		10AB290C1A90B87D00CE545D /* GONMarkupNamedColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupNamedColor.m; sourceTree = "<group>"; };
+		10AB290D1A90B87D00CE545D /* GONMarkupNamedFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupNamedFont.h; sourceTree = "<group>"; };
+		10AB290E1A90B87D00CE545D /* GONMarkupNamedFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupNamedFont.m; sourceTree = "<group>"; };
+		10AB290F1A90B87D00CE545D /* GONMarkupParagrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParagrap.h; sourceTree = "<group>"; };
+		10AB29101A90B87D00CE545D /* GONMarkupParagrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupParagrap.m; sourceTree = "<group>"; };
+		10AB29111A90B87D00CE545D /* GONMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParser.h; sourceTree = "<group>"; };
+		10AB29121A90B87D00CE545D /* GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupParser.m; sourceTree = "<group>"; };
+		10AB29131A90B87D00CE545D /* GONMarkupParser_All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParser_All.h; sourceTree = "<group>"; };
+		10AB29141A90B87D00CE545D /* GONMarkupParser_Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParser_Categories.h; sourceTree = "<group>"; };
+		10AB29151A90B87D00CE545D /* GONMarkupParserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParserManager.h; sourceTree = "<group>"; };
+		10AB29161A90B87D00CE545D /* GONMarkupParserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupParserManager.m; sourceTree = "<group>"; };
+		10AB29171A90B87D00CE545D /* GONMarkupParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupParserUtils.h; sourceTree = "<group>"; };
+		10AB29181A90B87D00CE545D /* GONMarkupParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupParserUtils.m; sourceTree = "<group>"; };
+		10AB29191A90B87D00CE545D /* GONMarkupReset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupReset.h; sourceTree = "<group>"; };
+		10AB291A1A90B87D00CE545D /* GONMarkupReset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupReset.m; sourceTree = "<group>"; };
+		10AB291B1A90B87D00CE545D /* GONMarkupSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupSimple.h; sourceTree = "<group>"; };
+		10AB291C1A90B87D00CE545D /* GONMarkupSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupSimple.m; sourceTree = "<group>"; };
+		10AB291D1A90B87D00CE545D /* GONMarkupTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupTextStyle.h; sourceTree = "<group>"; };
+		10AB291E1A90B87D00CE545D /* GONMarkupTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupTextStyle.m; sourceTree = "<group>"; };
+		10AB291F1A90B87D00CE545D /* UILabel+GONMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+GONMarkupParser.h"; sourceTree = "<group>"; };
+		10AB29201A90B87D00CE545D /* UILabel+GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+GONMarkupParser.m"; sourceTree = "<group>"; };
+		10AB29211A90B87D00CE545D /* UITextField+GONMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+GONMarkupParser.h"; sourceTree = "<group>"; };
+		10AB29221A90B87D00CE545D /* UITextField+GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+GONMarkupParser.m"; sourceTree = "<group>"; };
+		10AB29231A90B87D00CE545D /* UITextView+GONMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+GONMarkupParser.h"; sourceTree = "<group>"; };
+		10AB29241A90B87D00CE545D /* UITextView+GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+GONMarkupParser.m"; sourceTree = "<group>"; };
+		10AB29411A90B8C300CE545D /* NSString+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Color.h"; sourceTree = "<group>"; };
+		10AB29421A90B8C300CE545D /* NSString+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Color.m"; sourceTree = "<group>"; };
+		10AB29451A90BCBB00CE545D /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
+		10AB29461A90BCBB00CE545D /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
+		10AB29481A90BCEE00CE545D /* WxHxD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WxHxD.h; sourceTree = "<group>"; };
 		10E1F52C1A908C3200AED5D6 /* YXMWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXMWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E1F5301A908C3200AED5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E1F5311A908C3200AED5D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -225,6 +323,100 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		10AB28E01A9095B100CE545D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				10AB28E11A9095C000CE545D /* MapManager.h */,
+				10AB28E21A9095C000CE545D /* MapManager.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		10AB28E41A90AFF200CE545D /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				10AB28E51A90B01100CE545D /* AppColor.h */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		10AB28E91A90B87D00CE545D /* GONMarkupParser */ = {
+			isa = PBXGroup;
+			children = (
+				10AB29411A90B8C300CE545D /* NSString+Color.h */,
+				10AB29421A90B8C300CE545D /* NSString+Color.m */,
+				10AB28EA1A90B87D00CE545D /* GONMarkup+Private.h */,
+				10AB28EB1A90B87D00CE545D /* GONMarkup+Private.m */,
+				10AB28EC1A90B87D00CE545D /* GONMarkup.h */,
+				10AB28ED1A90B87D00CE545D /* GONMarkup.m */,
+				10AB28EE1A90B87D00CE545D /* GONMarkupAlignment.h */,
+				10AB28EF1A90B87D00CE545D /* GONMarkupAlignment.m */,
+				10AB28F01A90B87D00CE545D /* GONMarkupAnchor.h */,
+				10AB28F11A90B87D00CE545D /* GONMarkupAnchor.m */,
+				10AB28F21A90B87D00CE545D /* GONMarkupBlock.h */,
+				10AB28F31A90B87D00CE545D /* GONMarkupBlock.m */,
+				10AB28F41A90B87D00CE545D /* GONMarkupBold.h */,
+				10AB28F51A90B87D00CE545D /* GONMarkupBold.m */,
+				10AB28F61A90B87D00CE545D /* GONMarkupColor.h */,
+				10AB28F71A90B87D00CE545D /* GONMarkupColor.m */,
+				10AB28F81A90B87D00CE545D /* GONMarkupDec.h */,
+				10AB28F91A90B87D00CE545D /* GONMarkupDec.m */,
+				10AB28FA1A90B87D00CE545D /* GONMarkupDefaultMarkups.h */,
+				10AB28FB1A90B87D00CE545D /* GONMarkupFont.h */,
+				10AB28FC1A90B87D00CE545D /* GONMarkupFont.m */,
+				10AB28FD1A90B87D00CE545D /* GONMarkupFontTraits.h */,
+				10AB28FE1A90B87D00CE545D /* GONMarkupFontTraits.m */,
+				10AB28FF1A90B87D00CE545D /* GONMarkupInc.h */,
+				10AB29001A90B87D00CE545D /* GONMarkupInc.m */,
+				10AB29011A90B87D00CE545D /* GONMarkupItalic.h */,
+				10AB29021A90B87D00CE545D /* GONMarkupItalic.m */,
+				10AB29031A90B87D00CE545D /* GONMarkupLineBreak.h */,
+				10AB29041A90B87D00CE545D /* GONMarkupLineBreak.m */,
+				10AB29051A90B87D00CE545D /* GONMarkupLineStyle.h */,
+				10AB29061A90B87D00CE545D /* GONMarkupLineStyle.m */,
+				10AB29071A90B87D00CE545D /* GONMarkupList.h */,
+				10AB29081A90B87D00CE545D /* GONMarkupList.m */,
+				10AB29091A90B87D00CE545D /* GONMarkupListItem.h */,
+				10AB290A1A90B87D00CE545D /* GONMarkupListItem.m */,
+				10AB290B1A90B87D00CE545D /* GONMarkupNamedColor.h */,
+				10AB290C1A90B87D00CE545D /* GONMarkupNamedColor.m */,
+				10AB290D1A90B87D00CE545D /* GONMarkupNamedFont.h */,
+				10AB290E1A90B87D00CE545D /* GONMarkupNamedFont.m */,
+				10AB290F1A90B87D00CE545D /* GONMarkupParagrap.h */,
+				10AB29101A90B87D00CE545D /* GONMarkupParagrap.m */,
+				10AB29111A90B87D00CE545D /* GONMarkupParser.h */,
+				10AB29121A90B87D00CE545D /* GONMarkupParser.m */,
+				10AB29131A90B87D00CE545D /* GONMarkupParser_All.h */,
+				10AB29141A90B87D00CE545D /* GONMarkupParser_Categories.h */,
+				10AB29151A90B87D00CE545D /* GONMarkupParserManager.h */,
+				10AB29161A90B87D00CE545D /* GONMarkupParserManager.m */,
+				10AB29171A90B87D00CE545D /* GONMarkupParserUtils.h */,
+				10AB29181A90B87D00CE545D /* GONMarkupParserUtils.m */,
+				10AB29191A90B87D00CE545D /* GONMarkupReset.h */,
+				10AB291A1A90B87D00CE545D /* GONMarkupReset.m */,
+				10AB291B1A90B87D00CE545D /* GONMarkupSimple.h */,
+				10AB291C1A90B87D00CE545D /* GONMarkupSimple.m */,
+				10AB291D1A90B87D00CE545D /* GONMarkupTextStyle.h */,
+				10AB291E1A90B87D00CE545D /* GONMarkupTextStyle.m */,
+				10AB291F1A90B87D00CE545D /* UILabel+GONMarkupParser.h */,
+				10AB29201A90B87D00CE545D /* UILabel+GONMarkupParser.m */,
+				10AB29211A90B87D00CE545D /* UITextField+GONMarkupParser.h */,
+				10AB29221A90B87D00CE545D /* UITextField+GONMarkupParser.m */,
+				10AB29231A90B87D00CE545D /* UITextView+GONMarkupParser.h */,
+				10AB29241A90B87D00CE545D /* UITextView+GONMarkupParser.m */,
+			);
+			path = GONMarkupParser;
+			sourceTree = "<group>";
+		};
+		10AB29441A90BCBB00CE545D /* SetRect */ = {
+			isa = PBXGroup;
+			children = (
+				10AB29451A90BCBB00CE545D /* UIView+SetRect.h */,
+				10AB29461A90BCBB00CE545D /* UIView+SetRect.m */,
+			);
+			path = SetRect;
+			sourceTree = "<group>";
+		};
 		10E1F5231A908C3200AED5D6 = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +442,11 @@
 				10E1F5341A908C3200AED5D6 /* AppDelegate.m */,
 				10E1F5361A908C3200AED5D6 /* ViewController.h */,
 				10E1F5371A908C3200AED5D6 /* ViewController.m */,
+				10AB29481A90BCEE00CE545D /* WxHxD.h */,
+				10AB29441A90BCBB00CE545D /* SetRect */,
+				10AB28E91A90B87D00CE545D /* GONMarkupParser */,
+				10AB28E41A90AFF200CE545D /* Color */,
+				10AB28E01A9095B100CE545D /* Map */,
 				10AB28BB1A908F3F00CE545D /* Models */,
 				10AB28831A908ECC00CE545D /* AFNetworking.pch */,
 				10AB28DD1A908FA400CE545D /* Networking.h */,
@@ -390,34 +587,65 @@
 				10AB28AA1A908EE800CE545D /* AFHTTPRequestOperation.m in Sources */,
 				10AB28DC1A908F3F00CE545D /* Wind.m in Sources */,
 				10AB28B71A908EE800CE545D /* UIImageView+AFNetworking.m in Sources */,
+				10AB292F1A90B87D00CE545D /* GONMarkupInc.m in Sources */,
+				10AB29321A90B87D00CE545D /* GONMarkupLineStyle.m in Sources */,
+				10AB293E1A90B87D00CE545D /* UILabel+GONMarkupParser.m in Sources */,
 				10AB28D41A908F3F00CE545D /* Coord.m in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
+				10AB293D1A90B87D00CE545D /* GONMarkupTextStyle.m in Sources */,
+				10AB293A1A90B87D00CE545D /* GONMarkupParserUtils.m in Sources */,
 				10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */,
 				10AB28D71A908F3F00CE545D /* MainInfo.m in Sources */,
 				10AB28AB1A908EE800CE545D /* AFHTTPRequestOperationManager.m in Sources */,
+				10AB292A1A90B87D00CE545D /* GONMarkupBold.m in Sources */,
 				10AB28B81A908EE800CE545D /* UIProgressView+AFNetworking.m in Sources */,
 				10AB28D61A908F3F00CE545D /* CurrentWeatherData.m in Sources */,
+				10AB29381A90B87D00CE545D /* GONMarkupParser.m in Sources */,
+				10AB292D1A90B87D00CE545D /* GONMarkupFont.m in Sources */,
 				10AB28D21A908F3F00CE545D /* City.m in Sources */,
 				10AB28AD1A908EE800CE545D /* AFNetworkReachabilityManager.m in Sources */,
+				10AB29391A90B87D00CE545D /* GONMarkupParserManager.m in Sources */,
 				10AB28B11A908EE800CE545D /* AFURLResponseSerialization.m in Sources */,
 				10AB28AF1A908EE800CE545D /* AFURLConnectionOperation.m in Sources */,
+				10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */,
 				10AB28B61A908EE800CE545D /* UIButton+AFNetworking.m in Sources */,
 				10AB28DF1A908FA400CE545D /* Networking.m in Sources */,
 				10AB28B41A908EE800CE545D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				10AB29261A90B87D00CE545D /* GONMarkup.m in Sources */,
+				10AB29291A90B87D00CE545D /* GONMarkupBlock.m in Sources */,
+				10AB292C1A90B87D00CE545D /* GONMarkupDec.m in Sources */,
+				10AB29371A90B87D00CE545D /* GONMarkupParagrap.m in Sources */,
+				10AB29351A90B87D00CE545D /* GONMarkupNamedColor.m in Sources */,
 				10AB28AE1A908EE800CE545D /* AFSecurityPolicy.m in Sources */,
+				10AB29341A90B87D00CE545D /* GONMarkupListItem.m in Sources */,
+				10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */,
 				10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */,
+				10AB29331A90B87D00CE545D /* GONMarkupList.m in Sources */,
+				10AB292B1A90B87D00CE545D /* GONMarkupColor.m in Sources */,
 				10AB28B91A908EE800CE545D /* UIRefreshControl+AFNetworking.m in Sources */,
 				10AB28BA1A908EE800CE545D /* UIWebView+AFNetworking.m in Sources */,
+				10AB29271A90B87D00CE545D /* GONMarkupAlignment.m in Sources */,
 				10AB28AC1A908EE800CE545D /* AFHTTPSessionManager.m in Sources */,
+				10AB29401A90B87D00CE545D /* UITextView+GONMarkupParser.m in Sources */,
+				10AB29361A90B87D00CE545D /* GONMarkupNamedFont.m in Sources */,
 				10AB28D91A908F3F00CE545D /* Temp.m in Sources */,
 				10AB28B51A908EE800CE545D /* UIAlertView+AFNetworking.m in Sources */,
+				10AB29311A90B87D00CE545D /* GONMarkupLineBreak.m in Sources */,
 				10AB28B01A908EE800CE545D /* AFURLRequestSerialization.m in Sources */,
+				10AB28E31A9095C000CE545D /* MapManager.m in Sources */,
 				10AB28B31A908EE800CE545D /* AFNetworkActivityIndicatorManager.m in Sources */,
+				10AB29431A90B8C300CE545D /* NSString+Color.m in Sources */,
 				10AB28DA1A908F3F00CE545D /* Weather.m in Sources */,
+				10AB293C1A90B87D00CE545D /* GONMarkupSimple.m in Sources */,
 				10AB28D51A908F3F00CE545D /* CurrentConditions.m in Sources */,
 				10AB28B21A908EE800CE545D /* AFURLSessionManager.m in Sources */,
+				10AB292E1A90B87D00CE545D /* GONMarkupFontTraits.m in Sources */,
+				10AB29281A90B87D00CE545D /* GONMarkupAnchor.m in Sources */,
+				10AB293B1A90B87D00CE545D /* GONMarkupReset.m in Sources */,
+				10AB29301A90B87D00CE545D /* GONMarkupItalic.m in Sources */,
 				10AB28D31A908F3F00CE545D /* Clouds.m in Sources */,
 				10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */,
+				10AB29251A90B87D00CE545D /* GONMarkup+Private.m in Sources */,
 				10E1F5321A908C3200AED5D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +703,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -510,7 +738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
