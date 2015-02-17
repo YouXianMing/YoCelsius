@@ -6,19 +6,19 @@
 //
 
 // 宽度
-#define  WxHxD_Width                             [UIScreen mainScreen].bounds.size.width
+#define  Width                             [UIScreen mainScreen].bounds.size.width
 
 // 高度
-#define  WxHxD_Height                            [UIScreen mainScreen].bounds.size.height
+#define  Height                            [UIScreen mainScreen].bounds.size.height
 
 // 状态栏高度
-#define  WxHxD_StatusBarHeight                   20.f
+#define  StatusBarHeight                   20.f
 
 // 导航栏高度
-#define  WxHxD_NavigationBarHeight               44.f
+#define  NavigationBarHeight               44.f
 
 // 标签栏高度
-#define  WxHxD_TabbarHeight                      49.f
+#define  TabbarHeight                      49.f
 
 // 状态栏高度 + 导航栏高度
-#define  WxHxD_StatusBarAndNavigationBarHeight   (20.f + 44.f)
+#define  StatusBarAndNavigationBarHeight   (20.f + 44.f)

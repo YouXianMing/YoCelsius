@@ -42,7 +42,6 @@
 @property (nonatomic, strong) Clouds         *clouds;
 
 
-
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

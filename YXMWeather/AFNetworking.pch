@@ -29,6 +29,9 @@
 #import "AppColor.h"
 #import "UIView+SetRect.h"
 #import "WxHxD.h"
+#import "FontInfomation.h"
+#import "AddedFont.h"
+#import "YXGCD.h"
 #endif
 
 #endif

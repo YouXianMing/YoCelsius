@@ -8,10 +8,16 @@
 
 #import "ViewController.h"
 #import "MapManager.h"
+#import "LabelView.h"
+#import "FrameView.h"
+#import "CircleView.h"
 
 @interface ViewController ()<MapManagerLocationDelegate>
 
 @property (nonatomic, strong) MapManager *mapLoacation;
+@property (nonatomic, strong) GCDTimer   *timer;
+@property (nonatomic, strong) CAShapeLayer *circleLayer;
+@property (nonatomic, strong) CircleView *circleView;
 
 @end
 
@@ -20,45 +26,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = COLOR_WHITE;
+    // 测试背景图
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.image = [UIImage imageNamed:@"背景图"];
+    [self.view addSubview:imageView];
     
-    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WxHxD_Width, WxHxD_Height - 400)];
-    [self.view addSubview:testView];
-    testView.backgroundColor = COLOR_CYAN;
-
-    UILabel *you = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, WxHxD_Width - 30, 40)];
-    you.textColor = [UIColor redColor];
-    you.text = @"YouXianMing";
-    [self.view addSubview:you];
+//    [self produceCircleShapeLayer];
     
+    self.circleView            = [[CircleView alloc] initWithFrame:CGRectMake(100, 100, 70, 70)];
+    self.circleView.lineWidth  = 5;
+    self.circleView.lineColor  = [UIColor blackColor];
+    self.circleView.clockWise  = YES;
+    self.circleView.startAngle = 200;
+    [self.circleView buildView];
+    [self.view addSubview:self.circleView];
     
+    [GCDQueue executeInMainQueue:^{
+        [self.circleView strokeEnd:0.8 animated:YES duration:1.5];
+    } afterDelaySecs:1.f];
     
-    
-    
-    
-//    self.mapLoacation          = [MapManager new];
-//    self.mapLoacation.delegate = self;
-//    
-//    UIButton *button = [[UIButton alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:button];
-//    
-//    [button addTarget:self
-//               action:@selector(buttonEvent)
-//     forControlEvents:UIControlEventTouchUpInside];
+    [GCDQueue executeInMainQueue:^{
+        [self.circleView strokeEnd:0.f animated:YES duration:1.5];
+    } afterDelaySecs:5.f];
 }
-
-- (void)buttonEvent {
-    [self.mapLoacation start];
-    NSLog(@"%d", self.mapLoacation.authorizationStatus);
-}
-
-- (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location {
-    NSLog(@"%@", location);
-}
-- (void)mapManager:(MapManager *)manager didFailed:(NSError *)error {
-//    NSLog(@"%d", manager.authorizationStatus);
-}
-
-
 
 @end

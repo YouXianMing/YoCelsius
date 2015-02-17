@@ -10,23 +10,23 @@
 #import "NSString+Color.h"
 
 // 背景色
-#define COLOR_BACKGROUND        [@"191919" colorFromRGBcode]
+#define COLOR_BACKGROUND_        [@"191919" colorFromRGBcode]
 
 // 红色
-#define COLOR_RED               [@"a62424" colorFromRGBcode]
+#define COLOR_RED_               [@"a62424" colorFromRGBcode]
 
 // 选中的颜色
-#define COLOR_SELECTED          [@"3e3e3e" colorFromRGBcode]
+#define COLOR_SELECTED_          [@"3e3e3e" colorFromRGBcode]
 
 // 绿色
-#define COLOR_GREEN             [@"198a88" colorFromRGBcode]
+#define COLOR_GREEN_             [@"198a88" colorFromRGBcode]
 
 // 灰色字体
-#define COLOR_GRAY_FONT         [@"575757" colorFromRGBcode]
+#define COLOR_GRAY_FONT_         [@"575757" colorFromRGBcode]
 
 // 黄色
-#define COLOR_YELLOW            [@"d78716" colorFromRGBcode]
+#define COLOR_YELLOW_            [@"d78716" colorFromRGBcode]
 
 // 白色
-#define COLOR_WHITE             [@"ffffff" colorFromRGBcode]
+#define COLOR_WHITE_             [@"ffffff" colorFromRGBcode]
 
