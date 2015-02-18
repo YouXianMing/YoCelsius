@@ -11,13 +11,15 @@
 #import "LabelView.h"
 #import "FrameView.h"
 #import "CircleView.h"
+#import "HumidityView.h"
+#import "RotatedAngleView.h"
 
 @interface ViewController ()<MapManagerLocationDelegate>
 
-@property (nonatomic, strong) MapManager *mapLoacation;
-@property (nonatomic, strong) GCDTimer   *timer;
-@property (nonatomic, strong) CAShapeLayer *circleLayer;
-@property (nonatomic, strong) CircleView *circleView;
+@property (nonatomic, strong) MapManager   *mapLoacation;
+@property (nonatomic ,strong) HumidityView *humidityView;
+
+@property (nonatomic, strong) RotatedAngleView *rotatedView;
 
 @end
 
@@ -31,23 +33,29 @@
     imageView.image = [UIImage imageNamed:@"背景图"];
     [self.view addSubview:imageView];
     
-//    [self produceCircleShapeLayer];
-    
-    self.circleView            = [[CircleView alloc] initWithFrame:CGRectMake(100, 100, 70, 70)];
-    self.circleView.lineWidth  = 5;
-    self.circleView.lineColor  = [UIColor blackColor];
-    self.circleView.clockWise  = YES;
-    self.circleView.startAngle = 200;
-    [self.circleView buildView];
-    [self.view addSubview:self.circleView];
+
+    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(150, 225, 100, 100)];
+    [self.humidityView buildView];
+    [self.view addSubview:self.humidityView];
+
+
     
     [GCDQueue executeInMainQueue:^{
-        [self.circleView strokeEnd:0.8 animated:YES duration:1.5];
-    } afterDelaySecs:1.f];
+        self.humidityView.percent = 0.6;
+        [self.humidityView show];
+    } afterDelaySecs:1.];
+    
     
     [GCDQueue executeInMainQueue:^{
-        [self.circleView strokeEnd:0.f animated:YES duration:1.5];
-    } afterDelaySecs:5.f];
+        [self.humidityView hide];
+    } afterDelaySecs:4.f];
+    
+    
+    [GCDQueue executeInMainQueue:^{
+        self.humidityView.percent = 0.9;
+        [self.humidityView show];
+    } afterDelaySecs:7.f];
+
 }
 
 @end

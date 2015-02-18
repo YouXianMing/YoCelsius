@@ -104,22 +104,40 @@
     
     if (animated) {
         // 关键帧动画
-        CABasicAnimation *basicAnimation = [CABasicAnimation animation];
-        basicAnimation.keyPath           = @"strokeEnd";
-        basicAnimation.duration          = duration;
-        basicAnimation.timingFunction    = \
-        [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        basicAnimation.fromValue         = @(self.circleLayer.strokeEnd);
-        basicAnimation.toValue           = @(value);
+        CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
+        keyAnimation.keyPath              = @"strokeEnd";
+        keyAnimation.duration             = duration;
+        keyAnimation.values               = \
+            [YXEasing calculateFrameFromValue:self.circleLayer.strokeEnd
+                                      toValue:value
+                                         func:CubicEaseInOut
+                                   frameCount:duration * 30];
         
         // 执行动画
         self.circleLayer.strokeEnd = value;
-        [self.circleLayer addAnimation:basicAnimation forKey:nil];
+        [self.circleLayer addAnimation:keyAnimation forKey:nil];
     } else {
         // 关闭动画
         [CATransaction setDisableActions:YES];
         self.circleLayer.strokeEnd = value;
     }
+}
+
+/**
+ *  创建出默认配置的view
+ *
+ *  @param frame 设置用的frame值
+ *
+ *  @return 实例对象
+ */
++ (instancetype)createDefaultViewWithFrame:(CGRect)frame {
+    CircleView *circleView = [[CircleView alloc] initWithFrame:frame];
+    circleView.lineWidth   = 5.f;
+    circleView.lineColor   = [UIColor blackColor];
+    circleView.clockWise   = YES;
+    circleView.startAngle  = 180;
+    
+    return circleView;
 }
 
 @end

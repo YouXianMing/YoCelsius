@@ -43,4 +43,13 @@
  */
 - (void)strokeEnd:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration;
 
+/**
+ *  创建出默认配置的view
+ *
+ *  @param frame 设置用的frame值
+ *
+ *  @return 实例对象
+ */
++ (instancetype)createDefaultViewWithFrame:(CGRect)frame;
+
 @end

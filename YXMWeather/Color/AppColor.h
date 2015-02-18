@@ -30,3 +30,6 @@
 // 白色
 #define COLOR_WHITE_             [@"ffffff" colorFromRGBcode]
 
+// 圆圈灰色
+#define COLOR_CIRCLE_            [@"C2C2C2" colorFromRGBcode]
+
