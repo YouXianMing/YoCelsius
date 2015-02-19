@@ -43,6 +43,9 @@
  */
 - (void)strokeEnd:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration;
 
+
+- (void)strokeStart:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration;
+
 /**
  *  创建出默认配置的view
  *

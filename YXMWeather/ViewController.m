@@ -8,18 +8,26 @@
 
 #import "ViewController.h"
 #import "MapManager.h"
-#import "LabelView.h"
-#import "FrameView.h"
-#import "CircleView.h"
+
 #import "HumidityView.h"
-#import "RotatedAngleView.h"
+#import "WindSpeedView.h"
+
+#import "WindSpeedCountLabel.h"
+
+// 将度数转换为弧度
+#define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
+
 
 @interface ViewController ()<MapManagerLocationDelegate>
 
 @property (nonatomic, strong) MapManager   *mapLoacation;
-@property (nonatomic ,strong) HumidityView *humidityView;
 
-@property (nonatomic, strong) RotatedAngleView *rotatedView;
+@property (nonatomic ,strong) HumidityView  *humidityView;
+@property (nonatomic, strong) WindSpeedView *windSpeedView;
+
+
+@property (nonatomic, strong) UIButton  *testButton;
+@property (nonatomic)         BOOL       isShow;
 
 @end
 
@@ -34,28 +42,82 @@
     [self.view addSubview:imageView];
     
 
-    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(150, 225, 100, 100)];
+    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(45, 200, 100, 100)];
     [self.humidityView buildView];
     [self.view addSubview:self.humidityView];
-
+    
+    
+    self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(38, 240 + 140, 80, 80)];
+    [self.windSpeedView buildView];
+    [self.view addSubview:self.windSpeedView];
+    
+    
+    
+    WindSpeedCountLabel *test = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(10, 10, 200, 40)];
+    test.toValue = 1000;
+    [test showDuration:1.f];
+    [self.view addSubview:test];
+    
+//    [GCDQueue executeInMainQueue:^{
+//        [test hideDuration:0.5];
+//    } afterDelaySecs:4.f];
 
     
-    [GCDQueue executeInMainQueue:^{
-        self.humidityView.percent = 0.6;
+    
+    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
+         parameters: @{@"lat"  : @"39.88293652833437",
+                       @"lon"  : @"116.4621119300779"}
+            success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSLog(@"%@", responseObject);
+            }
+            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+            }];
+ 
+    
+    // 创建测试按钮
+    [self createTestButton];
+}
+
+- (void)createTestButton {
+    self.testButton = [[UIButton alloc] initWithFrame:self.view.bounds];
+    [self.testButton addTarget:self
+                        action:@selector(buttonEvent:)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.testButton];
+}
+
+- (void)buttonEvent:(UIButton *)button {
+    button.userInteractionEnabled = NO;
+    
+    if (self.isShow == NO) {
+        self.isShow = YES;
+        
+        // 湿度显示
+        self.humidityView.percent = (arc4random() % 100 / 100.f);
         [self.humidityView show];
-    } afterDelaySecs:1.];
-    
-    
-    [GCDQueue executeInMainQueue:^{
+        
+        // 风速显示
+        self.windSpeedView.windSpeed         = arc4random() % 400;
+        self.windSpeedView.circleByOneSecond = self.windSpeedView.windSpeed / 300.f;
+        [self.windSpeedView show];
+        
+        [GCDQueue executeInMainQueue:^{
+            button.userInteractionEnabled = YES;
+        } afterDelaySecs:1.6];
+    } else {
+        self.isShow = NO;
+        
+        // 湿度隐藏
         [self.humidityView hide];
-    } afterDelaySecs:4.f];
-    
-    
-    [GCDQueue executeInMainQueue:^{
-        self.humidityView.percent = 0.9;
-        [self.humidityView show];
-    } afterDelaySecs:7.f];
-
+        
+        // 风速隐藏
+        [self.windSpeedView hide];
+        
+        [GCDQueue executeInMainQueue:^{
+            button.userInteractionEnabled = YES;
+        } afterDelaySecs:0.76];
+    }
 }
 
 @end

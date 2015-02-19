@@ -101,12 +101,24 @@
 		10D87D181A940DD7007CD3A5 /* POPSpringAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CFD1A940DD7007CD3A5 /* POPSpringAnimation.mm */; };
 		10D87D191A940DD7007CD3A5 /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D011A940DD7007CD3A5 /* POPVector.mm */; };
 		10D87D1A1A940DD7007CD3A5 /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D041A940DD7007CD3A5 /* TransformationMatrix.cpp */; };
+		10D87D1D1A941630007CD3A5 /* NumberCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D1C1A941630007CD3A5 /* NumberCount.m */; };
+		10D87D201A941C04007CD3A5 /* HumidityCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D1F1A941C04007CD3A5 /* HumidityCount.m */; };
+		10D87D261A94202A007CD3A5 /* ConfigAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D231A94202A007CD3A5 /* ConfigAttributedString.m */; };
+		10D87D271A94202A007CD3A5 /* NSString+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D251A94202A007CD3A5 /* NSString+RichText.m */; };
+		10D87D2A1A942570007CD3A5 /* HumidityCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D291A942570007CD3A5 /* HumidityCountLabel.m */; };
+		10D87D2D1A943650007CD3A5 /* Humidity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D87D2C1A943650007CD3A5 /* Humidity@2x.png */; };
+		10D87D321A948E7A007CD3A5 /* AnimatedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D311A948E7A007CD3A5 /* AnimatedLineView.m */; };
+		10D87D351A94992C007CD3A5 /* ThreeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87D341A94992C007CD3A5 /* ThreeLineView.m */; };
 		10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6B1A92B46D00CFC713 /* GCDGroup.m */; };
 		10DE2F741A92B46D00CFC713 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6D1A92B46D00CFC713 /* GCDQueue.m */; };
 		10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */; };
 		10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F711A92B46D00CFC713 /* GCDTimer.m */; };
 		10DE2F781A92CA5900CFC713 /* 背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DE2F771A92CA5900CFC713 /* 背景图.png */; };
 		10DE2F7B1A93661F00CFC713 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F7A1A93661F00CFC713 /* CircleView.m */; };
+		10E169AD1A9571CB00200B79 /* WindSpeed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E169AC1A9571CB00200B79 /* WindSpeed@2x.png */; };
+		10E169B01A957DEA00200B79 /* WindSpeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169AF1A957DEA00200B79 /* WindSpeedView.m */; };
+		10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169B21A95F42B00200B79 /* WindSpeedCount.m */; };
+		10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */; };
 		10E1F5321A908C3200AED5D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5311A908C3200AED5D6 /* main.m */; };
 		10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5341A908C3200AED5D6 /* AppDelegate.m */; };
 		10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5371A908C3200AED5D6 /* ViewController.m */; };
@@ -330,6 +342,21 @@
 		10D87D041A940DD7007CD3A5 /* TransformationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformationMatrix.cpp; sourceTree = "<group>"; };
 		10D87D051A940DD7007CD3A5 /* TransformationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformationMatrix.h; sourceTree = "<group>"; };
 		10D87D061A940DD7007CD3A5 /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
+		10D87D1B1A941630007CD3A5 /* NumberCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberCount.h; sourceTree = "<group>"; };
+		10D87D1C1A941630007CD3A5 /* NumberCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberCount.m; sourceTree = "<group>"; };
+		10D87D1E1A941C04007CD3A5 /* HumidityCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumidityCount.h; sourceTree = "<group>"; };
+		10D87D1F1A941C04007CD3A5 /* HumidityCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumidityCount.m; sourceTree = "<group>"; };
+		10D87D221A94202A007CD3A5 /* ConfigAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigAttributedString.h; sourceTree = "<group>"; };
+		10D87D231A94202A007CD3A5 /* ConfigAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigAttributedString.m; sourceTree = "<group>"; };
+		10D87D241A94202A007CD3A5 /* NSString+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RichText.h"; sourceTree = "<group>"; };
+		10D87D251A94202A007CD3A5 /* NSString+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RichText.m"; sourceTree = "<group>"; };
+		10D87D281A942570007CD3A5 /* HumidityCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumidityCountLabel.h; sourceTree = "<group>"; };
+		10D87D291A942570007CD3A5 /* HumidityCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumidityCountLabel.m; sourceTree = "<group>"; };
+		10D87D2C1A943650007CD3A5 /* Humidity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humidity@2x.png"; sourceTree = "<group>"; };
+		10D87D301A948E7A007CD3A5 /* AnimatedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLineView.h; sourceTree = "<group>"; };
+		10D87D311A948E7A007CD3A5 /* AnimatedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLineView.m; sourceTree = "<group>"; };
+		10D87D331A94992C007CD3A5 /* ThreeLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLineView.h; sourceTree = "<group>"; };
+		10D87D341A94992C007CD3A5 /* ThreeLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeLineView.m; sourceTree = "<group>"; };
 		10DE2F6A1A92B46D00CFC713 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
 		10DE2F6B1A92B46D00CFC713 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
 		10DE2F6C1A92B46D00CFC713 /* GCDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDQueue.h; sourceTree = "<group>"; };
@@ -342,6 +369,13 @@
 		10DE2F771A92CA5900CFC713 /* 背景图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景图.png"; sourceTree = "<group>"; };
 		10DE2F791A93661F00CFC713 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		10DE2F7A1A93661F00CFC713 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		10E169AC1A9571CB00200B79 /* WindSpeed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WindSpeed@2x.png"; sourceTree = "<group>"; };
+		10E169AE1A957DEA00200B79 /* WindSpeedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindSpeedView.h; sourceTree = "<group>"; };
+		10E169AF1A957DEA00200B79 /* WindSpeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindSpeedView.m; sourceTree = "<group>"; };
+		10E169B11A95F42B00200B79 /* WindSpeedCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindSpeedCount.h; sourceTree = "<group>"; };
+		10E169B21A95F42B00200B79 /* WindSpeedCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindSpeedCount.m; sourceTree = "<group>"; };
+		10E169B71A96082E00200B79 /* WindSpeedCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindSpeedCountLabel.h; sourceTree = "<group>"; };
+		10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindSpeedCountLabel.m; sourceTree = "<group>"; };
 		10E1F52C1A908C3200AED5D6 /* YXMWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXMWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E1F5301A908C3200AED5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E1F5311A908C3200AED5D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -589,6 +623,22 @@
 				10D87CBF1A93F68A007CD3A5 /* HumidityView.m */,
 				10D87CC11A93FBE6007CD3A5 /* RotatedAngleView.h */,
 				10D87CC21A93FBE6007CD3A5 /* RotatedAngleView.m */,
+				10D87D1B1A941630007CD3A5 /* NumberCount.h */,
+				10D87D1C1A941630007CD3A5 /* NumberCount.m */,
+				10D87D1E1A941C04007CD3A5 /* HumidityCount.h */,
+				10D87D1F1A941C04007CD3A5 /* HumidityCount.m */,
+				10E169B11A95F42B00200B79 /* WindSpeedCount.h */,
+				10E169B21A95F42B00200B79 /* WindSpeedCount.m */,
+				10E169B71A96082E00200B79 /* WindSpeedCountLabel.h */,
+				10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */,
+				10D87D281A942570007CD3A5 /* HumidityCountLabel.h */,
+				10D87D291A942570007CD3A5 /* HumidityCountLabel.m */,
+				10D87D301A948E7A007CD3A5 /* AnimatedLineView.h */,
+				10D87D311A948E7A007CD3A5 /* AnimatedLineView.m */,
+				10D87D331A94992C007CD3A5 /* ThreeLineView.h */,
+				10D87D341A94992C007CD3A5 /* ThreeLineView.m */,
+				10E169AE1A957DEA00200B79 /* WindSpeedView.h */,
+				10E169AF1A957DEA00200B79 /* WindSpeedView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -670,6 +720,26 @@
 			path = WebCore;
 			sourceTree = "<group>";
 		};
+		10D87D211A94202A007CD3A5 /* RichText */ = {
+			isa = PBXGroup;
+			children = (
+				10D87D221A94202A007CD3A5 /* ConfigAttributedString.h */,
+				10D87D231A94202A007CD3A5 /* ConfigAttributedString.m */,
+				10D87D241A94202A007CD3A5 /* NSString+RichText.h */,
+				10D87D251A94202A007CD3A5 /* NSString+RichText.m */,
+			);
+			path = RichText;
+			sourceTree = "<group>";
+		};
+		10D87D2B1A9435CE007CD3A5 /* PicSource */ = {
+			isa = PBXGroup;
+			children = (
+				10D87D2C1A943650007CD3A5 /* Humidity@2x.png */,
+				10E169AC1A9571CB00200B79 /* WindSpeed@2x.png */,
+			);
+			path = PicSource;
+			sourceTree = "<group>";
+		};
 		10DE2F691A92B46D00CFC713 /* YXGCD */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +788,8 @@
 				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 				10D87CCB1A94046D007CD3A5 /* YouXianMingLog.h */,
 				10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */,
+				10D87D2B1A9435CE007CD3A5 /* PicSource */,
+				10D87D211A94202A007CD3A5 /* RichText */,
 				10D87CCE1A940DD7007CD3A5 /* pop */,
 				10D87CC41A93FCCE007CD3A5 /* YXEasing */,
 				10DE2F691A92B46D00CFC713 /* YXGCD */,
@@ -853,8 +925,10 @@
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
+				10D87D2D1A943650007CD3A5 /* Humidity@2x.png in Resources */,
 				10AB294A1A91376A00CE545D /* sat@2x.png in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,
+				10E169AD1A9571CB00200B79 /* WindSpeed@2x.png in Resources */,
 				10AB295A1A91DF6A00CE545D /* test.png in Resources */,
 				10AB29681A91F2DE00CE545D /* Lato-Light.ttf in Resources */,
 			);
@@ -880,6 +954,7 @@
 				10AB292F1A90B87D00CE545D /* GONMarkupInc.m in Sources */,
 				10AB29321A90B87D00CE545D /* GONMarkupLineStyle.m in Sources */,
 				10AB293E1A90B87D00CE545D /* UILabel+GONMarkupParser.m in Sources */,
+				10D87D201A941C04007CD3A5 /* HumidityCount.m in Sources */,
 				10AB28D41A908F3F00CE545D /* Coord.m in Sources */,
 				10D87D0D1A940DD7007CD3A5 /* POPAnimationRuntime.mm in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
@@ -888,9 +963,11 @@
 				10AB293D1A90B87D00CE545D /* GONMarkupTextStyle.m in Sources */,
 				10AB293A1A90B87D00CE545D /* GONMarkupParserUtils.m in Sources */,
 				10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */,
+				10D87D321A948E7A007CD3A5 /* AnimatedLineView.m in Sources */,
 				10AB29621A91EAD900CE545D /* LabelView.m in Sources */,
 				10AB28D71A908F3F00CE545D /* MainInfo.m in Sources */,
 				10D87D161A940DD7007CD3A5 /* POPMath.mm in Sources */,
+				10E169B01A957DEA00200B79 /* WindSpeedView.m in Sources */,
 				10AB28AB1A908EE800CE545D /* AFHTTPRequestOperationManager.m in Sources */,
 				10D87D141A940DD7007CD3A5 /* POPGeometry.mm in Sources */,
 				10D87D0F1A940DD7007CD3A5 /* POPAnimator.mm in Sources */,
@@ -900,6 +977,7 @@
 				10D87D151A940DD7007CD3A5 /* POPLayerExtras.mm in Sources */,
 				10D87D1A1A940DD7007CD3A5 /* TransformationMatrix.cpp in Sources */,
 				10AB29381A90B87D00CE545D /* GONMarkupParser.m in Sources */,
+				10D87D1D1A941630007CD3A5 /* NumberCount.m in Sources */,
 				10AB292D1A90B87D00CE545D /* GONMarkupFont.m in Sources */,
 				10AB28D21A908F3F00CE545D /* City.m in Sources */,
 				10DE2F7B1A93661F00CFC713 /* CircleView.m in Sources */,
@@ -909,6 +987,7 @@
 				10D87CC31A93FBE6007CD3A5 /* RotatedAngleView.m in Sources */,
 				10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */,
 				10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */,
+				10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */,
 				10AB28AF1A908EE800CE545D /* AFURLConnectionOperation.m in Sources */,
 				10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */,
 				10AB28B61A908EE800CE545D /* UIButton+AFNetworking.m in Sources */,
@@ -924,6 +1003,7 @@
 				10D87D191A940DD7007CD3A5 /* POPVector.mm in Sources */,
 				10AB29341A90B87D00CE545D /* GONMarkupListItem.m in Sources */,
 				10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */,
+				10D87D261A94202A007CD3A5 /* ConfigAttributedString.m in Sources */,
 				10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */,
 				10D87CCA1A93FCCE007CD3A5 /* YXEasing.m in Sources */,
 				10AB29331A90B87D00CE545D /* GONMarkupList.m in Sources */,
@@ -935,12 +1015,14 @@
 				10D87CC01A93F68A007CD3A5 /* HumidityView.m in Sources */,
 				10AB28BA1A908EE800CE545D /* UIWebView+AFNetworking.m in Sources */,
 				10AB29271A90B87D00CE545D /* GONMarkupAlignment.m in Sources */,
+				10D87D351A94992C007CD3A5 /* ThreeLineView.m in Sources */,
 				10AB28AC1A908EE800CE545D /* AFHTTPSessionManager.m in Sources */,
 				10AB29401A90B87D00CE545D /* UITextView+GONMarkupParser.m in Sources */,
 				10AB29361A90B87D00CE545D /* GONMarkupNamedFont.m in Sources */,
 				10AB28D91A908F3F00CE545D /* Temp.m in Sources */,
 				10AB28B51A908EE800CE545D /* UIAlertView+AFNetworking.m in Sources */,
 				10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */,
+				10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */,
 				10DE2F741A92B46D00CFC713 /* GCDQueue.m in Sources */,
 				10AB29311A90B87D00CE545D /* GONMarkupLineBreak.m in Sources */,
 				10AB296B1A91FC0700CE545D /* FrameView.m in Sources */,
@@ -948,11 +1030,13 @@
 				10AB28E31A9095C000CE545D /* MapManager.m in Sources */,
 				10AB28B31A908EE800CE545D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				10D87D0B1A940DD7007CD3A5 /* POPAnimationEvent.mm in Sources */,
+				10D87D2A1A942570007CD3A5 /* HumidityCountLabel.m in Sources */,
 				10D87D111A940DD7007CD3A5 /* POPCGUtils.mm in Sources */,
 				10AB29431A90B8C300CE545D /* NSString+Color.m in Sources */,
 				10AB28DA1A908F3F00CE545D /* Weather.m in Sources */,
 				10AB293C1A90B87D00CE545D /* GONMarkupSimple.m in Sources */,
 				10AB28D51A908F3F00CE545D /* CurrentConditions.m in Sources */,
+				10D87D271A94202A007CD3A5 /* NSString+RichText.m in Sources */,
 				10AB28B21A908EE800CE545D /* AFURLSessionManager.m in Sources */,
 				10AB292E1A90B87D00CE545D /* GONMarkupFontTraits.m in Sources */,
 				10AB29281A90B87D00CE545D /* GONMarkupAnchor.m in Sources */,

@@ -120,6 +120,37 @@
         // 关闭动画
         [CATransaction setDisableActions:YES];
         self.circleLayer.strokeEnd = value;
+        [CATransaction setDisableActions:NO];
+    }
+}
+
+- (void)strokeStart:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration {
+    // 过滤掉不合理的值
+    if (value <= 0) {
+        value = 0;
+    } else if (value >= 1) {
+        value = 1.f;
+    }
+    
+    if (animated) {
+        // 关键帧动画
+        CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
+        keyAnimation.keyPath              = @"strokeStart";
+        keyAnimation.duration             = duration;
+        keyAnimation.values               = \
+        [YXEasing calculateFrameFromValue:self.circleLayer.strokeStart
+                                  toValue:value
+                                     func:CubicEaseInOut
+                               frameCount:duration * 30];
+        
+        // 执行动画
+        self.circleLayer.strokeStart = value;
+        [self.circleLayer addAnimation:keyAnimation forKey:nil];
+    } else {
+        // 关闭动画
+        [CATransaction setDisableActions:YES];
+        self.circleLayer.strokeStart = value;
+        [CATransaction setDisableActions:NO];
     }
 }
 
@@ -132,7 +163,7 @@
  */
 + (instancetype)createDefaultViewWithFrame:(CGRect)frame {
     CircleView *circleView = [[CircleView alloc] initWithFrame:frame];
-    circleView.lineWidth   = 5.f;
+    circleView.lineWidth   = 2.f;
     circleView.lineColor   = [UIColor blackColor];
     circleView.clockWise   = YES;
     circleView.startAngle  = 180;

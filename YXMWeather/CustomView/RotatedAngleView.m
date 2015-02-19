@@ -44,6 +44,10 @@
     }];
 }
 
+- (void)roateAngle:(CGFloat)angle {
+    self.transform = CGAffineTransformRotate(_defaultTransform, RADIAN(angle));
+}
+
 - (void)recoverDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration animations:^{
         self.transform = CGAffineTransformRotate(_defaultTransform, 0);
