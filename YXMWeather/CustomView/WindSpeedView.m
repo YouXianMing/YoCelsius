@@ -73,7 +73,7 @@
     
     
     // 创建出风速变化的标签
-    self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(0, 88, 80, 15)];
+    self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(0, 87, 94, 15)];
     [self addSubview:self.windCountLabel];
     self.windCountLabelStoreValue = [WindSpeedCountLabelStoreValue new];
     self.windCountLabelStoreValue.midRect = self.windCountLabel.frame;

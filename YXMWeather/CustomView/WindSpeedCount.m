@@ -51,8 +51,8 @@
     NSString *countStr = [NSString stringWithFormat:@"%ld", (long)count];
     NSString *totalStr = [NSString stringWithFormat:@"%@ mps", countStr];
     
-    UIFont *font1       = [UIFont fontWithName:LATO_REGULAR size:10.f];
-    UIFont *font2       = [UIFont fontWithName:LATO_BOLD size:8.f];
+    UIFont *font1       = [UIFont fontWithName:LATO_REGULAR size:12.f];
+    UIFont *font2       = [UIFont fontWithName:LATO_BOLD size:10.f];
     
     NSRange totalRange   = [totalStr range];              // 全局的区域
     NSRange countRange   = [countStr rangeFrom:totalStr]; // %的区域

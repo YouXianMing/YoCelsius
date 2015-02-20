@@ -11,9 +11,7 @@
 
 #import "HumidityView.h"
 #import "WindSpeedView.h"
-
-
-#import "AlphaView.h"
+#import "MaxTempView.h"
 
 
 // 将度数转换为弧度
@@ -26,6 +24,7 @@
 
 @property (nonatomic ,strong) HumidityView  *humidityView;
 @property (nonatomic, strong) WindSpeedView *windSpeedView;
+@property (nonatomic, strong) MaxTempView   *maxTempView;
 
 
 @property (nonatomic, strong) UIButton  *testButton;
@@ -39,28 +38,24 @@
     [super viewDidLoad];
     
     // 测试背景图
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"背景图"];
-    [self.view addSubview:imageView];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+//    imageView.image = [UIImage imageNamed:@"背景图"];
+//    [self.view addSubview:imageView];
     
 
-    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(45, 200, 100, 100)];
+    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(45, 220, 100, 100)];
     [self.humidityView buildView];
     [self.view addSubview:self.humidityView];
     
     
-    self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(38, 240 + 140, 80, 80)];
+    self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(35, 240 + 140, 80, 80)];
     [self.windSpeedView buildView];
     [self.view addSubview:self.windSpeedView];
     
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(170, 200, 1, 100 * 0.75)];
-    lineView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:lineView];
-    
-    UIView *lineTwo = [[UIView alloc] initWithFrame:CGRectMake(170, 250, 125 * 0.75, 1)];
-    lineTwo.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:lineTwo];
+    self.maxTempView = [[MaxTempView alloc] initWithFrame:CGRectMake(40, 40, 170, 170)];
+    [self.maxTempView buildView];
+    [self.view addSubview:self.maxTempView];
     
     
 //    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
@@ -101,9 +96,19 @@
         self.windSpeedView.circleByOneSecond = self.windSpeedView.windSpeed / 300.f;
         [self.windSpeedView show];
         
+        // 最大温度,最小温度显示
+        
+        CGFloat tmpMax = arc4random() % 40;
+        CGFloat tmpMin = arc4random() % 20;
+        
+        self.maxTempView.maxTemp = tmpMax;
+        self.maxTempView.minTemp = -tmpMin;
+        [self.maxTempView show];
+        
         [GCDQueue executeInMainQueue:^{
             button.userInteractionEnabled = YES;
         } afterDelaySecs:1.6];
+        
     } else {
         self.isShow = NO;
         
@@ -112,6 +117,9 @@
         
         // 风速隐藏
         [self.windSpeedView hide];
+        
+        // 最大温度,最小温度隐藏
+        [self.maxTempView hide];
         
         [GCDQueue executeInMainQueue:^{
             button.userInteractionEnabled = YES;

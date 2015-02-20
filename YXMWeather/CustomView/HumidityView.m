@@ -11,7 +11,7 @@
 #import "RotatedAngleView.h"
 #import "HumidityCountLabel.h"
 
-#define  CIRCLE_FRAME  CGRectMake(0, 0, 100, 100)
+#define  CIRCLE_FRAME  CGRectMake(0, 0, 90, 90)
 #define  TITLE_MOVE    10.f
 
 @interface HumidityView ()

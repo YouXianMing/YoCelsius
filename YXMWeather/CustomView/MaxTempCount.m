@@ -1,15 +1,14 @@
 //
-//  HumidityCount.m
+//  MaxTempCount.m
 //  YXMWeather
 //
-//  Created by XianMingYou on 15/2/18.
+//  Created by XianMingYou on 15/2/20.
 //  Copyright (c) 2015年 XianMingYou. All rights reserved.
 //
 
-#import "HumidityCount.h"
-#import "NSString+RichText.h"
+#import "MaxTempCount.h"
 
-@implementation HumidityCount
+@implementation MaxTempCount
 
 - (void)startAnimation {
     // 初始化值
@@ -48,11 +47,11 @@
     
     NSInteger count    = [number integerValue];
     
-    NSString *countStr = [NSString stringWithFormat:@"%02ld", (long)count];
-    NSString *totalStr = [NSString stringWithFormat:@"%@%%", countStr];
+    NSString *countStr = [NSString stringWithFormat:@"%ld°", (long)count];
+    NSString *totalStr = [NSString stringWithFormat:@"Max %@", countStr];
     
-    UIFont *font1       = [UIFont fontWithName:LATO_LIGHT size:40.f];
-    UIFont *font2       = [UIFont fontWithName:LATO_LIGHT size:19.f];
+    UIFont *font1       = [UIFont fontWithName:LATO_REGULAR size:12.f];
+    UIFont *font2       = [UIFont fontWithName:LATO_BOLD size:8.f];
     
     NSRange totalRange   = [totalStr range];              // 全局的区域
     NSRange countRange   = [countStr rangeFrom:totalStr]; // %的区域
@@ -63,15 +62,9 @@
                                                                               range:totalRange],
                                                        [ConfigAttributedString font:font1
                                                                               range:countRange],
-                                                       
-                                                       // 局部设置
-                                                       [ConfigAttributedString foregroundColor:COLOR_CIRCLE_
-                                                                                         range:totalRange],
-                                                       [ConfigAttributedString foregroundColor:[UIColor blackColor]
-                                                                                         range:countRange],
-
-
+                                                       [ConfigAttributedString foregroundColor:[UIColor blackColor] range:totalRange],
                                                        ]];
 }
+
 
 @end
