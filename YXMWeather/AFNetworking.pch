@@ -35,6 +35,10 @@
 #import "YXEasing.h"
 #import "YouXianMingLog.h"
 #import "POP.h"
+#import "NSString+File.h"
+#import "MagicalRecord.h"
+#import "CoreData+MagicalRecord.h"
+#import "SharedInstance.h"
 #endif
 
 #endif

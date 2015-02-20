@@ -12,7 +12,9 @@
 #import "HumidityView.h"
 #import "WindSpeedView.h"
 
-#import "WindSpeedCountLabel.h"
+
+#import "AlphaView.h"
+
 
 // 将度数转换为弧度
 #define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
@@ -52,27 +54,24 @@
     [self.view addSubview:self.windSpeedView];
     
     
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(170, 200, 1, 100 * 0.75)];
+    lineView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:lineView];
     
-    WindSpeedCountLabel *test = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(10, 10, 200, 40)];
-    test.toValue = 1000;
-    [test showDuration:1.f];
-    [self.view addSubview:test];
-    
-//    [GCDQueue executeInMainQueue:^{
-//        [test hideDuration:0.5];
-//    } afterDelaySecs:4.f];
-
+    UIView *lineTwo = [[UIView alloc] initWithFrame:CGRectMake(170, 250, 125 * 0.75, 1)];
+    lineTwo.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:lineTwo];
     
     
-    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
-         parameters: @{@"lat"  : @"39.88293652833437",
-                       @"lon"  : @"116.4621119300779"}
-            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"%@", responseObject);
-            }
-            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                
-            }];
+//    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
+//         parameters: @{@"lat"  : @"39.88293652833437",
+//                       @"lon"  : @"116.4621119300779"}
+//            success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                NSLog(@"%@", responseObject);
+//            }
+//            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                
+//            }];
  
     
     // 创建测试按钮

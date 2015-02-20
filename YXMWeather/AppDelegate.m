@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "GlobalCoreData.h"
 
 @interface AppDelegate ()
 
@@ -15,16 +16,18 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    // 初始化
+    self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    
     self.window.rootViewController = [ViewController new];
     
+    // 隐藏状态栏
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+    
+    // 初始化数据库
+    [GlobalCoreData globalInit];
     
     return YES;
 }
@@ -49,6 +52,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [MagicalRecord cleanUp];
 }
 
 @end

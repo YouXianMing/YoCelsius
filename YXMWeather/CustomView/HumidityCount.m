@@ -65,7 +65,7 @@
                                                                               range:countRange],
                                                        
                                                        // 局部设置
-                                                       [ConfigAttributedString foregroundColor:[UIColor redColor]
+                                                       [ConfigAttributedString foregroundColor:COLOR_CIRCLE_
                                                                                          range:countRange],
 
                                                        ]];

@@ -119,6 +119,43 @@
 		10E169B01A957DEA00200B79 /* WindSpeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169AF1A957DEA00200B79 /* WindSpeedView.m */; };
 		10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169B21A95F42B00200B79 /* WindSpeedCount.m */; };
 		10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */; };
+		10E169BC1A968D8D00200B79 /* AlphaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169BB1A968D8D00200B79 /* AlphaView.m */; };
+		10E169C21A9695C800200B79 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169C11A9695C800200B79 /* NSString+File.m */; };
+		10E169C51A96997200200B79 /* CityCode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10E169C31A96997200200B79 /* CityCode.xcdatamodeld */; };
+		10E169C81A9699F700200B79 /* CityCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169C71A9699F700200B79 /* CityCode.m */; };
+		10E16A171A96A91200200B79 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169DB1A96A91200200B79 /* MagicalImportFunctions.m */; };
+		10E16A181A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169DD1A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m */; };
+		10E16A191A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169DF1A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m */; };
+		10E16A1A1A96A91200200B79 /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169E11A96A91200200B79 /* NSNumber+MagicalDataImport.m */; };
+		10E16A1B1A96A91200200B79 /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169E31A96A91200200B79 /* NSObject+MagicalDataImport.m */; };
+		10E16A1C1A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169E51A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.m */; };
+		10E16A1D1A96A91200200B79 /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169E71A96A91200200B79 /* NSString+MagicalDataImport.m */; };
+		10E16A1E1A96A91200200B79 /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169EA1A96A91200200B79 /* NSManagedObject+MagicalAggregation.m */; };
+		10E16A1F1A96A91200200B79 /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169EC1A96A91200200B79 /* NSManagedObject+MagicalDataImport.m */; };
+		10E16A201A96A91200200B79 /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169EE1A96A91200200B79 /* NSManagedObject+MagicalFinders.m */; };
+		10E16A211A96A91200200B79 /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169F01A96A91200200B79 /* NSManagedObject+MagicalRecord.m */; };
+		10E16A221A96A91200200B79 /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169F21A96A91200200B79 /* NSManagedObject+MagicalRequests.m */; };
+		10E16A231A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169F51A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m */; };
+		10E16A241A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169F71A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.m */; };
+		10E16A251A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169F91A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m */; };
+		10E16A261A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169FB1A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.m */; };
+		10E16A271A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169FD1A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.m */; };
+		10E16A281A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169FF1A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m */; };
+		10E16A291A96A91200200B79 /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A011A96A91200200B79 /* NSPersistentStore+MagicalRecord.m */; };
+		10E16A2A1A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A031A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
+		10E16A2B1A96A91200200B79 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A061A96A91200200B79 /* MagicalRecord+Actions.m */; };
+		10E16A2C1A96A91200200B79 /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A081A96A91200200B79 /* MagicalRecord+ErrorHandling.m */; };
+		10E16A2D1A96A91200200B79 /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A0A1A96A91200200B79 /* MagicalRecord+iCloud.m */; };
+		10E16A2E1A96A91200200B79 /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A0C1A96A91200200B79 /* MagicalRecord+Options.m */; };
+		10E16A2F1A96A91200200B79 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A0E1A96A91200200B79 /* MagicalRecord+Setup.m */; };
+		10E16A301A96A91200200B79 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A101A96A91200200B79 /* MagicalRecord+ShorthandSupport.m */; };
+		10E16A311A96A91200200B79 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A121A96A91200200B79 /* MagicalRecord.m */; };
+		10E16A351A96B09100200B79 /* CityCode.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A321A96B09100200B79 /* CityCode.sqlite */; };
+		10E16A361A96B09100200B79 /* CityCode.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A331A96B09100200B79 /* CityCode.sqlite-shm */; };
+		10E16A371A96B09100200B79 /* CityCode.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A341A96B09100200B79 /* CityCode.sqlite-wal */; };
+		10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A3A1A96B16400200B79 /* SharedInstance.m */; };
+		10E16A3E1A96B17C00200B79 /* GlobalValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A3D1A96B17C00200B79 /* GlobalValue.m */; };
+		10E16A411A96C66D00200B79 /* GlobalCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A401A96C66D00200B79 /* GlobalCoreData.m */; };
 		10E1F5321A908C3200AED5D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5311A908C3200AED5D6 /* main.m */; };
 		10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5341A908C3200AED5D6 /* AppDelegate.m */; };
 		10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5371A908C3200AED5D6 /* ViewController.m */; };
@@ -376,6 +413,80 @@
 		10E169B21A95F42B00200B79 /* WindSpeedCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindSpeedCount.m; sourceTree = "<group>"; };
 		10E169B71A96082E00200B79 /* WindSpeedCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindSpeedCountLabel.h; sourceTree = "<group>"; };
 		10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindSpeedCountLabel.m; sourceTree = "<group>"; };
+		10E169BA1A968D8D00200B79 /* AlphaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaView.h; sourceTree = "<group>"; };
+		10E169BB1A968D8D00200B79 /* AlphaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaView.m; sourceTree = "<group>"; };
+		10E169C01A9695C800200B79 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
+		10E169C11A9695C800200B79 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
+		10E169C41A96997200200B79 /* CityCode.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityCode.xcdatamodel; sourceTree = "<group>"; };
+		10E169C61A9699F700200B79 /* CityCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityCode.h; sourceTree = "<group>"; };
+		10E169C71A9699F700200B79 /* CityCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityCode.m; sourceTree = "<group>"; };
+		10E169DA1A96A91200200B79 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
+		10E169DB1A96A91200200B79 /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
+		10E169DC1A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169DD1A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributeDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169DE1A96A91200200B79 /* NSEntityDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169DF1A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169E01A96A91200200B79 /* NSNumber+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169E11A96A91200200B79 /* NSNumber+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169E21A96A91200200B79 /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169E31A96A91200200B79 /* NSObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169E41A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRelationshipDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169E51A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRelationshipDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169E61A96A91200200B79 /* NSString+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169E71A96A91200200B79 /* NSString+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169E91A96A91200200B79 /* NSManagedObject+MagicalAggregation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalAggregation.h"; sourceTree = "<group>"; };
+		10E169EA1A96A91200200B79 /* NSManagedObject+MagicalAggregation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalAggregation.m"; sourceTree = "<group>"; };
+		10E169EB1A96A91200200B79 /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		10E169EC1A96A91200200B79 /* NSManagedObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		10E169ED1A96A91200200B79 /* NSManagedObject+MagicalFinders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalFinders.h"; sourceTree = "<group>"; };
+		10E169EE1A96A91200200B79 /* NSManagedObject+MagicalFinders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalFinders.m"; sourceTree = "<group>"; };
+		10E169EF1A96A91200200B79 /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E169F01A96A91200200B79 /* NSManagedObject+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRecord.m"; sourceTree = "<group>"; };
+		10E169F11A96A91200200B79 /* NSManagedObject+MagicalRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRequests.h"; sourceTree = "<group>"; };
+		10E169F21A96A91200200B79 /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
+		10E169F41A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalChainSave.h"; sourceTree = "<group>"; };
+		10E169F51A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalChainSave.m"; sourceTree = "<group>"; };
+		10E169F61A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalObserving.h"; sourceTree = "<group>"; };
+		10E169F71A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalObserving.m"; sourceTree = "<group>"; };
+		10E169F81A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E169F91A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
+		10E169FA1A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalSaves.h"; sourceTree = "<group>"; };
+		10E169FB1A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
+		10E169FC1A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalThreading.h"; sourceTree = "<group>"; };
+		10E169FD1A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalThreading.m"; sourceTree = "<group>"; };
+		10E169FE1A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E169FF1A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
+		10E16A001A96A91200200B79 /* NSPersistentStore+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E16A011A96A91200200B79 /* NSPersistentStore+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+MagicalRecord.m"; sourceTree = "<group>"; };
+		10E16A021A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E16A031A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+MagicalRecord.m"; sourceTree = "<group>"; };
+		10E16A051A96A91200200B79 /* MagicalRecord+Actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Actions.h"; sourceTree = "<group>"; };
+		10E16A061A96A91200200B79 /* MagicalRecord+Actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Actions.m"; sourceTree = "<group>"; };
+		10E16A071A96A91200200B79 /* MagicalRecord+ErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ErrorHandling.h"; sourceTree = "<group>"; };
+		10E16A081A96A91200200B79 /* MagicalRecord+ErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ErrorHandling.m"; sourceTree = "<group>"; };
+		10E16A091A96A91200200B79 /* MagicalRecord+iCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+iCloud.h"; sourceTree = "<group>"; };
+		10E16A0A1A96A91200200B79 /* MagicalRecord+iCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+iCloud.m"; sourceTree = "<group>"; };
+		10E16A0B1A96A91200200B79 /* MagicalRecord+Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Options.h"; sourceTree = "<group>"; };
+		10E16A0C1A96A91200200B79 /* MagicalRecord+Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Options.m"; sourceTree = "<group>"; };
+		10E16A0D1A96A91200200B79 /* MagicalRecord+Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Setup.h"; sourceTree = "<group>"; };
+		10E16A0E1A96A91200200B79 /* MagicalRecord+Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Setup.m"; sourceTree = "<group>"; };
+		10E16A0F1A96A91200200B79 /* MagicalRecord+ShorthandSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ShorthandSupport.h"; sourceTree = "<group>"; };
+		10E16A101A96A91200200B79 /* MagicalRecord+ShorthandSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ShorthandSupport.m"; sourceTree = "<group>"; };
+		10E16A111A96A91200200B79 /* MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecord.h; sourceTree = "<group>"; };
+		10E16A121A96A91200200B79 /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
+		10E16A131A96A91200200B79 /* MagicalRecordDeprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordDeprecated.h; sourceTree = "<group>"; };
+		10E16A141A96A91200200B79 /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
+		10E16A151A96A91200200B79 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
+		10E16A161A96A91200200B79 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		10E16A321A96B09100200B79 /* CityCode.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CityCode.sqlite; sourceTree = "<group>"; };
+		10E16A331A96B09100200B79 /* CityCode.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CityCode.sqlite-shm"; sourceTree = "<group>"; };
+		10E16A341A96B09100200B79 /* CityCode.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CityCode.sqlite-wal"; sourceTree = "<group>"; };
+		10E16A391A96B16400200B79 /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
+		10E16A3A1A96B16400200B79 /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
+		10E16A3C1A96B17C00200B79 /* GlobalValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalValue.h; sourceTree = "<group>"; };
+		10E16A3D1A96B17C00200B79 /* GlobalValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalValue.m; sourceTree = "<group>"; };
+		10E16A3F1A96C66D00200B79 /* GlobalCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCoreData.h; sourceTree = "<group>"; };
+		10E16A401A96C66D00200B79 /* GlobalCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCoreData.m; sourceTree = "<group>"; };
 		10E1F52C1A908C3200AED5D6 /* YXMWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXMWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E1F5301A908C3200AED5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E1F5311A908C3200AED5D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -639,6 +750,8 @@
 				10D87D341A94992C007CD3A5 /* ThreeLineView.m */,
 				10E169AE1A957DEA00200B79 /* WindSpeedView.h */,
 				10E169AF1A957DEA00200B79 /* WindSpeedView.m */,
+				10E169BA1A968D8D00200B79 /* AlphaView.h */,
+				10E169BB1A968D8D00200B79 /* AlphaView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -756,6 +869,131 @@
 			path = YXGCD;
 			sourceTree = "<group>";
 		};
+		10E169BF1A9695C800200B79 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				10E169C01A9695C800200B79 /* NSString+File.h */,
+				10E169C11A9695C800200B79 /* NSString+File.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		10E169D71A96A91200200B79 /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				10E169D81A96A91200200B79 /* Categories */,
+				10E16A041A96A91200200B79 /* Core */,
+				10E16A161A96A91200200B79 /* CoreData+MagicalRecord.h */,
+			);
+			path = MagicalRecord;
+			sourceTree = "<group>";
+		};
+		10E169D81A96A91200200B79 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				10E169D91A96A91200200B79 /* DataImport */,
+				10E169E81A96A91200200B79 /* NSManagedObject */,
+				10E169F31A96A91200200B79 /* NSManagedObjectContext */,
+				10E169FE1A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.h */,
+				10E169FF1A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m */,
+				10E16A001A96A91200200B79 /* NSPersistentStore+MagicalRecord.h */,
+				10E16A011A96A91200200B79 /* NSPersistentStore+MagicalRecord.m */,
+				10E16A021A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.h */,
+				10E16A031A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		10E169D91A96A91200200B79 /* DataImport */ = {
+			isa = PBXGroup;
+			children = (
+				10E169DA1A96A91200200B79 /* MagicalImportFunctions.h */,
+				10E169DB1A96A91200200B79 /* MagicalImportFunctions.m */,
+				10E169DC1A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.h */,
+				10E169DD1A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m */,
+				10E169DE1A96A91200200B79 /* NSEntityDescription+MagicalDataImport.h */,
+				10E169DF1A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m */,
+				10E169E01A96A91200200B79 /* NSNumber+MagicalDataImport.h */,
+				10E169E11A96A91200200B79 /* NSNumber+MagicalDataImport.m */,
+				10E169E21A96A91200200B79 /* NSObject+MagicalDataImport.h */,
+				10E169E31A96A91200200B79 /* NSObject+MagicalDataImport.m */,
+				10E169E41A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.h */,
+				10E169E51A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.m */,
+				10E169E61A96A91200200B79 /* NSString+MagicalDataImport.h */,
+				10E169E71A96A91200200B79 /* NSString+MagicalDataImport.m */,
+			);
+			path = DataImport;
+			sourceTree = "<group>";
+		};
+		10E169E81A96A91200200B79 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				10E169E91A96A91200200B79 /* NSManagedObject+MagicalAggregation.h */,
+				10E169EA1A96A91200200B79 /* NSManagedObject+MagicalAggregation.m */,
+				10E169EB1A96A91200200B79 /* NSManagedObject+MagicalDataImport.h */,
+				10E169EC1A96A91200200B79 /* NSManagedObject+MagicalDataImport.m */,
+				10E169ED1A96A91200200B79 /* NSManagedObject+MagicalFinders.h */,
+				10E169EE1A96A91200200B79 /* NSManagedObject+MagicalFinders.m */,
+				10E169EF1A96A91200200B79 /* NSManagedObject+MagicalRecord.h */,
+				10E169F01A96A91200200B79 /* NSManagedObject+MagicalRecord.m */,
+				10E169F11A96A91200200B79 /* NSManagedObject+MagicalRequests.h */,
+				10E169F21A96A91200200B79 /* NSManagedObject+MagicalRequests.m */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		10E169F31A96A91200200B79 /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				10E169F41A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.h */,
+				10E169F51A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m */,
+				10E169F61A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.h */,
+				10E169F71A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.m */,
+				10E169F81A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.h */,
+				10E169F91A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m */,
+				10E169FA1A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.h */,
+				10E169FB1A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.m */,
+				10E169FC1A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.h */,
+				10E169FD1A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.m */,
+			);
+			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		10E16A041A96A91200200B79 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				10E16A051A96A91200200B79 /* MagicalRecord+Actions.h */,
+				10E16A061A96A91200200B79 /* MagicalRecord+Actions.m */,
+				10E16A071A96A91200200B79 /* MagicalRecord+ErrorHandling.h */,
+				10E16A081A96A91200200B79 /* MagicalRecord+ErrorHandling.m */,
+				10E16A091A96A91200200B79 /* MagicalRecord+iCloud.h */,
+				10E16A0A1A96A91200200B79 /* MagicalRecord+iCloud.m */,
+				10E16A0B1A96A91200200B79 /* MagicalRecord+Options.h */,
+				10E16A0C1A96A91200200B79 /* MagicalRecord+Options.m */,
+				10E16A0D1A96A91200200B79 /* MagicalRecord+Setup.h */,
+				10E16A0E1A96A91200200B79 /* MagicalRecord+Setup.m */,
+				10E16A0F1A96A91200200B79 /* MagicalRecord+ShorthandSupport.h */,
+				10E16A101A96A91200200B79 /* MagicalRecord+ShorthandSupport.m */,
+				10E16A111A96A91200200B79 /* MagicalRecord.h */,
+				10E16A121A96A91200200B79 /* MagicalRecord.m */,
+				10E16A131A96A91200200B79 /* MagicalRecordDeprecated.h */,
+				10E16A141A96A91200200B79 /* MagicalRecordLogging.h */,
+				10E16A151A96A91200200B79 /* MagicalRecordShorthand.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		10E16A381A96B14700200B79 /* shareInstance */ = {
+			isa = PBXGroup;
+			children = (
+				10E16A391A96B16400200B79 /* SharedInstance.h */,
+				10E16A3A1A96B16400200B79 /* SharedInstance.m */,
+				10E16A3C1A96B17C00200B79 /* GlobalValue.h */,
+				10E16A3D1A96B17C00200B79 /* GlobalValue.m */,
+			);
+			path = shareInstance;
+			sourceTree = "<group>";
+		};
 		10E1F5231A908C3200AED5D6 = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +1019,13 @@
 				10E1F5341A908C3200AED5D6 /* AppDelegate.m */,
 				10E1F5361A908C3200AED5D6 /* ViewController.h */,
 				10E1F5371A908C3200AED5D6 /* ViewController.m */,
+				10E16A381A96B14700200B79 /* shareInstance */,
+				10E169C31A96997200200B79 /* CityCode.xcdatamodeld */,
+				10E16A321A96B09100200B79 /* CityCode.sqlite */,
+				10E16A331A96B09100200B79 /* CityCode.sqlite-shm */,
+				10E16A341A96B09100200B79 /* CityCode.sqlite-wal */,
+				10E169C61A9699F700200B79 /* CityCode.h */,
+				10E169C71A9699F700200B79 /* CityCode.m */,
 				10DE2F771A92CA5900CFC713 /* 背景图.png */,
 				10AB294B1A915CE000CE545D /* 测试.png */,
 				10AB29591A91DF6A00CE545D /* test.png */,
@@ -788,6 +1033,10 @@
 				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 				10D87CCB1A94046D007CD3A5 /* YouXianMingLog.h */,
 				10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */,
+				10E16A3F1A96C66D00200B79 /* GlobalCoreData.h */,
+				10E16A401A96C66D00200B79 /* GlobalCoreData.m */,
+				10E169D71A96A91200200B79 /* MagicalRecord */,
+				10E169BF1A9695C800200B79 /* File */,
 				10D87D2B1A9435CE007CD3A5 /* PicSource */,
 				10D87D211A94202A007CD3A5 /* RichText */,
 				10D87CCE1A940DD7007CD3A5 /* pop */,
@@ -921,10 +1170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				10DE2F781A92CA5900CFC713 /* 背景图.png in Resources */,
+				10E16A361A96B09100200B79 /* CityCode.sqlite-shm in Resources */,
+				10E16A371A96B09100200B79 /* CityCode.sqlite-wal in Resources */,
 				10AB294C1A915CE000CE545D /* 测试.png in Resources */,
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
+				10E16A351A96B09100200B79 /* CityCode.sqlite in Resources */,
 				10D87D2D1A943650007CD3A5 /* Humidity@2x.png in Resources */,
 				10AB294A1A91376A00CE545D /* sat@2x.png in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,
@@ -950,26 +1202,33 @@
 			files = (
 				10AB28AA1A908EE800CE545D /* AFHTTPRequestOperation.m in Sources */,
 				10AB28DC1A908F3F00CE545D /* Wind.m in Sources */,
+				10E16A3E1A96B17C00200B79 /* GlobalValue.m in Sources */,
 				10AB28B71A908EE800CE545D /* UIImageView+AFNetworking.m in Sources */,
 				10AB292F1A90B87D00CE545D /* GONMarkupInc.m in Sources */,
 				10AB29321A90B87D00CE545D /* GONMarkupLineStyle.m in Sources */,
 				10AB293E1A90B87D00CE545D /* UILabel+GONMarkupParser.m in Sources */,
 				10D87D201A941C04007CD3A5 /* HumidityCount.m in Sources */,
+				10E16A2C1A96A91200200B79 /* MagicalRecord+ErrorHandling.m in Sources */,
 				10AB28D41A908F3F00CE545D /* Coord.m in Sources */,
 				10D87D0D1A940DD7007CD3A5 /* POPAnimationRuntime.mm in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
+				10E16A171A96A91200200B79 /* MagicalImportFunctions.m in Sources */,
 				10D87D131A940DD7007CD3A5 /* POPDecayAnimation.mm in Sources */,
 				10D87D0E1A940DD7007CD3A5 /* POPAnimationTracer.mm in Sources */,
 				10AB293D1A90B87D00CE545D /* GONMarkupTextStyle.m in Sources */,
 				10AB293A1A90B87D00CE545D /* GONMarkupParserUtils.m in Sources */,
 				10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */,
+				10E169BC1A968D8D00200B79 /* AlphaView.m in Sources */,
 				10D87D321A948E7A007CD3A5 /* AnimatedLineView.m in Sources */,
 				10AB29621A91EAD900CE545D /* LabelView.m in Sources */,
 				10AB28D71A908F3F00CE545D /* MainInfo.m in Sources */,
+				10E169C81A9699F700200B79 /* CityCode.m in Sources */,
 				10D87D161A940DD7007CD3A5 /* POPMath.mm in Sources */,
 				10E169B01A957DEA00200B79 /* WindSpeedView.m in Sources */,
 				10AB28AB1A908EE800CE545D /* AFHTTPRequestOperationManager.m in Sources */,
 				10D87D141A940DD7007CD3A5 /* POPGeometry.mm in Sources */,
+				10E16A271A96A91200200B79 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				10E169C21A9695C800200B79 /* NSString+File.m in Sources */,
 				10D87D0F1A940DD7007CD3A5 /* POPAnimator.mm in Sources */,
 				10AB292A1A90B87D00CE545D /* GONMarkupBold.m in Sources */,
 				10AB28B81A908EE800CE545D /* UIProgressView+AFNetworking.m in Sources */,
@@ -978,20 +1237,28 @@
 				10D87D1A1A940DD7007CD3A5 /* TransformationMatrix.cpp in Sources */,
 				10AB29381A90B87D00CE545D /* GONMarkupParser.m in Sources */,
 				10D87D1D1A941630007CD3A5 /* NumberCount.m in Sources */,
+				10E16A301A96A91200200B79 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				10AB292D1A90B87D00CE545D /* GONMarkupFont.m in Sources */,
 				10AB28D21A908F3F00CE545D /* City.m in Sources */,
 				10DE2F7B1A93661F00CFC713 /* CircleView.m in Sources */,
 				10AB28AD1A908EE800CE545D /* AFNetworkReachabilityManager.m in Sources */,
 				10AB29391A90B87D00CE545D /* GONMarkupParserManager.m in Sources */,
+				10E16A1B1A96A91200200B79 /* NSObject+MagicalDataImport.m in Sources */,
 				10AB28B11A908EE800CE545D /* AFURLResponseSerialization.m in Sources */,
 				10D87CC31A93FBE6007CD3A5 /* RotatedAngleView.m in Sources */,
+				10E16A231A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
+				10E16A2A1A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				10E16A201A96A91200200B79 /* NSManagedObject+MagicalFinders.m in Sources */,
 				10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */,
 				10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */,
 				10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */,
 				10AB28AF1A908EE800CE545D /* AFURLConnectionOperation.m in Sources */,
 				10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */,
+				10E16A221A96A91200200B79 /* NSManagedObject+MagicalRequests.m in Sources */,
 				10AB28B61A908EE800CE545D /* UIButton+AFNetworking.m in Sources */,
+				10E16A311A96A91200200B79 /* MagicalRecord.m in Sources */,
 				10AB28DF1A908FA400CE545D /* Networking.m in Sources */,
+				10E16A1C1A96A91200200B79 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				10AB28B41A908EE800CE545D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				10AB29261A90B87D00CE545D /* GONMarkup.m in Sources */,
 				10AB29291A90B87D00CE545D /* GONMarkupBlock.m in Sources */,
@@ -1001,25 +1268,38 @@
 				10AB28AE1A908EE800CE545D /* AFSecurityPolicy.m in Sources */,
 				10D87D121A940DD7007CD3A5 /* POPCustomAnimation.mm in Sources */,
 				10D87D191A940DD7007CD3A5 /* POPVector.mm in Sources */,
+				10E16A1D1A96A91200200B79 /* NSString+MagicalDataImport.m in Sources */,
 				10AB29341A90B87D00CE545D /* GONMarkupListItem.m in Sources */,
 				10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */,
+				10E16A2E1A96A91200200B79 /* MagicalRecord+Options.m in Sources */,
+				10E169C51A96997200200B79 /* CityCode.xcdatamodeld in Sources */,
+				10E16A241A96A91200200B79 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				10E16A261A96A91200200B79 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				10D87D261A94202A007CD3A5 /* ConfigAttributedString.m in Sources */,
 				10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */,
 				10D87CCA1A93FCCE007CD3A5 /* YXEasing.m in Sources */,
+				10E16A1F1A96A91200200B79 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				10AB29331A90B87D00CE545D /* GONMarkupList.m in Sources */,
+				10E16A1E1A96A91200200B79 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				10AB292B1A90B87D00CE545D /* GONMarkupColor.m in Sources */,
+				10E16A191A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */,
 				10D87D0C1A940DD7007CD3A5 /* POPAnimationExtras.mm in Sources */,
+				10E16A411A96C66D00200B79 /* GlobalCoreData.m in Sources */,
 				10AB28B91A908EE800CE545D /* UIRefreshControl+AFNetworking.m in Sources */,
+				10E16A251A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				10D87D101A940DD7007CD3A5 /* POPBasicAnimation.mm in Sources */,
 				10D87CC01A93F68A007CD3A5 /* HumidityView.m in Sources */,
 				10AB28BA1A908EE800CE545D /* UIWebView+AFNetworking.m in Sources */,
+				10E16A2B1A96A91200200B79 /* MagicalRecord+Actions.m in Sources */,
 				10AB29271A90B87D00CE545D /* GONMarkupAlignment.m in Sources */,
 				10D87D351A94992C007CD3A5 /* ThreeLineView.m in Sources */,
+				10E16A2D1A96A91200200B79 /* MagicalRecord+iCloud.m in Sources */,
 				10AB28AC1A908EE800CE545D /* AFHTTPSessionManager.m in Sources */,
 				10AB29401A90B87D00CE545D /* UITextView+GONMarkupParser.m in Sources */,
 				10AB29361A90B87D00CE545D /* GONMarkupNamedFont.m in Sources */,
 				10AB28D91A908F3F00CE545D /* Temp.m in Sources */,
+				10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */,
 				10AB28B51A908EE800CE545D /* UIAlertView+AFNetworking.m in Sources */,
 				10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */,
 				10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */,
@@ -1027,28 +1307,34 @@
 				10AB29311A90B87D00CE545D /* GONMarkupLineBreak.m in Sources */,
 				10AB296B1A91FC0700CE545D /* FrameView.m in Sources */,
 				10AB28B01A908EE800CE545D /* AFURLRequestSerialization.m in Sources */,
+				10E16A211A96A91200200B79 /* NSManagedObject+MagicalRecord.m in Sources */,
 				10AB28E31A9095C000CE545D /* MapManager.m in Sources */,
 				10AB28B31A908EE800CE545D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				10D87D0B1A940DD7007CD3A5 /* POPAnimationEvent.mm in Sources */,
 				10D87D2A1A942570007CD3A5 /* HumidityCountLabel.m in Sources */,
+				10E16A1A1A96A91200200B79 /* NSNumber+MagicalDataImport.m in Sources */,
 				10D87D111A940DD7007CD3A5 /* POPCGUtils.mm in Sources */,
 				10AB29431A90B8C300CE545D /* NSString+Color.m in Sources */,
 				10AB28DA1A908F3F00CE545D /* Weather.m in Sources */,
 				10AB293C1A90B87D00CE545D /* GONMarkupSimple.m in Sources */,
+				10E16A2F1A96A91200200B79 /* MagicalRecord+Setup.m in Sources */,
 				10AB28D51A908F3F00CE545D /* CurrentConditions.m in Sources */,
 				10D87D271A94202A007CD3A5 /* NSString+RichText.m in Sources */,
 				10AB28B21A908EE800CE545D /* AFURLSessionManager.m in Sources */,
 				10AB292E1A90B87D00CE545D /* GONMarkupFontTraits.m in Sources */,
 				10AB29281A90B87D00CE545D /* GONMarkupAnchor.m in Sources */,
 				10D87D091A940DD7007CD3A5 /* POPAnimatableProperty.mm in Sources */,
+				10E16A281A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				10AB293B1A90B87D00CE545D /* GONMarkupReset.m in Sources */,
 				10D87D0A1A940DD7007CD3A5 /* POPAnimation.mm in Sources */,
 				10D87D181A940DD7007CD3A5 /* POPSpringAnimation.mm in Sources */,
 				10D87D171A940DD7007CD3A5 /* POPPropertyAnimation.mm in Sources */,
 				10AB29301A90B87D00CE545D /* GONMarkupItalic.m in Sources */,
+				10E16A291A96A91200200B79 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				10AB28D31A908F3F00CE545D /* Clouds.m in Sources */,
 				10D87CCD1A94046D007CD3A5 /* YouXianMingLog.m in Sources */,
 				10D87CC91A93FCCE007CD3A5 /* Easing.c in Sources */,
+				10E16A181A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				10AB295E1A91E7A900CE545D /* NSString+StringHeight.m in Sources */,
 				10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */,
 				10AB29251A90B87D00CE545D /* GONMarkup+Private.m in Sources */,
@@ -1240,6 +1526,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		10E169C31A96997200200B79 /* CityCode.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				10E169C41A96997200200B79 /* CityCode.xcdatamodel */,
+			);
+			currentVersion = 10E169C41A96997200200B79 /* CityCode.xcdatamodel */;
+			path = CityCode.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 10E1F5241A908C3200AED5D6 /* Project object */;
 }

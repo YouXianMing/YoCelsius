@@ -77,7 +77,7 @@
     self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
     self.titleLabel.width         = CIRCLE_FRAME.size.width;
     self.titleLabel.height        = 20.f;
-    self.titleLabel.y             = CIRCLE_FRAME.size.height + 10;
+    self.titleLabel.y             = CIRCLE_FRAME.size.height + 4;
     self.titleLabel.x            -= TITLE_MOVE;
     self.titleLabel.alpha         = 0.f;
     [self addSubview:self.titleLabel];
@@ -141,7 +141,7 @@
         
         self.titleLabel.width         = CIRCLE_FRAME.size.width;
         self.titleLabel.height        = 20.f;
-        self.titleLabel.y             = CIRCLE_FRAME.size.height + 10;
+        self.titleLabel.y             = CIRCLE_FRAME.size.height + 4;
         self.titleLabel.x            -= TITLE_MOVE * 2;
         self.titleLabel.alpha         = 0.f;
     }];
