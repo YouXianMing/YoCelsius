@@ -65,7 +65,10 @@
 
 
 - (void)buildView {
-    CGRect windFrame = CGRectMake(0, 0, 70, 70);
+    
+    CGFloat windOffsetX = 20;
+    CGFloat windOffsetY = 10;
+    CGRect windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
     
     // 创建出扇叶
     self.threeLineView = [[ThreeLineView alloc] initWithFrame:windFrame];
@@ -73,7 +76,7 @@
     
     
     // 创建出风速变化的标签
-    self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(0, 87, 94, 15)];
+    self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(15, 90, 93, 15)];
     [self addSubview:self.windCountLabel];
     self.windCountLabelStoreValue = [WindSpeedCountLabelStoreValue new];
     self.windCountLabelStoreValue.midRect = self.windCountLabel.frame;
@@ -91,9 +94,11 @@
     [self addSubview:self.line];
     self.line.centerX = self.threeLineView.middleX;
     self.line.y       = windFrame.size.height / 2.f;
+    self.line.x      += windOffsetX;
+    self.line.y      += windOffsetY;
     self.line.backgroundColor = [UIColor blackColor];
     
-    CGFloat gapFromCenter = 5.f;
+    CGFloat gapFromCenter = 3.f;
     
     self.lineStoreValue = [LineStoreValue new];
     CGRect startRect = CGRectMake(self.line.x,
@@ -117,20 +122,18 @@
     self.circleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 4, 4)];
     self.circleView.center = self.threeLineView.middlePoint;
     self.circleView.layer.cornerRadius = self.circleView.height / 2.f;
+    self.circleView.x += windOffsetX;
+    self.circleView.y += windOffsetY;
     self.circleView.backgroundColor = [UIColor blackColor];
     [self addSubview:self.circleView];
     self.circleView.alpha = 0.f;
     
     // 文本
     self.titleLabelStoreValue     = [TilteLabelStoreValue new];
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
     self.titleLabel.text          = @"Wind Speed";
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.width         = 100;
-    self.titleLabel.height        = 20.f;
-    self.titleLabel.x            += 6.5f;
-    self.titleLabel.y             = endRect.origin.y + 70;
     self.titleLabel.alpha = 0.f;
     
     // 文本 - 存储文本相关操作

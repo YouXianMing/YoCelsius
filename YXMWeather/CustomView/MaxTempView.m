@@ -53,10 +53,13 @@
 
 - (void)buildView {
     
+    CGFloat gridOffsetX = 12;
+    CGFloat gridOffsetY = 13;
+    
     // 创建出格子view
     self.gridView  = [[GridView alloc] initWithFrame:CGRectZero];
-    self.gridView.origin     = CGPointMake(0, 0);
-    self.gridView.gridLength = 20.f;
+    self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
+    self.gridView.gridLength = 23;
     [self.gridView buildView];
     [self addSubview:self.gridView];
     
@@ -64,6 +67,9 @@
     self.centerLineViewStoreValue = [CenterLineViewStoreValue new];
     self.centerLineView = [[UIView alloc] initWithFrame:CGRectMake(0, _gridView.gridLength * 2, _gridView.gridLength * 5, 1.f)];
     self.centerLineView.backgroundColor = [UIColor blackColor];
+    
+    self.centerLineView.x += gridOffsetX;
+    self.centerLineView.y += gridOffsetY;
     self.centerLineViewStoreValue.midRect = self.centerLineView.frame;
     self.centerLineView.width = 0.f;
     self.centerLineViewStoreValue.startRect = self.centerLineView.frame;
@@ -75,6 +81,8 @@
     // 最小温度
     self.minTempViewStoreValue = [CenterLineViewStoreValue new];
     self.minTempView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 1, _gridView.gridLength * 2, _gridView.gridLength * 1, 0)];
+    self.minTempView.x += gridOffsetX;
+    self.minTempView.y += gridOffsetY;
     self.minTempView.backgroundColor = [UIColor blackColor];
     self.minTempView.alpha = 0.f;
     self.minTempViewStoreValue.startRect = self.minTempView.frame;
@@ -83,6 +91,8 @@
     // 最低温度显示
     self.minCountView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 1, _gridView.gridLength * 2, _gridView.gridLength * 1, _gridView.gridLength)];
     [self addSubview:self.minCountView];
+    self.minCountView.x += gridOffsetX;
+    self.minCountView.y += gridOffsetY;
     self.minCountViewStoreValue = [CenterLineViewStoreValue new];
     self.minCountViewStoreValue.startRect = self.minCountView.frame;
     self.minCountView.alpha = 0.f;
@@ -91,6 +101,8 @@
     // 最大温度
     self.maxTempViewStoreValue = [CenterLineViewStoreValue new];
     self.maxTempView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 3, _gridView.gridLength * 2, _gridView.gridLength * 1, 0)];
+    self.maxTempView.x += gridOffsetX;
+    self.maxTempView.y += gridOffsetY;
     self.maxTempView.backgroundColor = [UIColor blackColor];
     self.maxTempViewStoreValue.startRect = self.maxTempView.frame;
     self.maxTempView.alpha = 0.f;
@@ -98,6 +110,8 @@
     // 最大温度显示
     self.maxCountView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 3, _gridView.gridLength * 2, _gridView.gridLength * 1, _gridView.gridLength)];
     [self addSubview:self.minCountView];
+    self.maxCountView.x += gridOffsetX;
+    self.maxCountView.y += gridOffsetY;
     self.maxCountViewStoreValue = [CenterLineViewStoreValue new];
     self.maxCountViewStoreValue.startRect = self.maxCountView.frame;
     [self addSubview:self.maxCountView];
@@ -115,14 +129,10 @@
     [self addSubview:self.centerLineView];
     
     // 标题
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
     self.titleLabel.text          = @"Temperature";
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.width         = 100;
-    self.titleLabel.height        = 20.f;
-    self.titleLabel.x            -= 3.f;
-    self.titleLabel.y             = self.gridView.height - 15;
     self.titleLabel.alpha = 0.f;
     [self addSubview:self.titleLabel];
     self.titleLabelStoreValue     = [CenterLineViewStoreValue new];
@@ -159,11 +169,7 @@
         self.centerLineView.frame = self.centerLineViewStoreValue.midRect;
         self.centerLineView.alpha = 1.f;
         
-        
-        NSLog(@"%f", self.minTemp);
-        NSLog(@"%f", self.maxTemp);
-        
-        
+                
         self.minTempView.height = self.minTemp;
         self.minTempView.y     -= self.minTemp;
         self.minTempView.alpha  = 1.f;

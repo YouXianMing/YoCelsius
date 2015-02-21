@@ -162,6 +162,17 @@
 		10E16A4D1A97622500200B79 /* MaxTempCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A4C1A97622500200B79 /* MaxTempCountLabel.m */; };
 		10E16A501A9765CC00200B79 /* MinTempCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A4F1A9765CC00200B79 /* MinTempCount.m */; };
 		10E16A531A9765FF00200B79 /* MinTempContLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A521A9765FF00200B79 /* MinTempContLabel.m */; };
+		10E16A551A98166600200B79 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A541A98166600200B79 /* 2.png */; };
+		10E16A581A98228B00200B79 /* SunriseAndSunset.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A571A98228B00200B79 /* SunriseAndSunset.m */; };
+		10E16A5B1A983BAE00200B79 /* moon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A591A983BAE00200B79 /* moon@2x.png */; };
+		10E16A5C1A983BAE00200B79 /* sun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A5A1A983BAE00200B79 /* sun@2x.png */; };
+		10E16A5F1A98441F00200B79 /* Sun.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A5E1A98441F00200B79 /* Sun.m */; };
+		10E16A651A984DBC00200B79 /* SunInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A641A984DBC00200B79 /* SunInfoView.m */; };
+		10E16A681A98568700200B79 /* SunriseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A671A98568700200B79 /* SunriseView.m */; };
+		10E16A6B1A9871DF00200B79 /* SunsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A6A1A9871DF00200B79 /* SunsetView.m */; };
+		10E16A6D1A9897DE00200B79 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A6C1A9897DE00200B79 /* BG.png */; };
+		10E16A701A989ABB00200B79 /* UILabel+Temperature.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A6F1A989ABB00200B79 /* UILabel+Temperature.m */; };
+		10E16A721A98C49C00200B79 /* BG副本.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E16A711A98C49C00200B79 /* BG副本.png */; };
 		10E1F5321A908C3200AED5D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5311A908C3200AED5D6 /* main.m */; };
 		10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5341A908C3200AED5D6 /* AppDelegate.m */; };
 		10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5371A908C3200AED5D6 /* ViewController.m */; };
@@ -505,6 +516,23 @@
 		10E16A4F1A9765CC00200B79 /* MinTempCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinTempCount.m; sourceTree = "<group>"; };
 		10E16A511A9765FF00200B79 /* MinTempContLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinTempContLabel.h; sourceTree = "<group>"; };
 		10E16A521A9765FF00200B79 /* MinTempContLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinTempContLabel.m; sourceTree = "<group>"; };
+		10E16A541A98166600200B79 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		10E16A561A98228B00200B79 /* SunriseAndSunset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseAndSunset.h; sourceTree = "<group>"; };
+		10E16A571A98228B00200B79 /* SunriseAndSunset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunriseAndSunset.m; sourceTree = "<group>"; };
+		10E16A591A983BAE00200B79 /* moon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon@2x.png"; sourceTree = "<group>"; };
+		10E16A5A1A983BAE00200B79 /* sun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun@2x.png"; sourceTree = "<group>"; };
+		10E16A5D1A98441F00200B79 /* Sun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sun.h; sourceTree = "<group>"; };
+		10E16A5E1A98441F00200B79 /* Sun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun.m; sourceTree = "<group>"; };
+		10E16A631A984DBC00200B79 /* SunInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunInfoView.h; sourceTree = "<group>"; };
+		10E16A641A984DBC00200B79 /* SunInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunInfoView.m; sourceTree = "<group>"; };
+		10E16A661A98568700200B79 /* SunriseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseView.h; sourceTree = "<group>"; };
+		10E16A671A98568700200B79 /* SunriseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunriseView.m; sourceTree = "<group>"; };
+		10E16A691A9871DF00200B79 /* SunsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunsetView.h; sourceTree = "<group>"; };
+		10E16A6A1A9871DF00200B79 /* SunsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunsetView.m; sourceTree = "<group>"; };
+		10E16A6C1A9897DE00200B79 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
+		10E16A6E1A989ABB00200B79 /* UILabel+Temperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Temperature.h"; sourceTree = "<group>"; };
+		10E16A6F1A989ABB00200B79 /* UILabel+Temperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Temperature.m"; sourceTree = "<group>"; };
+		10E16A711A98C49C00200B79 /* BG副本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG副本.png"; sourceTree = "<group>"; };
 		10E1F52C1A908C3200AED5D6 /* YXMWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXMWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E1F5301A908C3200AED5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E1F5311A908C3200AED5D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -611,6 +639,8 @@
 				10AB28CF1A908F3F00CE545D /* WeatherInfo.m */,
 				10AB28D01A908F3F00CE545D /* Wind.h */,
 				10AB28D11A908F3F00CE545D /* Wind.m */,
+				10E16A561A98228B00200B79 /* SunriseAndSunset.h */,
+				10E16A571A98228B00200B79 /* SunriseAndSunset.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -744,6 +774,8 @@
 			children = (
 				10AB29601A91EAD900CE545D /* LabelView.h */,
 				10AB29611A91EAD900CE545D /* LabelView.m */,
+				10E16A6E1A989ABB00200B79 /* UILabel+Temperature.h */,
+				10E16A6F1A989ABB00200B79 /* UILabel+Temperature.m */,
 				10AB29691A91FC0700CE545D /* FrameView.h */,
 				10AB296A1A91FC0700CE545D /* FrameView.m */,
 				10DE2F791A93661F00CFC713 /* CircleView.h */,
@@ -782,6 +814,14 @@
 				10E16A431A96D56600200B79 /* GridView.m */,
 				10E16A451A96F32900200B79 /* MaxTempView.h */,
 				10E16A461A96F32900200B79 /* MaxTempView.m */,
+				10E16A5D1A98441F00200B79 /* Sun.h */,
+				10E16A5E1A98441F00200B79 /* Sun.m */,
+				10E16A661A98568700200B79 /* SunriseView.h */,
+				10E16A671A98568700200B79 /* SunriseView.m */,
+				10E16A691A9871DF00200B79 /* SunsetView.h */,
+				10E16A6A1A9871DF00200B79 /* SunsetView.m */,
+				10E16A631A984DBC00200B79 /* SunInfoView.h */,
+				10E16A641A984DBC00200B79 /* SunInfoView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -879,6 +919,8 @@
 			children = (
 				10D87D2C1A943650007CD3A5 /* Humidity@2x.png */,
 				10E169AC1A9571CB00200B79 /* WindSpeed@2x.png */,
+				10E16A591A983BAE00200B79 /* moon@2x.png */,
+				10E16A5A1A983BAE00200B79 /* sun@2x.png */,
 			);
 			path = PicSource;
 			sourceTree = "<group>";
@@ -1056,10 +1098,13 @@
 				10E16A341A96B09100200B79 /* CityCode.sqlite-wal */,
 				10E169C61A9699F700200B79 /* CityCode.h */,
 				10E169C71A9699F700200B79 /* CityCode.m */,
+				10E16A711A98C49C00200B79 /* BG副本.png */,
 				10DE2F771A92CA5900CFC713 /* 背景图.png */,
 				10AB294B1A915CE000CE545D /* 测试.png */,
 				10AB29591A91DF6A00CE545D /* test.png */,
+				10E16A541A98166600200B79 /* 2.png */,
 				10AB29491A91376A00CE545D /* sat@2x.png */,
+				10E16A6C1A9897DE00200B79 /* BG.png */,
 				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 				10D87CCB1A94046D007CD3A5 /* YouXianMingLog.h */,
 				10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */,
@@ -1200,15 +1245,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				10DE2F781A92CA5900CFC713 /* 背景图.png in Resources */,
+				10E16A5B1A983BAE00200B79 /* moon@2x.png in Resources */,
 				10E16A361A96B09100200B79 /* CityCode.sqlite-shm in Resources */,
 				10E16A371A96B09100200B79 /* CityCode.sqlite-wal in Resources */,
+				10E16A551A98166600200B79 /* 2.png in Resources */,
 				10AB294C1A915CE000CE545D /* 测试.png in Resources */,
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
+				10E16A6D1A9897DE00200B79 /* BG.png in Resources */,
+				10E16A721A98C49C00200B79 /* BG副本.png in Resources */,
 				10E16A351A96B09100200B79 /* CityCode.sqlite in Resources */,
 				10D87D2D1A943650007CD3A5 /* Humidity@2x.png in Resources */,
 				10AB294A1A91376A00CE545D /* sat@2x.png in Resources */,
+				10E16A5C1A983BAE00200B79 /* sun@2x.png in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,
 				10E169AD1A9571CB00200B79 /* WindSpeed@2x.png in Resources */,
 				10AB295A1A91DF6A00CE545D /* test.png in Resources */,
@@ -1261,6 +1311,7 @@
 				10E16A501A9765CC00200B79 /* MinTempCount.m in Sources */,
 				10E169C21A9695C800200B79 /* NSString+File.m in Sources */,
 				10D87D0F1A940DD7007CD3A5 /* POPAnimator.mm in Sources */,
+				10E16A581A98228B00200B79 /* SunriseAndSunset.m in Sources */,
 				10AB292A1A90B87D00CE545D /* GONMarkupBold.m in Sources */,
 				10AB28B81A908EE800CE545D /* UIProgressView+AFNetworking.m in Sources */,
 				10AB28D61A908F3F00CE545D /* CurrentWeatherData.m in Sources */,
@@ -1283,6 +1334,7 @@
 				10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */,
 				10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */,
 				10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */,
+				10E16A5F1A98441F00200B79 /* Sun.m in Sources */,
 				10AB28AF1A908EE800CE545D /* AFURLConnectionOperation.m in Sources */,
 				10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */,
 				10E16A221A96A91200200B79 /* NSManagedObject+MagicalRequests.m in Sources */,
@@ -1317,6 +1369,7 @@
 				10AB292B1A90B87D00CE545D /* GONMarkupColor.m in Sources */,
 				10E16A4A1A97615500200B79 /* MaxTempCount.m in Sources */,
 				10E16A191A96A91200200B79 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				10E16A651A984DBC00200B79 /* SunInfoView.m in Sources */,
 				10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */,
 				10D87D0C1A940DD7007CD3A5 /* POPAnimationExtras.mm in Sources */,
 				10E16A411A96C66D00200B79 /* GlobalCoreData.m in Sources */,
@@ -1326,8 +1379,10 @@
 				10D87CC01A93F68A007CD3A5 /* HumidityView.m in Sources */,
 				10AB28BA1A908EE800CE545D /* UIWebView+AFNetworking.m in Sources */,
 				10E16A2B1A96A91200200B79 /* MagicalRecord+Actions.m in Sources */,
+				10E16A681A98568700200B79 /* SunriseView.m in Sources */,
 				10AB29271A90B87D00CE545D /* GONMarkupAlignment.m in Sources */,
 				10D87D351A94992C007CD3A5 /* ThreeLineView.m in Sources */,
+				10E16A6B1A9871DF00200B79 /* SunsetView.m in Sources */,
 				10E16A2D1A96A91200200B79 /* MagicalRecord+iCloud.m in Sources */,
 				10AB28AC1A908EE800CE545D /* AFHTTPSessionManager.m in Sources */,
 				10AB29401A90B87D00CE545D /* UITextView+GONMarkupParser.m in Sources */,
@@ -1335,6 +1390,7 @@
 				10AB28D91A908F3F00CE545D /* Temp.m in Sources */,
 				10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */,
 				10AB28B51A908EE800CE545D /* UIAlertView+AFNetworking.m in Sources */,
+				10E16A701A989ABB00200B79 /* UILabel+Temperature.m in Sources */,
 				10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */,
 				10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */,
 				10DE2F741A92B46D00CFC713 /* GCDQueue.m in Sources */,

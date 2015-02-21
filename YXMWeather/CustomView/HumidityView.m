@@ -14,6 +14,14 @@
 #define  CIRCLE_FRAME  CGRectMake(0, 0, 90, 90)
 #define  TITLE_MOVE    10.f
 
+@interface StoreValue : NSObject
+@property (nonatomic) CGRect startRect;
+@property (nonatomic) CGRect midRect;
+@property (nonatomic) CGRect endRect;
+@end
+@implementation StoreValue
+@end
+
 @interface HumidityView ()
 
 @property (nonatomic, strong) CircleView         *fullCircle;
@@ -23,7 +31,10 @@
 
 
 @property (nonatomic, strong) UIImageView        *iconView;
+
+
 @property (nonatomic, strong) UILabel            *titleLabel;
+@property (nonatomic, strong) StoreValue         *titleLabelStoreValue;
 
 @end
 
@@ -31,7 +42,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
     }
     
     return self;
@@ -39,7 +49,7 @@
 
 - (void)buildView {
     CGRect circleRect = CIRCLE_FRAME;
-    CGRect rotateRect = CGRectMake(0, 0, circleRect.size.width, circleRect.size.height);
+    CGRect rotateRect = CGRectMake(25, 15, circleRect.size.width, circleRect.size.height);
     
     // 完整的圆
     self.fullCircle = [CircleView createDefaultViewWithFrame:circleRect];
@@ -58,6 +68,7 @@
     
     // 计数的数据
     self.countLabel = [[HumidityCountLabel alloc] initWithFrame:rotateRect];
+    self.countLabel.x += 4;
     [self addSubview:self.countLabel];
     
     /* ------------------------------- 静态view ------------------------------- */
@@ -68,18 +79,21 @@
     self.iconView.alpha = 0.f;
     self.iconView.y    -= 10;
     self.iconView.x    -= 5;
-    [self addSubview:self.iconView];
+//    [self addSubview:self.iconView];
     
     // 文本
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    self.titleLabelStoreValue     = [StoreValue new];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
     self.titleLabel.text          = @"Humidity";
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.width         = CIRCLE_FRAME.size.width;
-    self.titleLabel.height        = 20.f;
-    self.titleLabel.y             = CIRCLE_FRAME.size.height + 4;
-    self.titleLabel.x            -= TITLE_MOVE;
     self.titleLabel.alpha         = 0.f;
+    self.titleLabelStoreValue.midRect = self.titleLabel.frame;
+    self.titleLabel.x           += 10;
+    self.titleLabelStoreValue.endRect = self.titleLabel.frame;
+    self.titleLabel.x           -= 20;
+    self.titleLabelStoreValue.startRect = self.titleLabel.frame;
+    self.titleLabel.frame        = self.titleLabelStoreValue.startRect;
     [self addSubview:self.titleLabel];
 }
 
@@ -107,7 +121,7 @@
         self.iconView.alpha = 1.f;
         self.iconView.y    += 10;
         
-        self.titleLabel.x    += TITLE_MOVE;
+        self.titleLabel.frame = self.titleLabelStoreValue.midRect;
         self.titleLabel.alpha = 1.f;
     }];
 }
@@ -127,7 +141,7 @@
         self.iconView.alpha = 0.f;
         self.iconView.y    += 10;
         
-        self.titleLabel.x    += TITLE_MOVE;
+        self.titleLabel.frame = self.titleLabelStoreValue.endRect;
         self.titleLabel.alpha = 0.f;
     } completion:^(BOOL finished) {
         // 恢复初始值
@@ -138,12 +152,7 @@
         self.iconView.y -= 10;
         self.iconView.x -= 5;
         
-        
-        self.titleLabel.width         = CIRCLE_FRAME.size.width;
-        self.titleLabel.height        = 20.f;
-        self.titleLabel.y             = CIRCLE_FRAME.size.height + 4;
-        self.titleLabel.x            -= TITLE_MOVE * 2;
-        self.titleLabel.alpha         = 0.f;
+        self.titleLabel.frame = self.titleLabelStoreValue.startRect;
     }];
 }
 

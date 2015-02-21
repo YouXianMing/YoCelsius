@@ -33,3 +33,6 @@
 // 圆圈灰色
 #define COLOR_CIRCLE_            [@"C2C2C2" colorFromRGBcode]
 
+//
+#define COLOR_PURE_              [@"9000ff" colorFromRGBcode]
+
