@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1089D26F1A993B3F0025C8A1 /* ChangeColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089D26E1A993B3F0025C8A1 /* ChangeColorLabel.m */; };
+		1089D2721A99FEB60025C8A1 /* TemperatureCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089D2711A99FEB60025C8A1 /* TemperatureCount.m */; };
+		1089D2751A99FF820025C8A1 /* TemperatureCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089D2741A99FF820025C8A1 /* TemperatureCountLabel.m */; };
+		1089D2781A9A00670025C8A1 /* TemperatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089D2771A9A00670025C8A1 /* TemperatureView.m */; };
+		1089D27A1A9A03F50025C8A1 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1089D2791A9A03F50025C8A1 /* Lato-ThinItalic.ttf */; };
+		108E1F081A9AE1700014D8AC /* BG副本副本.png in Resources */ = {isa = PBXBuildFile; fileRef = 108E1F071A9AE1700014D8AC /* BG副本副本.png */; };
+		108E1F0A1A9AE2790014D8AC /* blackCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108E1F091A9AE2790014D8AC /* blackCircle@2x.png */; };
+		108E1F0C1A9AE2850014D8AC /* pureCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108E1F0B1A9AE2850014D8AC /* pureCircle@2x.png */; };
+		108E1F0F1A9AF0290014D8AC /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E1F0E1A9AF0290014D8AC /* LoadingView.m */; };
+		108E1F121A9B0B5C0014D8AC /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E1F111A9B0B5C0014D8AC /* WeatherView.m */; };
+		108E1F151A9B19B70014D8AC /* WeatherTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E1F141A9B19B70014D8AC /* WeatherTitleView.m */; };
 		10AB28AA1A908EE800CE545D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28861A908EE800CE545D /* AFHTTPRequestOperation.m */; };
 		10AB28AB1A908EE800CE545D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28881A908EE800CE545D /* AFHTTPRequestOperationManager.m */; };
 		10AB28AC1A908EE800CE545D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB288A1A908EE800CE545D /* AFHTTPSessionManager.m */; };
@@ -191,6 +202,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1089D26D1A993B3F0025C8A1 /* ChangeColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeColorLabel.h; sourceTree = "<group>"; };
+		1089D26E1A993B3F0025C8A1 /* ChangeColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeColorLabel.m; sourceTree = "<group>"; };
+		1089D2701A99FEB60025C8A1 /* TemperatureCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureCount.h; sourceTree = "<group>"; };
+		1089D2711A99FEB60025C8A1 /* TemperatureCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureCount.m; sourceTree = "<group>"; };
+		1089D2731A99FF820025C8A1 /* TemperatureCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureCountLabel.h; sourceTree = "<group>"; };
+		1089D2741A99FF820025C8A1 /* TemperatureCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureCountLabel.m; sourceTree = "<group>"; };
+		1089D2761A9A00670025C8A1 /* TemperatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureView.h; sourceTree = "<group>"; };
+		1089D2771A9A00670025C8A1 /* TemperatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureView.m; sourceTree = "<group>"; };
+		1089D2791A9A03F50025C8A1 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		108E1F071A9AE1700014D8AC /* BG副本副本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG副本副本.png"; sourceTree = "<group>"; };
+		108E1F091A9AE2790014D8AC /* blackCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackCircle@2x.png"; sourceTree = "<group>"; };
+		108E1F0B1A9AE2850014D8AC /* pureCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pureCircle@2x.png"; sourceTree = "<group>"; };
+		108E1F0D1A9AF0290014D8AC /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		108E1F0E1A9AF0290014D8AC /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		108E1F101A9B0B5C0014D8AC /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
+		108E1F111A9B0B5C0014D8AC /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
+		108E1F131A9B19B70014D8AC /* WeatherTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTitleView.h; sourceTree = "<group>"; };
+		108E1F141A9B19B70014D8AC /* WeatherTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTitleView.m; sourceTree = "<group>"; };
 		10AB28831A908ECC00CE545D /* AFNetworking.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.pch; sourceTree = "<group>"; };
 		10AB28851A908EE800CE545D /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		10AB28861A908EE800CE545D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -746,6 +775,7 @@
 				10AB29571A91DD3900CE545D /* Lato-Bold.ttf */,
 				10AB29651A91F26900CE545D /* Lato-Thin.ttf */,
 				10AB29671A91F2DE00CE545D /* Lato-Light.ttf */,
+				1089D2791A9A03F50025C8A1 /* Lato-ThinItalic.ttf */,
 				10AB29541A91DAFB00CE545D /* AddedFont.h */,
 			);
 			name = AddFonts;
@@ -774,6 +804,8 @@
 			children = (
 				10AB29601A91EAD900CE545D /* LabelView.h */,
 				10AB29611A91EAD900CE545D /* LabelView.m */,
+				1089D26D1A993B3F0025C8A1 /* ChangeColorLabel.h */,
+				1089D26E1A993B3F0025C8A1 /* ChangeColorLabel.m */,
 				10E16A6E1A989ABB00200B79 /* UILabel+Temperature.h */,
 				10E16A6F1A989ABB00200B79 /* UILabel+Temperature.m */,
 				10AB29691A91FC0700CE545D /* FrameView.h */,
@@ -786,6 +818,12 @@
 				10D87CC21A93FBE6007CD3A5 /* RotatedAngleView.m */,
 				10D87D1B1A941630007CD3A5 /* NumberCount.h */,
 				10D87D1C1A941630007CD3A5 /* NumberCount.m */,
+				1089D2701A99FEB60025C8A1 /* TemperatureCount.h */,
+				1089D2711A99FEB60025C8A1 /* TemperatureCount.m */,
+				1089D2731A99FF820025C8A1 /* TemperatureCountLabel.h */,
+				1089D2741A99FF820025C8A1 /* TemperatureCountLabel.m */,
+				1089D2761A9A00670025C8A1 /* TemperatureView.h */,
+				1089D2771A9A00670025C8A1 /* TemperatureView.m */,
 				10D87D1E1A941C04007CD3A5 /* HumidityCount.h */,
 				10D87D1F1A941C04007CD3A5 /* HumidityCount.m */,
 				10E16A481A97615500200B79 /* MaxTempCount.h */,
@@ -806,6 +844,8 @@
 				10D87D311A948E7A007CD3A5 /* AnimatedLineView.m */,
 				10D87D331A94992C007CD3A5 /* ThreeLineView.h */,
 				10D87D341A94992C007CD3A5 /* ThreeLineView.m */,
+				108E1F0D1A9AF0290014D8AC /* LoadingView.h */,
+				108E1F0E1A9AF0290014D8AC /* LoadingView.m */,
 				10E169AE1A957DEA00200B79 /* WindSpeedView.h */,
 				10E169AF1A957DEA00200B79 /* WindSpeedView.m */,
 				10E169BA1A968D8D00200B79 /* AlphaView.h */,
@@ -822,6 +862,10 @@
 				10E16A6A1A9871DF00200B79 /* SunsetView.m */,
 				10E16A631A984DBC00200B79 /* SunInfoView.h */,
 				10E16A641A984DBC00200B79 /* SunInfoView.m */,
+				108E1F131A9B19B70014D8AC /* WeatherTitleView.h */,
+				108E1F141A9B19B70014D8AC /* WeatherTitleView.m */,
+				108E1F101A9B0B5C0014D8AC /* WeatherView.h */,
+				108E1F111A9B0B5C0014D8AC /* WeatherView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -917,6 +961,8 @@
 		10D87D2B1A9435CE007CD3A5 /* PicSource */ = {
 			isa = PBXGroup;
 			children = (
+				108E1F091A9AE2790014D8AC /* blackCircle@2x.png */,
+				108E1F0B1A9AE2850014D8AC /* pureCircle@2x.png */,
 				10D87D2C1A943650007CD3A5 /* Humidity@2x.png */,
 				10E169AC1A9571CB00200B79 /* WindSpeed@2x.png */,
 				10E16A591A983BAE00200B79 /* moon@2x.png */,
@@ -1098,6 +1144,7 @@
 				10E16A341A96B09100200B79 /* CityCode.sqlite-wal */,
 				10E169C61A9699F700200B79 /* CityCode.h */,
 				10E169C71A9699F700200B79 /* CityCode.m */,
+				108E1F071A9AE1700014D8AC /* BG副本副本.png */,
 				10E16A711A98C49C00200B79 /* BG副本.png */,
 				10DE2F771A92CA5900CFC713 /* 背景图.png */,
 				10AB294B1A915CE000CE545D /* 测试.png */,
@@ -1253,14 +1300,18 @@
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
+				108E1F0A1A9AE2790014D8AC /* blackCircle@2x.png in Resources */,
 				10E16A6D1A9897DE00200B79 /* BG.png in Resources */,
 				10E16A721A98C49C00200B79 /* BG副本.png in Resources */,
+				108E1F0C1A9AE2850014D8AC /* pureCircle@2x.png in Resources */,
 				10E16A351A96B09100200B79 /* CityCode.sqlite in Resources */,
+				108E1F081A9AE1700014D8AC /* BG副本副本.png in Resources */,
 				10D87D2D1A943650007CD3A5 /* Humidity@2x.png in Resources */,
 				10AB294A1A91376A00CE545D /* sat@2x.png in Resources */,
 				10E16A5C1A983BAE00200B79 /* sun@2x.png in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,
 				10E169AD1A9571CB00200B79 /* WindSpeed@2x.png in Resources */,
+				1089D27A1A9A03F50025C8A1 /* Lato-ThinItalic.ttf in Resources */,
 				10AB295A1A91DF6A00CE545D /* test.png in Resources */,
 				10AB29681A91F2DE00CE545D /* Lato-Light.ttf in Resources */,
 			);
@@ -1329,8 +1380,10 @@
 				10AB28B11A908EE800CE545D /* AFURLResponseSerialization.m in Sources */,
 				10D87CC31A93FBE6007CD3A5 /* RotatedAngleView.m in Sources */,
 				10E16A231A96A91200200B79 /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
+				108E1F0F1A9AF0290014D8AC /* LoadingView.m in Sources */,
 				10E16A2A1A96A91200200B79 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				10E16A201A96A91200200B79 /* NSManagedObject+MagicalFinders.m in Sources */,
+				108E1F151A9B19B70014D8AC /* WeatherTitleView.m in Sources */,
 				10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */,
 				10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */,
 				10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */,
@@ -1338,6 +1391,7 @@
 				10AB28AF1A908EE800CE545D /* AFURLConnectionOperation.m in Sources */,
 				10AB293F1A90B87D00CE545D /* UITextField+GONMarkupParser.m in Sources */,
 				10E16A221A96A91200200B79 /* NSManagedObject+MagicalRequests.m in Sources */,
+				108E1F121A9B0B5C0014D8AC /* WeatherView.m in Sources */,
 				10AB28B61A908EE800CE545D /* UIButton+AFNetworking.m in Sources */,
 				10E16A311A96A91200200B79 /* MagicalRecord.m in Sources */,
 				10AB28DF1A908FA400CE545D /* Networking.m in Sources */,
@@ -1372,6 +1426,7 @@
 				10E16A651A984DBC00200B79 /* SunInfoView.m in Sources */,
 				10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */,
 				10D87D0C1A940DD7007CD3A5 /* POPAnimationExtras.mm in Sources */,
+				1089D2721A99FEB60025C8A1 /* TemperatureCount.m in Sources */,
 				10E16A411A96C66D00200B79 /* GlobalCoreData.m in Sources */,
 				10AB28B91A908EE800CE545D /* UIRefreshControl+AFNetworking.m in Sources */,
 				10E16A251A96A91200200B79 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
@@ -1418,6 +1473,7 @@
 				10E16A281A96A91200200B79 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				10AB293B1A90B87D00CE545D /* GONMarkupReset.m in Sources */,
 				10D87D0A1A940DD7007CD3A5 /* POPAnimation.mm in Sources */,
+				1089D26F1A993B3F0025C8A1 /* ChangeColorLabel.m in Sources */,
 				10D87D181A940DD7007CD3A5 /* POPSpringAnimation.mm in Sources */,
 				10D87D171A940DD7007CD3A5 /* POPPropertyAnimation.mm in Sources */,
 				10E16A531A9765FF00200B79 /* MinTempContLabel.m in Sources */,
@@ -1427,8 +1483,10 @@
 				10D87CCD1A94046D007CD3A5 /* YouXianMingLog.m in Sources */,
 				10D87CC91A93FCCE007CD3A5 /* Easing.c in Sources */,
 				10E16A181A96A91200200B79 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				1089D2751A99FF820025C8A1 /* TemperatureCountLabel.m in Sources */,
 				10AB295E1A91E7A900CE545D /* NSString+StringHeight.m in Sources */,
 				10E1F5351A908C3200AED5D6 /* AppDelegate.m in Sources */,
+				1089D2781A9A00670025C8A1 /* TemperatureView.m in Sources */,
 				10AB29251A90B87D00CE545D /* GONMarkup+Private.m in Sources */,
 				10E1F5321A908C3200AED5D6 /* main.m in Sources */,
 			);
@@ -1533,6 +1591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/AFNetworking.pch";
@@ -1540,6 +1599,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YXMWeather/DTIActivity/YXMWeather-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1547,6 +1608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/AFNetworking.pch";
@@ -1554,6 +1616,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YXMWeather/DTIActivity/YXMWeather-Bridging-Header.h";
 			};
 			name = Release;
 		};
