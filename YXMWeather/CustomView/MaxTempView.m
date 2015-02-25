@@ -10,6 +10,7 @@
 #import "GridView.h"
 #import "MaxTempCountLabel.h"
 #import "MinTempContLabel.h"
+#import "TitleMoveLabel.h"
 
 @interface CenterLineViewStoreValue : NSObject
 @property (nonatomic) CGRect startRect;
@@ -43,8 +44,7 @@
 @property (nonatomic, strong) MinTempContLabel          *minTempCountLabel;
 
 
-@property (nonatomic, strong) UILabel                   *titleLabel;
-@property (nonatomic, strong) CenterLineViewStoreValue  *titleLabelStoreValue;
+@property (nonatomic, strong) TitleMoveLabel            *titleMoveLabel;
 
 
 @end
@@ -58,8 +58,26 @@
     
     // 创建出格子view
     self.gridView  = [[GridView alloc] initWithFrame:CGRectZero];
-    self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
-    self.gridView.gridLength = 23;
+    
+    if (iPhone4_4s || iPhone5_5s) {
+        gridOffsetX = 30;
+        gridOffsetY = 45;
+        self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
+        self.gridView.gridLength = 23;
+    } else if (iPhone6) {
+        gridOffsetX = 30;
+        gridOffsetY = 50;
+        self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
+        self.gridView.gridLength = 26;
+    } else if (iPhone6_plus) {
+        gridOffsetX = 30;
+        gridOffsetY = 53;
+        self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
+        self.gridView.gridLength = 30;
+    } else {
+        self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
+        self.gridView.gridLength = 23;
+    }
     [self.gridView buildView];
     [self addSubview:self.gridView];
     
@@ -128,24 +146,17 @@
     [self addSubview:self.maxTempView];
     [self addSubview:self.centerLineView];
     
-    // 标题
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
-    self.titleLabel.text          = @"Temperature";
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.alpha = 0.f;
-    [self addSubview:self.titleLabel];
-    self.titleLabelStoreValue     = [CenterLineViewStoreValue new];
-    self.titleLabelStoreValue.midRect = self.titleLabel.frame;
-    self.titleLabel.x            += 10;
-    self.titleLabelStoreValue.startRect = self.titleLabel.frame;
-    self.titleLabel.x            -= 20;
-    self.titleLabelStoreValue.endRect  = self.titleLabel.frame;
-    self.titleLabel.frame = self.titleLabelStoreValue.startRect;
+    
+    self.titleMoveLabel = [TitleMoveLabel withText:@"Temperature"];
+    [self.titleMoveLabel buildView];
+    [self addSubview:self.titleMoveLabel];
 }
 
 - (void)show {
     CGFloat duration = 1.75;
+    
+    // 标题显示
+    [self.titleMoveLabel show];
     
     // 格子动画效果
     [self.gridView showWithDuration:1.5f];
@@ -184,9 +195,6 @@
         self.maxCountView.y    -= self.maxTemp;
         self.maxCountView.alpha = 1.f;
         
-        self.titleLabel.frame = self.titleLabelStoreValue.midRect;
-        self.titleLabel.alpha = 1.f;
-
     } completion:^(BOOL finished) {
         
     }];
@@ -194,6 +202,9 @@
 
 - (void)hide {
     CGFloat duration = 0.75f;
+    
+    // 标题隐藏
+    [self.titleMoveLabel hide];
     
     // 格子动画效果
     [self.gridView hideWithDuration:duration];
@@ -212,16 +223,11 @@
         self.maxCountView.alpha   = 0.f;
         self.maxCountView.x      += 10.f;
         
-        
-        self.titleLabel.frame = self.titleLabelStoreValue.endRect;
-        self.titleLabel.alpha = 0.f;
 
     } completion:^(BOOL finished) {
         self.centerLineView.frame = self.centerLineViewStoreValue.startRect;
         self.minCountView.frame   = self.minCountViewStoreValue.startRect;
         self.maxCountView.frame   = self.maxCountViewStoreValue.startRect;
-        
-        self.titleLabel.frame = self.titleLabelStoreValue.startRect;
     }];
 }
 

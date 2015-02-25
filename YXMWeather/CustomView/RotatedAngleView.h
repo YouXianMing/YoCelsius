@@ -11,12 +11,6 @@
 @interface RotatedAngleView : UIView
 
 /**
- *  输入的view
- */
-@property (nonatomic, strong) UIView *inputView;
-
-
-/**
  *  旋转角度与持续时间
  *
  *  @param angle    旋转角度

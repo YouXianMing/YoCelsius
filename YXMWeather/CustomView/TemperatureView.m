@@ -8,6 +8,7 @@
 
 #import "TemperatureView.h"
 #import "TemperatureCountLabel.h"
+#import "TitleMoveLabel.h"
 
 @interface TemperatureViewStoreValue : NSObject
 @property (nonatomic) CGRect startRect;
@@ -20,6 +21,8 @@
 @interface TemperatureView ()
 @property (nonatomic, strong) TemperatureCountLabel     *countLabel;
 @property (nonatomic, strong) TemperatureViewStoreValue *countLabelStoreValue;
+
+@property (nonatomic, strong) TitleMoveLabel            *titleMoveLabel;
 @end
 
 @implementation TemperatureView
@@ -35,11 +38,15 @@
     [self addSubview:self.countLabel];
     self.countLabelStoreValue = [TemperatureViewStoreValue new];
     self.countLabelStoreValue.midRect = self.countLabel.frame;
-    self.countLabel.x -= 10;
+    self.countLabel.x += 10;
     self.countLabelStoreValue.startRect = self.countLabel.frame;
-    self.countLabel.x += 20;
+    self.countLabel.x -= 20;
     self.countLabelStoreValue.endRect = self.countLabel.frame;
     self.countLabel.frame = self.countLabelStoreValue.startRect;
+    
+    // 标题
+    self.titleMoveLabel = [TitleMoveLabel withText:@"Temperature"];
+    [self addSubview:self.titleMoveLabel];
 }
 
 - (void)show {
@@ -47,6 +54,8 @@
     
     self.countLabel.toValue = self.temperature;
     [self.countLabel showDuration:duration];
+    
+    [self.titleMoveLabel show];
     
     [UIView animateWithDuration:duration animations:^{
         self.countLabel.frame = self.countLabelStoreValue.midRect;
@@ -57,6 +66,7 @@
     CGFloat duration = 0.75f;
     [self.countLabel hideDuration:duration];
     
+    [self.titleMoveLabel hide];
     
     [UIView animateWithDuration:duration animations:^{
         self.countLabel.frame = self.countLabelStoreValue.endRect;

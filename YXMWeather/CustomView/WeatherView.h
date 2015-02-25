@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CurrentWeatherData.h"
+#import "CurrentConditions.h"
 
 @interface WeatherView : UIView
 
@@ -15,6 +16,7 @@
  *  天气的数据
  */
 @property (nonatomic, strong) CurrentWeatherData  *weahterData;
+@property (nonatomic, strong) CurrentConditions   *weatherConditions;
 
 /**
  *  显示动画

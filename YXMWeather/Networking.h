@@ -20,4 +20,18 @@
                                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+
+
+
++ (AFHTTPRequestOperation *)GETMethod:(NSString *)URLString
+                           parameters:(id)parameters
+                              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
++ (AFHTTPRequestOperation *)POSTMethod:(NSString *)URLString
+                            parameters:(id)parameters
+                               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
+
 @end

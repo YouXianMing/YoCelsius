@@ -10,9 +10,7 @@
 #import "CircleView.h"
 #import "RotatedAngleView.h"
 #import "HumidityCountLabel.h"
-
-#define  CIRCLE_FRAME  CGRectMake(0, 0, 90, 90)
-#define  TITLE_MOVE    10.f
+#import "TitleMoveLabel.h"
 
 @interface StoreValue : NSObject
 @property (nonatomic) CGRect startRect;
@@ -29,12 +27,7 @@
 @property (nonatomic, strong) RotatedAngleView   *rotateView;
 @property (nonatomic, strong) HumidityCountLabel *countLabel;
 
-
-@property (nonatomic, strong) UIImageView        *iconView;
-
-
-@property (nonatomic, strong) UILabel            *titleLabel;
-@property (nonatomic, strong) StoreValue         *titleLabelStoreValue;
+@property (nonatomic, strong) TitleMoveLabel     *titleMoveLabel;
 
 @end
 
@@ -48,8 +41,27 @@
 }
 
 - (void)buildView {
-    CGRect circleRect = CIRCLE_FRAME;
-    CGRect rotateRect = CGRectMake(25, 15, circleRect.size.width, circleRect.size.height);
+    
+    CGRect circleRect = CGRectZero;
+    CGRect rotateRect = CGRectZero;
+    
+    if (iPhone5_5s || iPhone4_4s) {
+        circleRect = CGRectMake(0, 0, 100, 100);
+        rotateRect = CGRectMake(37, 40, circleRect.size.width, circleRect.size.height);
+    } else if (iPhone6) {
+        circleRect = CGRectMake(0, 0, 110, 110);
+        rotateRect = CGRectMake(40, 50, circleRect.size.width, circleRect.size.height);
+    } else if (iPhone6_plus) {
+        circleRect = CGRectMake(0, 0, 115, 115);
+        rotateRect = CGRectMake(45, 55, circleRect.size.width, circleRect.size.height);
+    } else {
+        circleRect = CGRectMake(0, 0, 90, 90);
+        rotateRect = CGRectMake(25, 15, circleRect.size.width, circleRect.size.height);
+    }
+        
+    // 移动的头部位
+    self.titleMoveLabel = [TitleMoveLabel withText:@"Humidity"];
+    [self addSubview:self.titleMoveLabel];
     
     // 完整的圆
     self.fullCircle = [CircleView createDefaultViewWithFrame:circleRect];
@@ -68,33 +80,9 @@
     
     // 计数的数据
     self.countLabel = [[HumidityCountLabel alloc] initWithFrame:rotateRect];
+    self.countLabel.backgroundColor = [UIColor clearColor];
     self.countLabel.x += 4;
     [self addSubview:self.countLabel];
-    
-    /* ------------------------------- 静态view ------------------------------- */
-    // 图标
-    self.iconView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Humidity"]];
-    self.iconView.center = CGPointMake(circleRect.size.height,
-                                       circleRect.size.width / 2.f);
-    self.iconView.alpha = 0.f;
-    self.iconView.y    -= 10;
-    self.iconView.x    -= 5;
-//    [self addSubview:self.iconView];
-    
-    // 文本
-    self.titleLabelStoreValue     = [StoreValue new];
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
-    self.titleLabel.text          = @"Humidity";
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.alpha         = 0.f;
-    self.titleLabelStoreValue.midRect = self.titleLabel.frame;
-    self.titleLabel.x           += 10;
-    self.titleLabelStoreValue.endRect = self.titleLabel.frame;
-    self.titleLabel.x           -= 20;
-    self.titleLabelStoreValue.startRect = self.titleLabel.frame;
-    self.titleLabel.frame        = self.titleLabelStoreValue.startRect;
-    [self addSubview:self.titleLabel];
 }
 
 - (void)show {
@@ -108,52 +96,30 @@
     [self.showCircle strokeStart:0 animated:NO duration:0];
     [self.rotateView roateAngle:0];
     
+    
+    // 标题显示
+    [self.titleMoveLabel show];
+    
+    
     // 设置动画
     [self.fullCircle strokeEnd:circleFullPercent animated:YES duration:duration];
     [self.showCircle strokeEnd:circleFullPercent * self.percent animated:YES duration:duration];
     [self.rotateView roateAngle:45.f duration:duration];
     self.countLabel.toValue = self.percent * 100;
     [self.countLabel showDuration:duration];
-    
-    /* ------------------------------- 静态view ------------------------------- */
-    // 图标动画
-    [UIView animateWithDuration:duration animations:^{
-        self.iconView.alpha = 1.f;
-        self.iconView.y    += 10;
-        
-        self.titleLabel.frame = self.titleLabelStoreValue.midRect;
-        self.titleLabel.alpha = 1.f;
-    }];
 }
 - (void)hide {
-    CGFloat duration = 0.75;
     
+    CGFloat duration = 0.75;
     CGFloat circleFullPercent = 0.75;
+    
+    // 标题隐藏
+    [self.titleMoveLabel hide];
     
     [self.fullCircle strokeStart:circleFullPercent animated:YES duration:duration];
     [self.showCircle strokeStart:self.percent * circleFullPercent animated:YES duration:duration];
     [self.rotateView roateAngle:90.f duration:duration];
     [self.countLabel hideDuration:duration];
-    
-    /* ------------------------------- 静态view ------------------------------- */
-    // 图标动画
-    [UIView animateWithDuration:duration animations:^{
-        self.iconView.alpha = 0.f;
-        self.iconView.y    += 10;
-        
-        self.titleLabel.frame = self.titleLabelStoreValue.endRect;
-        self.titleLabel.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        // 恢复初始值
-        CGRect circleRect = CIRCLE_FRAME;
-        self.iconView.center = CGPointMake(circleRect.size.height,
-                                           circleRect.size.width / 2.f);
-        self.iconView.alpha = 0.f;
-        self.iconView.y -= 10;
-        self.iconView.x -= 5;
-        
-        self.titleLabel.frame = self.titleLabelStoreValue.startRect;
-    }];
 }
 
 @end

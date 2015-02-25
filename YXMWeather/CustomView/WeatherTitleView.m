@@ -75,7 +75,7 @@
     [self.changeColorLabel updateLabelView];
     [self.changeColorLabel colorPercent:0.f];
     
-    
+
     CGFloat duration = 1.75f;
     
     // 获取天气描述信息
@@ -134,8 +134,27 @@
     }];
 }
 
-- (void)accessOffsetValue:(CGFloat)offsetValue {
-    
+- (void)accessOffsetValue:(CGFloat)offsetValue {    
+    if (offsetValue <= 0) {
+        CGFloat percent = -offsetValue / 100.f;
+        [self.changeColorLabel colorPercent:percent];
+        
+        CGFloat tmpX  = - offsetValue;
+        
+        self.hLine.x  = 17.f + tmpX * 0.2;
+        self.vLine.y  = 18.f + tmpX *0.1f;
+        self.changeColorLabel.x = 35 + tmpX * 0.1;
+        self.describInfoLabel.x = 17.f - tmpX * 0.05;
+        
+    } else {
+        CGFloat percent = (64 - offsetValue) / 64.f;
+        
+        self.changeColorLabel.alpha = percent;
+        self.hLine.alpha            = percent;
+        self.vLine.alpha            = percent;
+        self.describInfoLabel.alpha = percent;
+    }
+
 }
 
 @end

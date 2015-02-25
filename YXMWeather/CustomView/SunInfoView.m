@@ -9,6 +9,7 @@
 #import "SunInfoView.h"
 #import "SunriseView.h"
 #import "SunsetView.h"
+#import "TitleMoveLabel.h"
 
 
 @interface SunInfoStoreValue : NSObject
@@ -22,8 +23,7 @@
 
 @interface SunInfoView ()
 
-@property (nonatomic, strong) UILabel            *titleLabel;
-@property (nonatomic, strong) SunInfoStoreValue  *titleLabelStoreValue;
+@property (nonatomic, strong) TitleMoveLabel     *movetitleLabel;
 
 @property (nonatomic, strong) SunriseView        *sunriseView;
 @property (nonatomic, strong) UILabel            *sunriseTimeLabel;
@@ -51,24 +51,13 @@
  *  创建出view
  */
 - (void)buildView {
-    // 标题显示
-    self.titleLabelStoreValue     = [SunInfoStoreValue new];
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
-    self.titleLabel.text          = @"Sunrise & set";
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font          = [UIFont fontWithName:LATO_BOLD size:LATO_14];
-    self.titleLabel.alpha         = 0.f;
-    self.titleLabelStoreValue.midRect   = self.titleLabel.frame;
-    self.titleLabel.x                  += 10;
-    self.titleLabelStoreValue.endRect   = self.titleLabel.frame;
-    self.titleLabel.x                  -= 20;
-    self.titleLabelStoreValue.startRect = self.titleLabel.frame;
-    self.titleLabel.frame               = self.titleLabelStoreValue.startRect;
-    [self addSubview:self.titleLabel];
     
+    self.movetitleLabel = [TitleMoveLabel withText:@"Sunrise & Sunset"];
+    [self.movetitleLabel buildView];
+    [self addSubview:self.movetitleLabel];
     
     // 日出的view
-    self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(30 - 3, 25, 40, 80)];
+    self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(45, 50, 40, 80)];
     [self.sunriseView buildView];
     [self addSubview:self.sunriseView];
     self.sunriseViewStoreValue = [SunInfoStoreValue new];
@@ -89,7 +78,7 @@
     
     
     // 日落的view
-    self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(70 + 3, 15, 40, 80)];
+    self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(95, 40, 40, 80)];
     [self.sunsetView buildView];
     [self addSubview:self.sunsetView];
     self.sunsetViewStoreValue = [SunInfoStoreValue new];
@@ -113,6 +102,8 @@
  */
 - (void)show {
 
+    [self.movetitleLabel show];
+    
     // 动画持续时间
     CGFloat duration = 1.75f;
     
@@ -123,9 +114,6 @@
     [self.sunsetView showWithDuration:1.5];
     
     [UIView animateWithDuration:duration animations:^{
-        // 标题显示
-        self.titleLabel.frame = self.titleLabelStoreValue.midRect;
-        self.titleLabel.alpha = 1.f;
         
         self.sunriseView.frame = self.sunriseViewStoreValue.midRect;
         self.sunsetView.frame = self.sunsetViewStoreValue.midRect;
@@ -144,6 +132,8 @@
 - (void)hide {
     CGFloat duration = 0.75f;
     
+        [self.movetitleLabel hide];
+    
     // 日出动画隐藏
     [self.sunriseView hideWithDuration:duration];
     
@@ -151,18 +141,12 @@
     [self.sunsetView hideWithDuration:duration];
     
     [UIView animateWithDuration:duration animations:^{
-        // 标题隐藏
-        self.titleLabel.frame = self.titleLabelStoreValue.endRect;
-        self.titleLabel.alpha = 0.f;
-        
         self.sunriseView.frame = self.sunriseViewStoreValue.endRect;
         self.sunsetView.frame = self.sunsetViewStoreValue.endRect;
         
         self.sunriseTimeLabel.alpha = 0.f;
         self.sunsetTimeLabel.alpha = 0.f;
     } completion:^(BOOL finished) {
-        self.titleLabel.frame = self.titleLabelStoreValue.startRect;
-        
         self.sunriseView.frame = self.sunriseViewStoreValue.startRect;
         self.sunsetView.frame = self.sunsetViewStoreValue.startRect;
     }];

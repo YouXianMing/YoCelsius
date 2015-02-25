@@ -48,7 +48,7 @@
     
     NSInteger count    = [number integerValue];
     
-    NSString *countStr = [NSString stringWithFormat:@"%02ld", (long)count];
+    NSString *countStr = [NSString stringWithFormat:@"%ld", (long)count];
     NSString *duStr    = @"°";
     NSString *totalStr = [NSString stringWithFormat:@"%@%@", countStr, duStr];
     
