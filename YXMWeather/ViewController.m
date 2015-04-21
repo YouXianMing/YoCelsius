@@ -7,79 +7,54 @@
 //
 
 #import "ViewController.h"
+
+// 管理定位的view
 #import "MapManager.h"
 
-#import "HumidityView.h"
-#import "WindSpeedView.h"
-#import "MaxTempView.h"
-#import "SunInfoView.h"
-#import "TemperatureView.h"
-#import "WeatherIconView.h"
 
-#import "ChangeColorLabel.h"
-#import "LoadingView.h"
-
-
-
+// 天气的view
 #import "WeatherView.h"
+#import "SearchView.h"
+
+// 网络Model数据
 #import "CurrentWeatherData.h"
 #import "CurrentConditions.h"
-#import "CityTitleView.h"
 
 
-#import "TitleMoveLabel.h"
-#import "LongTapAnimationView.h"
-
-
+// 获取网络数据
 #import "GetWeatherData.h"
+
+// 控制器
+#import "ForecastController.h"
+
+// 动画生成器
+#import "PresentingAnimator.h"
+#import "DismissingAnimator.h"
+
+// 更新 + 变黑
+#import "UpdatingView.h"
+#import "FadeBlackView.h"
+
+
+#import "FailedLongPressView.h"
+#import "TWMessageBarManager.h"
 
 
 // 将度数转换为弧度
 #define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
 
 
-@interface ViewController ()<MapManagerLocationDelegate, UITableViewDelegate, GetWeatherDataDelegate>
+@interface ViewController ()<MapManagerLocationDelegate, UITableViewDelegate, GetWeatherDataDelegate, WeatherViewDelegate, UIViewControllerTransitioningDelegate, FailedLongPressViewDelegate>
 
+@property (nonatomic, strong) MapManager           *mapLoacation;
+@property (nonatomic, strong) WeatherView          *weatherView;
+@property (nonatomic, strong) GetWeatherData       *getWeatherData;
+@property (nonatomic, strong) FadeBlackView        *fadeBlackView;
+@property (nonatomic, strong) UpdatingView         *upDatingView;
 
-@property (nonatomic, strong) MapManager   *mapLoacation;
+@property (nonatomic, strong) FailedLongPressView  *failedView;  // 加载失败后显示的view
 
-
-@property (nonatomic, strong) HumidityView      *humidityView;
-@property (nonatomic, strong) WindSpeedView     *windSpeedView;
-@property (nonatomic, strong) MaxTempView       *maxTempView;
-@property (nonatomic, strong) SunInfoView       *sunInfoView;
-@property (nonatomic, strong) TemperatureView   *temperatureView;
-@property (nonatomic, strong) WeatherIconView   *weatherIconView;
-
-
-@property (nonatomic, strong) UIButton          *testButton;
-@property (nonatomic)         BOOL               isShow;
-
-
-@property (nonatomic, strong) UITableView       *tableView;
-@property (nonatomic, strong) UIView            *lineView;
-
-
-@property (nonatomic, strong) ChangeColorLabel  *changeColorLabel;
-@property (nonatomic, strong) UIView            *vLine;
-@property (nonatomic, strong) UIView            *hLine;
-@property (nonatomic, strong) LoadingView       *loadingView;
-
-
-
-@property (nonatomic, strong) WeatherView       *weatherView;
-
-
-
-@property (nonatomic, strong) CityTitleView     *cityTitleView;
-
-
-@property (nonatomic, strong) GetWeatherData    *getWeatherData;
-
-
-
-@property (nonatomic, strong) UIButton          *button;
-
+@property (nonatomic)         BOOL               firstTimeLoadingData;
 
 @end
 
@@ -88,202 +63,149 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    // 测试背景图
-//    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-//    bgImageView.image = [UIImage imageNamed:@"BG"];
-//    [self.view addSubview:bgImageView];
-//
-//    
-//    
-//    if (iPhone5_5s) {
-//        NSLog(@"苹果5s");
-//    } else if (iPhone6) {
-//        NSLog(@"iphone6");
-//    } else if (iPhone6_plus) {
-//        NSLog(@"iphone6_plus");
-//    } else if (iPhone4_4s){
-//        NSLog(@"苹果4");
-//    }
-    
-    
-    
-#if 0
-    // 测试用tableView
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds
-                                                  style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.delegate        = self;
-    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:self.tableView];
-    
-    // 显示控件
-    self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(0, Height - Width / 2.f, Width / 2.f, Width / 2.f)];
-    [self.humidityView buildView];
-    [self.tableView addSubview:self.humidityView];
-    
-
-    self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width / 2.f, Width / 2.f, Width / 2.f)];
-    [self.windSpeedView buildView];
-    [self.tableView addSubview:self.windSpeedView];
-
-    
-    self.maxTempView = [[MaxTempView alloc] initWithFrame:CGRectMake(0, Height - Width, Width / 2.f, Width / 2.f)];
-    [self.maxTempView buildView];
-    [self.tableView addSubview:self.maxTempView];
-
-
-    self.sunInfoView = [[SunInfoView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width, Width / 2.f, Width / 2.f)];
-    [self.sunInfoView buildView];
-    [self.tableView addSubview:self.sunInfoView];
-    
-    self.temperatureView = [[TemperatureView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width - Width / 2.f, Width / 2.f, Width / 2.f)];
-    [self.temperatureView buildView];
-    [self.tableView addSubview:self.temperatureView];
-    
-    
-    
-    
-    self.weatherIconView = [[WeatherIconView alloc] initWithFrame:CGRectMake(0, Height - Width - Width / 2.f, Width / 2.f, Width / 2.f)];
-    [self.weatherIconView buildView];
-    [self.tableView addSubview:self.weatherIconView];
-    
-    
-    
-    // 创建出线条
-    {
-        UIView *grayLine1         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - Width / 2.f, Width, 1)];
-        grayLine1.backgroundColor = [UIColor blackColor];
-        grayLine1.alpha           = 0.1;
-        [self.tableView addSubview:grayLine1];
-        
-        UIView *grayLine2         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - 1, Width, 1)];
-        grayLine2.backgroundColor = [UIColor blackColor];
-        grayLine2.alpha           = 0.1;
-        [self.tableView addSubview:grayLine2];
-
-        UIView *grayLine3         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - Width, Width, 1)];
-        grayLine3.backgroundColor = [UIColor blackColor];
-        grayLine3.alpha           = 0.1;
-        [self.tableView addSubview:grayLine3];
-        
-        UIView *grayLine4         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - Width - Width / 2.f, Width, 1)];
-        grayLine4.backgroundColor = [UIColor blackColor];
-        grayLine4.alpha           = 0.1;
-        [self.tableView addSubview:grayLine4];
-        
-        UIView *vLine             = [[UIView alloc] initWithFrame:CGRectMake(Width / 2.f - 1, Height - Width - Width / 2.f, 1, Width + Width / 2.f)];
-        vLine.backgroundColor     = [UIColor blackColor];
-        vLine.alpha               = 0.1;
-        [self.tableView addSubview:vLine];
-    }
-
-    
-    self.cityTitleView = [[CityTitleView alloc] initWithFrame:CGRectMake(0, 0, Width, 100)];
-    [self.cityTitleView buildView];
-    [self.tableView addSubview:self.cityTitleView];
-
-    
-    
-    // 创建测试按钮
-    [self createTestButton];
-    
-    
-    [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-         parameters:@{@"lat"  : @"39.88293652833437",
-                      @"lon"  : @"116.4621119300779",
-                      @"cnt"  : @"10"}
-            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"%@", responseObject);
-            }
-            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"%@", error);
-            }];
-    
-    
-    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
-         parameters: @{@"lat"  : @"39.88293652833437",
-                       @"lon"  : @"116.4621119300779",}
-            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"\n\n\n\n\n\n----------\n%@\n\n\n\n\n\n\n\n", responseObject);
-            }
-            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                
-            }];
-    
-    
-    
     // 获取10天天气
     // http://api.openweathermap.org/data/2.5/forecast/daily?lat=39.907501&lon=116.397232&cnt=10
 
+    
+    
 
-#endif
-
+    
+    
     // 天气的view
-    self.weatherView = [[WeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView                     = [[WeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView.layer.masksToBounds = YES;
+    self.weatherView.delegate            = self;
     [self.weatherView buildView];
     [self.view addSubview:self.weatherView];
-
+    
+    // 变黑
+    self.fadeBlackView = [[FadeBlackView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:self.fadeBlackView];
+    
+    // loading
+    self.upDatingView        = [[UpdatingView alloc] initWithFrame:CGRectZero];
+    self.upDatingView.center = self.view.center;
+    [self.view addSubview:self.upDatingView];
 
     // 定位功能
     self.mapLoacation          = [MapManager new];
     self.mapLoacation.delegate = self;
-    [self.mapLoacation start];
-    
     
     // 获取网络请求
     self.getWeatherData          = [GetWeatherData new];
     self.getWeatherData.delegate = self;
-    
-    
-    // 测试用按钮
-    self.button = [[UIButton alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.button];
-    [self.button addTarget:self
-                    action:@selector(myButtonEvent:)
-          forControlEvents:UIControlEventTouchUpInside];
-    self.button.userInteractionEnabled = NO;
 
+    
+    // 加载失败后显示的view
+    self.failedView          = [[FailedLongPressView alloc] initWithFrame:self.view.bounds];
+    self.failedView.delegate = self;
+    [self.failedView buildView];
+    [self.view addSubview:self.failedView];
+    
+    
+    // 进入加载数据动画效果
+    [self getLocationAndFadeShow];
+//    [self getCityIdAndFadeShow];
 }
 
-- (void)myButtonEvent:(UIButton *)button {
-    self.button.userInteractionEnabled = NO;
+/**
+ *  上拉进入新的控制器
+ *
+ *  @param condition 新控制器需要的数据
+ */
+- (void)pullUpEventWithData:(CurrentConditions *)condition {
+    
+    [GCDQueue executeInMainQueue:^{
+        ForecastController *forecastCV    = [ForecastController new];
+        forecastCV.transitioningDelegate  = self;
+        forecastCV.modalPresentationStyle = UIModalPresentationCustom;
+        forecastCV.weatherCondition       = condition;
+        [self presentViewController:forecastCV
+                           animated:YES
+                         completion:^{}];
+    } afterDelaySecs:0.05f];
+}
+
+/**
+ *  下拉更新数据
+ */
+- (void)pullDownToRefreshData {
+    NSLog(@"下拉获取数据");
+    
+    [self getLocationAndFadeShow];
+    
+//    [self getCityIdAndFadeShow];
+}
+
+- (void)getLocationAndFadeShow {
+    
+    // 显示出等待页面
+    [self.fadeBlackView show];
+    [self.upDatingView show];
+    
+    // 开始定位
     [self.mapLoacation start];
 }
 
-- (void)weatherData:(id)object sucess:(BOOL)sucess {
-    if (sucess) {
-        NSLog(@"%@", object);
-        
-        
-        // 获取数据
-        CurrentWeatherData *data       = [object valueForKey:@"WeatherData"];
-        CurrentConditions  *conditions = [object valueForKey:@"WeatherConditions"];
-        
-        // 先获取温度
-        self.weatherView.weahterData       = data;
-        self.weatherView.weatherConditions = conditions;
-        
-        // 先隐藏,再显示
-        [self.weatherView hide];
-        [GCDQueue executeInMainQueue:^{
-            [self.weatherView show];
-        } afterDelaySecs:1.f];
-        
-        [GCDQueue executeInMainQueue:^{
-            self.button.userInteractionEnabled = YES;
-        } afterDelaySecs:1.f + 2.f];
-    } else {
-        NSLog(@"获取数据失败");
-        self.button.userInteractionEnabled = YES;
-    }
+- (void)getCityIdAndFadeShow {
+    // 显示出等待页面
+    [self.fadeBlackView show];
+    [self.upDatingView show];
+
+    [self.getWeatherData startGetCityIdWeatherData];
 }
 
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location {
-    // 过滤掉重复的地址
+    NSLog(@"定位成功 - 并开始获取网路数据");
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self performSelector:@selector(delayRunEvent:)
                withObject:location
                afterDelay:0.3f];
+}
+
+- (void)mapManager:(MapManager *)manager didFailed:(NSError *)error {
+    NSLog(@"定位失败");
+    [self.upDatingView showFailed];
+    [GCDQueue executeInMainQueue:^{
+        [self.fadeBlackView hide];
+        [self.upDatingView hide];
+    } afterDelaySecs:2.5f];
+    
+    
+    
+    
+    [GCDQueue executeInMainQueue:^{
+        [self.failedView show];
+    } afterDelaySecs:2.5f];
+    
+    
+    [GCDQueue executeInMainQueue:^{
+        [[TWMessageBarManager sharedInstance] \
+         showMessageWithTitle:@"Failed to locate"
+         description:@"Sorry, temporarily unable to locate your position."
+         type:TWMessageBarMessageTypeError
+         callback:^{}];
+    } afterDelaySecs:1.f];
+}
+
+- (void)mapManagerServerClosed:(MapManager *)manager {
+    [GCDQueue executeInMainQueue:^{
+        [self.fadeBlackView hide];
+        [self.upDatingView hide];
+    } afterDelaySecs:1.5];
+    
+    [GCDQueue executeInMainQueue:^{
+        [self.failedView show];
+    } afterDelaySecs:1.5f];
+    
+    
+    [GCDQueue executeInMainQueue:^{
+        [[TWMessageBarManager sharedInstance] \
+         showMessageWithTitle:@"Failed to locate"
+         description:@"Please turn on your Locations Service."
+         type:TWMessageBarMessageTypeError
+         callback:^{}];
+    } afterDelaySecs:0.f];
 }
 
 /**
@@ -296,94 +218,87 @@
     [self.getWeatherData startGetLocationWeatherData];
 }
 
-- (void)createTestButton {
-    self.testButton = [[UIButton alloc] initWithFrame:self.view.bounds];
-    [self.testButton addTarget:self
-                        action:@selector(buttonEvent:)
-              forControlEvents:UIControlEventTouchUpInside];
-    [self.tableView addSubview:self.testButton];
+/**
+ *  获取到网络数据的结果
+ *
+ *  @param object 网络数据
+ *  @param sucess 时候成功了
+ */
+- (void)weatherData:(id)object sucess:(BOOL)sucess {
+    if (sucess) {
+        NSLog(@"%@", object);
+        
+        // 获取数据
+        CurrentWeatherData *data       = [object valueForKey:@"WeatherData"];
+        CurrentConditions  *conditions = [object valueForKey:@"WeatherConditions"];
+        
+        
+        // 先获取温度
+        self.weatherView.weahterData       = data;
+        self.weatherView.weatherConditions = conditions;
+        
+        // 先隐藏,再显示
+        [self.weatherView hide];
+        
+        [GCDQueue executeInMainQueue:^{
+            [self.weatherView show];
+            [self.fadeBlackView hide];
+            [self.upDatingView hide];
+        } afterDelaySecs:1.f];
+        
+        [GCDQueue executeInMainQueue:^{
+            [self.failedView remove];
+        } afterDelaySecs:1.f];
+        
+    } else {
+        NSLog(@"获取数据失败");
+        
+        [self.upDatingView showFailed];
+        [GCDQueue executeInMainQueue:^{
+            [self.fadeBlackView hide];
+            [self.upDatingView hide];
+        } afterDelaySecs:2.51f];
+        
+        
+        [GCDQueue executeInMainQueue:^{
+            [self.failedView show];
+        } afterDelaySecs:2.51f];
+        
+        
+        [self showErrorInfo];
+    }
+}
+
+- (void)showErrorInfo {
+    [GCDQueue executeInMainQueue:^{
+        [[TWMessageBarManager sharedInstance] \
+         showMessageWithTitle:@"Network Unreachable"
+         description:@"Please try later."
+         type:TWMessageBarMessageTypeError
+         callback:^{}];
+    } afterDelaySecs:1.f];
 }
 
 
-
-
-- (void)buttonEvent:(UIButton *)button {
-    button.userInteractionEnabled = NO;
+- (void)pressEvent:(FailedLongPressView *)view {
+    [self.failedView hide];
     
-    if (self.isShow == NO) {
-        self.isShow = YES;
-        
-        // 湿度显示
-        self.humidityView.percent = (arc4random() % 100 / 100.f);
-        
-        
-        // 风速显示
-        self.windSpeedView.windSpeed         = arc4random() % 400;
-        self.windSpeedView.circleByOneSecond = self.windSpeedView.windSpeed / 300.f;
+    [self getLocationAndFadeShow];
+}
 
-        
-        // 最大温度,最小温度显示
-        CGFloat tmpMax = arc4random() % 40;
-        CGFloat tmpMin = arc4random() % 20;
-        self.maxTempView.maxTemp = tmpMax;
-        self.maxTempView.minTemp = tmpMin;
+#pragma mark - 定制转场动画
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    // 推出控制器的动画
+    return [PresentingAnimator new];
+}
 
-        
-        // 日出时间,日落时间显示
-        self.sunInfoView.sunsireValue.utcSec = 1424473131 + arc4random() % 2000;
-        [self.sunInfoView.sunsireValue accessUtcSec];
-        self.sunInfoView.sunsetValue.utcSec = 1424512601 + arc4random() % 2000;
-        [self.sunInfoView.sunsetValue accessUtcSec];
-//        NSLog(@"%@", self.sunInfoView.sunsireValue.timeString);
-//        NSLog(@"%@", self.sunInfoView.sunsetValue.timeString);
-
-        
-        // 当前温度显示
-        self.temperatureView.temperature = 17;
-
-
-        
-        
-        [self.windSpeedView show];
-        [self.maxTempView show];
-        [self.sunInfoView show];
-        [self.temperatureView show];
-        [self.humidityView show];
-        [self.weatherIconView show];
-
-        
-        
-        
-        [GCDQueue executeInMainQueue:^{
-            button.userInteractionEnabled = YES;
-        } afterDelaySecs:1.6];
-        
-        
-    } else {
-        self.isShow = NO;
-        
-        // 湿度隐藏
-        [self.humidityView hide];
-        
-        // 风速隐藏
-        [self.windSpeedView hide];
-        
-        // 最大温度,最小温度隐藏
-        [self.maxTempView hide];
-        
-        // 日出时间,日落时间显示
-        [self.sunInfoView hide];
-        
-        // 当前温度
-        [self.temperatureView hide];
-        
-        [self.weatherIconView hide];
-        
-        
-        [GCDQueue executeInMainQueue:^{
-            button.userInteractionEnabled = YES;
-        } afterDelaySecs:0.76];
-    }
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    // 退出控制器动画
+    return [DismissingAnimator new];
 }
 
 @end

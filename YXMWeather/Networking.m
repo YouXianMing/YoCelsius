@@ -36,7 +36,14 @@
                            parameters:(id)parameters
                               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFHTTPRequestOperationManager *manager    = [AFHTTPRequestOperationManager manager];
+
+    // 设置超时时间
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 10.f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    
     AFHTTPRequestOperation *httpOperation = [manager GET:URLString
                                               parameters:parameters
                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -49,6 +56,8 @@
                                                          failure(operation, error);
                                                      }
                                                  }];
+//    httpOperation.request.timeoutInterval = 5.f;
+
     
     return httpOperation;
 }

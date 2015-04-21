@@ -65,12 +65,13 @@
     POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnimation.toValue  = [NSValue valueWithCGSize:CGSizeMake(tmpScale, tmpScale)];
     scaleAnimation.delegate = self; // 核心
+    scaleAnimation.duration = 0.30f;
     [self.layer pop_addAnimation:scaleAnimation forKey:nil];
     
     if (_countDown == 0) {
         [self performSelector:@selector(performSelectorEvent:)
                    withObject:@(0)
-                   afterDelay:(_completeDurationAfterLongPress > 1.5 ? _completeDurationAfterLongPress : 1.5)];
+                   afterDelay:0.30 + 0.01];
     } else {
         for (int i = 0; i < _countDown; i++) {
             [self performSelector:@selector(performSelectorEvent:)
@@ -87,6 +88,7 @@
     POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnimation.toValue  = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
     scaleAnimation.delegate = self; // 核心
+    scaleAnimation.duration = 0.3;
     [self.layer pop_addAnimation:scaleAnimation forKey:nil];
     
     if (_countDown == 0) {
@@ -104,6 +106,7 @@
     POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnimation.toValue  = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
     scaleAnimation.delegate = self; // 核心
+    scaleAnimation.duration = 0.3;
     [self.layer pop_addAnimation:scaleAnimation forKey:nil];
     
     if (_countDown == 0) {

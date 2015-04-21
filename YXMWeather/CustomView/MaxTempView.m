@@ -58,6 +58,7 @@
     
     // 创建出格子view
     self.gridView  = [[GridView alloc] initWithFrame:CGRectZero];
+    self.gridView.alpha = 0.f;
     
     if (iPhone4_4s || iPhone5_5s) {
         gridOffsetX = 30;
@@ -147,7 +148,7 @@
     [self addSubview:self.centerLineView];
     
     
-    self.titleMoveLabel = [TitleMoveLabel withText:@"Temperature"];
+    self.titleMoveLabel = [TitleMoveLabel withText:@"Min/Max Temp"];
     [self.titleMoveLabel buildView];
     [self addSubview:self.titleMoveLabel];
 }

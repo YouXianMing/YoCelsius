@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SnowView.h"
+#import "RainView.h"
+#import "WeatherNumberMeaningTransform.h"
 
 @interface CityTitleView : UIView
 
@@ -17,6 +20,8 @@
 @property (nonatomic, strong) NSString *updateYear;
 @property (nonatomic, strong) NSString *updateHour;
 @property (nonatomic)         NSTimeInterval  utcSec;
+@property (nonatomic, strong) NSNumber *weatherNumber;
+
 
 // 创建view
 - (void)buildView;

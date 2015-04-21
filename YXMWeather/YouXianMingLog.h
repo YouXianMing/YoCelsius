@@ -16,7 +16,7 @@
 ///////////////   CONFIG   /////////////////
 
 #define NO_LOG          OFF   // 禁用Log
-#define SWITCH_LOG      OFF    // 切换打印
+#define SWITCH_LOG      OFF   // 切换打印
 
 #define TIME_STAMP      OFF   // 时间戳
 #define FILE_NAME       ON    // 文件名

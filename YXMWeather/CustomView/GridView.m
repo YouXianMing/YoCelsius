@@ -65,6 +65,7 @@
 - (void)showWithDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration animations:^{
         self.alphaView.x = -5;
+        self.alpha = 1.f;
     } completion:^(BOOL finished) {
         
     }];
@@ -73,6 +74,7 @@
 - (void)hideWithDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration animations:^{
         self.alphaView.x = self.width;
+        self.alpha = 0.f;
     } completion:^(BOOL finished) {
         self.alphaView.x = -self.width;
     }];

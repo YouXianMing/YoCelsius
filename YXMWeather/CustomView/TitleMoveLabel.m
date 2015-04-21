@@ -80,10 +80,19 @@
     TitleMoveLabel *titleMove = [[TitleMoveLabel alloc] initWithFrame:CGRectMake(20, 10, 0, 0)];
     titleMove.text            = text;
     titleMove.textColor       = [UIColor blackColor];
-    titleMove.font            = [UIFont fontWithName:LATO_BOLD size:LATO_14];
+    if (iPhone4_4s || iPhone5_5s) {
+        titleMove.font    = [UIFont fontWithName:LATO_BOLD size:LATO_14];
+    } else if (iPhone6) {
+        titleMove.font    = [UIFont fontWithName:LATO_LIGHT size:17];
+    } else if (iPhone6_plus) {
+        titleMove.font    = [UIFont fontWithName:LATO_LIGHT size:20];
+    } else {
+        titleMove.font    = [UIFont fontWithName:LATO_BOLD size:LATO_14];
+    }
+    
     titleMove.moveGap         = 10.f;
     [titleMove buildView];
-
+    
     return titleMove;
 }
 

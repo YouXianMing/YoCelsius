@@ -52,9 +52,22 @@
     NSString *duStr    = @"°";
     NSString *totalStr = [NSString stringWithFormat:@"%@%@", countStr, duStr];
     
-    
-    UIFont *totalFont       = [UIFont fontWithName:LATO_THIN size:75.f];
-    UIFont *duFont          = [UIFont fontWithName:LATO_THIN size:75.f];
+
+    UIFont *totalFont = nil;
+    UIFont *duFont    = nil;
+    if (iPhone4_4s || iPhone5_5s) {
+        totalFont       = [UIFont fontWithName:LATO_THIN size:75.f];
+        duFont          = [UIFont fontWithName:LATO_THIN size:75.f];
+    } else if (iPhone6) {
+        totalFont       = [UIFont fontWithName:LATO_THIN size:90];
+        duFont          = [UIFont fontWithName:LATO_THIN size:90];
+    } else if (iPhone6_plus) {
+        totalFont       = [UIFont fontWithName:LATO_THIN size:95.f];
+        duFont          = [UIFont fontWithName:LATO_THIN size:95.f];
+    } else {
+        totalFont       = [UIFont fontWithName:LATO_THIN size:75.f];
+        duFont          = [UIFont fontWithName:LATO_THIN size:75.f];
+    }
     
     NSRange totalRange   = [totalStr range];              // 全局的区域
     NSRange countRange   = [countStr rangeFrom:totalStr]; // %的区域

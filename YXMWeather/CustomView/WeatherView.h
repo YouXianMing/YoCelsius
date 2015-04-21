@@ -10,7 +10,18 @@
 #import "CurrentWeatherData.h"
 #import "CurrentConditions.h"
 
+@protocol WeatherViewDelegate <NSObject>
+- (void)pullUpEventWithData:(CurrentConditions *)condition;
+- (void)pullDownToRefreshData;
+@end
+
 @interface WeatherView : UIView
+
+
+/**
+ *  代理
+ */
+@property (nonatomic, weak)   id<WeatherViewDelegate> delegate;
 
 /**
  *  天气的数据
@@ -32,15 +43,5 @@
  *  创建出view
  */
 - (void)buildView;
-
-/**
- *  进入loading状态
- */
-- (void)intoLoadingStatus;
-
-/**
- * 进入刷新状态
- */
-- (void)intoUpdateStatus;
 
 @end

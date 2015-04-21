@@ -14,6 +14,7 @@
 @optional
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location;
 - (void)mapManager:(MapManager *)manager didFailed:(NSError *)error;
+- (void)mapManagerServerClosed:(MapManager *)manager;
 
 @end
 

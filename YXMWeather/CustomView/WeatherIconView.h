@@ -8,16 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum : NSUInteger {
-    E_SUN, // 晴朗
-} EWeatherIcon;
-
 @interface WeatherIconView : UIView
 
+
 /**
- *  天气信息
+ *  天气文本
  */
-@property (nonatomic) EWeatherIcon  weatherType;
+@property (nonatomic, strong) NSNumber *weatherNumber;
 
 /**
  *  创建出view

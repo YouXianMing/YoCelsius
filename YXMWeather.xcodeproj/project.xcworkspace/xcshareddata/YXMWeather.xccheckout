@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D1D632A-9B19-495C-8AB1-E579F0B31BFF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YXMWeather</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E846FA1C5F9077375A75267DFE4F87EDFC6399C0</key>
+		<string>https://github.com/YouXianMing/YoCelsius.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>YXMWeather.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E846FA1C5F9077375A75267DFE4F87EDFC6399C0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/YouXianMing/YoCelsius.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E846FA1C5F9077375A75267DFE4F87EDFC6399C0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E846FA1C5F9077375A75267DFE4F87EDFC6399C0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YoCelsius</string>
+		</dict>
+	</array>
+</dict>
+</plist>

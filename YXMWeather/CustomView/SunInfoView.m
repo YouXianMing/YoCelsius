@@ -52,12 +52,18 @@
  */
 - (void)buildView {
     
-    self.movetitleLabel = [TitleMoveLabel withText:@"Sunrise & Sunset"];
+    self.movetitleLabel = [TitleMoveLabel withText:@"Sunrise/Sunset"];
     [self.movetitleLabel buildView];
     [self addSubview:self.movetitleLabel];
     
     // 日出的view
-    self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(45, 50, 40, 80)];
+    if (iPhone5_5s || iPhone4_4s) {
+        self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(45, 50, 40, 80)];
+    } else if (iPhone6) {
+        self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
+    } else {
+        self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
+    }
     [self.sunriseView buildView];
     [self addSubview:self.sunriseView];
     self.sunriseViewStoreValue = [SunInfoStoreValue new];
@@ -69,16 +75,28 @@
     self.sunriseView.frame = self.sunriseViewStoreValue.startRect;
     
     // 日出时间标签
-    self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 40, 20)];
+    if (iPhone5_5s || iPhone4_4s) {
+        self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 40, 20)];
+    } else if (iPhone6) {
+        self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 50, 25)];
+    } else {
+        self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 50, 25)];
+    }
     self.sunriseTimeLabel.alpha = 0.f;
     self.sunriseTimeLabel.textAlignment = NSTextAlignmentCenter;
     self.sunriseTimeLabel.font = [UIFont fontWithName:LATO_BOLD size:LATO_10];
     [self.sunriseView addSubview:self.sunriseTimeLabel];
-
+    
     
     
     // 日落的view
-    self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(95, 40, 40, 80)];
+    if (iPhone5_5s || iPhone4_4s) {
+        self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(95, 40, 40, 80)];
+    } else if (iPhone6) {
+        self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(110, 60, 50, 100)];
+    } else {
+        self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(110, 60, 50, 100)];
+    }
     [self.sunsetView buildView];
     [self addSubview:self.sunsetView];
     self.sunsetViewStoreValue = [SunInfoStoreValue new];
@@ -90,7 +108,13 @@
     self.sunsetView.frame = self.sunsetViewStoreValue.startRect;
     
     // 日落时间标签
-    self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 40, 20)];
+    if (iPhone5_5s || iPhone4_4s) {
+        self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 40, 20)];
+    } else if (iPhone6) {
+        self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
+    } else {
+        self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
+    }
     self.sunsetTimeLabel.textAlignment = NSTextAlignmentCenter;
     self.sunsetTimeLabel.alpha = 0.f;
     self.sunsetTimeLabel.font = [UIFont fontWithName:LATO_BOLD size:LATO_10];
@@ -101,7 +125,7 @@
  *  显示
  */
 - (void)show {
-
+    
     [self.movetitleLabel show];
     
     // 动画持续时间
@@ -132,7 +156,7 @@
 - (void)hide {
     CGFloat duration = 0.75f;
     
-        [self.movetitleLabel hide];
+    [self.movetitleLabel hide];
     
     // 日出动画隐藏
     [self.sunriseView hideWithDuration:duration];
