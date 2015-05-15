@@ -39,6 +39,10 @@
     
     NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
+
+    //测试北京地址
+//    NSString *latStr = @"39.907501";
+//    NSString *lonStr = @"116.397232";
     
     // 网络请求1
     AFHTTPRequestOperation *operation = \
@@ -66,6 +70,8 @@
     [self.requestArray addObject:operation];
 }
 
+
+//获取10天天气数据
 - (void)requestTwo {
     AFHTTPRequestOperation *operation = \
     [Networking GETMethod:@"http://api.openweathermap.org/data/2.5/forecast/daily"

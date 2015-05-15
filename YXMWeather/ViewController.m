@@ -156,7 +156,7 @@
 }
 
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location {
-    NSLog(@"定位成功 - 并开始获取网路数据");
+    NSLog(@"定位成功 - 并开始获取网路数据 %@",location);
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self performSelector:@selector(delayRunEvent:)
                withObject:location
@@ -226,7 +226,7 @@
  */
 - (void)weatherData:(id)object sucess:(BOOL)sucess {
     if (sucess) {
-        NSLog(@"%@", object);
+        NSLog(@"---> %@", object);
         
         // 获取数据
         CurrentWeatherData *data       = [object valueForKey:@"WeatherData"];
