@@ -42,54 +42,54 @@
     
     // 网络请求1
     AFHTTPRequestOperation *operation = \
-    [Networking GETMethod:@"http://api.openweathermap.org/data/2.5/weather"
-               parameters:@{@"lat"  : latStr,
-                            @"lon"  : lonStr}
-                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
-                      if (currentData.cod.integerValue == 200) {
-                          self.currentWeatherData = currentData;
-                          
-                          // 再执行请求2
-                          [self requestTwo];
-                      } else {
-                          NSLog(@"请求1结果异常");
-                          [_delegate weatherData:nil
-                                          sucess:NO];
-                      }
-                  }
-                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"请求1超时");
-                      [_delegate weatherData:nil
-                                      sucess:NO];
-                  }];
+    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
+         parameters:@{@"lat"  : latStr,
+                      @"lon"  : lonStr}
+            success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
+                if (currentData.cod.integerValue == 200) {
+                    self.currentWeatherData = currentData;
+                    
+                    // 再执行请求2
+                    [self requestTwo];
+                } else {
+                    NSLog(@"请求1结果异常");
+                    [_delegate weatherData:nil
+                                    sucess:NO];
+                }
+            }
+            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"请求1超时");
+                [_delegate weatherData:nil
+                                sucess:NO];
+            }];
     [self.requestArray addObject:operation];
 }
 
 - (void)requestTwo {
     AFHTTPRequestOperation *operation = \
-    [Networking GETMethod:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-               parameters:@{@"id"   : self.currentWeatherData.cityId,
-                            @"cnt"  : @"14"}
-                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
-                      if (currentData.cod.integerValue == 200) {
-                          self.currentConditions = currentData;
-                          
-                          
-                          [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
-                                                   @"WeatherConditions" : self.currentConditions}
-                                          sucess:YES];
-                      } else {
-                          [_delegate weatherData:nil
-                                          sucess:NO];
-                      }
-                  }
-                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"请求2超时");
-                      [_delegate weatherData:nil
-                                      sucess:NO];
-                  }];
+    [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+         parameters:@{@"id"   : self.currentWeatherData.cityId,
+                      @"cnt"  : @"14"}
+            success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
+                if (currentData.cod.integerValue == 200) {
+                    self.currentConditions = currentData;
+                    
+                    
+                    [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
+                                             @"WeatherConditions" : self.currentConditions}
+                                    sucess:YES];
+                } else {
+                    [_delegate weatherData:nil
+                                    sucess:NO];
+                }
+            }
+            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"请求2超时");
+                [_delegate weatherData:nil
+                                sucess:NO];
+            }];
     [self.requestArray addObject:operation];
 }
 
@@ -221,18 +221,18 @@
         
         
         AFHTTPRequestOperation *operation = \
-        [Networking GETMethod:@"http://api.openweathermap.org/data/2.5/weather"
-                   parameters:@{@"id"  : cityCodeString}
-                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                          CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
-                          if (currentData.cod.integerValue == 200) {
-                              self.currentWeatherData = currentData;
-                          }
-                          [semaphore signal];
-                      }
-                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                          [semaphore signal];
-                      }];
+        [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
+             parameters:@{@"id"  : cityCodeString}
+                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
+                    if (currentData.cod.integerValue == 200) {
+                        self.currentWeatherData = currentData;
+                    }
+                    [semaphore signal];
+                }
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [semaphore signal];
+                }];
         [self.requestArray addObject:operation];
         
         // 等待
@@ -243,19 +243,19 @@
         GCDSemaphore *semaphore = [GCDSemaphore new];
         
         AFHTTPRequestOperation *operation = \
-        [Networking GETMethod:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-                   parameters:@{@"id"   : cityCodeString,
-                                @"cnt"  : @"14"}
-                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                          CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
-                          if (currentData.cod.integerValue == 200) {
-                              self.currentConditions = currentData;
-                          }
-                          [semaphore signal];
-                      }
-                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                          [semaphore signal];
-                      }];
+        [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+             parameters:@{@"id"   : cityCodeString,
+                          @"cnt"  : @"14"}
+                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
+                    if (currentData.cod.integerValue == 200) {
+                        self.currentConditions = currentData;
+                    }
+                    [semaphore signal];
+                }
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [semaphore signal];
+                }];
         [self.requestArray addObject:operation];
         
         // 等待

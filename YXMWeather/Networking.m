@@ -11,38 +11,19 @@
 
 @implementation Networking
 
-+ (AFHTTPRequestOperationManager *)GET:(NSString *)URLString
-                            parameters:(id)parameters
-                               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:URLString
-      parameters:parameters
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             if (success) {
-                 success(operation, responseObject);
-             }
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             if (failure) {
-                 failure(operation, error);
-             }
-         }];
++ (AFHTTPRequestOperation *)GET:(NSString *)URLString
+                     parameters:(id)parameters
+                        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    return manager;
-}
-
-+ (AFHTTPRequestOperation *)GETMethod:(NSString *)URLString
-                           parameters:(id)parameters
-                              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    AFHTTPRequestOperationManager *manager            = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer                         = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
-    AFHTTPRequestOperationManager *manager    = [AFHTTPRequestOperationManager manager];
-
-    // 设置超时时间
-    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 10.f;
-    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    //    // 设置超时时间
+    //    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    //    manager.requestSerializer.timeoutInterval = 10.f;
+    //    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     AFHTTPRequestOperation *httpOperation = [manager GET:URLString
                                               parameters:parameters
@@ -56,46 +37,26 @@
                                                          failure(operation, error);
                                                      }
                                                  }];
-//    httpOperation.request.timeoutInterval = 5.f;
-
+    
+    
     
     return httpOperation;
 }
 
 
-+ (AFHTTPRequestOperationManager *)POST:(NSString *)URLString
-                             parameters:(id)parameters
-                                success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
++ (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(id)parameters
+                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
     AFHTTPRequestOperationManager *manager            = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer                         = [AFJSONRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
-    [manager POST:URLString
-       parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if (success) {
-                  success(operation, responseObject);
-              }
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if (failure) {
-                  failure(operation, error);
-              }
-          }];
-    
-    return manager;
-}
-
-+ (AFHTTPRequestOperation *)POSTMethod:(NSString *)URLString
-                            parameters:(id)parameters
-                               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    
-    AFHTTPRequestOperationManager *manager            = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer                         = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    //    // 设置超时时间
+    //    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    //    manager.requestSerializer.timeoutInterval = 10.f;
+    //    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     AFHTTPRequestOperation *httpOperation = [manager POST:URLString
                                                parameters:parameters
