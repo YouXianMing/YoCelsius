@@ -21,15 +21,6 @@
     // 自己的view
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     
-//    [UIView animateWithDuration:[self transitionDuration:transitionContext]
-//                     animations:^{
-//                         fromView.y = Height;
-//                         
-//                     } completion:^(BOOL finished) {
-//                         // 动画结束
-//                         [transitionContext completeTransition:YES];
-//                     }];
-    
     // 动画时间
     CGFloat duration = [self transitionDuration:transitionContext];
     

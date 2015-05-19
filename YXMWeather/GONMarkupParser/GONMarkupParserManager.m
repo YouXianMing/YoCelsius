@@ -18,8 +18,6 @@
 #pragma mark - Shared manager
 + (instancetype)manager
 {
-    [super initialize];
-    
     static GONMarkupParserManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

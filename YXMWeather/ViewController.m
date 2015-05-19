@@ -105,7 +105,6 @@
     
     // 进入加载数据动画效果
     [self getLocationAndFadeShow];
-//    [self getCityIdAndFadeShow];
 }
 
 /**
@@ -133,8 +132,6 @@
     NSLog(@"下拉获取数据");
     
     [self getLocationAndFadeShow];
-    
-//    [self getCityIdAndFadeShow];
 }
 
 - (void)getLocationAndFadeShow {
