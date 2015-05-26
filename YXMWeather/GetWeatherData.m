@@ -12,13 +12,17 @@
 
 
 @interface GetWeatherData ()
+
+
 @property (nonatomic, strong) NSMutableArray     *requestArray;
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
 
 @property (nonatomic)         BOOL                getDataFailed; // 获取数据失败
 
+
 @end
+
 
 @implementation GetWeatherData
 

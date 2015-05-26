@@ -219,7 +219,7 @@
  *  获取到网络数据的结果
  *
  *  @param object 网络数据
- *  @param sucess 时候成功了
+ *  @param sucess YES表示成功,NO表示失败
  */
 - (void)weatherData:(id)object sucess:(BOOL)sucess {
     if (sucess) {

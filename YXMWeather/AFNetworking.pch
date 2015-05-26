@@ -31,7 +31,7 @@
 #import "WxHxD.h"
 #import "FontInfomation.h"
 #import "AddedFont.h"
-#import "YXGCD.h"
+#import "GCD.h"
 #import "YXEasing.h"
 #import "YouXianMingLog.h"
 #import "POP.h"

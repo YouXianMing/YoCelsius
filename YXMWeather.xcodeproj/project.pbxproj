@@ -521,7 +521,7 @@
 		10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
 		10DE2F701A92B46D00CFC713 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
 		10DE2F711A92B46D00CFC713 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
-		10DE2F721A92B46D00CFC713 /* YXGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGCD.h; sourceTree = "<group>"; };
+		10DE2F721A92B46D00CFC713 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		10DE2F791A93661F00CFC713 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		10DE2F7A1A93661F00CFC713 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		10E01A4E1AA3FDA0000676BF /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
@@ -1142,7 +1142,7 @@
 				10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */,
 				10DE2F701A92B46D00CFC713 /* GCDTimer.h */,
 				10DE2F711A92B46D00CFC713 /* GCDTimer.m */,
-				10DE2F721A92B46D00CFC713 /* YXGCD.h */,
+				10DE2F721A92B46D00CFC713 /* GCD.h */,
 			);
 			path = YXGCD;
 			sourceTree = "<group>";
@@ -1420,7 +1420,6 @@
 				TargetAttributes = {
 					10E1F52B1A908C3200AED5D6 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 96SZNQ256W;
 					};
 					10E1F5441A908C3200AED5D6 = {
 						CreatedOnToolsVersion = 6.1.1;

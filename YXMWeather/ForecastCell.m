@@ -72,7 +72,6 @@
     UIView *dateBlackView = [[UIView alloc] initWithFrame:CGRectMake(Width - 50, 0, 50, 12.f)];
     dateBlackView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.95];
     [dateBlackView addSubview:self.dateLabel];
-//    [self addSubview:dateBlackView];
     
     
     // 最低温度
