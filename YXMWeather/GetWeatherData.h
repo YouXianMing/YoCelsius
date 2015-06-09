@@ -38,12 +38,6 @@
 
 
 /**
- *  开始获取网络数据 (开始获取定位数据的信息)
- */
-- (void)startGetCityIdWeatherData;
-
-
-/**
  *  取消请求
  */
 - (void)cancelRequest;

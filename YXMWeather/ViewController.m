@@ -148,8 +148,6 @@
     // 显示出等待页面
     [self.fadeBlackView show];
     [self.upDatingView show];
-
-    [self.getWeatherData startGetCityIdWeatherData];
 }
 
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location {

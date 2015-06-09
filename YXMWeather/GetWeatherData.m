@@ -49,6 +49,9 @@
     [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
          parameters:@{@"lat"  : latStr,
                       @"lon"  : lonStr}
+    timeoutInterval:nil
+        requestType:HTTPRequestType
+       responseType:JSONResponseType
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
                 if (currentData.cod.integerValue == 200) {
@@ -61,6 +64,7 @@
                     [_delegate weatherData:nil
                                     sucess:NO];
                 }
+                
             }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"请求1超时");
@@ -75,12 +79,13 @@
     [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
          parameters:@{@"id"   : self.currentWeatherData.cityId,
                       @"cnt"  : @"14"}
+    timeoutInterval:nil
+        requestType:HTTPRequestType
+       responseType:JSONResponseType
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
                 if (currentData.cod.integerValue == 200) {
                     self.currentConditions = currentData;
-                    
-                    
                     [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
                                              @"WeatherConditions" : self.currentConditions}
                                     sucess:YES];
@@ -88,12 +93,14 @@
                     [_delegate weatherData:nil
                                     sucess:NO];
                 }
+
             }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"请求2超时");
                 [_delegate weatherData:nil
                                 sucess:NO];
             }];
+    
     [self.requestArray addObject:operation];
 }
 
@@ -101,80 +108,6 @@
     [self requestOne];
     
     return;
-}
-
-/**
- *  程序中没有使用的方法,根据城市ID获取信息
- */
-- (void)startGetCityIdWeatherData {
-    
-    // 线程组
-    GCDGroup *group = [GCDGroup new];
-    
-    
-    NSString *cityCodeString = @"2347304";
-    
-    // 网络请求1
-    [[GCDQueue globalQueue] execute:^{
-        GCDSemaphore *semaphore = [GCDSemaphore new];
-        
-        
-        AFHTTPRequestOperation *operation = \
-        [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
-             parameters:@{@"id"  : cityCodeString}
-                success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
-                    if (currentData.cod.integerValue == 200) {
-                        self.currentWeatherData = currentData;
-                    }
-                    [semaphore signal];
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    [semaphore signal];
-                }];
-        [self.requestArray addObject:operation];
-        
-        // 等待
-        [semaphore wait];
-    } inGroup:group];
-    // 网络请求2
-    [[GCDQueue globalQueue] execute:^{
-        GCDSemaphore *semaphore = [GCDSemaphore new];
-        
-        AFHTTPRequestOperation *operation = \
-        [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-             parameters:@{@"id"   : cityCodeString,
-                          @"cnt"  : @"14"}
-                success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
-                    if (currentData.cod.integerValue == 200) {
-                        self.currentConditions = currentData;
-                    }
-                    [semaphore signal];
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    [semaphore signal];
-                }];
-        [self.requestArray addObject:operation];
-        
-        // 等待
-        [semaphore wait];
-    } inGroup:group];
-    [[GCDQueue mainQueue] notify:^{
-        [self.requestArray removeAllObjects];
-        if (_delegate && [_delegate respondsToSelector:@selector(weatherData:sucess:)]) {
-            if (self.currentConditions && self.currentWeatherData) {
-                [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
-                                         @"WeatherConditions" : self.currentConditions}
-                                sucess:YES];
-            } else {
-                [_delegate weatherData:nil
-                                sucess:NO];
-            }
-        }
-        
-    } inGroup:group];
-    
 }
 
 /**
