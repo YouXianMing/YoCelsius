@@ -1,6 +1,5 @@
 // AFURLRequestSerialization.m
-//
-// Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
+// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -252,6 +251,47 @@ static void *AFHTTPRequestSerializerObserverContext = &AFHTTPRequestSerializerOb
             [self removeObserver:self forKeyPath:keyPath context:AFHTTPRequestSerializerObserverContext];
         }
     }
+}
+
+#pragma mark -
+
+// Workarounds for crashing behavior using Key-Value Observing with XCTest
+// See https://github.com/AFNetworking/AFNetworking/issues/2523
+
+- (void)setAllowsCellularAccess:(BOOL)allowsCellularAccess {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(allowsCellularAccess))];
+    _allowsCellularAccess = allowsCellularAccess;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(allowsCellularAccess))];
+}
+
+- (void)setCachePolicy:(NSURLRequestCachePolicy)cachePolicy {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(cachePolicy))];
+    _cachePolicy = cachePolicy;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(cachePolicy))];
+}
+
+- (void)setHTTPShouldHandleCookies:(BOOL)HTTPShouldHandleCookies {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(HTTPShouldHandleCookies))];
+    _HTTPShouldHandleCookies = HTTPShouldHandleCookies;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(HTTPShouldHandleCookies))];
+}
+
+- (void)setHTTPShouldUsePipelining:(BOOL)HTTPShouldUsePipelining {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(HTTPShouldUsePipelining))];
+    _HTTPShouldUsePipelining = HTTPShouldUsePipelining;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(HTTPShouldUsePipelining))];
+}
+
+- (void)setNetworkServiceType:(NSURLRequestNetworkServiceType)networkServiceType {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(networkServiceType))];
+    _networkServiceType = networkServiceType;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(networkServiceType))];
+}
+
+- (void)setTimeoutInterval:(NSTimeInterval)timeoutInterval {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
+    _timeoutInterval = timeoutInterval;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
 }
 
 #pragma mark -
