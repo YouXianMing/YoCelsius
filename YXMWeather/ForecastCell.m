@@ -213,8 +213,6 @@
 - (void)show {
     [UIView animateWithDuration:0.5 animations:^{
         self.weekDayInfoLabel.x = 17;
-        
-//        self.dateLabel.x = 17;
     }];
 }
 
@@ -223,8 +221,6 @@
  */
 - (void)hide {
     self.weekDayInfoLabel.x = 17 + 10;
-    
-//    self.dateLabel.x = 17 - 5;
 }
 
 @end

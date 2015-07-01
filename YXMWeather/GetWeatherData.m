@@ -11,14 +11,19 @@
 #import "CurrentWeatherData.h"
 
 
-@interface GetWeatherData ()
+#define  WEATHER  @"WEATHER"
+#define  DAILY    @"DAILY"
 
 
-@property (nonatomic, strong) NSMutableArray     *requestArray;
+@interface GetWeatherData () <NetworkingDelegate>
+
+
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
 
-@property (nonatomic)         BOOL                getDataFailed; // 获取数据失败
+
+@property (nonatomic, strong) Networking         *networkWeather;
+@property (nonatomic, strong) Networking         *networkDaily;
 
 
 @end
@@ -26,98 +31,90 @@
 
 @implementation GetWeatherData
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.requestArray = [NSMutableArray array];
-    }
-    return self;
-}
 
-- (void)requestOne {
+- (void)startGetLocationWeatherData {
     
     if (self.location == nil) {
-        NSLog(@"先定位");
         return;
     }
     
     NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
     
-    // 网络请求1
-    AFHTTPRequestOperation *operation = \
-    [Networking GET:@"http://api.openweathermap.org/data/2.5/weather"
-         parameters:@{@"lat"  : latStr,
-                      @"lon"  : lonStr}
-    timeoutInterval:nil
-        requestType:HTTPRequestType
-       responseType:JSONResponseType
-            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:responseObject];
-                if (currentData.cod.integerValue == 200) {
-                    self.currentWeatherData = currentData;
-                    
-                    // 再执行请求2
-                    [self requestTwo];
-                } else {
-                    NSLog(@"请求1结果异常");
-                    [_delegate weatherData:nil
-                                    sucess:NO];
-                }
-                
-            }
-            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"请求1超时");
-                [_delegate weatherData:nil
-                                sucess:NO];
-            }];
-    [self.requestArray addObject:operation];
-}
-
-- (void)requestTwo {
-    AFHTTPRequestOperation *operation = \
-    [Networking GET:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-         parameters:@{@"id"   : self.currentWeatherData.cityId,
-                      @"cnt"  : @"14"}
-    timeoutInterval:nil
-        requestType:HTTPRequestType
-       responseType:JSONResponseType
-            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:responseObject];
-                if (currentData.cod.integerValue == 200) {
-                    self.currentConditions = currentData;
-                    [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
-                                             @"WeatherConditions" : self.currentConditions}
-                                    sucess:YES];
-                } else {
-                    [_delegate weatherData:nil
-                                    sucess:NO];
-                }
-
-            }
-            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"请求2超时");
-                [_delegate weatherData:nil
-                                sucess:NO];
-            }];
+    // 请求1
+    self.networkWeather                   = [[Networking alloc] init];
+    self.networkWeather.urlString         = @"http://api.openweathermap.org/data/2.5/weather";
+    self.networkWeather.requestDictionary = @{@"lat"  : latStr,
+                                              @"lon"  : lonStr};
+    self.networkWeather.delegate          = self;
+    self.networkWeather.flag              = WEATHER;
+    self.networkWeather.RequestMethod     = GET_METHOD;
+    self.networkWeather.requestType       = HTTPRequestType;
+    self.networkWeather.responseType      = JSONResponseType;
+    [self.networkWeather startRequest];
     
-    [self.requestArray addObject:operation];
+    //  请求2
+    self.networkDaily                   = [[Networking alloc] init];
+    self.networkDaily.urlString         = @"http://api.openweathermap.org/data/2.5/forecast/daily";
+    self.networkDaily.delegate          = self;
+    self.networkDaily.flag              = DAILY;
+    self.networkDaily.RequestMethod     = GET_METHOD;
+    self.networkDaily.requestType       = HTTPRequestType;
+    self.networkDaily.responseType      = JSONResponseType;
 }
 
-- (void)startGetLocationWeatherData {
-    [self requestOne];
-    
-    return;
-}
 
-/**
- *  取消请求
- */
-- (void)cancelRequest {
-    for (int i = 0; i < self.requestArray.count; i++) {
-        AFHTTPRequestOperation *operation = self.requestArray[i];
-        [operation cancel];
+- (void)requestSucess:(Networking *)networking data:(id)data {
+
+    if ([networking.flag isEqualToString:WEATHER]) {
+        // 请求1结果
+        
+        CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
+        if (currentData.cod.integerValue == 200) {
+            
+            self.currentWeatherData = currentData;
+            
+            self.networkDaily.requestDictionary = @{@"id"   : self.currentWeatherData.cityId,
+                                                    @"cnt"  : @"14"};
+            [self.networkDaily startRequest];
+            
+            
+        } else {
+
+            [_delegate weatherData:nil
+                            sucess:NO];
+        }
+        
+        
+    } else if ([networking.flag isEqualToString:DAILY]) {
+        // 请求2结果
+        
+        CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:data];
+        if (currentData.cod.integerValue == 200) {
+            self.currentConditions = currentData;
+            [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
+                                     @"WeatherConditions" : self.currentConditions}
+                            sucess:YES];
+        } else {
+            
+            [_delegate weatherData:nil
+                            sucess:NO];
+        }
+        
     }
+    
+}
+
+- (void)requestFailed:(Networking *)networking error:(NSError *)error {
+
+    [_delegate weatherData:nil
+                    sucess:NO];
+}
+
+- (void)userCanceledFailed:(Networking *)networking error:(NSError *)error {
+
+    [_delegate weatherData:nil
+                    sucess:NO];
 }
 
 @end
