@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // 支持作者 (大家都是做开发的，知道开发应用的辛酸，如果用了该源码学习，请用你的手机打开以下网址，去appStore下载安装，然后给个好评，您的支持是作者继续开发的动力)
+    // 支持作者 (大家都是做开发的，知道开发应用的辛酸，如果用了该源码学习，请用你的手机打开以下网址，去appStore下载安装，然后给个好评，您的支持是作者继续开源代码的动力)
     /*
        作者联系方式：
         
