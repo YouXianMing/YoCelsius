@@ -690,6 +690,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100C32E61B464BD600FDB932 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				10E16A3F1A96C66D00200B79 /* GlobalCoreData.h */,
+				10E16A401A96C66D00200B79 /* GlobalCoreData.m */,
+				10E169C61A9699F700200B79 /* CityCode.h */,
+				10E169C71A9699F700200B79 /* CityCode.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		10AB28841A908EE800CE545D /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1382,12 +1393,8 @@
 				10AB28841A908EE800CE545D /* AFNetworking */,
 				10DD09FA1B441FE7000B3EE7 /* Networking */,
 				10E16A381A96B14700200B79 /* shareInstance */,
-				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 				10DD0A081B4425F7000B3EE7 /* Log */,
-				10E16A3F1A96C66D00200B79 /* GlobalCoreData.h */,
-				10E16A401A96C66D00200B79 /* GlobalCoreData.m */,
-				10E169C61A9699F700200B79 /* CityCode.h */,
-				10E169C71A9699F700200B79 /* CityCode.m */,
+				100C32E61B464BD600FDB932 /* CoreData */,
 				10DD0A091B442615000B3EE7 /* WeatherNumberMeaningTransform */,
 				10DD79141AA9D89E00051B0D /* ARCGPathFromString */,
 				10E169D71A96A91200200B79 /* MagicalRecord */,
@@ -1408,6 +1415,7 @@
 				10AB28981A908EE800CE545D /* UIKit+AFNetworking */,
 				10E1F53C1A908C3200AED5D6 /* Images.xcassets */,
 				10AB28831A908ECC00CE545D /* AFNetworking.pch */,
+				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 				10E1F52F1A908C3200AED5D6 /* Supporting Files */,
 			);
 			path = YXMWeather;

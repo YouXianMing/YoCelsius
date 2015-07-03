@@ -29,6 +29,7 @@
        ------------------------------------------
      
        苹果下载地址：  https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8
+       本人讲解视频：  http://www.cnblogs.com/YouXianMing/p/4608526.html
      */
     
     // 初始化
