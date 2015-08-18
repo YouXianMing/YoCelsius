@@ -84,19 +84,8 @@
 }
 
 - (void)buildView {
-    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.90f];
     
-    /**
-     if (iPhone4_4s || iPhone5_5s) {
-     
-     } else if (iPhone6) {
-     
-     } else if (iPhone6_plus) {
-     
-     } else {
-     
-     }
-     */
+    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.90f];
     
     // 基站信息
     self.baseLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, Width - 8, 12.f)];
@@ -295,13 +284,10 @@
 }
 
 - (void)show {
+    
     CGFloat duration = 1.75f;
     
-    
-    
     EMitterType type = [WeatherNumberMeaningTransform emitterTypeWithNumber:self.weatherNumber];
-//    EMitterType type = [WeatherNumberMeaningTransform emitterTypeWithNumber:@(600)];
-    
     
     // 表述类型
     if (type == __RAIN) {
@@ -318,13 +304,8 @@
         
     }
     
-    
-    
-    
-    
-    
-    
     [UIView animateWithDuration:duration animations:^{
+        
         self.baseLabel.frame = self.baseLabelStoreValue.midRect;
         self.baseLabel.alpha = 1.f;
         

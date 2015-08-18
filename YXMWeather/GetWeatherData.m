@@ -9,11 +9,14 @@
 #import "GetWeatherData.h"
 #import "CurrentConditions.h"
 #import "CurrentWeatherData.h"
+#import "GetNetworking.h"
 
-
-#define  WEATHER  @"WEATHER"
-#define  DAILY    @"DAILY"
-
+typedef enum : NSUInteger {
+    
+    WEATHER = 0x11,
+    DAILY,
+    
+} EFlag;
 
 @interface GetWeatherData () <NetworkingDelegate>
 
@@ -42,31 +45,30 @@
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
     
     // 请求1
-    self.networkWeather                   = [[Networking alloc] init];
-    self.networkWeather.urlString         = @"http://api.openweathermap.org/data/2.5/weather";
-    self.networkWeather.requestDictionary = @{@"lat"  : latStr,
-                                              @"lon"  : lonStr};
-    self.networkWeather.delegate          = self;
-    self.networkWeather.flag              = WEATHER;
-    self.networkWeather.RequestMethod     = GET_METHOD;
-    self.networkWeather.requestType       = HTTPRequestType;
-    self.networkWeather.responseType      = JSONResponseType;
+    self.networkWeather = [GetNetworking networkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
+                                               requestDictionary:@{@"lat"  : latStr,
+                                                                   @"lon"  : lonStr}
+                                                        delegate:self
+                                                 timeoutInterval:nil
+                                                             tag:WEATHER
+                                            requestSerialization:nil
+                                           responseSerialization:[AFJSONResponseSerializer serializer]];
     [self.networkWeather startRequest];
     
     //  请求2
-    self.networkDaily                   = [[Networking alloc] init];
-    self.networkDaily.urlString         = @"http://api.openweathermap.org/data/2.5/forecast/daily";
-    self.networkDaily.delegate          = self;
-    self.networkDaily.flag              = DAILY;
-    self.networkDaily.RequestMethod     = GET_METHOD;
-    self.networkDaily.requestType       = HTTPRequestType;
-    self.networkDaily.responseType      = JSONResponseType;
+    self.networkDaily = [GetNetworking networkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+                                             requestDictionary:nil
+                                                      delegate:self
+                                               timeoutInterval:nil
+                                                           tag:DAILY
+                                          requestSerialization:nil
+                                         responseSerialization:[AFJSONResponseSerializer serializer]];
 }
 
 
 - (void)requestSucess:(Networking *)networking data:(id)data {
 
-    if ([networking.flag isEqualToString:WEATHER]) {
+    if (networking.tag == WEATHER) {
         // 请求1结果
         
         CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
@@ -78,7 +80,6 @@
                                                     @"cnt"  : @"14"};
             [self.networkDaily startRequest];
             
-            
         } else {
 
             [_delegate weatherData:nil
@@ -86,7 +87,7 @@
         }
         
         
-    } else if ([networking.flag isEqualToString:DAILY]) {
+    } else if (networking.tag == DAILY) {
         // 请求2结果
         
         CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:data];

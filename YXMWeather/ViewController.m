@@ -66,11 +66,6 @@
     // 获取10天天气
     // http://api.openweathermap.org/data/2.5/forecast/daily?lat=39.907501&lon=116.397232&cnt=10
 
-    
-    
-
-    
-    
     // 天气的view
     self.weatherView                     = [[WeatherView alloc] initWithFrame:self.view.bounds];
     self.weatherView.layer.masksToBounds = YES;
@@ -159,6 +154,7 @@
 }
 
 - (void)mapManager:(MapManager *)manager didFailed:(NSError *)error {
+    
     NSLog(@"定位失败");
     [self.upDatingView showFailed];
     [GCDQueue executeInMainQueue:^{
@@ -166,13 +162,9 @@
         [self.upDatingView hide];
     } afterDelaySecs:2.5f];
     
-    
-    
-    
     [GCDQueue executeInMainQueue:^{
         [self.failedView show];
     } afterDelaySecs:2.5f];
-    
     
     [GCDQueue executeInMainQueue:^{
         [[TWMessageBarManager sharedInstance] \
@@ -184,6 +176,7 @@
 }
 
 - (void)mapManagerServerClosed:(MapManager *)manager {
+    
     [GCDQueue executeInMainQueue:^{
         [self.fadeBlackView hide];
         [self.upDatingView hide];
@@ -192,7 +185,6 @@
     [GCDQueue executeInMainQueue:^{
         [self.failedView show];
     } afterDelaySecs:1.5f];
-    
     
     [GCDQueue executeInMainQueue:^{
         [[TWMessageBarManager sharedInstance] \
@@ -209,6 +201,7 @@
  *  @param object 过滤掉干扰项目
  */
 - (void)delayRunEvent:(id)object {
+    
     self.getWeatherData.location = object;
     [self.getWeatherData startGetLocationWeatherData];
 }
@@ -220,13 +213,13 @@
  *  @param sucess YES表示成功,NO表示失败
  */
 - (void)weatherData:(id)object sucess:(BOOL)sucess {
+    
     if (sucess) {
         NSLog(@"%@", object);
         
         // 获取数据
         CurrentWeatherData *data       = [object valueForKey:@"WeatherData"];
         CurrentConditions  *conditions = [object valueForKey:@"WeatherConditions"];
-        
         
         // 先获取温度
         self.weatherView.weahterData       = data;
@@ -259,12 +252,12 @@
             [self.failedView show];
         } afterDelaySecs:2.51f];
         
-        
         [self showErrorInfo];
     }
 }
 
 - (void)showErrorInfo {
+    
     [GCDQueue executeInMainQueue:^{
         [[TWMessageBarManager sharedInstance] \
          showMessageWithTitle:@"Network Unreachable"
@@ -276,6 +269,7 @@
 
 
 - (void)pressEvent:(FailedLongPressView *)view {
+    
     [self.failedView hide];
     
     [self getLocationAndFadeShow];
