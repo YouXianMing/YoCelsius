@@ -61,6 +61,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     // 获取10天天气
@@ -146,6 +147,7 @@
 }
 
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location {
+    
     NSLog(@"定位成功 - 并开始获取网路数据");
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self performSelector:@selector(delayRunEvent:)
@@ -178,20 +180,26 @@
 - (void)mapManagerServerClosed:(MapManager *)manager {
     
     [GCDQueue executeInMainQueue:^{
+        
         [self.fadeBlackView hide];
         [self.upDatingView hide];
+        
     } afterDelaySecs:1.5];
     
     [GCDQueue executeInMainQueue:^{
+        
         [self.failedView show];
+        
     } afterDelaySecs:1.5f];
     
     [GCDQueue executeInMainQueue:^{
+        
         [[TWMessageBarManager sharedInstance] \
          showMessageWithTitle:@"Failed to locate"
          description:@"Please turn on your Locations Service."
          type:TWMessageBarMessageTypeError
          callback:^{}];
+        
     } afterDelaySecs:0.f];
 }
 

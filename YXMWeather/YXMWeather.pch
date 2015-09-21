@@ -34,8 +34,6 @@
 #import "YXEasing.h"
 #import "POP.h"
 #import "NSString+File.h"
-#import "MagicalRecord.h"
-#import "CoreData+MagicalRecord.h"
 #import "SharedInstance.h"
 #import "SimpleNSLog.h"
 #endif
