@@ -254,16 +254,6 @@
     self.cityTitleView.utcSec             = self.weahterData.dt.integerValue; // 更新时间
     self.cityTitleView.weatherNumber      = weather.weatherId;
 
-//    NSDate *utcDate            = [NSDate dateWithTimeIntervalSince1970:self.weahterData.dt.integerValue];
-//    NSDateFormatter *formatter = [NSDateFormatter new];
-//    [formatter setDateFormat:@"yyyy:MM:dd hh:mm a EEEE MMMM dd"];
-//    NSLog(@"数据更新时间 ===   %@", [formatter stringFromDate:utcDate]);
-//    [formatter setDateFormat:@"yyyy.mm.dd"];
-//    NSLog(@"数据更新时间 ===   %@", [formatter stringFromDate:utcDate]);
-//    [formatter setDateFormat:@"hh:mm"];
-//    NSLog(@"数据更新时间 ===   %@", [formatter stringFromDate:utcDate]);
-    
-    
     // 天气图标
     self.weatherIconView.weatherNumber = weather.weatherId;
 
@@ -348,37 +338,6 @@
             [_delegate pullDownToRefreshData];
         }
     }
-    
-//    if (scrollView.contentOffset.y >= 100) {
-//        
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//        
-//        
-//        CGPoint startPoint = self.tableView.center;
-//        CGPoint endPoint   = CGPointMake(self.tableView.middleX, self.tableView.middleY - Height);
-//        
-//        
-//        CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
-//        keyAnimation.keyPath              = @"position";
-//        keyAnimation.values               = [YXEasing calculateFrameFromPoint:startPoint
-//                                                                      toPoint:endPoint
-//                                                                         func:CubicEaseIn
-//                                                                   frameCount:1.f * 30.f];
-//        keyAnimation.duration             = 1.f;
-//        [self.tableView.layer addAnimation:keyAnimation forKey:nil];
-//        
-//        
-//        // 执行透明度动画
-//        [UIView animateWithDuration:0.95 animations:^{
-//            self.tableView.alpha = 0.f;
-//        }];
-//        
-//        
-//        [GCDQueue executeInMainQueue:^{
-//            scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//            self.tableView.alpha = 1.f;
-//        } afterDelaySecs:1.1];
-//    }
 }
 
 

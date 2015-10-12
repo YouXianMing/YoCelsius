@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E846FA1C5F9077375A75267DFE4F87EDFC6399C0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E846FA1C5F9077375A75267DFE4F87EDFC6399C0" : 0,
+    "5A04178CB2ACB20445C4D4E86111C1F7A89B3322" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5D1D632A-9B19-495C-8AB1-E579F0B31BFF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E846FA1C5F9077375A75267DFE4F87EDFC6399C0" : "YoCelsius",
+    "5A04178CB2ACB20445C4D4E86111C1F7A89B3322" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "YXMWeather",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "YXMWeather.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/YouXianMing\/Swift-GCD.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5A04178CB2ACB20445C4D4E86111C1F7A89B3322"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/YouXianMing\/YoCelsius.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E846FA1C5F9077375A75267DFE4F87EDFC6399C0"
+    }
+  ]
+}

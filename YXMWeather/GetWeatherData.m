@@ -11,6 +11,8 @@
 #import "CurrentWeatherData.h"
 #import "GetNetworking.h"
 
+static NSString *appIdKey = @"8781e4ef1c73ff20a180d3d7a42a8c04";
+
 typedef enum : NSUInteger {
     
     WEATHER = 0x11,
@@ -43,11 +45,12 @@ typedef enum : NSUInteger {
     
     NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
-    
+        
     // 请求1
     self.networkWeather = [GetNetworking networkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
-                                               requestDictionary:@{@"lat"  : latStr,
-                                                                   @"lon"  : lonStr}
+                                               requestDictionary:@{@"lat"   : latStr,
+                                                                   @"lon"   : lonStr,
+                                                                   @"APPID" : appIdKey}
                                                         delegate:self
                                                  timeoutInterval:nil
                                                              tag:WEATHER
@@ -76,8 +79,9 @@ typedef enum : NSUInteger {
             
             self.currentWeatherData = currentData;
             
-            self.networkDaily.requestDictionary = @{@"id"   : self.currentWeatherData.cityId,
-                                                    @"cnt"  : @"14"};
+            self.networkDaily.requestDictionary = @{@"id"    : self.currentWeatherData.cityId,
+                                                    @"cnt"   : @"14",
+                                                    @"APPID" : appIdKey};
             [self.networkDaily startRequest];
             
         } else {
