@@ -111,13 +111,16 @@
 - (void)pullUpEventWithData:(CurrentConditions *)condition {
     
     [GCDQueue executeInMainQueue:^{
+        
         ForecastController *forecastCV    = [ForecastController new];
         forecastCV.transitioningDelegate  = self;
         forecastCV.modalPresentationStyle = UIModalPresentationCustom;
         forecastCV.weatherCondition       = condition;
+        
         [self presentViewController:forecastCV
                            animated:YES
                          completion:^{}];
+        
     } afterDelaySecs:0.05f];
 }
 
@@ -125,8 +128,8 @@
  *  下拉更新数据
  */
 - (void)pullDownToRefreshData {
-    NSLog(@"下拉获取数据");
     
+    NSLog(@"下拉获取数据");
     [self getLocationAndFadeShow];
 }
 
@@ -141,6 +144,7 @@
 }
 
 - (void)getCityIdAndFadeShow {
+    
     // 显示出等待页面
     [self.fadeBlackView show];
     [self.upDatingView show];
@@ -159,21 +163,28 @@
     
     NSLog(@"定位失败");
     [self.upDatingView showFailed];
+    
     [GCDQueue executeInMainQueue:^{
+        
         [self.fadeBlackView hide];
         [self.upDatingView hide];
+        
     } afterDelaySecs:2.5f];
     
     [GCDQueue executeInMainQueue:^{
+        
         [self.failedView show];
+        
     } afterDelaySecs:2.5f];
     
     [GCDQueue executeInMainQueue:^{
+        
         [[TWMessageBarManager sharedInstance] \
          showMessageWithTitle:@"Failed to locate"
          description:@"Sorry, temporarily unable to locate your position."
          type:TWMessageBarMessageTypeError
          callback:^{}];
+        
     } afterDelaySecs:1.f];
 }
 
@@ -223,6 +234,7 @@
 - (void)weatherData:(id)object sucess:(BOOL)sucess {
     
     if (sucess) {
+        
         NSLog(@"%@", object);
         
         // 获取数据
@@ -237,13 +249,17 @@
         [self.weatherView hide];
         
         [GCDQueue executeInMainQueue:^{
+            
             [self.weatherView show];
             [self.fadeBlackView hide];
             [self.upDatingView hide];
+            
         } afterDelaySecs:1.f];
         
         [GCDQueue executeInMainQueue:^{
+            
             [self.failedView remove];
+            
         } afterDelaySecs:1.f];
         
     } else {
@@ -251,13 +267,17 @@
         
         [self.upDatingView showFailed];
         [GCDQueue executeInMainQueue:^{
+            
             [self.fadeBlackView hide];
             [self.upDatingView hide];
+            
         } afterDelaySecs:2.51f];
         
         
         [GCDQueue executeInMainQueue:^{
+            
             [self.failedView show];
+            
         } afterDelaySecs:2.51f];
         
         [self showErrorInfo];
