@@ -1,0 +1,41 @@
+//
+//  PrefixHeader.pch
+//  TestPch
+//
+//  Created by YouXianMing on 14-9-26.
+//  Copyright (c) 2014年 YouXianMing. All rights reserved.
+//
+
+#ifndef AFNetworking_PCH
+#define AFNetworking_PCH
+
+/*-------------------------------------------
+ * $(SRCROOT)/$(PROJECT_NAME)/YoCelsius.pch *
+ -------------------------------------------*/
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
+#import "Networking.h"
+#import "AppColor.h"
+#import "UIView+SetRect.h"
+#import "WxHxD.h"
+#import "FontInfomation.h"
+#import "AddedFont.h"
+#import "GCD.h"
+#import "YXEasing.h"
+#import "POP.h"
+#import "NSString+File.h"
+#import "SharedInstance.h"
+#import "SimpleNSLog.h"
+#endif
+
+#endif
