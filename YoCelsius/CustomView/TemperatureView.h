@@ -18,9 +18,7 @@
 @property (nonatomic) CGFloat temperature;
 
 - (void)buildView;
-
 - (void)show;
 - (void)hide;
-
 
 @end

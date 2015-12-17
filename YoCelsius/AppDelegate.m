@@ -32,12 +32,12 @@
        ------------------------------------------
      
        苹果下载地址： https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8
-       本人讲解视频： http://www.cnblogs.com/YouXianMing/p/4608526.html
+       本人讲解视频： http://my.jikexueyuan.com/YouXianMing/record/
      
        = 注意 =
      
        1. 请用真机测试
-       2. 最新编译无警告版本 Xcode Version 7.1 (7B91b)
+       2. 最新编译无警告版本 Xcode Version 7.2 (7C68)
      */
     
     // 初始化

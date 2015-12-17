@@ -11,20 +11,14 @@
 #import "TemperatureView.h"
 #import "TemperatureCountLabel.h"
 #import "TitleMoveLabel.h"
-
-@interface TemperatureViewStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation TemperatureViewStoreValue
-@end
+#import "CGRectStoreValue.h"
 
 @interface TemperatureView ()
-@property (nonatomic, strong) TemperatureCountLabel     *countLabel;
-@property (nonatomic, strong) TemperatureViewStoreValue *countLabelStoreValue;
 
-@property (nonatomic, strong) TitleMoveLabel            *titleMoveLabel;
+@property (nonatomic, strong) TemperatureCountLabel  *countLabel;
+@property (nonatomic, strong) CGRectStoreValue       *countLabelStoreValue;
+@property (nonatomic, strong) TitleMoveLabel         *titleMoveLabel;
+
 @end
 
 @implementation TemperatureView
@@ -38,7 +32,7 @@
     self.countLabel    = [[TemperatureCountLabel alloc] initWithFrame:rect];
     self.countLabel.center = self.middlePoint;
     [self addSubview:self.countLabel];
-    self.countLabelStoreValue = [TemperatureViewStoreValue new];
+    self.countLabelStoreValue = [CGRectStoreValue new];
     self.countLabelStoreValue.midRect = self.countLabel.frame;
     self.countLabel.x += 10;
     self.countLabelStoreValue.startRect = self.countLabel.frame;

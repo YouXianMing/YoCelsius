@@ -12,54 +12,17 @@
 #import "ThreeLineView.h"
 #import "WindSpeedCountLabel.h"
 #import "TitleMoveLabel.h"
-
-
-@interface LineStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation LineStoreValue
-@end
-
-
-
-@interface TilteLabelStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation TilteLabelStoreValue
-@end
-
-
-@interface WindSpeedCountLabelStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation WindSpeedCountLabelStoreValue
-@end
-
+#import "CGRectStoreValue.h"
 
 @interface WindSpeedView ()
 
-@property (nonatomic, strong) ThreeLineView   *threeLineView;
-
-
-@property (nonatomic, strong) UIView          *line;
-@property (nonatomic, strong) LineStoreValue  *lineStoreValue;
-
-
-@property (nonatomic, strong) UIView          *circleView;
-
-
-@property (nonatomic, strong) TitleMoveLabel        *titleMoveLabel;
-
-
-@property (nonatomic, strong) WindSpeedCountLabel            *windCountLabel;
-@property (nonatomic, strong) WindSpeedCountLabelStoreValue  *windCountLabelStoreValue;
-
+@property (nonatomic, strong) ThreeLineView       *threeLineView;
+@property (nonatomic, strong) UIView              *line;
+@property (nonatomic, strong) CGRectStoreValue    *lineStoreValue;
+@property (nonatomic, strong) UIView              *circleView;
+@property (nonatomic, strong) TitleMoveLabel      *titleMoveLabel;
+@property (nonatomic, strong) WindSpeedCountLabel *windCountLabel;
+@property (nonatomic, strong) CGRectStoreValue    *windCountLabelStoreValue;
 
 @end
 
@@ -73,18 +36,25 @@
     CGRect windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
     
     if (iPhone4_4s || iPhone5_5s) {
+        
         windOffsetX = 40;
         windOffsetY = 40;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
+        
     } else if (iPhone6) {
+        
         windOffsetX = 40;
         windOffsetY = 50;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 65, 65);
+        
     } else if (iPhone6_plus) {
+        
         windOffsetX = 40;
         windOffsetY = 55;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 70, 70);
+        
     } else {
+        
         windOffsetX = 40;
         windOffsetY = 40;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
@@ -101,18 +71,24 @@
     
     // 创建出风速变化的标签
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 120, 93, 15)];
+        
     } else if (iPhone6) {
+        
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 143, 93, 15)];
+        
     } else if (iPhone6_plus) {
+        
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 155, 93, 15)];
+        
     } else {
+        
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(15, 90, 93, 15)];
     }
     
-    
     [self addSubview:self.windCountLabel];
-    self.windCountLabelStoreValue = [WindSpeedCountLabelStoreValue new];
+    self.windCountLabelStoreValue = [CGRectStoreValue new];
     self.windCountLabelStoreValue.midRect = self.windCountLabel.frame;
     self.windCountLabel.x += 10;
     self.windCountLabelStoreValue.startRect = self.windCountLabel.frame;
@@ -125,13 +101,20 @@
     
     // 创建出支柱
     if (iPhone4_4s || iPhone5_5s) {
-        self.line         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
+        
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
+        
     } else if (iPhone6) {
-        self.line         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 70.f)];
+        
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 70.f)];
+        
     } else if (iPhone6_plus) {
-        self.line         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 75.f)];
+        
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 75.f)];
+        
     } else {
-        self.line         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
+        
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
     }
 
     [self addSubview:self.line];
@@ -143,7 +126,7 @@
     
     CGFloat gapFromCenter = 3.f;
     
-    self.lineStoreValue = [LineStoreValue new];
+    self.lineStoreValue = [CGRectStoreValue new];
     CGRect startRect = CGRectMake(self.line.x,
                                   self.line.y + self.line.height + gapFromCenter * 2 * 2,
                                   self.line.width,
@@ -173,6 +156,7 @@
 }
 
 - (void)show {
+    
     CGFloat duration = 1.5;
     
     // 扇叶动画
@@ -190,6 +174,7 @@
     
     // 支柱动画 + 圆动画 + 文本动画 + 标签数字动画
     [UIView animateWithDuration:duration animations:^{
+        
         self.line.alpha = 1.f;
         self.line.frame = self.lineStoreValue.midRect;
         
@@ -201,6 +186,7 @@
 }
 
 - (void)hide {
+    
     CGFloat duration = 0.75;
     
     // 扇叶动画
@@ -214,6 +200,7 @@
 
     // 支柱动画 + 圆动画
     [UIView animateWithDuration:duration animations:^{
+        
         self.line.alpha = 0.f;
         self.line.frame = self.lineStoreValue.endRect;
         
@@ -221,9 +208,10 @@
         
         self.windCountLabel.frame = self.windCountLabelStoreValue.endRect;
         self.windCountLabel.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        self.line.frame = self.lineStoreValue.startRect;
         
+    } completion:^(BOOL finished) {
+        
+        self.line.frame           = self.lineStoreValue.startRect;
         self.windCountLabel.frame = self.windCountLabelStoreValue.startRect;
     }];
 }

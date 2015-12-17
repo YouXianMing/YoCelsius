@@ -13,12 +13,13 @@
 #import "CurrentConditions.h"
 
 @protocol WeatherViewDelegate <NSObject>
+
 - (void)pullUpEventWithData:(CurrentConditions *)condition;
 - (void)pullDownToRefreshData;
+
 @end
 
 @interface WeatherView : UIView
-
 
 /**
  *  代理

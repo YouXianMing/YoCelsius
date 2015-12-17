@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 100BFAE41C22A346008C5523 /* CGRectStoreValue.m */; };
 		104405DD1AA14AF4008DF810 /* SnowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405D81AA14AF4008DF810 /* SnowView.m */; };
 		104405DE1AA14AF4008DF810 /* CALayer+MaskLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405DA1AA14AF4008DF810 /* CALayer+MaskLayer.m */; };
 		104405DF1AA14AF4008DF810 /* EmitterLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405DC1AA14AF4008DF810 /* EmitterLayerView.m */; };
@@ -167,6 +168,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100BFAE31C22A346008C5523 /* CGRectStoreValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectStoreValue.h; sourceTree = "<group>"; };
+		100BFAE41C22A346008C5523 /* CGRectStoreValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRectStoreValue.m; sourceTree = "<group>"; };
 		104405D71AA14AF4008DF810 /* SnowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowView.h; sourceTree = "<group>"; };
 		104405D81AA14AF4008DF810 /* SnowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowView.m; sourceTree = "<group>"; };
 		104405D91AA14AF4008DF810 /* CALayer+MaskLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+MaskLayer.h"; sourceTree = "<group>"; };
@@ -857,6 +860,8 @@
 				10E1F5371A908C3200AED5D6 /* ViewController.m */,
 				10BD57061A9E9D4200A6F83D /* ForecastController.h */,
 				10BD57071A9E9D4200A6F83D /* ForecastController.m */,
+				100BFAE31C22A346008C5523 /* CGRectStoreValue.h */,
+				100BFAE41C22A346008C5523 /* CGRectStoreValue.m */,
 				10DD0A061B4425BC000B3EE7 /* ForecastController - Source */,
 			);
 			name = Controllers;
@@ -1206,6 +1211,7 @@
 				10AB28D41A908F3F00CE545D /* Coord.m in Sources */,
 				10D87D0D1A940DD7007CD3A5 /* POPAnimationRuntime.mm in Sources */,
 				10DD79191AA9D89E00051B0D /* ARCGPathFromString.m in Sources */,
+				100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
 				10D87D131A940DD7007CD3A5 /* POPDecayAnimation.mm in Sources */,
 				10F653071B830D5F004E45FC /* UploadNetworking.m in Sources */,

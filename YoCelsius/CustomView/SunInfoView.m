@@ -12,28 +12,19 @@
 #import "SunriseView.h"
 #import "SunsetView.h"
 #import "TitleMoveLabel.h"
-
-
-@interface SunInfoStoreValue : NSObject
-@property (nonatomic) CGRect  startRect;
-@property (nonatomic) CGRect  midRect;
-@property (nonatomic) CGRect  endRect;
-@end
-@implementation SunInfoStoreValue
-@end
-
+#import "CGRectStoreValue.h"
 
 @interface SunInfoView ()
 
-@property (nonatomic, strong) TitleMoveLabel     *movetitleLabel;
+@property (nonatomic, strong) TitleMoveLabel    *movetitleLabel;
 
-@property (nonatomic, strong) SunriseView        *sunriseView;
-@property (nonatomic, strong) UILabel            *sunriseTimeLabel;
-@property (nonatomic, strong) SunInfoStoreValue  *sunriseViewStoreValue;
+@property (nonatomic, strong) SunriseView       *sunriseView;
+@property (nonatomic, strong) UILabel           *sunriseTimeLabel;
+@property (nonatomic, strong) CGRectStoreValue  *sunriseViewStoreValue;
 
-@property (nonatomic, strong) SunsetView         *sunsetView;
-@property (nonatomic, strong) UILabel            *sunsetTimeLabel;
-@property (nonatomic, strong) SunInfoStoreValue  *sunsetViewStoreValue;
+@property (nonatomic, strong) SunsetView        *sunsetView;
+@property (nonatomic, strong) UILabel           *sunsetTimeLabel;
+@property (nonatomic, strong) CGRectStoreValue  *sunsetViewStoreValue;
 
 @end
 
@@ -68,7 +59,7 @@
     }
     [self.sunriseView buildView];
     [self addSubview:self.sunriseView];
-    self.sunriseViewStoreValue = [SunInfoStoreValue new];
+    self.sunriseViewStoreValue = [CGRectStoreValue new];
     self.sunriseViewStoreValue.midRect = self.sunriseView.frame;
     self.sunriseView.y += 10;
     self.sunriseViewStoreValue.startRect = self.sunriseView.frame;
@@ -101,7 +92,7 @@
     }
     [self.sunsetView buildView];
     [self addSubview:self.sunsetView];
-    self.sunsetViewStoreValue = [SunInfoStoreValue new];
+    self.sunsetViewStoreValue = [CGRectStoreValue new];
     self.sunsetViewStoreValue.midRect = self.sunsetView.frame;
     self.sunsetView.y -= 10;
     self.sunsetViewStoreValue.startRect = self.sunsetView.frame;

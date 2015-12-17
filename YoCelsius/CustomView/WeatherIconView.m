@@ -12,6 +12,7 @@
 #import "TitleMoveLabel.h"
 #import "UIView+GlowView.h"
 #import "WeatherNumberMeaningTransform.h"
+#import "CGRectStoreValue.h"
 
 
 
@@ -26,9 +27,9 @@
 
 
 @interface WeatherIconView ()
-@property (nonatomic, strong) TitleMoveLabel              *titleMoveLabel;
-@property (nonatomic, strong) UILabel                     *glowLabel;
-@property (nonatomic, strong) WeatherIconViewStoreValue   *storeValue;
+@property (nonatomic, strong) TitleMoveLabel     *titleMoveLabel;
+@property (nonatomic, strong) UILabel            *glowLabel;
+@property (nonatomic, strong) CGRectStoreValue   *storeValue;
 @end
 
 @implementation WeatherIconView
@@ -40,34 +41,40 @@
     self.titleMoveLabel = [TitleMoveLabel withText:@"Weather"];
     [self addSubview:self.titleMoveLabel];
     
-    self.storeValue = [WeatherIconViewStoreValue new];
+    self.storeValue = [CGRectStoreValue new];
 }
 
 /**
  *  显示
  */
 - (void)show {
+    
     [self.titleMoveLabel show];
-    
-    
     
     // 创建
     self.glowLabel               = [[UILabel alloc] initWithFrame:self.bounds];
     self.glowLabel.textAlignment = NSTextAlignmentCenter;
+    
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:80];
         self.glowLabel.y         = 10;
         self.glowLabel.x         = 5;
+        
     } else if (iPhone6) {
+        
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:110];
         self.glowLabel.y         = 14;
         self.glowLabel.x         = 8;
 
     } else if (iPhone6_plus) {
+        
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:110];
         self.glowLabel.y         = 14;
         self.glowLabel.x         = 8;
+        
     } else {
+        
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:80];
     }
     
@@ -78,7 +85,6 @@
     self.storeValue.endRect      = self.glowLabel.frame;
     self.glowLabel.frame         = self.storeValue.startRect;
     
-
     self.GCDTimerInterval        = @(1.75);
     self.glowLayerOpacity        = @(1.5);
     self.glowDuration            = @(1.f);
@@ -90,11 +96,8 @@
     self.glowLabel.alpha         = 0.f;
     [self addSubview:self.glowLabel];
 
-    
-    
-    
-    
     [UIView animateWithDuration:1.75 animations:^{
+        
         self.glowLabel.alpha = 1.f;
         self.glowLabel.frame = self.storeValue.midRect;
     }];
@@ -104,12 +107,16 @@
  *  隐藏
  */
 - (void)hide {
+    
     [self.titleMoveLabel hide];
     
     [UIView animateWithDuration:0.75 animations:^{
+        
         self.glowLabel.alpha = 0.f;
         self.glowLabel.frame = self.storeValue.endRect;
+        
     } completion:^(BOOL finished) {
+        
         self.glowLabel.frame = self.storeValue.startRect;
         [self.glowLabel removeFromSuperview];
     }];

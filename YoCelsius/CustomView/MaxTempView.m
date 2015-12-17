@@ -13,41 +13,31 @@
 #import "MaxTempCountLabel.h"
 #import "MinTempContLabel.h"
 #import "TitleMoveLabel.h"
-
-@interface CenterLineViewStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation CenterLineViewStoreValue
-@end
+#import "CGRectStoreValue.h"
 
 @interface MaxTempView ()
 
 @property (nonatomic, strong) GridView  *gridView;
 
-@property (nonatomic, strong) UIView                    *centerLineView;
-@property (nonatomic, strong) CenterLineViewStoreValue  *centerLineViewStoreValue;
+@property (nonatomic, strong) UIView            *centerLineView;
+@property (nonatomic, strong) CGRectStoreValue  *centerLineViewStoreValue;
 
-@property (nonatomic, strong) UIView                    *minTempView;
-@property (nonatomic, strong) CenterLineViewStoreValue  *minTempViewStoreValue;
+@property (nonatomic, strong) UIView            *minTempView;
+@property (nonatomic, strong) CGRectStoreValue  *minTempViewStoreValue;
 
-@property (nonatomic, strong) UIView                    *maxTempView;
-@property (nonatomic, strong) CenterLineViewStoreValue  *maxTempViewStoreValue;
+@property (nonatomic, strong) UIView            *maxTempView;
+@property (nonatomic, strong) CGRectStoreValue  *maxTempViewStoreValue;
 
-@property (nonatomic, strong) UIView                    *maxCountView;
-@property (nonatomic, strong) CenterLineViewStoreValue  *maxCountViewStoreValue;
+@property (nonatomic, strong) UIView            *maxCountView;
+@property (nonatomic, strong) CGRectStoreValue  *maxCountViewStoreValue;
 
-@property (nonatomic, strong) UIView                    *minCountView;
-@property (nonatomic, strong) CenterLineViewStoreValue  *minCountViewStoreValue;
+@property (nonatomic, strong) UIView            *minCountView;
+@property (nonatomic, strong) CGRectStoreValue  *minCountViewStoreValue;
 
+@property (nonatomic, strong) MaxTempCountLabel *maxTempCountLabel;
+@property (nonatomic, strong) MinTempContLabel  *minTempCountLabel;
 
-@property (nonatomic, strong) MaxTempCountLabel         *maxTempCountLabel;
-@property (nonatomic, strong) MinTempContLabel          *minTempCountLabel;
-
-
-@property (nonatomic, strong) TitleMoveLabel            *titleMoveLabel;
-
+@property (nonatomic, strong) TitleMoveLabel    *titleMoveLabel;
 
 @end
 
@@ -85,7 +75,7 @@
     [self addSubview:self.gridView];
     
     // 中间的横条view
-    self.centerLineViewStoreValue = [CenterLineViewStoreValue new];
+    self.centerLineViewStoreValue = [CGRectStoreValue new];
     self.centerLineView = [[UIView alloc] initWithFrame:CGRectMake(0, _gridView.gridLength * 2, _gridView.gridLength * 5, 1.f)];
     self.centerLineView.backgroundColor = [UIColor blackColor];
     
@@ -100,7 +90,7 @@
     self.centerLineView.frame = self.centerLineViewStoreValue.startRect;
     
     // 最小温度
-    self.minTempViewStoreValue = [CenterLineViewStoreValue new];
+    self.minTempViewStoreValue = [CGRectStoreValue new];
     self.minTempView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 1, _gridView.gridLength * 2, _gridView.gridLength * 1, 0)];
     self.minTempView.x += gridOffsetX;
     self.minTempView.y += gridOffsetY;
@@ -114,13 +104,13 @@
     [self addSubview:self.minCountView];
     self.minCountView.x += gridOffsetX;
     self.minCountView.y += gridOffsetY;
-    self.minCountViewStoreValue = [CenterLineViewStoreValue new];
+    self.minCountViewStoreValue = [CGRectStoreValue new];
     self.minCountViewStoreValue.startRect = self.minCountView.frame;
     self.minCountView.alpha = 0.f;
 
     
     // 最大温度
-    self.maxTempViewStoreValue = [CenterLineViewStoreValue new];
+    self.maxTempViewStoreValue = [CGRectStoreValue new];
     self.maxTempView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 3, _gridView.gridLength * 2, _gridView.gridLength * 1, 0)];
     self.maxTempView.x += gridOffsetX;
     self.maxTempView.y += gridOffsetY;
@@ -133,7 +123,7 @@
     [self addSubview:self.minCountView];
     self.maxCountView.x += gridOffsetX;
     self.maxCountView.y += gridOffsetY;
-    self.maxCountViewStoreValue = [CenterLineViewStoreValue new];
+    self.maxCountViewStoreValue = [CGRectStoreValue new];
     self.maxCountViewStoreValue.startRect = self.maxCountView.frame;
     [self addSubview:self.maxCountView];
     self.maxCountView.alpha = 0.f;

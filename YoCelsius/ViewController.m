@@ -93,13 +93,11 @@
     self.getWeatherData          = [GetWeatherData new];
     self.getWeatherData.delegate = self;
 
-    
     // 加载失败后显示的view
     self.failedView          = [[FailedLongPressView alloc] initWithFrame:self.view.bounds];
     self.failedView.delegate = self;
     [self.failedView buildView];
     [self.view addSubview:self.failedView];
-    
     
     // 进入加载数据动画效果
     [self getLocationAndFadeShow];

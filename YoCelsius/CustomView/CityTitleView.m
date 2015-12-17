@@ -9,40 +9,32 @@
 //
 
 #import "CityTitleView.h"
-
-@interface CityTitleViewStoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation CityTitleViewStoreValue
-@end
+#import "CGRectStoreValue.h"
 
 @interface CityTitleView ()
-@property (nonatomic, strong) UILabel *baseLabel;       // 基站label
-@property (nonatomic, strong) CityTitleViewStoreValue *baseLabelStoreValue;
 
-@property (nonatomic, strong) UILabel *cityNameLabel;   // 城市名字label
-@property (nonatomic, strong) CityTitleViewStoreValue *cityNameLabelStoreValue;
+@property (nonatomic, strong) UILabel          *baseLabel;       // 基站label
+@property (nonatomic, strong) CGRectStoreValue *baseLabelStoreValue;
 
-@property (nonatomic, strong) UILabel *weatherDesLabel; // 天气描述label
-@property (nonatomic, strong) CityTitleViewStoreValue *weatherDesLabelStoreValue;
+@property (nonatomic, strong) UILabel          *cityNameLabel;   // 城市名字label
+@property (nonatomic, strong) CGRectStoreValue *cityNameLabelStoreValue;
 
-@property (nonatomic, strong) UILabel *updateYearLabel; // 更新年份label
-@property (nonatomic, strong) CityTitleViewStoreValue *updateYearLabelStoreValue;
+@property (nonatomic, strong) UILabel          *weatherDesLabel; // 天气描述label
+@property (nonatomic, strong) CGRectStoreValue *weatherDesLabelStoreValue;
 
-@property (nonatomic, strong) UILabel *updateHourLabel; // 更新的小时label
-@property (nonatomic, strong) CityTitleViewStoreValue *updateHourLabelStoreValue;
+@property (nonatomic, strong) UILabel          *updateYearLabel; // 更新年份label
+@property (nonatomic, strong) CGRectStoreValue *updateYearLabelStoreValue;
 
-@property (nonatomic, strong) UIView  *blackView;       // 黑色的view
-@property (nonatomic, strong) CityTitleViewStoreValue *blackViewStoreValue;
+@property (nonatomic, strong) UILabel          *updateHourLabel; // 更新的小时label
+@property (nonatomic, strong) CGRectStoreValue *updateHourLabelStoreValue;
 
-@property (nonatomic, strong) UIView  *redView;         // 红色的view
-@property (nonatomic, strong) CityTitleViewStoreValue *redViewStoreValue;
+@property (nonatomic, strong) UIView           *blackView;       // 黑色的view
+@property (nonatomic, strong) CGRectStoreValue *blackViewStoreValue;
 
+@property (nonatomic, strong) UIView           *redView;         // 红色的view
+@property (nonatomic, strong) CGRectStoreValue *redViewStoreValue;
 
 @property (nonatomic, strong) EmitterLayerView *weatherConditionView;
-
 
 @end
 
@@ -51,7 +43,8 @@
 // 从右向左运动
 - (void)moveToLeftWithMidRect:(CGRect)rect
                  moveDistance:(CGFloat)distance
-               withStoreValue:(CityTitleViewStoreValue *)storeValue {
+               withStoreValue:(CGRectStoreValue *)storeValue {
+    
     CGRect midRect   = rect;
     CGRect startRect = CGRectMake(rect.origin.x + distance,
                                   rect.origin.y,
@@ -69,7 +62,8 @@
 
 - (void)moveToRightWithMidRect:(CGRect)rect
                   moveDistance:(CGFloat)distance
-                withStoreValue:(CityTitleViewStoreValue *)storeValue{
+                withStoreValue:(CGRectStoreValue *)storeValue {
+    
     CGRect midRect   = rect;
     CGRect startRect = CGRectMake(rect.origin.x - distance,
                                   rect.origin.y,
@@ -94,7 +88,7 @@
     self.baseLabel.textAlignment = NSTextAlignmentRight;
     self.baseLabel.font          = [UIFont fontWithName:LATO_BOLD size:10.f];
     self.baseLabel.text          = @"cmc station";
-    self.baseLabelStoreValue     = [CityTitleViewStoreValue new];
+    self.baseLabelStoreValue     = [CGRectStoreValue new];
     [self moveToLeftWithMidRect:self.baseLabel.frame
                    moveDistance:10
                  withStoreValue:self.baseLabelStoreValue];
@@ -114,7 +108,7 @@
     }
     self.blackView.backgroundColor = [UIColor blackColor];
     [self addSubview:self.blackView];
-    self.blackViewStoreValue = [CityTitleViewStoreValue new];
+    self.blackViewStoreValue = [CGRectStoreValue new];
     self.blackViewStoreValue.midRect = self.blackView.frame;
     self.blackView.x -= 5;
     self.blackViewStoreValue.startRect = self.blackView.frame;
@@ -140,7 +134,7 @@
     }
     self.redView.backgroundColor = [UIColor redColor];
     [self addSubview:self.redView];
-    self.redViewStoreValue = [CityTitleViewStoreValue new];
+    self.redViewStoreValue = [CGRectStoreValue new];
     [self moveToLeftWithMidRect:self.redView.frame
                    moveDistance:30.f
                  withStoreValue:self.redViewStoreValue];
@@ -149,6 +143,7 @@
     
     // 年份的view
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 12.f)];
         self.updateYearLabel.text = @"2015.03.21";
         self.updateYearLabel.textAlignment = NSTextAlignmentRight;
@@ -156,6 +151,7 @@
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:10];
         
     } else if (iPhone6) {
+        
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
         self.updateYearLabel.textAlignment = NSTextAlignmentRight;
@@ -163,20 +159,24 @@
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:16];
         
     } else if (iPhone6_plus) {
+        
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
         self.updateYearLabel.textAlignment = NSTextAlignmentRight;
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:16];
+        
     } else {
+        
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 12.f)];
         self.updateYearLabel.text = @"2015.03.21";
         self.updateYearLabel.textAlignment = NSTextAlignmentRight;
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:10];
     }
+    
     [self addSubview:self.updateYearLabel];
-    self.updateYearLabelStoreValue = [CityTitleViewStoreValue new];
+    self.updateYearLabelStoreValue = [CGRectStoreValue new];
     [self moveToLeftWithMidRect:self.updateYearLabel.frame
                    moveDistance:20.f
                  withStoreValue:self.updateYearLabelStoreValue];
@@ -185,6 +185,7 @@
     
     // 小时的view
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 45, Width - 8, 14.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
         self.updateHourLabel.text = @"13:20 update";
@@ -192,26 +193,32 @@
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:12];
         
     } else if (iPhone6) {
+        
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
         self.updateHourLabel.text = @"13:20 update";
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:16];
+        
     } else if (iPhone6_plus) {
+        
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
         self.updateHourLabel.text = @"13:20 update";
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:16];
+        
     } else {
+        
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 45, Width - 8, 14.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
         self.updateHourLabel.text = @"13:20 update";
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:12];
     }
+    
     [self addSubview:self.updateHourLabel];
-    self.updateHourLabelStoreValue = [CityTitleViewStoreValue new];
+    self.updateHourLabelStoreValue = [CGRectStoreValue new];
     [self moveToLeftWithMidRect:self.updateHourLabel.frame
                    moveDistance:15.f
                  withStoreValue:self.updateHourLabelStoreValue];
@@ -221,28 +228,34 @@
     
     // 城市label
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 16, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:26.f];
 
     } else if (iPhone6) {
+        
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_LIGHT size:30.f];
         
     } else if (iPhone6_plus) {
+        
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_LIGHT size:30.f];
+        
     } else {
+        
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 16, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:26.f];
     }
+    
     [self addSubview:self.cityNameLabel];
     [self.cityNameLabel sizeToFit];
     self.cityNameLabel.width = Width - 10;
-    self.cityNameLabelStoreValue = [CityTitleViewStoreValue new];
+    self.cityNameLabelStoreValue = [CGRectStoreValue new];
     [self moveToRightWithMidRect:self.cityNameLabel.frame
                     moveDistance:5
                   withStoreValue:self.cityNameLabelStoreValue];
@@ -251,57 +264,62 @@
     
     // 天气描述用的label
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:14.f];
         
     } else if (iPhone6) {
+        
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:16.f];
         
     } else if (iPhone6_plus) {
+        
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:16.f];
         
     } else {
+        
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:14.f];
         
     }
+    
     [self addSubview:self.weatherDesLabel];
     [self.weatherDesLabel sizeToFit];
     self.weatherDesLabel.width = Width - 10;
-    self.weatherDesLabelStoreValue = [CityTitleViewStoreValue new];
+    self.weatherDesLabelStoreValue = [CGRectStoreValue new];
     [self moveToRightWithMidRect:self.weatherDesLabel.frame
                     moveDistance:8
                   withStoreValue:self.weatherDesLabelStoreValue];
     self.weatherDesLabel.frame = self.weatherDesLabelStoreValue.startRect;
     self.weatherDesLabel.alpha = 0.f;
-    
-    
-    
 }
 
 - (void)show {
     
     CGFloat duration = 1.75f;
-    
     EMitterType type = [WeatherNumberMeaningTransform emitterTypeWithNumber:self.weatherNumber];
     
     // 表述类型
     if (type == __RAIN) {
+        
         self.weatherConditionView = [[RainView alloc] initWithFrame:CGRectMake(0, 0, Width / 2.f, Height - Width - Width / 2.f)];
         [self.weatherConditionView configType:__RAIN];
         [self.weatherConditionView show];
         [self addSubview:self.weatherConditionView];
+        
     } else if (type == __SNOW) {
+        
         self.weatherConditionView = [[SnowView alloc] initWithFrame:CGRectMake(0, 0, Width / 2.f, Height - Width - Width / 2.f)];
         [self.weatherConditionView configType:__SNOW];
         [self.weatherConditionView show];
         [self addSubview:self.weatherConditionView];
+        
     } else if (type == __NONE) {
         
     }
@@ -332,11 +350,10 @@
 }
 
 - (void)hide {
+    
     CGFloat duration = 0.75f;
     
-    
     [self.weatherConditionView hide];
-    
     
     [UIView animateWithDuration:duration animations:^{
         self.baseLabel.frame = self.baseLabelStoreValue.endRect;
@@ -362,6 +379,7 @@
         self.blackView.alpha = 0.f;
         
     } completion:^(BOOL finished) {
+        
         self.baseLabel.frame = self.baseLabelStoreValue.startRect;
         
         self.cityNameLabel.frame = self.cityNameLabelStoreValue.startRect;
@@ -376,8 +394,6 @@
         
         self.blackView.frame = self.blackViewStoreValue.startRect;
         self.blackView.alpha = 1.f;
-        
-        
         
         // 移除天气view
         [self.weatherConditionView removeFromSuperview];

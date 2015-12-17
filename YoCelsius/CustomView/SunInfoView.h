@@ -38,5 +38,4 @@
  */
 - (void)hide;
 
-
 @end

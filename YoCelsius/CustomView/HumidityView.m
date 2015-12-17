@@ -14,14 +14,6 @@
 #import "HumidityCountLabel.h"
 #import "TitleMoveLabel.h"
 
-@interface StoreValue : NSObject
-@property (nonatomic) CGRect startRect;
-@property (nonatomic) CGRect midRect;
-@property (nonatomic) CGRect endRect;
-@end
-@implementation StoreValue
-@end
-
 @interface HumidityView ()
 
 @property (nonatomic, strong) CircleView         *fullCircle;
@@ -35,28 +27,28 @@
 
 @implementation HumidityView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-    }
-    
-    return self;
-}
-
 - (void)buildView {
     
     CGRect circleRect = CGRectZero;
     CGRect rotateRect = CGRectZero;
     
     if (iPhone5_5s || iPhone4_4s) {
+        
         circleRect = CGRectMake(0, 0, 100, 100);
         rotateRect = CGRectMake(37, 40, circleRect.size.width, circleRect.size.height);
+        
     } else if (iPhone6) {
+        
         circleRect = CGRectMake(0, 0, 110, 110);
         rotateRect = CGRectMake(40, 50, circleRect.size.width, circleRect.size.height);
+        
     } else if (iPhone6_plus) {
+        
         circleRect = CGRectMake(0, 0, 115, 115);
         rotateRect = CGRectMake(45, 55, circleRect.size.width, circleRect.size.height);
+        
     } else {
+        
         circleRect = CGRectMake(0, 0, 90, 90);
         rotateRect = CGRectMake(25, 15, circleRect.size.width, circleRect.size.height);
     }
@@ -88,6 +80,7 @@
 }
 
 - (void)show {
+    
     CGFloat circleFullPercent = 0.75;
     CGFloat duration          = 1.5;
     
@@ -98,10 +91,8 @@
     [self.showCircle strokeStart:0 animated:NO duration:0];
     [self.rotateView roateAngle:0];
     
-    
     // 标题显示
     [self.titleMoveLabel show];
-    
     
     // 设置动画
     [self.fullCircle strokeEnd:circleFullPercent animated:YES duration:duration];
@@ -110,9 +101,10 @@
     self.countLabel.toValue = self.percent * 100;
     [self.countLabel showDuration:duration];
 }
+
 - (void)hide {
     
-    CGFloat duration = 0.75;
+    CGFloat duration          = 0.75;
     CGFloat circleFullPercent = 0.75;
     
     // 标题隐藏
