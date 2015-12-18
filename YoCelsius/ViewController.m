@@ -287,11 +287,13 @@
 - (void)showErrorInfo {
     
     [GCDQueue executeInMainQueue:^{
+        
         [[TWMessageBarManager sharedInstance] \
          showMessageWithTitle:@"Network Unreachable"
          description:@"Please try later."
          type:TWMessageBarMessageTypeError
          callback:^{}];
+        
     } afterDelaySecs:1.f];
 }
 
@@ -306,14 +308,14 @@
 #pragma mark - 定制转场动画
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source
-{
+                                                                      sourceController:(UIViewController *)source {
+    
     // 推出控制器的动画
     return [PresentingAnimator new];
 }
 
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    
     // 退出控制器动画
     return [DismissingAnimator new];
 }
