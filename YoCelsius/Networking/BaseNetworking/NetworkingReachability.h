@@ -1,29 +1,19 @@
 //
 //  NetworkingReachability.h
-//  BaseViewControllers
+//  Networking
 //
-//  Created by YouXianMing on 15/8/6.
-//  Copyright (c) 2015年 YouXianMing. All rights reserved.
+//  Created by YouXianMing on 15/11/6.
+//  Copyright © 2015年 ZiPeiYi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- *  通知中心监听字符串
- */
-#define  MSG_NETWORKING_REACHABILITY  @"MSG_NETWORKING_REACHABILITY"
-
-/**
- *  用于测试网络是否可以连接的基准URL地址
- */
-static NSString *reachabeBaseURL               = @"http://baidu.com/";
-
-/**
  *  外部接收通知用字符串
  */
-static NSString *NetworkingStatus_WWAN         = @"_WWAN_";
-static NSString *NetworkingStatus_WIFI         = @"_WIFI_";
-static NSString *NetworkingStatus_NotReachable = @"_NONE_";
+extern NSString *const NetworkingReachableViaWWANNotification;
+extern NSString *const NetworkingReachableViaWIFINotification;
+extern NSString *const NetworkingNotReachableNotification;
 
 @interface NetworkingReachability : NSObject
 

@@ -11,76 +11,70 @@
 #import "GetWeatherData.h"
 #import "CurrentConditions.h"
 #import "CurrentWeatherData.h"
-#import "GetNetworking.h"
+#import "V_2_X_Networking.h"
 
 static NSString *appIdKey = @"8781e4ef1c73ff20a180d3d7a42a8c04";
 
 typedef enum : NSUInteger {
     
-    WEATHER = 0x11,
-    DAILY,
+    kWeather = 0x11,
+    kDaily,
     
-} EFlag;
+} EGetWeatherDataValue;
 
 @interface GetWeatherData () <NetworkingDelegate>
-
 
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
 
-
-@property (nonatomic, strong) Networking         *networkWeather;
-@property (nonatomic, strong) Networking         *networkDaily;
-
+@property (nonatomic, strong) V_2_X_Networking   *networkWeather;
+@property (nonatomic, strong) V_2_X_Networking   *networkDaily;
 
 @end
 
-
 @implementation GetWeatherData
-
 
 - (void)startGetLocationWeatherData {
     
     if (self.location == nil) {
+        
         return;
     }
     
     NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
-        
+    
     // 请求1
-    self.networkWeather = [GetNetworking networkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
-                                               requestDictionary:@{@"lat"   : latStr,
-                                                                   @"lon"   : lonStr,
-                                                                   @"APPID" : appIdKey}
-                                                        delegate:self
-                                                 timeoutInterval:nil
-                                                             tag:WEATHER
-                                            requestSerialization:nil
-                                           responseSerialization:[AFJSONResponseSerializer serializer]];
+    self.networkWeather = [V_2_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
+                                                           requestDictionary:@{@"lat"   : latStr,
+                                                                               @"lon"   : lonStr,
+                                                                               @"APPID" : appIdKey}
+                                                             requestBodyType:[HttpBodyType type]
+                                                            responseDataType:[JsonDataType type]];
+    self.networkWeather.tag             = kWeather;
+    self.networkWeather.delegate        = self;
+    self.networkWeather.timeoutInterval = @(8.f);
     [self.networkWeather startRequest];
     
     //  请求2
-    self.networkDaily = [GetNetworking networkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-                                             requestDictionary:nil
-                                                      delegate:self
-                                               timeoutInterval:nil
-                                                           tag:DAILY
-                                          requestSerialization:nil
-                                         responseSerialization:[AFJSONResponseSerializer serializer]];
+    self.networkDaily = [V_2_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+                                                         requestDictionary:nil
+                                                           requestBodyType:[HttpBodyType type]
+                                                          responseDataType:[JsonDataType type]];
+    self.networkDaily.tag             = kDaily;
+    self.networkDaily.delegate        = self;
+    self.networkDaily.timeoutInterval = @(8.f);
 }
-
 
 - (void)requestSucess:(Networking *)networking data:(id)data {
 
-    if (networking.tag == WEATHER) {
-        // 请求1结果
+    if (networking.tag == kWeather) {
         
+        // 请求1结果
         CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
             
-            self.currentWeatherData = currentData;
-            
+            self.currentWeatherData             = currentData;
             self.networkDaily.requestDictionary = @{@"id"    : self.currentWeatherData.cityId,
                                                     @"cnt"   : @"14",
                                                     @"APPID" : appIdKey};
@@ -88,40 +82,34 @@ typedef enum : NSUInteger {
             
         } else {
 
-            [_delegate weatherData:nil
-                            sucess:NO];
+            [_delegate weatherData:nil sucess:NO];
         }
         
+    } else if (networking.tag == kDaily) {
         
-    } else if (networking.tag == DAILY) {
         // 请求2结果
-        
         CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
+            
             self.currentConditions = currentData;
             [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
                                      @"WeatherConditions" : self.currentConditions}
                             sucess:YES];
         } else {
             
-            [_delegate weatherData:nil
-                            sucess:NO];
+            [_delegate weatherData:nil sucess:NO];
         }
-        
     }
-    
 }
 
 - (void)requestFailed:(Networking *)networking error:(NSError *)error {
 
-    [_delegate weatherData:nil
-                    sucess:NO];
+    [_delegate weatherData:nil sucess:NO];
 }
 
 - (void)userCanceledFailed:(Networking *)networking error:(NSError *)error {
 
-    [_delegate weatherData:nil
-                    sucess:NO];
+    [_delegate weatherData:nil sucess:NO];
 }
 
 @end
