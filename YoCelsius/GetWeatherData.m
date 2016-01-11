@@ -11,7 +11,7 @@
 #import "GetWeatherData.h"
 #import "CurrentConditions.h"
 #import "CurrentWeatherData.h"
-#import "V_2_X_Networking.h"
+#import "V_3_X_Networking.h"
 
 static NSString *appIdKey = @"8781e4ef1c73ff20a180d3d7a42a8c04";
 
@@ -27,8 +27,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
 
-@property (nonatomic, strong) V_2_X_Networking   *networkWeather;
-@property (nonatomic, strong) V_2_X_Networking   *networkDaily;
+@property (nonatomic, strong) Networking         *networkWeather;
+@property (nonatomic, strong) Networking         *networkDaily;
 
 @end
 
@@ -45,7 +45,7 @@ typedef enum : NSUInteger {
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
     
     // 请求1
-    self.networkWeather = [V_2_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
+    self.networkWeather = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
                                                            requestDictionary:@{@"lat"   : latStr,
                                                                                @"lon"   : lonStr,
                                                                                @"APPID" : appIdKey}
@@ -57,7 +57,7 @@ typedef enum : NSUInteger {
     [self.networkWeather startRequest];
     
     //  请求2
-    self.networkDaily = [V_2_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+    self.networkDaily = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
                                                          requestDictionary:nil
                                                            requestBodyType:[HttpBodyType type]
                                                           responseDataType:[JsonDataType type]];
