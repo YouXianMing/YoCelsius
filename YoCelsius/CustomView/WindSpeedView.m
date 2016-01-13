@@ -116,7 +116,7 @@
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
     }
-
+    
     [self addSubview:self.line];
     self.line.centerX = self.threeLineView.middleX;
     self.line.y       = windFrame.size.height / 2.f;
@@ -162,7 +162,13 @@
     // 扇叶动画
     [self.threeLineView.layer removeAllAnimations];
     self.threeLineView.circleByOneSecond = self.circleByOneSecond; // 设置转速
-    [self.threeLineView rotateImageViewWithCircleByOneSecond];
+    
+    [GCDQueue executeInMainQueue:^{
+        
+        [self.threeLineView rotateImageViewWithCircleByOneSecond];
+        
+    } afterDelaySecs:0.01f];
+    
     [self.threeLineView showWithDuration:duration animated:YES];
     
     // 标签数字动画
@@ -197,7 +203,7 @@
     
     // 标题
     [self.titleMoveLabel hide];
-
+    
     // 支柱动画 + 圆动画
     [UIView animateWithDuration:duration animations:^{
         

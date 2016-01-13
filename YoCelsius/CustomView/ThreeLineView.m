@@ -14,18 +14,23 @@
 
 @interface ThreeLineView ()
 
-@property (nonatomic, strong) AnimatedLineView *oneLine;
-@property (nonatomic, strong) AnimatedLineView *twoLine;
-@property (nonatomic, strong) AnimatedLineView *threeLine;
+@property (nonatomic, strong) AnimatedLineView  *oneLine;
+@property (nonatomic, strong) AnimatedLineView  *twoLine;
+@property (nonatomic, strong) AnimatedLineView  *threeLine;
+
+@property (nonatomic)         CGAffineTransform  defaultTransform;
 
 @end
 
 @implementation ThreeLineView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+    
+    if (self = [super initWithFrame:frame]) {
+        
         [self initLineViews];
+        
+        self.defaultTransform = self.transform;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(eventDidBecomeActive:)                                                     name:UIApplicationDidBecomeActiveNotification
@@ -34,15 +39,19 @@
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(eventDidBecomeActive:)                                                     name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
-
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(eventDidBecomeActive:)                                                     name:UIApplicationWillResignActiveNotification
+                                                   object:nil];
     }
+    
     return self;
 }
 
 - (void)initLineViews {
     
     UIImage *image = [UIImage imageNamed:@"WindSpeed"];
-    CGFloat width = self.height / image.size.height * image.size.width / 2.f;
+    CGFloat  width = self.height / image.size.height * image.size.width / 2.f;
     
     // 初始化第一个叶子
     self.oneLine        = [[AnimatedLineView alloc] initWithFrame:CGRectMake(0, 0, width, self.height)];
@@ -66,51 +75,63 @@
 }
 
 - (void)showWithDuration:(CGFloat)duration animated:(BOOL)animated {
-    [self.oneLine showWithDuration:duration animated:animated];
-    [self.twoLine showWithDuration:duration animated:animated];
+    
+    [self.oneLine   showWithDuration:duration animated:animated];
+    [self.twoLine   showWithDuration:duration animated:animated];
     [self.threeLine showWithDuration:duration animated:animated];
 }
 
 - (void)hideWithDuration:(CGFloat)duration animated:(BOOL)animated {
-    [self.oneLine hideWithDuration:duration animated:animated];
-    [self.twoLine hideWithDuration:duration animated:animated];
+    
+    [self.oneLine   hideWithDuration:duration animated:animated];
+    [self.twoLine   hideWithDuration:duration animated:animated];
     [self.threeLine hideWithDuration:duration animated:animated];
 }
 
 - (void)rotateImageViewWithCircleByOneSecond {
         
     CGFloat circleByOneSecond = (self.circleByOneSecond <= 0 ? 0.001 : self.circleByOneSecond);
-    
-    // 执行动画
-    [UIView animateWithDuration:1.f / circleByOneSecond
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.transform = CGAffineTransformRotate(self.transform, M_PI_2);
-                     }
-                     completion:^(BOOL finished){
-                         if (finished) {
-                             [self rotateImageViewWithCircleByOneSecond];
-                         }
-                     }];
+
+    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.fromValue         = @(0);
+    rotationAnimation.toValue           = @(M_PI * 100000);
+    rotationAnimation.duration          = circleByOneSecond * 100000;
+    rotationAnimation.timingFunction    = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [self.layer addAnimation:rotationAnimation forKey:nil];
 }
 
 - (void)dealloc {
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)eventDidBecomeActive:(id)obj {
+    
     // 获取通知对象
     NSNotification *fication = obj;
 
     if ([fication.name isEqualToString:UIApplicationDidBecomeActiveNotification]) {
+        
         [UIView animateWithDuration:0.5f animations:^{
+            
             self.alpha = 1.f;
         }];
         
         [self rotateImageViewWithCircleByOneSecond];
+        
     } else if ([fication.name isEqualToString:UIApplicationDidEnterBackgroundNotification]) {
-        self.alpha = 0.f;
+        
+        [UIView animateWithDuration:0.5f animations:^{
+            
+            self.alpha = 0.f;
+        }];
+        
+    } else if ([fication.name isEqualToString:UIApplicationWillResignActiveNotification]) {
+        
+        [UIView animateWithDuration:0.5f animations:^{
+            
+            self.alpha = 0.f;
+        }];
     }
 }
 

@@ -14,7 +14,6 @@
 
 @interface ThreeLineView : UIView
 
-
 /**
  *  显示出来
  *
