@@ -18,8 +18,6 @@
 @property (nonatomic, strong) AnimatedLineView  *twoLine;
 @property (nonatomic, strong) AnimatedLineView  *threeLine;
 
-@property (nonatomic)         CGAffineTransform  defaultTransform;
-
 @end
 
 @implementation ThreeLineView
@@ -29,8 +27,6 @@
     if (self = [super initWithFrame:frame]) {
         
         [self initLineViews];
-        
-        self.defaultTransform = self.transform;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(eventDidBecomeActive:)                                                     name:UIApplicationDidBecomeActiveNotification
