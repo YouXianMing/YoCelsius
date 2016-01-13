@@ -30,6 +30,9 @@
         
         // AFNetworking 3.x 相关初始化
         self.session = [AFHTTPSessionManager manager];
+        
+        // 添加头部支持
+        self.HTTPHeaderFieldsWithValues = [NSMutableDictionary dictionary];
     }
     
     return self;
