@@ -91,7 +91,7 @@
     CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.fromValue         = @(0);
     rotationAnimation.toValue           = @(M_PI * 100000);
-    rotationAnimation.duration          = circleByOneSecond * 100000;
+    rotationAnimation.duration          = (1 / circleByOneSecond) * 100000;
     rotationAnimation.timingFunction    = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     [self.layer addAnimation:rotationAnimation forKey:nil];
 }

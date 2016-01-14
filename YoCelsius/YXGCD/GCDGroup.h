@@ -1,29 +1,24 @@
 //
 //  GCDGroup.h
+//  GCD
 //
 //  http://home.cnblogs.com/u/YouXianMing/
+//  https://github.com/YouXianMing
 //
-//  Created by Y.X. on 14-4-11.
-//  Copyright (c) 2014年 Y.X. All rights reserved.
+//  Created by XianMingYou on 15/3/15.
+//  Copyright (c) 2015年 XianMingYou. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#if __has_feature(objc_arc)
-#define STRONG strong
-#else
-#define STRONG retain
-#endif
-
 @interface GCDGroup : NSObject
 
-@property (STRONG, readonly, nonatomic) dispatch_group_t dispatchGroup;
+@property (strong, nonatomic, readonly) dispatch_group_t dispatchGroup;
 
-#pragma 初始化以及释放
+#pragma 初始化
 - (instancetype)init;
-- (void)dispatchRelease;
 
-#pragma 用法
+#pragma mark - 用法
 - (void)enter;
 - (void)leave;
 - (void)wait;

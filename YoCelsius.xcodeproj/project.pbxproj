@@ -37,6 +37,10 @@
 		104405DF1AA14AF4008DF810 /* EmitterLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405DC1AA14AF4008DF810 /* EmitterLayerView.m */; };
 		104405E61AA15256008DF810 /* UpdatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405E51AA15256008DF810 /* UpdatingView.m */; };
 		104405E91AA16D23008DF810 /* FadeBlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405E81AA16D23008DF810 /* FadeBlackView.m */; };
+		1047D0FD1C4736A9009ADED6 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1047D0F61C4736A9009ADED6 /* GCDGroup.m */; };
+		1047D0FE1C4736A9009ADED6 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1047D0F81C4736A9009ADED6 /* GCDQueue.m */; };
+		1047D0FF1C4736A9009ADED6 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1047D0FA1C4736A9009ADED6 /* GCDSemaphore.m */; };
+		1047D1001C4736A9009ADED6 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1047D0FC1C4736A9009ADED6 /* GCDTimer.m */; };
 		104C0F9F1AAEE5D7000773FE /* PressAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 104C0F9E1AAEE5D7000773FE /* PressAnimationButton.m */; };
 		104C0FA21AAEE6B4000773FE /* FailedLongPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104C0FA11AAEE6B4000773FE /* FailedLongPressView.m */; };
 		107DC83B1AA6960C00BEB3DF /* LineAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107DC8361AA6960C00BEB3DF /* LineAnimationView.m */; };
@@ -115,10 +119,6 @@
 		10DD79191AA9D89E00051B0D /* ARCGPathFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DD79161AA9D89E00051B0D /* ARCGPathFromString.m */; };
 		10DD791A1AA9D89E00051B0D /* UIBezierPath+TextPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DD79181AA9D89E00051B0D /* UIBezierPath+TextPaths.m */; };
 		10DD791D1AA9D8B100051B0D /* ShapeWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DD791C1AA9D8B100051B0D /* ShapeWordView.m */; };
-		10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6B1A92B46D00CFC713 /* GCDGroup.m */; };
-		10DE2F741A92B46D00CFC713 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6D1A92B46D00CFC713 /* GCDQueue.m */; };
-		10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */; };
-		10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F711A92B46D00CFC713 /* GCDTimer.m */; };
 		10DE2F7B1A93661F00CFC713 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DE2F7A1A93661F00CFC713 /* CircleView.m */; };
 		10E01A501AA3FDA0000676BF /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E01A4F1AA3FDA0000676BF /* SearchView.m */; };
 		10E01A571AA43573000676BF /* TapTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E01A561AA43573000676BF /* TapTitleView.m */; };
@@ -222,6 +222,15 @@
 		104405E51AA15256008DF810 /* UpdatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatingView.m; sourceTree = "<group>"; };
 		104405E71AA16D23008DF810 /* FadeBlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeBlackView.h; sourceTree = "<group>"; };
 		104405E81AA16D23008DF810 /* FadeBlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeBlackView.m; sourceTree = "<group>"; };
+		1047D0F41C4736A9009ADED6 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		1047D0F51C4736A9009ADED6 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
+		1047D0F61C4736A9009ADED6 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
+		1047D0F71C4736A9009ADED6 /* GCDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDQueue.h; sourceTree = "<group>"; };
+		1047D0F81C4736A9009ADED6 /* GCDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDQueue.m; sourceTree = "<group>"; };
+		1047D0F91C4736A9009ADED6 /* GCDSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSemaphore.h; sourceTree = "<group>"; };
+		1047D0FA1C4736A9009ADED6 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
+		1047D0FB1C4736A9009ADED6 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		1047D0FC1C4736A9009ADED6 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
 		104C0F9D1AAEE5D7000773FE /* PressAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressAnimationButton.h; sourceTree = "<group>"; };
 		104C0F9E1AAEE5D7000773FE /* PressAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressAnimationButton.m; sourceTree = "<group>"; };
 		104C0FA01AAEE6B4000773FE /* FailedLongPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedLongPressView.h; sourceTree = "<group>"; };
@@ -392,15 +401,6 @@
 		10DD79181AA9D89E00051B0D /* UIBezierPath+TextPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+TextPaths.m"; sourceTree = "<group>"; };
 		10DD791B1AA9D8B100051B0D /* ShapeWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeWordView.h; sourceTree = "<group>"; };
 		10DD791C1AA9D8B100051B0D /* ShapeWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeWordView.m; sourceTree = "<group>"; };
-		10DE2F6A1A92B46D00CFC713 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
-		10DE2F6B1A92B46D00CFC713 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
-		10DE2F6C1A92B46D00CFC713 /* GCDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDQueue.h; sourceTree = "<group>"; };
-		10DE2F6D1A92B46D00CFC713 /* GCDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDQueue.m; sourceTree = "<group>"; };
-		10DE2F6E1A92B46D00CFC713 /* GCDSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSemaphore.h; sourceTree = "<group>"; };
-		10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
-		10DE2F701A92B46D00CFC713 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
-		10DE2F711A92B46D00CFC713 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
-		10DE2F721A92B46D00CFC713 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		10DE2F791A93661F00CFC713 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		10DE2F7A1A93661F00CFC713 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		10E01A4E1AA3FDA0000676BF /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
@@ -597,7 +597,7 @@
 			name = "3.x-Networking";
 			sourceTree = "<group>";
 		};
-		102B85E21C3DF253001699A9 /* Network */ = {
+		102B85E21C3DF253001699A9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				100149271C43F65F006D9153 /* AFNetworking */,
@@ -605,7 +605,36 @@
 				102B85E11C3DEFC4001699A9 /* 3.x-Networking */,
 				102B85BF1C3DEFA4001699A9 /* Networking */,
 			);
-			name = Network;
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		1047D1011C4736F8009ADED6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				10E1F5361A908C3200AED5D6 /* ViewController.h */,
+				10E1F5371A908C3200AED5D6 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		1047D1021C473702009ADED6 /* ForecastController */ = {
+			isa = PBXGroup;
+			children = (
+				10BD57091A9EA43800A6F83D /* ForecastCell.h */,
+				10BD570A1A9EA43800A6F83D /* ForecastCell.m */,
+				10BD57061A9E9D4200A6F83D /* ForecastController.h */,
+				10BD57071A9E9D4200A6F83D /* ForecastController.m */,
+			);
+			name = ForecastController;
+			sourceTree = "<group>";
+		};
+		1047D1031C473726009ADED6 /* CGRectStoreValue */ = {
+			isa = PBXGroup;
+			children = (
+				100BFAE31C22A346008C5523 /* CGRectStoreValue.h */,
+				100BFAE41C22A346008C5523 /* CGRectStoreValue.m */,
+			);
+			name = CGRectStoreValue;
 			sourceTree = "<group>";
 		};
 		10AB28BB1A908F3F00CE545D /* Models */ = {
@@ -912,13 +941,8 @@
 		10DD0A041B44258B000B3EE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				10E1F5361A908C3200AED5D6 /* ViewController.h */,
-				10E1F5371A908C3200AED5D6 /* ViewController.m */,
-				10BD57061A9E9D4200A6F83D /* ForecastController.h */,
-				10BD57071A9E9D4200A6F83D /* ForecastController.m */,
-				100BFAE31C22A346008C5523 /* CGRectStoreValue.h */,
-				100BFAE41C22A346008C5523 /* CGRectStoreValue.m */,
-				10DD0A061B4425BC000B3EE7 /* ForecastController - Source */,
+				1047D1011C4736F8009ADED6 /* ViewController */,
+				1047D1021C473702009ADED6 /* ForecastController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -930,15 +954,6 @@
 				10BD569D1A9DE10300A6F83D /* GetWeatherData.m */,
 			);
 			name = GetWeatherData;
-			sourceTree = "<group>";
-		};
-		10DD0A061B4425BC000B3EE7 /* ForecastController - Source */ = {
-			isa = PBXGroup;
-			children = (
-				10BD57091A9EA43800A6F83D /* ForecastCell.h */,
-				10BD570A1A9EA43800A6F83D /* ForecastCell.m */,
-			);
-			name = "ForecastController - Source";
 			sourceTree = "<group>";
 		};
 		10DD0A071B4425D7000B3EE7 /* Animator */ = {
@@ -984,15 +999,15 @@
 		10DE2F691A92B46D00CFC713 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				10DE2F6A1A92B46D00CFC713 /* GCDGroup.h */,
-				10DE2F6B1A92B46D00CFC713 /* GCDGroup.m */,
-				10DE2F6C1A92B46D00CFC713 /* GCDQueue.h */,
-				10DE2F6D1A92B46D00CFC713 /* GCDQueue.m */,
-				10DE2F6E1A92B46D00CFC713 /* GCDSemaphore.h */,
-				10DE2F6F1A92B46D00CFC713 /* GCDSemaphore.m */,
-				10DE2F701A92B46D00CFC713 /* GCDTimer.h */,
-				10DE2F711A92B46D00CFC713 /* GCDTimer.m */,
-				10DE2F721A92B46D00CFC713 /* GCD.h */,
+				1047D0F41C4736A9009ADED6 /* GCD.h */,
+				1047D0F51C4736A9009ADED6 /* GCDGroup.h */,
+				1047D0F61C4736A9009ADED6 /* GCDGroup.m */,
+				1047D0F71C4736A9009ADED6 /* GCDQueue.h */,
+				1047D0F81C4736A9009ADED6 /* GCDQueue.m */,
+				1047D0F91C4736A9009ADED6 /* GCDSemaphore.h */,
+				1047D0FA1C4736A9009ADED6 /* GCDSemaphore.m */,
+				1047D0FB1C4736A9009ADED6 /* GCDTimer.h */,
+				1047D0FC1C4736A9009ADED6 /* GCDTimer.m */,
 			);
 			name = GCD;
 			path = YXGCD;
@@ -1037,10 +1052,11 @@
 		10E1F52E1A908C3200AED5D6 /* YoCelsius */ = {
 			isa = PBXGroup;
 			children = (
+				10DD0A041B44258B000B3EE7 /* Controllers */,
 				10E1F5331A908C3200AED5D6 /* AppDelegate.h */,
 				10E1F5341A908C3200AED5D6 /* AppDelegate.m */,
-				10DD0A041B44258B000B3EE7 /* Controllers */,
-				102B85E21C3DF253001699A9 /* Network */,
+				1047D1031C473726009ADED6 /* CGRectStoreValue */,
+				102B85E21C3DF253001699A9 /* Networking */,
 				10DD0A071B4425D7000B3EE7 /* Animator */,
 				10DD0A051B44259C000B3EE7 /* GetWeatherData */,
 				10E16A381A96B14700200B79 /* shareInstance */,
@@ -1156,6 +1172,7 @@
 				1001495F1C43F673006D9153 /* V_3_X_Networking.m in Sources */,
 				10E16A3E1A96B17C00200B79 /* GlobalValue.m in Sources */,
 				100149571C43F65F006D9153 /* UIRefreshControl+AFNetworking.m in Sources */,
+				1047D1001C4736A9009ADED6 /* GCDTimer.m in Sources */,
 				10E1E7201A9C8D18000D6549 /* UIView+GlowView.m in Sources */,
 				104405E91AA16D23008DF810 /* FadeBlackView.m in Sources */,
 				10E1E7231A9C93A2000D6549 /* WeatherIconView.m in Sources */,
@@ -1207,7 +1224,6 @@
 				100149581C43F65F006D9153 /* UIWebView+AFNetworking.m in Sources */,
 				10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */,
 				100149531C43F65F006D9153 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				10DE2F761A92B46D00CFC713 /* GCDTimer.m in Sources */,
 				10E169B31A95F42B00200B79 /* WindSpeedCount.m in Sources */,
 				10BF93D31AA0819800858386 /* ShowDownView.m in Sources */,
 				10E16A5F1A98441F00200B79 /* Sun.m in Sources */,
@@ -1229,7 +1245,6 @@
 				10E1E71B1A9C49E8000D6549 /* TitleMoveLabel.m in Sources */,
 				10E16A4A1A97615500200B79 /* MaxTempCount.m in Sources */,
 				10E16A651A984DBC00200B79 /* SunInfoView.m in Sources */,
-				10DE2F731A92B46D00CFC713 /* GCDGroup.m in Sources */,
 				10D87D0C1A940DD7007CD3A5 /* POPAnimationExtras.mm in Sources */,
 				1089D2721A99FEB60025C8A1 /* TemperatureCount.m in Sources */,
 				10F6530B1B8310D2004E45FC /* NSString+Color.m in Sources */,
@@ -1247,12 +1262,12 @@
 				100149501C43F65F006D9153 /* AFAutoPurgingImageCache.m in Sources */,
 				100149511C43F65F006D9153 /* AFImageDownloader.m in Sources */,
 				10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */,
+				1047D0FD1C4736A9009ADED6 /* GCDGroup.m in Sources */,
 				10E16A701A989ABB00200B79 /* UILabel+Temperature.m in Sources */,
-				10DE2F751A92B46D00CFC713 /* GCDSemaphore.m in Sources */,
 				10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */,
-				10DE2F741A92B46D00CFC713 /* GCDQueue.m in Sources */,
 				10DD791A1AA9D89E00051B0D /* UIBezierPath+TextPaths.m in Sources */,
 				10AB296B1A91FC0700CE545D /* FrameView.m in Sources */,
+				1047D0FF1C4736A9009ADED6 /* GCDSemaphore.m in Sources */,
 				10AB28E31A9095C000CE545D /* MapManager.m in Sources */,
 				104405DF1AA14AF4008DF810 /* EmitterLayerView.m in Sources */,
 				10D87D0B1A940DD7007CD3A5 /* POPAnimationEvent.mm in Sources */,
@@ -1273,6 +1288,7 @@
 				1001494F1C43F65F006D9153 /* AFURLSessionManager.m in Sources */,
 				10AB28D51A908F3F00CE545D /* CurrentConditions.m in Sources */,
 				100149601C43F673006D9153 /* V_3_X_NetworkingIndicator.m in Sources */,
+				1047D0FE1C4736A9009ADED6 /* GCDQueue.m in Sources */,
 				100149561C43F65F006D9153 /* UIProgressView+AFNetworking.m in Sources */,
 				10D87D271A94202A007CD3A5 /* NSString+RichText.m in Sources */,
 				10D87D091A940DD7007CD3A5 /* POPAnimatableProperty.mm in Sources */,

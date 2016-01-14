@@ -1,57 +1,54 @@
 //
 //  GCDGroup.m
+//  GCD
 //
 //  http://home.cnblogs.com/u/YouXianMing/
+//  https://github.com/YouXianMing
 //
-//  Created by Y.X. on 14-4-11.
-//  Copyright (c) 2014年 Y.X. All rights reserved.
+//  Created by XianMingYou on 15/3/15.
+//  Copyright (c) 2015年 XianMingYou. All rights reserved.
 //
 
 #import "GCDGroup.h"
 
 @interface GCDGroup ()
-@property (STRONG, readwrite, nonatomic) dispatch_group_t dispatchGroup;
+
+@property (strong, nonatomic, readwrite) dispatch_group_t dispatchGroup;
+
 @end
 
 @implementation GCDGroup
 
-- (instancetype)init
-{
+- (instancetype)init {
+    
     self = [super init];
-    if (self)
-    {
+    
+    if (self) {
+        
         self.dispatchGroup = dispatch_group_create();
     }
+    
     return self;
 }
 
-- (void)enter
-{
+- (void)enter {
+    
     dispatch_group_enter(self.dispatchGroup);
 }
 
-- (void)leave
-{
+- (void)leave {
+    
     dispatch_group_leave(self.dispatchGroup);
 }
 
-- (void)wait
-{
+- (void)wait {
+    
     dispatch_group_wait(self.dispatchGroup, DISPATCH_TIME_FOREVER);
 }
 
-- (BOOL)wait:(int64_t)delta
-{
-      return dispatch_group_wait(self.dispatchGroup, \
-                                 dispatch_time(DISPATCH_TIME_NOW, delta)) == 0;
-}
-
-- (void)dispatchRelease
-{
-#if __has_feature(objc_arc)
-#else
-    dispatch_release(self.dispatchGroup);
-#endif
+- (BOOL)wait:(int64_t)delta {
+    
+    return dispatch_group_wait(self.dispatchGroup, dispatch_time(DISPATCH_TIME_NOW, delta)) == 0;
 }
 
 @end

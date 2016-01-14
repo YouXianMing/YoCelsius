@@ -1,34 +1,32 @@
 //
 //  GCDTimer.h
+//  GCD
 //
 //  http://home.cnblogs.com/u/YouXianMing/
+//  https://github.com/YouXianMing
 //
-//  Created by Y.X. on 14-4-11.
-//  Copyright (c) 2014年 Y.X. All rights reserved.
+//  Created by XianMingYou on 15/3/15.
+//  Copyright (c) 2015年 XianMingYou. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#if __has_feature(objc_arc)
-#define STRONG strong
-#else
-#define STRONG retain
-#endif
-
 @class GCDQueue;
+
 @interface GCDTimer : NSObject
 
-@property (STRONG, readonly, nonatomic) dispatch_source_t dispatchSource;
+@property (strong, readonly, nonatomic) dispatch_source_t dispatchSource;
 
-#pragma 初始化以及释放
+#pragma 初始化
 - (instancetype)init;
 - (instancetype)initInQueue:(GCDQueue *)queue;
-- (void)dispatchRelease;
 
-#pragma 用法
+#pragma mark - 用法
 - (void)event:(dispatch_block_t)block timeInterval:(uint64_t)interval;
+- (void)event:(dispatch_block_t)block timeInterval:(uint64_t)interval delay:(uint64_t)delay;
+- (void)event:(dispatch_block_t)block timeIntervalWithSecs:(float)secs;
+- (void)event:(dispatch_block_t)block timeIntervalWithSecs:(float)secs delaySecs:(float)delaySecs;
 - (void)start;
 - (void)destroy;
-
 
 @end
