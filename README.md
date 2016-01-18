@@ -11,4 +11,4 @@
 
 > 帮助
 
-![Animations](https://github.com/YouXianMing/Animations) 是本人另外的一个动画效果合集，感兴趣的朋友可以看看^_^。
+![Animations](https://github.com/YouXianMing/Animations) 是本人另外的一个动画效果合集项目，感兴趣的朋友可以看看^_^。
