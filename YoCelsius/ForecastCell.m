@@ -46,14 +46,14 @@
         self.weekDayInfoLabel.font          = [UIFont fontWithName:LATO_THIN size:28.f];
         self.weekDayInfoLabel.text          = @"Today";
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.weekDayInfoLabel               = [[UILabel alloc] initWithFrame:CGRectMake(17 + 10, 24, 100, 60)];
         self.weekDayInfoLabel.textAlignment = NSTextAlignmentLeft;
         self.weekDayInfoLabel.font          = [UIFont fontWithName:LATO_THIN size:34.f];
         self.weekDayInfoLabel.text          = @"Today";
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.weekDayInfoLabel               = [[UILabel alloc] initWithFrame:CGRectMake(17 + 10, 24, 100, 60)];
         self.weekDayInfoLabel.textAlignment = NSTextAlignmentLeft;
@@ -92,14 +92,14 @@
         self.minTempLabel.font          = [UIFont fontWithName:LATO_THIN size:28];
         self.minTempLabel.text          = @"-200.0°";
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.minTempLabel               = [[UILabel alloc] initWithFrame:CGRectMake(110, 25, 200, 70)];
         self.minTempLabel.textAlignment = NSTextAlignmentLeft;
         self.minTempLabel.font          = [UIFont fontWithName:LATO_THIN size:34];
         self.minTempLabel.text          = @"-200.0°";
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.minTempLabel               = [[UILabel alloc] initWithFrame:CGRectMake(120, 25, 200, 70)];
         self.minTempLabel.textAlignment = NSTextAlignmentLeft;
@@ -127,14 +127,14 @@
         self.maxTempLabel.text          = @"-200.0°";
         
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.maxTempLabel               = [[UILabel alloc] initWithFrame:CGRectMake(100 + 80 + 20, 25, 200, 70)];
         self.maxTempLabel.textAlignment = NSTextAlignmentLeft;
         self.maxTempLabel.font          = [UIFont fontWithName:LATO_THIN size:34];
         self.maxTempLabel.text          = @"-200.0°";
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.maxTempLabel               = [[UILabel alloc] initWithFrame:CGRectMake(100 + 80 + 40, 25, 200, 70)];
         self.maxTempLabel.textAlignment = NSTextAlignmentLeft;
@@ -160,13 +160,13 @@
         self.weatherLabel.textAlignment = NSTextAlignmentCenter;
         self.weatherLabel.font          = [UIFont fontWithName:WEATHER_TIME size:40.f];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.weatherLabel               = [[UILabel alloc] initWithFrame:CGRectMake(250 + 40, 20, 60, 60)];
         self.weatherLabel.textAlignment = NSTextAlignmentCenter;
         self.weatherLabel.font          = [UIFont fontWithName:WEATHER_TIME size:45.f];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.weatherLabel               = [[UILabel alloc] initWithFrame:CGRectMake(250 + 70, 24, 60, 60)];
         self.weatherLabel.textAlignment = NSTextAlignmentCenter;

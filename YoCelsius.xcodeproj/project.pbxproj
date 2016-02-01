@@ -26,6 +26,7 @@
 		100149601C43F673006D9153 /* V_3_X_NetworkingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1001495C1C43F673006D9153 /* V_3_X_NetworkingIndicator.m */; };
 		100149611C43F673006D9153 /* V_3_X_NetworkingReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1001495E1C43F673006D9153 /* V_3_X_NetworkingReachability.m */; };
 		100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 100BFAE41C22A346008C5523 /* CGRectStoreValue.m */; };
+		1026BD4B1C5F5834004FB93B /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1026BD4A1C5F5834004FB93B /* UIView+SetRect.m */; };
 		102B85D21C3DEFA4001699A9 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 102B85C21C3DEFA4001699A9 /* Networking.m */; };
 		102B85D31C3DEFA4001699A9 /* NetworkingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 102B85C41C3DEFA4001699A9 /* NetworkingIndicator.m */; };
 		102B85D41C3DEFA4001699A9 /* NetworkingReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 102B85C61C3DEFA4001699A9 /* NetworkingReachability.m */; };
@@ -70,7 +71,6 @@
 		10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28CF1A908F3F00CE545D /* WeatherInfo.m */; };
 		10AB28DC1A908F3F00CE545D /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28D11A908F3F00CE545D /* Wind.m */; };
 		10AB28E31A9095C000CE545D /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28E21A9095C000CE545D /* MapManager.m */; };
-		10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29461A90BCBB00CE545D /* UIView+SetRect.m */; };
 		10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB294E1A91D90700CE545D /* Lato-Regular.ttf */; };
 		10AB29531A91DA5200CE545D /* FontInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB29521A91DA5200CE545D /* FontInfomation.m */; };
 		10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB29571A91DD3900CE545D /* Lato-Bold.ttf */; };
@@ -198,6 +198,8 @@
 		1001495E1C43F673006D9153 /* V_3_X_NetworkingReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_3_X_NetworkingReachability.m; sourceTree = "<group>"; };
 		100BFAE31C22A346008C5523 /* CGRectStoreValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectStoreValue.h; sourceTree = "<group>"; };
 		100BFAE41C22A346008C5523 /* CGRectStoreValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRectStoreValue.m; sourceTree = "<group>"; };
+		1026BD491C5F5834004FB93B /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
+		1026BD4A1C5F5834004FB93B /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
 		102B85C11C3DEFA4001699A9 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		102B85C21C3DEFA4001699A9 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		102B85C31C3DEFA4001699A9 /* NetworkingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingIndicator.h; sourceTree = "<group>"; };
@@ -290,9 +292,6 @@
 		10AB28E11A9095C000CE545D /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
 		10AB28E21A9095C000CE545D /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		10AB28E51A90B01100CE545D /* AppColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppColor.h; sourceTree = "<group>"; };
-		10AB29451A90BCBB00CE545D /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
-		10AB29461A90BCBB00CE545D /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
-		10AB29481A90BCEE00CE545D /* WxHxD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WxHxD.h; sourceTree = "<group>"; };
 		10AB294E1A91D90700CE545D /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		10AB29511A91DA5200CE545D /* FontInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontInfomation.h; sourceTree = "<group>"; };
 		10AB29521A91DA5200CE545D /* FontInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontInfomation.m; sourceTree = "<group>"; };
@@ -690,8 +689,8 @@
 		10AB29441A90BCBB00CE545D /* SetRect */ = {
 			isa = PBXGroup;
 			children = (
-				10AB29451A90BCBB00CE545D /* UIView+SetRect.h */,
-				10AB29461A90BCBB00CE545D /* UIView+SetRect.m */,
+				1026BD491C5F5834004FB93B /* UIView+SetRect.h */,
+				1026BD4A1C5F5834004FB93B /* UIView+SetRect.m */,
 			);
 			path = SetRect;
 			sourceTree = "<group>";
@@ -1089,7 +1088,6 @@
 				10E1F53C1A908C3200AED5D6 /* Images.xcassets */,
 				10AB28831A908ECC00CE545D /* YoCelsius.pch */,
 				10F653081B831018004E45FC /* SimpleNSLog.h */,
-				10AB29481A90BCEE00CE545D /* WxHxD.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1181,6 +1179,7 @@
 				10D87D0D1A940DD7007CD3A5 /* POPAnimationRuntime.mm in Sources */,
 				10DD79191AA9D89E00051B0D /* ARCGPathFromString.m in Sources */,
 				100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */,
+				1026BD4B1C5F5834004FB93B /* UIView+SetRect.m in Sources */,
 				100149551C43F65F006D9153 /* UIImageView+AFNetworking.m in Sources */,
 				102B85D61C3DEFA4001699A9 /* RequestMethodType.m in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
@@ -1235,7 +1234,6 @@
 				10BD570B1A9EA43800A6F83D /* ForecastCell.m in Sources */,
 				10D87D121A940DD7007CD3A5 /* POPCustomAnimation.mm in Sources */,
 				10D87D191A940DD7007CD3A5 /* POPVector.mm in Sources */,
-				10AB29471A90BCBB00CE545D /* UIView+SetRect.m in Sources */,
 				10BD57521A9EFD8600A6F83D /* PresentingAnimator.m in Sources */,
 				10D87D261A94202A007CD3A5 /* ConfigAttributedString.m in Sources */,
 				10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */,

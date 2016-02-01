@@ -77,14 +77,16 @@
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:24];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
+        
         self.cityNameLabel = \
         [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
                                                   self.countryCodeBackgroundView.x + 30, 0, 0)];
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_THIN size:40];
     
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
+        
         self.cityNameLabel = \
         [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
                                                   self.countryCodeBackgroundView.x + 30, 0, 0)];

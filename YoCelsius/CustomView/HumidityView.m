@@ -37,12 +37,12 @@
         circleRect = CGRectMake(0, 0, 100, 100);
         rotateRect = CGRectMake(37, 40, circleRect.size.width, circleRect.size.height);
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         circleRect = CGRectMake(0, 0, 110, 110);
         rotateRect = CGRectMake(40, 50, circleRect.size.width, circleRect.size.height);
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         circleRect = CGRectMake(0, 0, 115, 115);
         rotateRect = CGRectMake(45, 55, circleRect.size.width, circleRect.size.height);

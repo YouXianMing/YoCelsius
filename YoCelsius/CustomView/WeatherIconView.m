@@ -61,13 +61,13 @@
         self.glowLabel.y         = 10;
         self.glowLabel.x         = 5;
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:110];
         self.glowLabel.y         = 14;
         self.glowLabel.x         = 8;
 
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.glowLabel.font      = [UIFont fontWithName:WEATHER_TIME size:110];
         self.glowLabel.y         = 14;

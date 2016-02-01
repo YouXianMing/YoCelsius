@@ -51,12 +51,18 @@
     
     // 日出的view
     if (iPhone5_5s || iPhone4_4s) {
+        
         self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(45, 50, 40, 80)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
+        
     } else {
+        
         self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
     }
+    
     [self.sunriseView buildView];
     [self addSubview:self.sunriseView];
     self.sunriseViewStoreValue = [CGRectStoreValue new];
@@ -69,12 +75,18 @@
     
     // 日出时间标签
     if (iPhone5_5s || iPhone4_4s) {
+        
         self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 40, 20)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 50, 25)];
+        
     } else {
+        
         self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 50, 25)];
     }
+    
     self.sunriseTimeLabel.alpha = 0.f;
     self.sunriseTimeLabel.textAlignment = NSTextAlignmentCenter;
     self.sunriseTimeLabel.font = [UIFont fontWithName:LATO_BOLD size:LATO_10];
@@ -84,12 +96,18 @@
     
     // 日落的view
     if (iPhone5_5s || iPhone4_4s) {
+        
         self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(95, 40, 40, 80)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(110, 60, 50, 100)];
+        
     } else {
+        
         self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(110, 60, 50, 100)];
     }
+    
     [self.sunsetView buildView];
     [self addSubview:self.sunsetView];
     self.sunsetViewStoreValue = [CGRectStoreValue new];
@@ -102,12 +120,18 @@
     
     // 日落时间标签
     if (iPhone5_5s || iPhone4_4s) {
+        
         self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 40, 20)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
+        
     } else {
+        
         self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
     }
+    
     self.sunsetTimeLabel.textAlignment = NSTextAlignmentCenter;
     self.sunsetTimeLabel.alpha = 0.f;
     self.sunsetTimeLabel.font = [UIFont fontWithName:LATO_BOLD size:LATO_10];

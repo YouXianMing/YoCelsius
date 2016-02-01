@@ -98,14 +98,22 @@
     
     // 黑色的view
     if (iPhone4_4s || iPhone5_5s) {
+        
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 44)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 60)];
-    } else if (iPhone6_plus) {
+        
+    } else if (iPhone6_6sPlus) {
+        
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 60)];
+        
     } else {
+        
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 44)];
     }
+    
     self.blackView.backgroundColor = [UIColor blackColor];
     [self addSubview:self.blackView];
     self.blackViewStoreValue = [CGRectStoreValue new];
@@ -121,17 +129,25 @@
     // 红色的view
     CGFloat redViewWidth = 100;
     if (iPhone4_4s || iPhone5_5s) {
+        
         redViewWidth = 100;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 44)];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         redViewWidth = 135;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 60)];
-    } else if (iPhone6_plus) {
+        
+    } else if (iPhone6_6sPlus) {
+        
         redViewWidth = 135;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 60)];
+        
     } else {
+        
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 44)];
     }
+    
     self.redView.backgroundColor = [UIColor redColor];
     [self addSubview:self.redView];
     self.redViewStoreValue = [CGRectStoreValue new];
@@ -150,7 +166,7 @@
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:10];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
@@ -158,7 +174,7 @@
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:16];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
@@ -192,7 +208,7 @@
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:12];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
@@ -200,7 +216,7 @@
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:16];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
@@ -233,13 +249,13 @@
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:26.f];
 
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_LIGHT size:30.f];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
@@ -269,13 +285,13 @@
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:14.f];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:16.f];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";

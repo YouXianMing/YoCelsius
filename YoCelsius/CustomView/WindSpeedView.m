@@ -41,13 +41,13 @@
         windOffsetY = 40;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         windOffsetX = 40;
         windOffsetY = 50;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 65, 65);
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         windOffsetX = 40;
         windOffsetY = 55;
@@ -74,11 +74,11 @@
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 120, 93, 15)];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 143, 93, 15)];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 155, 93, 15)];
         
@@ -104,11 +104,11 @@
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
         
-    } else if (iPhone6) {
+    } else if (iPhone6_6s) {
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 70.f)];
         
-    } else if (iPhone6_plus) {
+    } else if (iPhone6_6sPlus) {
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 75.f)];
         

@@ -27,7 +27,6 @@
 #import "Networking.h"
 #import "AppColor.h"
 #import "UIView+SetRect.h"
-#import "WxHxD.h"
 #import "FontInfomation.h"
 #import "AddedFont.h"
 #import "GCD.h"

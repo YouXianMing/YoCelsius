@@ -53,24 +53,32 @@
     self.gridView.alpha = 0.f;
     
     if (iPhone4_4s || iPhone5_5s) {
+        
         gridOffsetX = 30;
         gridOffsetY = 45;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 23;
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         gridOffsetX = 30;
         gridOffsetY = 50;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 26;
-    } else if (iPhone6_plus) {
+        
+    } else if (iPhone6_6sPlus) {
+        
         gridOffsetX = 30;
         gridOffsetY = 53;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 30;
+        
     } else {
+        
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 23;
     }
+    
     [self.gridView buildView];
     [self addSubview:self.gridView];
     

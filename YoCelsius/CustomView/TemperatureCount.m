@@ -58,15 +58,22 @@
     UIFont *totalFont = nil;
     UIFont *duFont    = nil;
     if (iPhone4_4s || iPhone5_5s) {
+        
         totalFont       = [UIFont fontWithName:LATO_THIN size:75.f];
         duFont          = [UIFont fontWithName:LATO_THIN size:75.f];
-    } else if (iPhone6) {
+        
+    } else if (iPhone6_6s) {
+        
         totalFont       = [UIFont fontWithName:LATO_THIN size:90];
         duFont          = [UIFont fontWithName:LATO_THIN size:90];
-    } else if (iPhone6_plus) {
+        
+    } else if (iPhone6_6sPlus) {
+        
         totalFont       = [UIFont fontWithName:LATO_THIN size:95.f];
         duFont          = [UIFont fontWithName:LATO_THIN size:95.f];
+        
     } else {
+        
         totalFont       = [UIFont fontWithName:LATO_THIN size:75.f];
         duFont          = [UIFont fontWithName:LATO_THIN size:75.f];
     }
