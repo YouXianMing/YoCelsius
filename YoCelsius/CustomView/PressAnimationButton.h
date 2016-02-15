@@ -19,21 +19,16 @@
 
 @interface PressAnimationButton : UIView
 
-
 @property (nonatomic, strong) UIFont   *font;
 @property (nonatomic, strong) NSString *text;
-
 
 @property (nonatomic, strong) UIColor  *normalTextColor;
 @property (nonatomic, strong) UIColor  *highlightTextColor;
 
-
 @property (nonatomic, strong) UIColor  *animationColor;
 @property (nonatomic)         CGFloat   animationWidth; // 动画的宽度
 
-
 @property (nonatomic, weak)   id<PressAnimationButtonDelegate>  delegate; // 代理
-
 
 /**
  *  动画结束 + 恢复正常的时间

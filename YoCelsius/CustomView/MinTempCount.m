@@ -13,6 +13,7 @@
 @implementation MinTempCount
 
 - (void)startAnimation {
+    
     // 初始化值
     CGFloat fromeValue = self.fromValue;
     CGFloat toValue    = self.toValue;
@@ -27,6 +28,7 @@
     
     // 只有执行了代理才会执行计数引擎
     if (self.delegate && [self.delegate respondsToSelector:@selector(numberCount:currentSting:)]) {
+        
         /* 将计算出来的值通过writeBlock动态给控件设定 */
         self.conutAnimation.property = \
         [POPMutableAnimatableProperty propertyWithName:@"conutAnimation"

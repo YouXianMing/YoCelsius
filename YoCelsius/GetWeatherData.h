@@ -21,7 +21,6 @@
 
 @interface GetWeatherData : NSObject
 
-
 @property (nonatomic, weak)  id<GetWeatherDataDelegate> delegate;
 
 /**
@@ -29,12 +28,10 @@
  */
 @property (nonatomic, strong) CLLocation  *location;
 
-
 /**
  *  城市ID号码
  */
 @property (nonatomic, strong) NSString    *cityId;
-
 
 /**
  *  开始获取网络数据 (开始获取定位数据的信息)

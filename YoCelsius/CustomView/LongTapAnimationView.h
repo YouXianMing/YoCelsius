@@ -10,6 +10,7 @@
 @class LongTapAnimationView;
 
 @protocol LongTapAnimationViewDelegate <NSObject>
+
 /**
  *  长按百分比
  *
@@ -18,6 +19,7 @@
  */
 - (void)longPressPercentage:(CGFloat)percent view:(LongTapAnimationView *)view;
 - (void)longPressCompleteWithView:(LongTapAnimationView *)view intNumber:(NSNumber *)number;
+
 @end
 
 @interface LongTapAnimationView : UIView

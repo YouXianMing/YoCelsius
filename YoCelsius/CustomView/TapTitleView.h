@@ -14,6 +14,7 @@
 @protocol TapTitleViewDelegate <NSObject>
 
 @optional
+
 - (void)tapTitleView:(TapTitleView *)tapView;
 
 @end

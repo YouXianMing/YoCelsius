@@ -15,7 +15,9 @@
 @class FailedLongPressView;
 
 @protocol FailedLongPressViewDelegate <NSObject>
+
 - (void)pressEvent:(FailedLongPressView *)view;
+
 @end
 
 @interface FailedLongPressView : UIView

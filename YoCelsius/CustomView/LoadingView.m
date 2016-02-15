@@ -20,22 +20,26 @@
 @implementation LoadingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         self.lock = @(NO);
         
         [self initViews];
         
         [self rotateImageViewWithCircleByOneSecond];
     }
+    
     return self;
 }
 
 - (void)initViews {
+    
     // 静态图片
     self.staticImageView       = [[UIImageView alloc] initWithFrame:self.bounds];
     self.staticImageView.alpha = 0.f;
-
     [self addSubview:self.staticImageView];
     
     // 动态图片
@@ -51,8 +55,11 @@
     
     // 锁上
     if (self.lock.boolValue == NO) {
+        
         self.lock = @(YES);
+        
     } else {
+        
         return;
     }
     
@@ -65,52 +72,66 @@
          usingSpringWithDamping:3.f
           initialSpringVelocity:0.f
                         options:UIViewAnimationOptionLayoutSubviews animations:^{
+                            
                             self.staticImageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
                             self.staticImageView.alpha     = 1.f;
                             
                             self.animtedImageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
                             self.animtedImageView.alpha     = 1.f;
-    } completion:^(BOOL finished) {
-        
-    }];
+                            
+                        } completion:^(BOOL finished) {
+                            
+                        }];
 }
 
 /**
  *  隐藏
  */
 - (void)hide {
+    
     // 解锁
     self.lock = @(NO);
     
     CGFloat duration = 0.75f;
     
     [UIView animateWithDuration:duration animations:^{
+        
         self.staticImageView.transform = CGAffineTransformMake(1.2, 0, 0, 1.2, 0, 0);
         self.staticImageView.alpha     = 0.f;
         
         self.animtedImageView.transform = CGAffineTransformMake(1.2, 0, 0, 1.2, 0, 0);
         self.animtedImageView.alpha     = 0.f;
-
+        
     } completion:^(BOOL finished) {
-
+        
     }];
 }
 
 #pragma mark - 重写setter,getter方法
+
 @synthesize staticCircleImage = _staticCircleImage;
+
 - (void)setStaticCircleImage:(UIImage *)staticCircleImage {
+    
     _staticCircleImage         = staticCircleImage;
     self.staticImageView.image = staticCircleImage;
 }
+
 - (UIImage *)staticCircleImage {
+    
     return _staticCircleImage;
 }
+
 @synthesize animtedImage = _animtedImage;
+
 - (void)setAnimtedImage:(UIImage *)animtedImage {
+    
     _animtedImage               = animtedImage;
     self.animtedImageView.image = animtedImage;
 }
+
 - (UIImage *)animtedImage {
+    
     return _animtedImage;
 }
 
@@ -123,9 +144,11 @@
                           delay:0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
+                         
                          self.transform = CGAffineTransformRotate(self.transform, M_PI_2);
-                     }
-                     completion:^(BOOL finished){
+                         
+                     } completion:^(BOOL finished){
+                         
                          [self rotateImageViewWithCircleByOneSecond];
                      }];
 }

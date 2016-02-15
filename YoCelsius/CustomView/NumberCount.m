@@ -14,11 +14,15 @@
 @implementation NumberCount
 
 - (instancetype)init {
+    
     self = [super init];
+    
     if (self) {
+        
         self.conutAnimation = [POPBasicAnimation animation];
         
     }
+    
     return self;
 }
 
@@ -38,6 +42,7 @@
 
     // 只有执行了代理才会执行计数引擎
     if (self.delegate && [self.delegate respondsToSelector:@selector(numberCount:currentNumber:)]) {
+        
         /* 将计算出来的值通过writeBlock动态给控件设定 */
         self.conutAnimation.property = \
         [POPMutableAnimatableProperty propertyWithName:@"conutAnimation"

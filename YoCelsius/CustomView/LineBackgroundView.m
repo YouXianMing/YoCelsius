@@ -10,10 +10,8 @@
 
 #import "LineBackgroundView.h"
 
-
 // 将度数转换为弧度
 #define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
-
 
 @interface LineBackgroundView ()
 
@@ -24,16 +22,21 @@
 @implementation LineBackgroundView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         self.layer.masksToBounds = YES;
     }
+    
     return self;
 }
 
 - (void)buildView {
     
     if (self.lineGap <= 0 && self.lineWidth <= 0) {
+        
         return;
     }
     
@@ -51,14 +54,19 @@
                                                        self.bounds.size.height / 2.f);
     
     NSInteger lineViewCount = containerViewWidth / (self.lineGap + self.lineWidth);
+    
     for (int count = 0; count < lineViewCount + 1; count++) {
+        
         UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(count * (self.lineGap + self.lineWidth),
                                                                     0,
                                                                     self.lineWidth,
                                                                     containerViewWidth)];
         if (self.lineColor) {
+            
             tempView.backgroundColor = self.lineColor;
+            
         } else {
+            
             tempView.backgroundColor = [UIColor blackColor];
         }
 
@@ -73,6 +81,7 @@
                           LineWidth:(CGFloat)width
                             lineGap:(CGFloat)lineGap
                           lineColor:(UIColor *)color {
+    
     LineBackgroundView *bgView = [[LineBackgroundView alloc] initWithFrame:frame];
     bgView.lineWidth           = width;
     bgView.lineGap             = lineGap;

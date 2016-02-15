@@ -18,7 +18,6 @@
 @property (nonatomic) CGFloat percent;
 
 - (void)buildView;
-
 - (void)show;
 - (void)hide;
 

@@ -20,8 +20,11 @@
 @implementation ShowDownView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         CGFloat width  = frame.size.width / 2.f;
         CGFloat height = frame.size.height;
         
@@ -34,10 +37,12 @@
         [self addSubview:self.leftView];
         [self addSubview:self.rightView];
     }
+    
     return self;
 }
 
 - (void)showPercent:(CGFloat)percent {
+    
     [self.leftView showPercent:percent];
     [self.rightView showPercent:percent];
 }

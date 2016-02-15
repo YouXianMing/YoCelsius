@@ -12,7 +12,6 @@
 
 @interface RainView : EmitterLayerView
 
-
 @property (nonatomic, strong) UIImage *snowImage;
 
 @property (nonatomic, assign) CGFloat   lifetime;   // 生命周期
@@ -22,11 +21,9 @@
 @property (nonatomic, assign) CGFloat   gravity;    // 重力
 @property (nonatomic, strong) UIColor  *snowColor;  // 雪花颜色
 
-
 - (void)showSnow;
 - (void)show;
 - (void)hide;
 - (void)configType:(EMitterType)type;
-
 
 @end

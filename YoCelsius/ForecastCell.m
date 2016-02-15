@@ -26,7 +26,9 @@
 @implementation ForecastCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         // 初始化标签
@@ -71,7 +73,6 @@
     [self.weekDayInfoLabel sizeToFit];
     [self addSubview:self.weekDayInfoLabel];
     
-    
     // 日期
     self.dateLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 12.f)];
     self.dateLabel.textAlignment = NSTextAlignmentCenter;
@@ -79,10 +80,9 @@
     self.dateLabel.text          = @"2015.2.25";
     self.dateLabel.textColor     = [UIColor whiteColor];
     
-    UIView *dateBlackView = [[UIView alloc] initWithFrame:CGRectMake(Width - 50, 0, 50, 12.f)];
+    UIView *dateBlackView         = [[UIView alloc] initWithFrame:CGRectMake(Width - 50, 0, 50, 12.f)];
     dateBlackView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.95];
     [dateBlackView addSubview:self.dateLabel];
-    
     
     // 最低温度
     if (iPhone4_4s || iPhone5_5s) {
@@ -117,7 +117,6 @@
     [self.minTempLabel sizeToFit];
     [self addSubview:self.minTempLabel];
     
-    
     // 最高温度
     if (iPhone4_4s || iPhone5_5s) {
         
@@ -125,7 +124,6 @@
         self.maxTempLabel.textAlignment = NSTextAlignmentLeft;
         self.maxTempLabel.font          = [UIFont fontWithName:LATO_THIN size:28];
         self.maxTempLabel.text          = @"-200.0°";
-        
         
     } else if (iPhone6_6s) {
         
@@ -151,7 +149,6 @@
     
     [self.maxTempLabel sizeToFit];
     [self addSubview:self.maxTempLabel];
-    
     
     // 天气图标
     if (iPhone4_4s || iPhone5_5s) {
@@ -179,6 +176,7 @@
         self.weatherLabel.font          = [UIFont fontWithName:WEATHER_TIME size:40.f];
         
     }
+    
     [self addSubview:self.weatherLabel];
     
     // 天气描述信息
@@ -187,11 +185,10 @@
     self.weatherInfoLabel.font          = [UIFont fontWithName:LATO_REGULAR size:10];
     [self addSubview:self.weatherInfoLabel];
     
-    
     // 线条
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, Width / 4.f - 0.5, Width, 0.5)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, Width / 4.f - 0.5, Width, 0.5)];
     line.backgroundColor = [UIColor blackColor];
-    line.alpha   = 0.1;
+    line.alpha           = 0.1;
     [self addSubview:line];
 }
 
@@ -200,11 +197,11 @@
     WeatherInfo *weatherInfo = data;
     
     // 最高温度
-    NSString *maxTemp = [NSString stringWithFormat:@"%d°", @(weatherInfo.temp.max.floatValue - 273.15).intValue];
+    NSString *maxTemp      = [NSString stringWithFormat:@"%d°", @(weatherInfo.temp.max.floatValue - 273.15).intValue];
     self.maxTempLabel.text = maxTemp;
     
     // 最低温度
-    NSString *minTemp = [NSString stringWithFormat:@"%d°", @(weatherInfo.temp.min.floatValue - 273.15).intValue];
+    NSString *minTemp      = [NSString stringWithFormat:@"%d°", @(weatherInfo.temp.min.floatValue - 273.15).intValue];
     self.minTempLabel.text = minTemp;
     
     NSDate *utcDate            = [NSDate dateWithTimeIntervalSince1970:weatherInfo.dt.integerValue];
@@ -244,6 +241,7 @@
 - (void)show {
     
     [UIView animateWithDuration:0.5 animations:^{
+        
         self.weekDayInfoLabel.x = 17;
     }];
 }

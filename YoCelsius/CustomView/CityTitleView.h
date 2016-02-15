@@ -15,15 +15,14 @@
 
 @interface CityTitleView : UIView
 
-@property (nonatomic, strong) NSString *cityName;
-@property (nonatomic, strong) NSString *cityCode;
-@property (nonatomic, strong) NSString *weatherDescription;
-@property (nonatomic, strong) NSString *baseStation;
-@property (nonatomic, strong) NSString *updateYear;
-@property (nonatomic, strong) NSString *updateHour;
+@property (nonatomic, strong) NSString       *cityName;
+@property (nonatomic, strong) NSString       *cityCode;
+@property (nonatomic, strong) NSString       *weatherDescription;
+@property (nonatomic, strong) NSString       *baseStation;
+@property (nonatomic, strong) NSString       *updateYear;
+@property (nonatomic, strong) NSString       *updateHour;
 @property (nonatomic)         NSTimeInterval  utcSec;
-@property (nonatomic, strong) NSNumber *weatherNumber;
-
+@property (nonatomic, strong) NSNumber       *weatherNumber;
 
 // 创建view
 - (void)buildView;

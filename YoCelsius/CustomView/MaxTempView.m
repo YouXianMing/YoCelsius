@@ -49,7 +49,7 @@
     CGFloat gridOffsetY = 13;
     
     // 创建出格子view
-    self.gridView  = [[GridView alloc] initWithFrame:CGRectZero];
+    self.gridView       = [[GridView alloc] initWithFrame:CGRectZero];
     self.gridView.alpha = 0.f;
     
     if (iPhone4_4s || iPhone5_5s) {
@@ -116,7 +116,6 @@
     self.minCountViewStoreValue.startRect = self.minCountView.frame;
     self.minCountView.alpha = 0.f;
 
-    
     // 最大温度
     self.maxTempViewStoreValue = [CGRectStoreValue new];
     self.maxTempView = [[UIView alloc] initWithFrame:CGRectMake(_gridView.gridLength * 3, _gridView.gridLength * 2, _gridView.gridLength * 1, 0)];
@@ -147,13 +146,13 @@
     [self addSubview:self.maxTempView];
     [self addSubview:self.centerLineView];
     
-    
     self.titleMoveLabel = [TitleMoveLabel withText:@"Min/Max Temp"];
     [self.titleMoveLabel buildView];
     [self addSubview:self.titleMoveLabel];
 }
 
 - (void)show {
+    
     CGFloat duration = 1.75;
     
     // 标题显示
@@ -163,10 +162,12 @@
     [self.gridView showWithDuration:1.5f];
     
     if (self.minTemp >= 0) {
+        
         self.minCountView.y -= self.gridView.gridLength;
     }
     
     if (self.maxTemp >= 0) {
+        
         self.maxCountView.y -= self.gridView.gridLength;
     }
     
@@ -178,18 +179,16 @@
     
     // 中间线条动画效果
     [UIView animateWithDuration:0.75 delay:0.35 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+        
         self.centerLineView.frame = self.centerLineViewStoreValue.midRect;
         self.centerLineView.alpha = 1.f;
         
-                
         self.minTempView.height = self.minTemp;
         self.minTempView.y     -= self.minTemp;
         self.minTempView.alpha  = 1.f;
         self.minCountView.y    -= self.minTemp;
         self.minCountView.alpha = 1.f;
 
-
-        
         self.maxTempView.height = self.maxTemp;
         self.maxTempView.y     -= self.maxTemp;
         self.maxTempView.alpha  = 1.f;
@@ -202,6 +201,7 @@
 }
 
 - (void)hide {
+    
     CGFloat duration = 0.75f;
     
     // 标题隐藏
@@ -211,6 +211,7 @@
     [self.gridView hideWithDuration:duration];
     
     [UIView animateWithDuration:duration animations:^{
+        
         self.centerLineView.alpha = 0.f;
         
         self.minTempView.frame = self.minTempViewStoreValue.startRect;
@@ -223,9 +224,9 @@
         self.minCountView.x      += 10.f;
         self.maxCountView.alpha   = 0.f;
         self.maxCountView.x      += 10.f;
-        
 
     } completion:^(BOOL finished) {
+        
         self.centerLineView.frame = self.centerLineViewStoreValue.startRect;
         self.minCountView.frame   = self.minCountViewStoreValue.startRect;
         self.maxCountView.frame   = self.maxCountViewStoreValue.startRect;

@@ -18,7 +18,7 @@
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:frameCount];
     
     // 计算并存储
-	CGFloat t = 0.0;
+	CGFloat t  = 0.0;
 	CGFloat dt = 1.0 / (frameCount - 1);
 	for(size_t frame = 0; frame < frameCount; ++frame, t += dt)
 	{
@@ -42,7 +42,7 @@
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:frameCount];
 	
     // 计算并存储
-	CGFloat t = 0.0;
+	CGFloat t  = 0.0;
 	CGFloat dt = 1.0 / (frameCount - 1);
 	for(size_t frame = 0; frame < frameCount; ++frame, t += dt)
 	{
@@ -67,7 +67,7 @@
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:frameCount];
 	
     // 计算并存储
-	CGFloat t = 0.0;
+	CGFloat t  = 0.0;
 	CGFloat dt = 1.0 / (frameCount - 1);
 	for(size_t frame = 0; frame < frameCount; ++frame, t += dt)
 	{

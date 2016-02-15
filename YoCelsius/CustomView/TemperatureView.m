@@ -29,15 +29,15 @@
     CGRect rect = CGRectMake(0, 0, 160, 140);
     
     // 计数的数据
-    self.countLabel    = [[TemperatureCountLabel alloc] initWithFrame:rect];
+    self.countLabel        = [[TemperatureCountLabel alloc] initWithFrame:rect];
     self.countLabel.center = self.middlePoint;
     [self addSubview:self.countLabel];
-    self.countLabelStoreValue = [CGRectStoreValue new];
-    self.countLabelStoreValue.midRect = self.countLabel.frame;
-    self.countLabel.x += 10;
+    self.countLabelStoreValue           = [CGRectStoreValue new];
+    self.countLabelStoreValue.midRect   = self.countLabel.frame;
+    self.countLabel.x                  += 10;
     self.countLabelStoreValue.startRect = self.countLabel.frame;
-    self.countLabel.x -= 20;
-    self.countLabelStoreValue.endRect = self.countLabel.frame;
+    self.countLabel.x                  -= 20;
+    self.countLabelStoreValue.endRect   = self.countLabel.frame;
     self.countLabel.frame = self.countLabelStoreValue.startRect;
     
     // 标题
@@ -46,6 +46,7 @@
 }
 
 - (void)show {
+    
     CGFloat duration = 1.75f;
     
     self.countLabel.toValue = self.temperature;
@@ -54,22 +55,26 @@
     [self.titleMoveLabel show];
     
     [UIView animateWithDuration:duration animations:^{
+        
         self.countLabel.frame = self.countLabelStoreValue.midRect;
     }];
 }
 
 - (void)hide {
+    
     CGFloat duration = 0.75f;
     [self.countLabel hideDuration:duration];
     
     [self.titleMoveLabel hide];
     
     [UIView animateWithDuration:duration animations:^{
+        
         self.countLabel.frame = self.countLabelStoreValue.endRect;
+        
     } completion:^(BOOL finished) {
+        
         self.countLabel.frame = self.countLabelStoreValue.startRect;
     }];
 }
-
 
 @end

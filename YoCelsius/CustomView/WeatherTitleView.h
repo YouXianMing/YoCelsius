@@ -49,5 +49,4 @@
  */
 - (void)accessOffsetValue:(CGFloat)offsetValue;
 
-
 @end

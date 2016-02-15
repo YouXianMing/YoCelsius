@@ -58,7 +58,7 @@
     [self addSubview:self.titleMoveLabel];
     
     // 完整的圆
-    self.fullCircle = [CircleView createDefaultViewWithFrame:circleRect];
+    self.fullCircle           = [CircleView createDefaultViewWithFrame:circleRect];
     self.fullCircle.lineColor = COLOR_CIRCLE_;
     [self.fullCircle buildView];
     

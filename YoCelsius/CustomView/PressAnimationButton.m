@@ -28,7 +28,9 @@
 @implementation PressAnimationButton
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
         
         self.layer.masksToBounds = YES;
@@ -42,11 +44,13 @@
         // 创建出label
         [self createLabelsWithFrame:self.bounds];
     }
+    
     return self;
 }
 
 #pragma mark - button相关
 - (void)createButtonWithFrame:(CGRect)frame {
+    
     self.button = [[UIButton alloc] initWithFrame:frame];
     
     // 添加按钮
@@ -72,9 +76,10 @@
 }
 
 - (void)buttonTouchDownAndDragEnter {
+    
     self.showView.bounds = ((CALayer *)self.showView.layer.presentationLayer).bounds;
     self.showView.alpha  = ((CALayer *)self.showView.layer.presentationLayer).opacity;
-
+    
     self.normalLabel.alpha    = ((CALayer *)self.normalLabel.layer.presentationLayer).opacity;
     self.highlightLabel.alpha = ((CALayer *)self.highlightLabel.layer.presentationLayer).opacity;
     
@@ -83,70 +88,79 @@
     
     [UIView animateWithDuration:(self.toEndDuration <= 0 ? TIME_END_DURATION : self.toEndDuration)
                      animations:^{
+                         
                          self.showView.bounds = CGRectMake(0, 0, SHOW_VIEW_WIDTH,
                                                            (self.animationWidth <= 0? SHOW_VIEW_WIDTH : self.animationWidth));
-        self.showView.alpha  = 1;
-        
-        self.normalLabel.alpha    = 0.f;
-        self.highlightLabel.alpha = 1.f;
-    } completion:^(BOOL finished) {
-        if (finished == YES) {
-            if (_delegate && ([_delegate respondsToSelector:@selector(finishedEventWith:)])) {
-                [_delegate finishedEventWith:self];
-            }
-        }
-    }];
-
+                         
+                         self.showView.alpha       = 1;
+                         self.normalLabel.alpha    = 0.f;
+                         self.highlightLabel.alpha = 1.f;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         if (finished == YES) {
+                             
+                             if (_delegate && ([_delegate respondsToSelector:@selector(finishedEventWith:)])) {
+                                 
+                                 [_delegate finishedEventWith:self];
+                             }
+                         }
+                     }];
 }
 
 - (void)buttonTouchUpInside {
+    
     self.showView.bounds = ((CALayer *)self.showView.layer.presentationLayer).bounds;
     self.showView.alpha  = ((CALayer *)self.showView.layer.presentationLayer).opacity;
-
+    
     self.normalLabel.alpha    = ((CALayer *)self.normalLabel.layer.presentationLayer).opacity;
     self.highlightLabel.alpha = ((CALayer *)self.highlightLabel.layer.presentationLayer).opacity;
     
     // 移除之前的动画状态
     [self.showView.layer removeAllAnimations];
     
-    
     [UIView animateWithDuration:(self.toNormalDuration <= 0 ? TIME_NOR_DURATION : self.toNormalDuration)
                      animations:^{
-        self.showView.bounds = CGRectMake(0, 0, SHOW_VIEW_WIDTH, 0);
-        self.showView.alpha  = 0;
-        
-        self.normalLabel.alpha    = 1.f;
-        self.highlightLabel.alpha = 0.f;
-    } completion:^(BOOL finished) {
-
-    }];
+                         
+                         self.showView.bounds = CGRectMake(0, 0, SHOW_VIEW_WIDTH, 0);
+                         self.showView.alpha  = 0;
+                         
+                         self.normalLabel.alpha    = 1.f;
+                         self.highlightLabel.alpha = 0.f;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (void)buttonTouchDragExit {
+    
     self.showView.bounds = ((CALayer *)self.showView.layer.presentationLayer).bounds;
     self.showView.alpha  = ((CALayer *)self.showView.layer.presentationLayer).opacity;
     
-    self.normalLabel.alpha = ((CALayer *)self.normalLabel.layer.presentationLayer).opacity;
+    self.normalLabel.alpha    = ((CALayer *)self.normalLabel.layer.presentationLayer).opacity;
     self.highlightLabel.alpha = ((CALayer *)self.highlightLabel.layer.presentationLayer).opacity;
     
     // 移除之前的动画状态
     [self.showView.layer removeAllAnimations];
-
     
     [UIView animateWithDuration:(self.toNormalDuration <= 0 ? TIME_NOR_DURATION : self.toNormalDuration)
                      animations:^{
-        self.showView.bounds = CGRectMake(0, 0, SHOW_VIEW_WIDTH, 0);
-        self.showView.alpha  = 0;
-        
-        self.normalLabel.alpha    = 1.f;
-        self.highlightLabel.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        
-    }];
+                         
+                         self.showView.bounds = CGRectMake(0, 0, SHOW_VIEW_WIDTH, 0);
+                         self.showView.alpha  = 0;
+                         
+                         self.normalLabel.alpha    = 1.f;
+                         self.highlightLabel.alpha = 0.f;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 #pragma mark - showView相关
 - (void)createShowView {
+    
     self.showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SHOW_VIEW_WIDTH, 0)];
     [self addSubview:self.showView];
     self.showView.alpha  = 0.f;
@@ -159,66 +173,89 @@
 
 #pragma mark - label相关
 - (void)createLabelsWithFrame:(CGRect)frame {
+    
     self.normalLabel    = [[UILabel alloc] initWithFrame:frame];
     self.highlightLabel = [[UILabel alloc] initWithFrame:frame];
-    
     
     self.normalLabel.alpha    = 1.f;
     self.highlightLabel.alpha = 0.f;
     
-    
     self.normalLabel.textAlignment    = NSTextAlignmentCenter;
     self.highlightLabel.textAlignment = NSTextAlignmentCenter;
-    
-    
     
     [self addSubview:self.highlightLabel];
     [self addSubview:self.normalLabel];
 }
 
 #pragma mark - 重写setter,getter方法
+
 @synthesize font = _font;
+
 - (void)setFont:(UIFont *)font {
+    
     _font = font;
     
     self.normalLabel.font    = font;
     self.highlightLabel.font = font;
 }
+
 - (UIFont *)font {
+    
     return _font;
 }
-@synthesize text = _text;
-- (void)setText:(NSString *)text {
-    _text = text;
 
+@synthesize text = _text;
+
+- (void)setText:(NSString *)text {
+    
+    _text = text;
+    
     self.normalLabel.text    = text;
     self.highlightLabel.text = text;
 }
+
 - (NSString *)text {
+    
     return _text;
 }
+
 @synthesize normalTextColor = _normalTextColor;
+
 - (void)setNormalTextColor:(UIColor *)normalTextColor {
-    _normalTextColor = normalTextColor;
+    
+    _normalTextColor           = normalTextColor;
     self.normalLabel.textColor = normalTextColor;
 }
+
 - (UIColor *)normalTextColor {
+    
     return _normalTextColor;
 }
+
 @synthesize highlightTextColor = _highlightTextColor;
+
 - (void)setHighlightTextColor:(UIColor *)highlightTextColor {
-    _highlightTextColor = highlightTextColor;
+    
+    _highlightTextColor           = highlightTextColor;
     self.highlightLabel.textColor = highlightTextColor;
 }
+
 - (UIColor *)highlightTextColor {
+    
     return _highlightTextColor;
 }
+
 @synthesize animationColor = _animationColor;
+
 - (void)setAnimationColor:(UIColor *)animationColor {
-    _animationColor = animationColor;
+    
+    _animationColor               = animationColor;
     self.showView.backgroundColor = animationColor;
 }
+
 - (UIColor *)animationColor {
+    
     return _animationColor;
 }
+
 @end

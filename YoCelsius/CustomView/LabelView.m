@@ -22,6 +22,7 @@
 @implementation LabelView
 
 - (void)buildView {
+    
     // 设置label
     self.label.text      = self.text;
     self.label.font      = self.font;
@@ -43,14 +44,18 @@
     
     // 设置背景色
     if (self.color) {
+        
         self.backgroundColor = self.color;
     }
 }
 
 @synthesize label = _label;
+
 - (UILabel *)label {
+    
     if (_label == nil) {
-        _label = [[UILabel alloc] initWithFrame:CGRectZero];
+        
+        _label               = [[UILabel alloc] initWithFrame:CGRectZero];
         _label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_label];
     }
@@ -59,6 +64,7 @@
 }
 
 + (instancetype)createWithText:(NSString *)text atOrigin:(CGPoint)origin {
+    
     LabelView *labelView    = [[LabelView alloc] initWithFrame:CGRectMake(origin.x, origin.y, 0, 0)];
     labelView.color         = [UIColor blackColor];
     labelView.text          = text;

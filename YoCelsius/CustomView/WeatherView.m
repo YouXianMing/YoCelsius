@@ -9,48 +9,37 @@
 //
 
 #import "WeatherView.h"
-
 #import "HumidityView.h"
 #import "WindSpeedView.h"
 #import "MaxTempView.h"
 #import "SunInfoView.h"
 #import "WeatherIconView.h"
 #import "TemperatureView.h"
-
 #import "ChangeColorLabel.h"
 #import "CityTitleView.h"
-
 #import "ShowDownView.h"
 #import "LeftToRightView.h"
 #import "UpToDownView.h"
-
-
 #import "ShapeWordView.h"
-
 
 @interface WeatherView ()<UITableViewDelegate>
 
 @property (nonatomic, strong) ChangeColorLabel  *changeColorLabel;
-
 @property (nonatomic ,strong) HumidityView      *humidityView;
 @property (nonatomic, strong) WindSpeedView     *windSpeedView;
 @property (nonatomic, strong) MaxTempView       *maxTempView;
 @property (nonatomic, strong) SunInfoView       *sunInfoView;
 @property (nonatomic, strong) TemperatureView   *temperatureView;
 @property (nonatomic, strong) WeatherIconView   *weatherIconView;
-
 @property (nonatomic, strong) CityTitleView     *cityTitleView;
-
 @property (nonatomic, strong) UITableView       *tableView;
 @property (nonatomic, strong) ShowDownView      *showDownView;
-
-@property (nonatomic, strong) LeftToRightView      *grayLine1;
-@property (nonatomic, strong) LeftToRightView      *grayLine2;
-@property (nonatomic, strong) LeftToRightView      *grayLine3;
-@property (nonatomic, strong) LeftToRightView      *grayLine4;
-@property (nonatomic, strong) UpToDownView         *vLine;
-
-@property (nonatomic, strong) ShapeWordView        *shapeWordView;
+@property (nonatomic, strong) LeftToRightView   *grayLine1;
+@property (nonatomic, strong) LeftToRightView   *grayLine2;
+@property (nonatomic, strong) LeftToRightView   *grayLine3;
+@property (nonatomic, strong) LeftToRightView   *grayLine4;
+@property (nonatomic, strong) UpToDownView      *vLine;
+@property (nonatomic, strong) ShapeWordView     *shapeWordView;
 
 @end
 
@@ -59,14 +48,12 @@
 - (void)buildView {
     
     // 加载用tableView
-    self.tableView = [[UITableView alloc] initWithFrame:self.bounds
-                                                  style:UITableViewStylePlain];
+    self.tableView                 = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate        = self;
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.tableView];
     
-
     if (iPhone4_4s) {
         
         // 显示控件
@@ -74,16 +61,13 @@
         [self.humidityView buildView];
         [self.tableView addSubview:self.humidityView];
         
-        
         self.sunInfoView = [[SunInfoView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width / 2.f, Width / 2.f, Width / 2.f)];
         [self.sunInfoView buildView];
         [self.tableView addSubview:self.sunInfoView];
         
-        
         self.temperatureView = [[TemperatureView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width, Width / 2.f, Width / 2.f)];
         [self.temperatureView buildView];
         [self.tableView addSubview:self.temperatureView];
-        
         
         self.weatherIconView = [[WeatherIconView alloc] initWithFrame:CGRectMake(0, Height - Width, Width / 2.f, Width / 2.f)];
         [self.weatherIconView buildView];
@@ -210,7 +194,7 @@
     
     // 风速显示
     self.windSpeedView.windSpeed         = self.weahterData.wind.speed.floatValue;
-    self.windSpeedView.circleByOneSecond = self.windSpeedView.windSpeed / 5.f;
+    self.windSpeedView.circleByOneSecond = self.windSpeedView.windSpeed / 10.f;
     
     // 最大温度,最小温度显示
     WeatherInfo *today = [self accessWeatherInfoDateWith:self.weatherConditions.list];

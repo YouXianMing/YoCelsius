@@ -23,7 +23,6 @@
  */
 @property (nonatomic, strong) NSString *cityName;
 
-
 /**
  *  创建出view
  */

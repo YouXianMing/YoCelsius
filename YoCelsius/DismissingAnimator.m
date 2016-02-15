@@ -11,13 +11,13 @@
 
 @implementation DismissingAnimator
 
-- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
-{
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
+    
     return 0.5f;
 }
 
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
-{
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    
     // 自己的view
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     
@@ -37,13 +37,14 @@
                                                                      func:CubicEaseIn
                                                                frameCount:duration * 60.f];
     keyAnimation.duration             = duration;
-    fromView.center = endPoint;
+    fromView.center                   = endPoint;
     [fromView.layer addAnimation:keyAnimation forKey:nil];
     
     [GCDQueue executeInMainQueue:^{
+        
         [transitionContext completeTransition:YES];
+        
     } afterDelaySecs:duration];
-
 }
 
 @end

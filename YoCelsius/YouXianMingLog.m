@@ -22,10 +22,11 @@ dispatch_once(&predicate, block); \
 
 static NSDateFormatter* _DMLogDateFormatter = nil;
 
-void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...)
-{
+void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...) {
+    
     // 获取时间格式
     GCDExecOnce(^{
+        
         _DMLogDateFormatter = [[NSDateFormatter alloc] init];
         [_DMLogDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
         [_DMLogDateFormatter setDateFormat:DMDEBUG_DEFAULT_DATEFORMAT];
@@ -45,13 +46,17 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     va_end (ap);
     
 #if FILE_NAME
+    
     // 获取一些参数
     NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent];
     
     // 打印
     fprintf(stderr, "%s %s:%d %s", nowCString, [fileName UTF8String], lineNumber, [body UTF8String]);
+    
 #else
+    
     fprintf(stderr, "%s %s", nowCString, [body UTF8String]);
+    
 #endif
     
 #else
@@ -68,13 +73,17 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     
     
 #if FILE_NAME
+    
     // 获取一些参数
     NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent];
     
     // 打印
     fprintf(stderr, "%s:%d %s", [fileName UTF8String], lineNumber, [body UTF8String]);
+    
 #else
+    
     fprintf(stderr, "%s", [body UTF8String]);
+    
 #endif
     
 #endif

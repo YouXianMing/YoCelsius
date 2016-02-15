@@ -13,7 +13,6 @@
 // 管理定位的view
 #import "MapManager.h"
 
-
 // 天气的view
 #import "WeatherView.h"
 #import "SearchView.h"
@@ -21,7 +20,6 @@
 // 网络Model数据
 #import "CurrentWeatherData.h"
 #import "CurrentConditions.h"
-
 
 // 获取网络数据
 #import "GetWeatherData.h"
@@ -37,14 +35,11 @@
 #import "UpdatingView.h"
 #import "FadeBlackView.h"
 
-
 #import "FailedLongPressView.h"
 #import "TWMessageBarManager.h"
 
-
 // 将度数转换为弧度
 #define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
-
 
 @interface ViewController ()<MapManagerLocationDelegate, UITableViewDelegate, GetWeatherDataDelegate, WeatherViewDelegate, UIViewControllerTransitioningDelegate, FailedLongPressViewDelegate>
 
@@ -56,7 +51,7 @@
 
 @property (nonatomic, strong) FailedLongPressView  *failedView;  // 加载失败后显示的view
 
-@property (nonatomic)         BOOL               firstTimeLoadingData;
+@property (nonatomic)         BOOL                  firstTimeLoadingData;
 
 @end
 
@@ -68,7 +63,7 @@
     
     // 获取10天天气
     // http://api.openweathermap.org/data/2.5/forecast/daily?lat=39.907501&lon=116.397232&cnt=10
-
+    
     // 天气的view
     self.weatherView                     = [[WeatherView alloc] initWithFrame:self.view.bounds];
     self.weatherView.layer.masksToBounds = YES;
@@ -84,7 +79,7 @@
     self.upDatingView        = [[UpdatingView alloc] initWithFrame:CGRectZero];
     self.upDatingView.center = self.view.center;
     [self.view addSubview:self.upDatingView];
-
+    
     // 定位功能
     self.mapLoacation          = [MapManager new];
     self.mapLoacation.delegate = self;
@@ -92,7 +87,7 @@
     // 获取网络请求
     self.getWeatherData          = [GetWeatherData new];
     self.getWeatherData.delegate = self;
-
+    
     // 加载失败后显示的view
     self.failedView          = [[FailedLongPressView alloc] initWithFrame:self.view.bounds];
     self.failedView.delegate = self;
@@ -179,11 +174,10 @@
     
     [GCDQueue executeInMainQueue:^{
         
-        [[TWMessageBarManager sharedInstance] \
-         showMessageWithTitle:@"Failed to locate"
-         description:@"Sorry, temporarily unable to locate your position."
-         type:TWMessageBarMessageTypeError
-         callback:^{}];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Failed to locate"
+                                                       description:@"Sorry, temporarily unable to locate your position."
+                                                              type:TWMessageBarMessageTypeError
+                                                          callback:^{}];
         
     } afterDelaySecs:1.f];
 }
@@ -205,11 +199,10 @@
     
     [GCDQueue executeInMainQueue:^{
         
-        [[TWMessageBarManager sharedInstance] \
-         showMessageWithTitle:@"Failed to locate"
-         description:@"Please turn on your Locations Service."
-         type:TWMessageBarMessageTypeError
-         callback:^{}];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Failed to locate"
+                                                       description:@"Please turn on your Locations Service."
+                                                              type:TWMessageBarMessageTypeError
+                                                          callback:^{}];
         
     } afterDelaySecs:0.f];
 }
@@ -288,11 +281,10 @@
     
     [GCDQueue executeInMainQueue:^{
         
-        [[TWMessageBarManager sharedInstance] \
-         showMessageWithTitle:@"Network Unreachable"
-         description:@"Please try later."
-         type:TWMessageBarMessageTypeError
-         callback:^{}];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Network Unreachable"
+                                                       description:@"Please try later."
+                                                              type:TWMessageBarMessageTypeError
+                                                          callback:^{}];
         
     } afterDelaySecs:1.f];
 }
@@ -301,7 +293,6 @@
 - (void)pressEvent:(FailedLongPressView *)view {
     
     [self.failedView hide];
-    
     [self getLocationAndFadeShow];
 }
 

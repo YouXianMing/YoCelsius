@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UIColor  *textColor;
 @property (nonatomic, strong) UIColor  *changedColor;
 
-
 /**
  *  文本
  */

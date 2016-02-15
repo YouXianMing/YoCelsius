@@ -13,23 +13,29 @@
 #import "AlphaView.h"
 
 @interface ChangeColorLabel ()
+
 @property (nonatomic, strong) UILabel   *showLabel;
 @property (nonatomic, strong) UILabel   *alphaLabel;
 @property (nonatomic, strong) AlphaView *alphaView;
+
 @end
 
 @implementation ChangeColorLabel
 
-
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         [self initLabels];
     }
+    
     return self;
 }
 
 - (void)initLabels {
+    
     self.showLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [self addSubview:self.showLabel];
     
@@ -52,6 +58,7 @@
  *  设定文本后将会重新更新控件
  */
 - (void)updateLabelView {
+    
     // 字体
     UIFont  *font      = (self.font == nil ? self.showLabel.font : self.font);
     
@@ -78,14 +85,15 @@
  *  @param percent 百分比
  */
 - (void)colorPercent:(CGFloat)percent {
+    
     if (percent <= 0) {
+        
         self.alphaView.x = -self.showLabel.width;
+        
     } else {
+        
         self.alphaView.x = -self.showLabel.width + percent * self.showLabel.width;
     }
 }
-
-#pragma mark - 私有方法
-
 
 @end

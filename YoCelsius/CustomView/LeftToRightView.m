@@ -13,8 +13,11 @@
 @implementation LeftToRightView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         CGFloat x      = frame.origin.x;
         CGFloat y      = frame.origin.y;
         CGFloat height = frame.size.height;
@@ -26,23 +29,30 @@
         
         self.frame      = self.startFrame;
     }
+    
     return self;
 }
 
 - (void)show {
+    
     // 动画
     [UIView animateWithDuration:self.fadeToShowDuration animations:^{
+        
         self.alpha = self.maxAlpha;
         self.frame = self.midFrame;
     }];
 }
 
 - (void)hide {
+    
     // 动画
     [UIView animateWithDuration:self.fadeToHideDuration animations:^{
+        
         self.alpha = 0.f;
         self.frame = self.endFrame;
+        
     } completion:^(BOOL finished) {
+        
         self.frame = self.startFrame;
         self.alpha = 0.f;
     }];

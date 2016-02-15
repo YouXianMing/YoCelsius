@@ -9,6 +9,7 @@
 #import "EmitterLayerView.h"
 
 @interface EmitterLayerView () {
+    
     CAEmitterLayer    *_layer;
 }
 
@@ -22,6 +23,7 @@
  *  @return 替换当前view的layer
  */
 + (Class)layerClass {
+    
     return [CAEmitterLayer class];
 }
 
@@ -30,15 +32,21 @@
  *
  */
 - (void)setEmitterLayer:(CAEmitterLayer *)layer {
+    
     _layer = layer;
 }
+
 - (CAEmitterLayer *)emitterLayer {
+    
     return _layer;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         _layer = (CAEmitterLayer *)self.layer;
     }
     return self;

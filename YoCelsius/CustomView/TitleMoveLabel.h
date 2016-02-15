@@ -24,7 +24,6 @@
 
 // 创建出view
 - (void)buildView;
-
 - (void)show;
 - (void)hide;
 

@@ -11,15 +11,19 @@
 #import "SearchCell.h"
 
 @interface SearchCell ()
+
 @property (nonatomic, strong) UILabel *cityLabel;
 @property (nonatomic, strong) UILabel *countryLabel;
 @property (nonatomic, strong) UIView  *blackView;
+
 @end
 
 @implementation SearchCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self buildViews];
     }
@@ -28,6 +32,7 @@
 }
 
 - (void)buildViews {
+    
     // 国家编号
     self.blackView                  = [[UIView alloc] initWithFrame:CGRectMake(25, 25, 50, 28)];
     self.blackView.backgroundColor  = [UIColor redColor];

@@ -12,6 +12,4 @@
 
 @interface SearchCell : UITableViewCell
 
-
-
 @end

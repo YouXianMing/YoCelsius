@@ -28,31 +28,40 @@
 @implementation RotatedAngleView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         // 存储默认的旋转值
         self.defaultTransform = self.transform;
     }
+    
     return self;
 }
-
 
 - (void)roateAngle:(CGFloat)angle duration:(CGFloat)duration {
         
     [UIView animateWithDuration:duration animations:^{
+        
         self.transform = CGAffineTransformRotate(_defaultTransform, RADIAN(angle));
+        
     } completion:^(BOOL finished) {
         
     }];
 }
 
 - (void)roateAngle:(CGFloat)angle {
+    
     self.transform = CGAffineTransformRotate(_defaultTransform, RADIAN(angle));
 }
 
 - (void)recoverDuration:(CGFloat)duration {
+    
     [UIView animateWithDuration:duration animations:^{
+        
         self.transform = CGAffineTransformRotate(_defaultTransform, 0);
+        
     } completion:^(BOOL finished) {
         
     }];

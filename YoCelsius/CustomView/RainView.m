@@ -12,16 +12,20 @@
 
 @implementation RainView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         [self setup];
     }
+    
     return self;
 }
 
 - (void)setup {
+    
     self.emitterLayer.emitterShape    = kCAEmitterLayerLine;                            // 直线粒子发射器
     self.emitterLayer.emitterMode     = kCAEmitterLayerSurface;                         // ?????
     self.emitterLayer.emitterSize     = self.frame.size;                                // 发射区域
@@ -29,6 +33,7 @@
 }
 
 - (void)showSnow {
+    
     // 创建雪花类型的粒子
     CAEmitterCell *snowflake = [CAEmitterCell emitterCell];
     
@@ -70,6 +75,7 @@
 }
 
 - (void)configType:(EMitterType)type {
+    
     if (type == __RAIN) {
         
         UIImageView *snowAlpha = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -87,16 +93,23 @@
         self.alpha     = 0.f;
     }
 }
+
 - (void)show {
+    
     [self showSnow];
     
     [UIView animateWithDuration:1.75f animations:^{
+        
         self.alpha = 0.5f;
     }];
 }
+
 - (void)hide {
+    
     [UIView animateWithDuration:0.75 animations:^{
+        
         self.alpha = 0.f;
+        
     } completion:^(BOOL finished) {
         
     }];

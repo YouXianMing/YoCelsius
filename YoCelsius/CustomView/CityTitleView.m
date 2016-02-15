@@ -114,20 +114,21 @@
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 44)];
     }
     
-    self.blackView.backgroundColor = [UIColor blackColor];
+    self.blackView.backgroundColor     = [UIColor blackColor];
     [self addSubview:self.blackView];
-    self.blackViewStoreValue = [CGRectStoreValue new];
-    self.blackViewStoreValue.midRect = self.blackView.frame;
-    self.blackView.x -= 5;
+    self.blackViewStoreValue           = [CGRectStoreValue new];
+    self.blackViewStoreValue.midRect   = self.blackView.frame;
+    self.blackView.x                  -= 5;
     self.blackViewStoreValue.startRect = self.blackView.frame;
-    self.blackView.x += 5;
-    self.blackView.y += 5;
-    self.blackViewStoreValue.endRect = self.blackView.frame;
-    self.blackView.frame = self.blackViewStoreValue.startRect;
-    self.blackView.alpha = 0.f;
+    self.blackView.x                  += 5;
+    self.blackView.y                  += 5;
+    self.blackViewStoreValue.endRect   = self.blackView.frame;
+    self.blackView.frame               = self.blackViewStoreValue.startRect;
+    self.blackView.alpha               = 0.f;
     
     // 红色的view
     CGFloat redViewWidth = 100;
+    
     if (iPhone4_4s || iPhone5_5s) {
         
         redViewWidth = 100;
@@ -241,7 +242,6 @@
     self.updateHourLabel.frame = self.updateHourLabelStoreValue.startRect;
     self.updateHourLabel.alpha = 0.f;
     
-    
     // 城市label
     if (iPhone4_4s || iPhone5_5s) {
         
@@ -302,7 +302,6 @@
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:14.f];
-        
     }
     
     [self addSubview:self.weatherDesLabel];
@@ -372,6 +371,7 @@
     [self.weatherConditionView hide];
     
     [UIView animateWithDuration:duration animations:^{
+        
         self.baseLabel.frame = self.baseLabelStoreValue.endRect;
         self.baseLabel.alpha = 0.f;
         
@@ -390,15 +390,14 @@
         self.redView.frame = self.redViewStoreValue.endRect;
         self.redView.alpha = 0.f;
         
-        
         self.blackView.frame = self.blackViewStoreValue.endRect;
         self.blackView.alpha = 0.f;
         
     } completion:^(BOOL finished) {
         
-        self.baseLabel.frame = self.baseLabelStoreValue.startRect;
+        self.baseLabel.frame       = self.baseLabelStoreValue.startRect;
         
-        self.cityNameLabel.frame = self.cityNameLabelStoreValue.startRect;
+        self.cityNameLabel.frame   = self.cityNameLabelStoreValue.startRect;
         
         self.weatherDesLabel.frame = self.weatherDesLabelStoreValue.startRect;
         
@@ -418,36 +417,52 @@
 
 
 #pragma mark - 重写setter,getter方法
+
 @synthesize cityName = _cityName;
+
 - (void)setCityName:(NSString *)cityName {
+    
     _cityName           = cityName;
     _cityNameLabel.text = cityName;
     [_cityNameLabel sizeToFit];
 }
+
 - (NSString *)cityName {
+    
     return _cityName;
 }
 
 @synthesize weatherDescription = _weatherDescription;
+
 - (void)setWeatherDescription:(NSString *)weatherDescription {
+    
     _weatherDescription   = weatherDescription;
     _weatherDesLabel.text = weatherDescription;
     [_weatherDesLabel sizeToFit];
 }
+
 - (NSString *)weatherDescription {
+    
     return _weatherDescription;
 }
 
 @synthesize baseStation = _baseStation;
+
 - (void)setBaseStation:(NSString *)baseStation {
+    
     _baseStation    = baseStation;
     _baseLabel.text = baseStation;
 }
+
 - (NSString *)baseStation {
+    
     return _baseStation;
 }
+
 @synthesize utcSec = _utcSec;
+
 - (void)setUtcSec:(NSTimeInterval)utcSec {
+    
     _utcSec = utcSec;
     
     NSDate *utcDate = [NSDate dateWithTimeIntervalSince1970:utcSec];
@@ -461,7 +476,10 @@
     NSString *hourStr = [NSString stringWithFormat:@"%@ update", [formatter stringFromDate:utcDate]];
     self.updateHourLabel.text = hourStr;
 }
+
 - (NSTimeInterval)utcSec {
+    
     return _utcSec;
 }
+
 @end

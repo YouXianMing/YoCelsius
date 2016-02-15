@@ -98,7 +98,6 @@
     self.windCountLabel.frame = self.windCountLabelStoreValue.startRect;
     self.windCountLabel.alpha = 0.f;
     
-    
     // 创建出支柱
     if (iPhone4_4s || iPhone5_5s) {
         

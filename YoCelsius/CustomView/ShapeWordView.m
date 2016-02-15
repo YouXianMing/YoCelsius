@@ -11,7 +11,9 @@
 #import "ShapeWordView.h"
 
 @interface ShapeWordView ()
+
 @property (nonatomic, strong) CAShapeLayer  *shapeLayer;
+
 @end
 
 @implementation ShapeWordView
@@ -23,7 +25,9 @@
     UIFont   *font        = (self.font == nil ? [UIFont systemFontOfSize:18.f] : self.font);
     UIColor  *lineColor   = (self.lineColor == nil ? [UIColor blackColor] : self.lineColor);
     NSString *text        = self.text;
+    
     if (text == nil || text.length == 0) {
+        
         return;
     }
     
@@ -44,24 +48,38 @@
 }
 
 - (void)percent:(CGFloat)percent animated:(BOOL)animated {
+    
     if (animated) {
+        
         if (percent <= 0) {
+            
             self.shapeLayer.strokeEnd = 0;
+            
         } else if (percent > 0 && percent <= 1) {
+            
             self.shapeLayer.strokeEnd = percent;
+            
         } else {
+            
             self.shapeLayer.strokeEnd = 1.f;
         }
+        
     } else {
+        
         if (percent <= 0) {
+            
             [CATransaction setDisableActions:YES];
             self.shapeLayer.strokeEnd = 0;
             [CATransaction setDisableActions:NO];
+            
         } else if (percent > 0 && percent <= 1) {
+            
             [CATransaction setDisableActions:YES];
             self.shapeLayer.strokeEnd = percent;
             [CATransaction setDisableActions:NO];
+            
         } else {
+            
             [CATransaction setDisableActions:YES];
             self.shapeLayer.strokeEnd = 1.f;
             [CATransaction setDisableActions:NO];

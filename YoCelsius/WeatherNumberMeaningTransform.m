@@ -415,8 +415,8 @@
 }
 
 + (EMitterType)emitterTypeWithNumber:(NSNumber *)number {
-    EMitterType type = __NONE;
     
+    EMitterType type = __NONE;
     
     switch (number.intValue) {
             

@@ -12,7 +12,6 @@
 
 @interface WeatherIconView : UIView
 
-
 /**
  *  天气文本
  */

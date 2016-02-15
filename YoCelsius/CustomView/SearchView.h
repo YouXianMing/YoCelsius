@@ -12,7 +12,9 @@
 @class SearchView;
 
 @protocol SearchViewDelegate <NSObject>
+
 - (void)currentLocationWithView:(SearchView *)view;
+
 @end
 
 @interface SearchView : UIView

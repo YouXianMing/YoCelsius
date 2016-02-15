@@ -10,13 +10,13 @@
 @implementation PresentingAnimator
 
 // 转场动画时间
-- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
-{
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
+    
     return 1.f;
 }
 
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
-{
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    
     // 另一个view
     UIView *toView   = [transitionContext viewForKey:UITransitionContextToViewKey];
     toView.y         = Height;
@@ -42,13 +42,14 @@
                                                                      func:ExponentialEaseOut
                                                                frameCount:duration * 60.f];
     keyAnimation.duration             = duration;
-    toView.center = container.center;
+    toView.center                     = container.center;
     [toView.layer addAnimation:keyAnimation forKey:nil];
     
     [GCDQueue executeInMainQueue:^{
+        
         [transitionContext completeTransition:YES];
+        
     } afterDelaySecs:duration];
 }
-
 
 @end

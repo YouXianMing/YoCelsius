@@ -12,37 +12,47 @@
 @class StoreFrameInfo;
 
 typedef enum : NSUInteger {
+    
     VIEW_START_FRAME,
     VIEW_MID_FRAME,
     VIEW_END_FRAME,
+    
 } EnumFrameView;
 
 /* ------------------------------------------ */
 
 @interface StoreFrameInfo : NSObject
+
 @property (nonatomic, strong) NSMutableArray *frameArray; // 存储frame值
 @property (nonatomic, strong) NSMutableArray *alphaArray; // 存储alpha值
 
 - (CGRect)frameFrom:(EnumFrameView)type;
 - (CGFloat)alphaFrom:(EnumFrameView)type;
+
 @end
 
 @implementation StoreFrameInfo
 
 - (instancetype)init {
+    
     self = [super init];
+    
     if (self) {
+        
         self.frameArray = [NSMutableArray array];
         self.alphaArray = [NSMutableArray array];
     }
+    
     return self;
 }
 
 - (CGRect)frameFrom:(EnumFrameView)type {
+    
     return [self.frameArray[type] CGRectValue];
 }
 
 - (CGFloat)alphaFrom:(EnumFrameView)type {
+    
     return [self.alphaArray[type] floatValue];
 }
 
@@ -55,7 +65,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UILabel        *textLabel;           // 显示的文本
 @property (nonatomic, strong) StoreFrameInfo *textLabelFrame;      // 存储textLabel的frame值
 
-@property (nonatomic, strong) UIView  *underlineView;              // 下划线
+@property (nonatomic, strong) UIView         *underlineView;       // 下划线
 @property (nonatomic, strong) StoreFrameInfo *underlineViewFrame;  // 下划线以及其存储的值
 
 @end
@@ -63,8 +73,11 @@ typedef enum : NSUInteger {
 @implementation FrameView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
+        
         // 初始化数组
         self.textLabelFrame     = [StoreFrameInfo new];
         self.underlineViewFrame = [StoreFrameInfo new];
@@ -76,6 +89,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)initViews {
+    
     self.textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [self addSubview:self.textLabel];
     
@@ -83,8 +97,8 @@ typedef enum : NSUInteger {
     [self addSubview:self.underlineView];
 }
 
-
 - (void)buildViews {
+    
     // 初始化标签
     [self initLabel];
     
@@ -93,8 +107,9 @@ typedef enum : NSUInteger {
 }
 
 - (void)initUnderLine {
-    CGFloat  lineWidth = self.underLineWidth;
-    UIColor *lineColor = self.underLineColor;
+    
+    CGFloat  lineWidth                 = self.underLineWidth;
+    UIColor *lineColor                 = self.underLineColor;
     self.underlineView.height          = 1.f;
     self.underlineView.width           = lineWidth;
     self.underlineView.backgroundColor = lineColor;
@@ -120,6 +135,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)initLabel {
+    
     // 获取属性值
     NSString *text      = self.text;
     UIColor  *textColor = self.textColor;
@@ -135,11 +151,11 @@ typedef enum : NSUInteger {
     self.textLabel.height    = height;
     
     // 存储必要的信息
-    self.textLabel.x    = -width / 8.f;  // 起始位置
+    self.textLabel.x    = -width / 8.f;
     NSValue *valueStart = [NSValue valueWithCGRect:self.textLabel.frame];
-    self.textLabel.x    = 0;      // 中间位置
+    self.textLabel.x    = 0;
     NSValue *valueMid   = [NSValue valueWithCGRect:self.textLabel.frame];
-    self.textLabel.x    = width / 8.f; // 结束位置
+    self.textLabel.x    = width / 8.f;
     NSValue *valueEnd   = [NSValue valueWithCGRect:self.textLabel.frame];
     [self.textLabelFrame.alphaArray addObject:@(0.0)];
     [self.textLabelFrame.alphaArray addObject:@(1.0)];
@@ -154,19 +170,24 @@ typedef enum : NSUInteger {
 }
 
 - (void)fadeToShow {
+    
     [UIView animateWithDuration:1.f delay:0.f usingSpringWithDamping:2 initialSpringVelocity:1.f options:UIViewAnimationOptionLayoutSubviews animations:^{
+        
         self.textLabel.alpha = [self.textLabelFrame alphaFrom:VIEW_MID_FRAME];
         self.textLabel.frame = [self.textLabelFrame frameFrom:VIEW_MID_FRAME];
         
         self.underlineView.alpha = [self.underlineViewFrame alphaFrom:VIEW_MID_FRAME];
         self.underlineView.frame = [self.underlineViewFrame frameFrom:VIEW_MID_FRAME];
+        
     } completion:^(BOOL finished) {
         
     }];
 }
 
 - (void)fadeTohide {
+    
     [UIView animateWithDuration:1.5 delay:0.f usingSpringWithDamping:2 initialSpringVelocity:1.f options:UIViewAnimationOptionLayoutSubviews animations:^{
+        
         self.textLabel.alpha = [self.textLabelFrame alphaFrom:VIEW_END_FRAME];
         self.textLabel.frame = [self.textLabelFrame frameFrom:VIEW_END_FRAME];
         
@@ -174,6 +195,7 @@ typedef enum : NSUInteger {
         self.underlineView.frame = [self.underlineViewFrame frameFrom:VIEW_END_FRAME];
 
     } completion:^(BOOL finished) {
+        
         self.textLabel.alpha = [self.textLabelFrame alphaFrom:VIEW_START_FRAME];
         self.textLabel.frame = [self.textLabelFrame frameFrom:VIEW_START_FRAME];
         

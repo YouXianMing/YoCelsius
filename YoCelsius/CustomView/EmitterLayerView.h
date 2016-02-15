@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
+    
     __SNOW = 0x11,
     __RAIN,
     __NONE,
+    
 } EMitterType;
 
 @interface EmitterLayerView : UIView

@@ -14,22 +14,24 @@
 #import "WeatherNumberMeaningTransform.h"
 #import "CGRectStoreValue.h"
 
-
-
 @interface WeatherIconViewStoreValue : NSObject
+
 @property (nonatomic) CGRect startRect;
 @property (nonatomic) CGRect midRect;
 @property (nonatomic) CGRect endRect;
+
 @end
+
 @implementation WeatherIconViewStoreValue
+
 @end
-
-
 
 @interface WeatherIconView ()
+
 @property (nonatomic, strong) TitleMoveLabel     *titleMoveLabel;
 @property (nonatomic, strong) UILabel            *glowLabel;
 @property (nonatomic, strong) CGRectStoreValue   *storeValue;
+
 @end
 
 @implementation WeatherIconView
@@ -38,6 +40,7 @@
  *  创建出view
  */
 - (void)buildView {
+    
     self.titleMoveLabel = [TitleMoveLabel withText:@"Weather"];
     [self addSubview:self.titleMoveLabel];
     

@@ -13,11 +13,15 @@
 #define UPDATING_HEIGHY  20.f
 
 @interface UpdatingViewStoreValue : NSObject
+
 @property (nonatomic) CGRect startRect;
 @property (nonatomic) CGRect midRect;
 @property (nonatomic) CGRect endRect;
+
 @end
+
 @implementation UpdatingViewStoreValue
+
 @end
 
 @interface UpdatingView ()
@@ -34,18 +38,22 @@
 @implementation UpdatingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:CGRectMake(0, 0, Width / 2.f, Width / 2.f + UPDATING_HEIGHY)];
     if (self) {
+        
         [self initLabel];
         [self initSnow];
         
         // 关闭用户交互
         self.userInteractionEnabled = NO;
     }
+    
     return self;
 }
 
 - (void)initLabel {
+    
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, Width / 2.f, Width / 2.f, UPDATING_HEIGHY)];
     [self addSubview:self.label];
     self.label.textColor        = [UIColor whiteColor];
@@ -59,7 +67,6 @@
                               glowRadius:2.f];
     [self.label startGlow];
     
-    
     self.labelStoreValue           = [UpdatingViewStoreValue new];
     self.labelStoreValue.midRect   = self.label.frame;
     self.label.x                  -= 30.f;
@@ -68,8 +75,6 @@
     self.labelStoreValue.endRect   = self.label.frame;
     self.label.frame               = self.labelStoreValue.startRect;
     self.label.alpha               = 0.f;
-    
-    
     
     self.failedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, Width / 2.f, Width / 2.f, UPDATING_HEIGHY)];
     [self addSubview:self.failedLabel];
@@ -84,7 +89,6 @@
                               glowRadius:2.f];
     [self.failedLabel startGlow];
     
-    
     self.failedLabelStoreValue           = [UpdatingViewStoreValue new];
     self.failedLabelStoreValue.midRect   = self.failedLabel.frame;
     self.failedLabel.x                  -= 30.f;
@@ -96,6 +100,7 @@
 }
 
 - (void)initSnow {
+    
     self.snow = [[SnowView alloc] initWithFrame:CGRectMake(0, 0, Width / 2.f, Width / 2.f)];
     [self addSubview:self.snow];
     self.snow.snowImage  = [UIImage imageNamed:@"snow"];
@@ -112,18 +117,22 @@
 - (void)show {
     
     [UIView animateWithDuration:1.f animations:^{
+        
         self.snow.alpha      = 1.f;
         self.snow.transform  = CGAffineTransformMake(1.f, 0, 0, 1.f, 0, 0);
         
         self.label.frame     = self.labelStoreValue.midRect;
         self.label.alpha     = 1.f;
+        
     } completion:^(BOOL finished) {
         
     }];
 }
 
 - (void)hide {
+    
     [UIView animateWithDuration:0.75f animations:^{
+        
         self.snow.alpha     = 0.f;
         self.snow.transform = CGAffineTransformMake(0.7f, 0, 0, 0.7f, 0, 0);
         
@@ -134,8 +143,9 @@
         self.failedLabel.alpha = 0.f;
         
     } completion:^(BOOL finished) {
-        self.label.frame    = self.labelStoreValue.startRect;
-        self.snow.transform = CGAffineTransformMake(1.4, 0, 0, 1.4f, 0, 0);
+        
+        self.label.frame       = self.labelStoreValue.startRect;
+        self.snow.transform    = CGAffineTransformMake(1.4, 0, 0, 1.4f, 0, 0);
         self.failedLabel.frame = self.self.failedLabelStoreValue.startRect;
     }];
 }
@@ -147,20 +157,22 @@
 - (void)showFailed {
     
     [UIView animateWithDuration:1.5f animations:^{
+        
         // 隐藏label标签
         self.label.frame = self.labelStoreValue.endRect;
         self.label.alpha = 0.f;
+        
     } completion:^(BOOL finished) {
 
         [UIView animateWithDuration:1.f animations:^{
             // 显示failed标签
             self.failedLabel.frame = self.failedLabelStoreValue.midRect;
             self.failedLabel.alpha = 1.f;
+            
         } completion:^(BOOL finished) {
             
         }];
     }];
-    
 }
 
 @end

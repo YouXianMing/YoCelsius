@@ -34,5 +34,4 @@
  */
 - (void)recoverDuration:(CGFloat)duration;
 
-
 @end
