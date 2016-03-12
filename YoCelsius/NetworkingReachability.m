@@ -1,12 +1,12 @@
 //
-//  V_3_X_NetworkingReachability.m
+//  NetworkingReachability.m
 //  AFNetworking-3.x
 //
-//  Created by YouXianMing on 16/1/11.
+//  Created by YouXianMing on 16/3/12.
 //  Copyright © 2016年 YouXianMing. All rights reserved.
 //
 
-#import "V_3_X_NetworkingReachability.h"
+#import "NetworkingReachability.h"
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 
@@ -14,15 +14,14 @@
  *  用于测试网络是否可以连接的基准URL地址
  */
 static NSString *reachabeBaseURL = @"http://baidu.com/";
-
 static BOOL     _canSendMessage  = YES;
 
-@implementation V_3_X_NetworkingReachability
+@implementation NetworkingReachability
 
 + (void)initialize {
     
-    if (self == [V_3_X_NetworkingReachability class]) {
-    
+    if (self == [NetworkingReachability class]) {
+        
         [AFNetworkReachabilityManager managerForAddress:(__bridge const void * _Nonnull)(reachabeBaseURL)];
         
         [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {

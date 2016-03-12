@@ -11,7 +11,7 @@
 #import "GetWeatherData.h"
 #import "CurrentConditions.h"
 #import "CurrentWeatherData.h"
-#import "V_3_X_Networking.h"
+#import "Networking.h"
 
 static NSString *appIdKey = @"8781e4ef1c73ff20a180d3d7a42a8c04";
 
@@ -22,7 +22,7 @@ typedef enum : NSUInteger {
     
 } EGetWeatherDataValue;
 
-@interface GetWeatherData () <NetworkingDelegate>
+@interface GetWeatherData () <AbsNetworkingDelegate>
 
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
@@ -45,29 +45,29 @@ typedef enum : NSUInteger {
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
     
     // 请求1
-    self.networkWeather = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
-                                                           requestDictionary:@{@"lat"   : latStr,
-                                                                               @"lon"   : lonStr,
-                                                                               @"APPID" : appIdKey}
-                                                             requestBodyType:[HttpBodyType type]
-                                                            responseDataType:[JsonDataType type]];
+    self.networkWeather = [Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
+                                                     requestDictionary:@{@"lat"   : latStr,
+                                                                         @"lon"   : lonStr,
+                                                                         @"APPID" : appIdKey}
+                                                       requestBodyType:[HttpBodyType type]
+                                                      responseDataType:[JsonDataType type]];
     self.networkWeather.tag             = kWeather;
     self.networkWeather.delegate        = self;
     self.networkWeather.timeoutInterval = @(8.f);
     [self.networkWeather startRequest];
     
     //  请求2
-    self.networkDaily = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-                                                         requestDictionary:nil
-                                                           requestBodyType:[HttpBodyType type]
-                                                          responseDataType:[JsonDataType type]];
+    self.networkDaily = [Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
+                                                   requestDictionary:nil
+                                                     requestBodyType:[HttpBodyType type]
+                                                    responseDataType:[JsonDataType type]];
     self.networkDaily.tag             = kDaily;
     self.networkDaily.delegate        = self;
     self.networkDaily.timeoutInterval = @(8.f);
 }
 
 - (void)requestSucess:(Networking *)networking data:(id)data {
-
+    
     if (networking.tag == kWeather) {
         
         // 请求1结果
@@ -81,7 +81,7 @@ typedef enum : NSUInteger {
             [self.networkDaily startRequest];
             
         } else {
-
+            
             [_delegate weatherData:nil sucess:NO];
         }
         
@@ -103,12 +103,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)requestFailed:(Networking *)networking error:(NSError *)error {
-
-    [_delegate weatherData:nil sucess:NO];
-}
-
-- (void)userCanceledFailed:(Networking *)networking error:(NSError *)error {
-
+    
     [_delegate weatherData:nil sucess:NO];
 }
 

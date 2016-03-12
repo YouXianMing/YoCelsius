@@ -18,8 +18,8 @@
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
     // 另一个view
-    UIView *toView   = [transitionContext viewForKey:UITransitionContextToViewKey];
-    toView.y         = Height;
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    toView.y       = Height;
     
     // 管理容器
     UIView *container = [transitionContext containerView];

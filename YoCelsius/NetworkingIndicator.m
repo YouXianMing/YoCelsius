@@ -1,15 +1,15 @@
 //
-//  V_3_X_NetworkingIndicator.m
+//  NetworkingIndicator.m
 //  AFNetworking-3.x
 //
-//  Created by YouXianMing on 16/1/11.
+//  Created by YouXianMing on 16/3/12.
 //  Copyright © 2016年 YouXianMing. All rights reserved.
 //
 
-#import "V_3_X_NetworkingIndicator.h"
+#import "NetworkingIndicator.h"
 #import "UIKit+AFNetworking.h"
 
-@implementation V_3_X_NetworkingIndicator
+@implementation NetworkingIndicator
 
 + (void)showNetworkActivityIndicator:(BOOL)show {
     

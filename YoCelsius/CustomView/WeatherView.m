@@ -169,7 +169,6 @@
     if ([netDateStr isEqualToString:currentDateStr]) {
         
         weatherInfo = today;
-        NSLog(@"%@", netDateStr);
         
     } else {
         
