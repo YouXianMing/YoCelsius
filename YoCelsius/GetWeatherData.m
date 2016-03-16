@@ -46,7 +46,7 @@ typedef enum : NSUInteger {
     
     // 请求1
     self.networkWeather = [Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
-                                                     requestDictionary:@{@"lat"   : latStr,
+                                                      requestParameter:@{@"lat"   : latStr,
                                                                          @"lon"   : lonStr,
                                                                          @"APPID" : appIdKey}
                                                        requestBodyType:[HttpBodyType type]
@@ -58,7 +58,7 @@ typedef enum : NSUInteger {
     
     //  请求2
     self.networkDaily = [Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/forecast/daily"
-                                                   requestDictionary:nil
+                                                    requestParameter:nil
                                                      requestBodyType:[HttpBodyType type]
                                                     responseDataType:[JsonDataType type]];
     self.networkDaily.tag             = kDaily;
@@ -74,10 +74,10 @@ typedef enum : NSUInteger {
         CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
             
-            self.currentWeatherData             = currentData;
-            self.networkDaily.requestDictionary = @{@"id"    : self.currentWeatherData.cityId,
-                                                    @"cnt"   : @"14",
-                                                    @"APPID" : appIdKey};
+            self.currentWeatherData            = currentData;
+            self.networkDaily.requestParameter = @{@"id"    : self.currentWeatherData.cityId,
+                                                   @"cnt"   : @"14",
+                                                   @"APPID" : appIdKey};
             [self.networkDaily startRequest];
             
         } else {
