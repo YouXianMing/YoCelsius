@@ -11,6 +11,8 @@
 
 > 帮助
 
+[iOS-Design-Patterns](https://github.com/YouXianMing/iOS-Design-Patterns) 是本人写的设计模式实现的合集，感兴趣的朋友可以看看 :]。
+
 [Animations](https://github.com/YouXianMing/Animations) 是本人另外的一个动画效果合集项目，感兴趣的朋友可以看看 :]。
 
 ![demo01.gif](http://images2015.cnblogs.com/blog/607542/201511/607542-20151116202907436-992788389.gif)
