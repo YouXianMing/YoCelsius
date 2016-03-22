@@ -41,22 +41,22 @@
 /**
  *  iPhone4 or iPhone4s
  */
-#define  iPhone4_4s     (Width == 320.f && Height == 480.f ? YES : NO)
+#define  iPhone4_4s     (Width == 320.f && Height == 480.f)
 
 /**
  *  iPhone5 or iPhone5s
  */
-#define  iPhone5_5s     (Width == 320.f && Height == 568.f ? YES : NO)
+#define  iPhone5_5s     (Width == 320.f && Height == 568.f)
 
 /**
  *  iPhone6 or iPhone6s
  */
-#define  iPhone6_6s     (Width == 375.f && Height == 667.f ? YES : NO)
+#define  iPhone6_6s     (Width == 375.f && Height == 667.f)
 
 /**
  *  iPhone6Plus or iPhone6sPlus
  */
-#define  iPhone6_6sPlus (Width == 414.f && Height == 736.f ? YES : NO)
+#define  iPhone6_6sPlus (Width == 414.f && Height == 736.f)
 
 @interface UIView (SetRect)
 
