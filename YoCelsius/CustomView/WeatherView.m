@@ -276,7 +276,7 @@
     
     if (offsetY >= 0.f) {
         
-        percent = offsetY / 60.f;
+        percent = (offsetY-20.0) / 60.f;
         [self.shapeWordView percent:percent animated:NO];
     }
 }
