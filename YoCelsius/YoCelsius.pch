@@ -22,8 +22,6 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
-#import "UIKit+AFNetworking.h"
 #import "Networking.h"
 #import "AppColor.h"
 #import "UIView+SetRect.h"
@@ -33,7 +31,6 @@
 #import "YXEasing.h"
 #import "POP.h"
 #import "NSString+File.h"
-#import "SharedInstance.h"
 #import "SimpleNSLog.h"
 #endif
 

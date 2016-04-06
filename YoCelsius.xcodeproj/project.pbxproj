@@ -130,8 +130,6 @@
 		10E169B91A96082E00200B79 /* WindSpeedCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169B81A96082E00200B79 /* WindSpeedCountLabel.m */; };
 		10E169BC1A968D8D00200B79 /* AlphaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169BB1A968D8D00200B79 /* AlphaView.m */; };
 		10E169C21A9695C800200B79 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E169C11A9695C800200B79 /* NSString+File.m */; };
-		10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A3A1A96B16400200B79 /* SharedInstance.m */; };
-		10E16A3E1A96B17C00200B79 /* GlobalValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A3D1A96B17C00200B79 /* GlobalValue.m */; };
 		10E16A441A96D56600200B79 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A431A96D56600200B79 /* GridView.m */; };
 		10E16A471A96F32900200B79 /* MaxTempView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A461A96F32900200B79 /* MaxTempView.m */; };
 		10E16A4A1A97615500200B79 /* MaxTempCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E16A491A97615500200B79 /* MaxTempCount.m */; };
@@ -422,10 +420,6 @@
 		10E169BB1A968D8D00200B79 /* AlphaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaView.m; sourceTree = "<group>"; };
 		10E169C01A9695C800200B79 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		10E169C11A9695C800200B79 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
-		10E16A391A96B16400200B79 /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
-		10E16A3A1A96B16400200B79 /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
-		10E16A3C1A96B17C00200B79 /* GlobalValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalValue.h; sourceTree = "<group>"; };
-		10E16A3D1A96B17C00200B79 /* GlobalValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalValue.m; sourceTree = "<group>"; };
 		10E16A421A96D56600200B79 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		10E16A431A96D56600200B79 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
 		10E16A451A96F32900200B79 /* MaxTempView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxTempView.h; sourceTree = "<group>"; };
@@ -1003,17 +997,6 @@
 			path = File;
 			sourceTree = "<group>";
 		};
-		10E16A381A96B14700200B79 /* shareInstance */ = {
-			isa = PBXGroup;
-			children = (
-				10E16A391A96B16400200B79 /* SharedInstance.h */,
-				10E16A3A1A96B16400200B79 /* SharedInstance.m */,
-				10E16A3C1A96B17C00200B79 /* GlobalValue.h */,
-				10E16A3D1A96B17C00200B79 /* GlobalValue.m */,
-			);
-			path = shareInstance;
-			sourceTree = "<group>";
-		};
 		10E1F5231A908C3200AED5D6 = {
 			isa = PBXGroup;
 			children = (
@@ -1040,7 +1023,6 @@
 				102B85E21C3DF253001699A9 /* Networking */,
 				10DD0A071B4425D7000B3EE7 /* Animator */,
 				10DD0A051B44259C000B3EE7 /* GetWeatherData */,
-				10E16A381A96B14700200B79 /* shareInstance */,
 				10DD0A081B4425F7000B3EE7 /* Log */,
 				10DD0A091B442615000B3EE7 /* WeatherNumberMeaningTransform */,
 				10DD79141AA9D89E00051B0D /* ARCGPathFromString */,
@@ -1149,7 +1131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10AB28DC1A908F3F00CE545D /* Wind.m in Sources */,
-				10E16A3E1A96B17C00200B79 /* GlobalValue.m in Sources */,
 				100149571C43F65F006D9153 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1047D1001C4736A9009ADED6 /* GCDTimer.m in Sources */,
 				10E1E7201A9C8D18000D6549 /* UIView+GlowView.m in Sources */,
@@ -1242,7 +1223,6 @@
 				109606AD1C93EA3A00CCB3AD /* RequestMethodType.m in Sources */,
 				100149501C43F65F006D9153 /* AFAutoPurgingImageCache.m in Sources */,
 				100149511C43F65F006D9153 /* AFImageDownloader.m in Sources */,
-				10E16A3B1A96B16400200B79 /* SharedInstance.m in Sources */,
 				109606AF1C93EA3A00CCB3AD /* ResponseDataType.m in Sources */,
 				1047D0FD1C4736A9009ADED6 /* GCDGroup.m in Sources */,
 				10E16A701A989ABB00200B79 /* UILabel+Temperature.m in Sources */,
