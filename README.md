@@ -11,7 +11,7 @@
 
 > 帮助
 
-<font color=red>既然都已经进来了，就帮我star一下吧 _(:з」∠)_</font>
+既然都已经进来了，就帮我star一下吧 _(:з」∠)_
 
 [iOS-Design-Patterns](https://github.com/YouXianMing/iOS-Design-Patterns) 是本人写的设计模式实现的合集，感兴趣的朋友可以看看 :]。
 
