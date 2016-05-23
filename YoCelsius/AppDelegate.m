@@ -22,7 +22,7 @@
     /*
      
      请用真机测试
-     最新编译无警告版本 Xcode Version 7.3 (7D175)
+     最新编译无警告版本 Xcode Version 7.3.1 (7D1014)
      
      QQ   705786299
      邮箱  YouXianMing1987@126.com
