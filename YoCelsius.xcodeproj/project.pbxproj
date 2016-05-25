@@ -1087,6 +1087,7 @@
 				TargetAttributes = {
 					10E1F52B1A908C3200AED5D6 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 96SZNQ256W;
 					};
 				};
 			};
@@ -1383,7 +1384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/YoCelsius.pch";
 				INFOPLIST_FILE = YoCelsius/Info.plist;
