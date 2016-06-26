@@ -11,27 +11,32 @@
 
 @implementation CurrentConditions
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key
-{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    
 //    if([key isEqualToString:@"id"]) {
 //        self.productID = value;
 //    }
 }
 
-- (void)setValue:(id)value forKey:(NSString *)key
-{
+- (void)setValue:(id)value forKey:(NSString *)key {
+    
     if ([value isKindOfClass:[NSNull class]]) {
+        
         return;
     }
     
     if ([key isEqualToString:@"city"]) {
+        
         value = [[City alloc] initWithDictionary:value];
     }
     
     if ([key isEqualToString:@"list"] && [value isKindOfClass:[NSArray class]]) {
+        
         NSArray *tmp                    = value;
         NSMutableArray *weatherInfoList = [NSMutableArray array];
+        
         for (NSDictionary *info in tmp) {
+            
             WeatherInfo *weatherInfo = [[WeatherInfo alloc] initWithDictionary:info];
             [weatherInfoList addObject:weatherInfo];
         }
@@ -41,14 +46,20 @@
 
     [super setValue:value forKey:key];
 }
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        self = [super init];
-        if (self) {
+                
+        if (self = [super init]) {
+            
             [self setValuesForKeysWithDictionary:dictionary];
         }
+        
         return self;
+        
     } else {
+        
         return nil;
     }    
 }

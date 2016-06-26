@@ -10,7 +10,7 @@
 
 @interface EmitterLayerView () {
     
-    CAEmitterLayer    *_layer;
+    CAEmitterLayer *_layer;
 }
 
 @end

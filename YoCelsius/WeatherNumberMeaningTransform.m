@@ -92,8 +92,6 @@
      232	thunderstorm with heavy drizzle	[[file:11d.png]]
      
      
-     
-     
      Extreme
      
      900	tornado
@@ -121,7 +119,6 @@
      */
     
     NSString *weatherText = nil;
-    
     
     switch (number.intValue) {
             
@@ -172,7 +169,6 @@
             weatherText = @"Y";
             break;
             
-            
             // Thunderstorm
         case 210:
         case 211:
@@ -222,7 +218,6 @@
             weatherText = @"X";
             break;
             
-            
             // Snow
         case 600:
         case 601:
@@ -262,7 +257,7 @@
             break;
             
             
-            
+
             // Clouds
         case 800:
             weatherText = @"A";
@@ -286,13 +281,12 @@
             break;
     }
     
-    
     return weatherText;
 }
 
 + (UIColor *)iconColor:(NSNumber *)number {
-    UIColor *color = nil;
     
+    UIColor *color = nil;
     
     switch (number.intValue) {
             
@@ -318,7 +312,6 @@
         case 962:
             color = [UIColor redColor];
             break;
-            
             
             // Thunderstorm
         case 210:
@@ -360,7 +353,6 @@
             color = [UIColor redColor];
             break;
             
-            
             // Snow
         case 600:
         case 601:
@@ -374,7 +366,6 @@
         case 622:
             color = COLOR_PURE_;
             break;
-            
             
             // Atmosphere
         case 701:
@@ -390,8 +381,6 @@
             color = [UIColor redColor];
             break;
             
-            
-            
             // Clouds
         case 800:
         case 801:
@@ -401,17 +390,13 @@
             color = [UIColor orangeColor];
             break;
             
-            
-            
         default:
             // 未知的情况
             color = [UIColor blackColor];
             break;
     }
     
-    
     return color;
-    
 }
 
 + (EMitterType)emitterTypeWithNumber:(NSNumber *)number {
@@ -441,7 +426,6 @@
         case 961:
         case 962:
             break;
-            
             
             // Thunderstorm
         case 210:
