@@ -10,38 +10,35 @@
 
 @implementation NSString (File)
 
-- (NSString *)path
-{
+- (NSString *)path {
+    
     return [NSHomeDirectory() stringByAppendingPathComponent:self];
 }
 
-- (NSString *)bundleFile
-{
-    return [[NSBundle mainBundle] pathForResource:self
-                                           ofType:nil];
+- (NSString *)bundleFile {
+    
+    return [[NSBundle mainBundle] pathForResource:self ofType:nil];
 }
 
-- (UIImage *)bundleImage
-{
+- (UIImage *)bundleImage {
+    
     return [UIImage imageNamed:self];
 }
 
-- (BOOL)exist
-{
+- (BOOL)exist {
+    
     return [[NSFileManager defaultManager] fileExistsAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
                                                 isDirectory:nil];
 }
 
-- (BOOL)createFolder
-{
+- (BOOL)createFolder {
+    
     return [[NSFileManager defaultManager] createDirectoryAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
-                                     withIntermediateDirectories:YES
-                                                      attributes:nil
-                                                           error:nil];
+                                     withIntermediateDirectories:YES attributes:nil error:nil];
 }
 
-- (BOOL)isDirectory
-{
+- (BOOL)isDirectory {
+    
     BOOL isDirectory = NO;
     
     [[NSFileManager defaultManager] fileExistsAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
@@ -50,30 +47,30 @@
     return isDirectory;
 }
 
-- (BOOL)copyTo:(NSString *)path
-{
+- (BOOL)copyTo:(NSString *)path {
+    
     return [[NSFileManager defaultManager] copyItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
                                                    toPath:[NSHomeDirectory() stringByAppendingPathComponent:path]
                                                     error:nil];
 }
 
-- (BOOL)moveTo:(NSString *)path
-{
+- (BOOL)moveTo:(NSString *)path {
+    
     return [[NSFileManager defaultManager] moveItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
                                                    toPath:[NSHomeDirectory() stringByAppendingPathComponent:path]
                                                     error:nil];
 }
 
-- (BOOL)remove
-{
+- (BOOL)remove {
+    
     return [[NSFileManager defaultManager] removeItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
                                                       error:nil];
 }
 
-- (NSArray *)enumeratorFolder
-{
-    if ([self isDirectory])
-    {
+- (NSArray *)enumeratorFolder {
+    
+    if ([self isDirectory]) {
+        
         NSMutableArray *storeArray = [NSMutableArray array];
         
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:self];
@@ -81,23 +78,24 @@
         NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:docsDir];
         
         NSString *file;
-        while ((file = [dirEnum nextObject]))
-        {
+        
+        while ((file = [dirEnum nextObject])) {
+            
             [storeArray addObject:[[NSHomeDirectory() stringByAppendingPathComponent:self] stringByAppendingPathComponent:file]];
         }
         
         return storeArray;
-    }
-    else
-    {
+        
+    } else {
+        
         return nil;
     }
 }
 
-- (void)enumeratorFolderEach:(void (^)(NSString *path))block
-{
-    if ([self isDirectory])
-    {
+- (void)enumeratorFolderEach:(void (^)(NSString *path))block {
+    
+    if ([self isDirectory]) {
+        
         NSMutableArray *storeArray = [NSMutableArray array];
         
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:self];
@@ -105,28 +103,27 @@
         NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:docsDir];
         
         NSString *file;
-        while ((file = [dirEnum nextObject]))
-        {
+        while ((file = [dirEnum nextObject])) {
+            
             [storeArray addObject:[self stringByAppendingPathComponent:file]];
         }
         
         [storeArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
             block(obj);
         }];
     }
 }
 
-- (NSDictionary *)fileInfo
-{
-    return [[NSFileManager defaultManager] attributesOfItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
-                                                            error:nil];
+- (NSDictionary *)fileInfo {
+    
+    return [[NSFileManager defaultManager] attributesOfItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self] error:nil];
 }
 
-- (int)fileSize
-{
+- (int)fileSize {
+    
     return [[[[NSFileManager defaultManager] attributesOfItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:self]
-                                                              error:nil] \
-             objectForKey:@"NSFileSize"] intValue];
+                                                              error:nil] objectForKey:@"NSFileSize"] intValue];
 }
 
 @end

@@ -11,13 +11,17 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-
 @protocol GetWeatherDataDelegate <NSObject>
 
+/**
+ *  Get the weatherData.
+ *
+ *  @param object The Data.
+ *  @param sucess Sucess or not.
+ */
 - (void)weatherData:(id)object sucess:(BOOL)sucess;
 
 @end
-
 
 @interface GetWeatherData : NSObject
 

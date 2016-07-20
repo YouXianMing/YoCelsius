@@ -20,15 +20,20 @@
 @implementation SunriseAndSunset
 
 - (instancetype)init {
+    
     self = [super init];
+    
     if (self) {
+        
         self.formatter            = [NSDateFormatter new];
         self.formatter.dateFormat = @"HH : mm";
     }
+    
     return self;
 }
 
 - (void)accessUtcSec {
+    
     // Unix UTC
     NSTimeInterval seconds = (self.utcSec <= 0 ? 0 : self.utcSec);
     

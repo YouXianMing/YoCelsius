@@ -23,10 +23,8 @@
 @property (nonatomic, strong) NSNumber       *pressure;  // Atmospheric pressure (on the sea level, if there is no sea_level or grnd_level data), hPa
 @property (nonatomic, strong) NSNumber       *deg;       // Wind direction, degrees (meteorological)
 
-
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
 
 @end
 

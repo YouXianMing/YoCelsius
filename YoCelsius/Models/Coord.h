@@ -11,14 +11,11 @@
 
 @interface Coord : NSObject
 
-
 @property (nonatomic, strong) NSNumber       *lon;
 @property (nonatomic, strong) NSNumber       *lat;
 
-
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
 
 @end
 

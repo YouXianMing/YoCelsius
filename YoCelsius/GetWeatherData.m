@@ -26,7 +26,6 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
-
 @property (nonatomic, strong) Networking         *networkWeather;
 @property (nonatomic, strong) Networking         *networkDaily;
 
@@ -78,7 +77,8 @@ typedef enum : NSUInteger {
             self.currentWeatherData = currentData;
             
             NSString *baseUrl   = @"http://api.openweathermap.org/data/2.5/forecast/daily";
-            NSString *urlString = [NSString stringWithFormat:@"%@?id=%@&cnt=%@&APPID=%@", baseUrl, self.currentWeatherData.cityId, @"14", appIdKey];
+            NSString *urlString = [NSString stringWithFormat:@"%@?id=%@&cnt=%@&APPID=%@",
+                                   baseUrl, self.currentWeatherData.cityId, @"14", appIdKey];
             
             self.networkDaily.urlString = urlString;
             

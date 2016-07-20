@@ -11,13 +11,10 @@
 
 @interface Clouds : NSObject
 
-
-@property (nonatomic, strong) NSNumber       *all; // Cloudiness, %
-
+@property (nonatomic, strong) NSNumber *all; // Cloudiness, %
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
 
 @end
 

@@ -92,7 +92,6 @@
 		10D87CC31A93FBE6007CD3A5 /* RotatedAngleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CC21A93FBE6007CD3A5 /* RotatedAngleView.m */; };
 		10D87CC91A93FCCE007CD3A5 /* Easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CC51A93FCCE007CD3A5 /* Easing.c */; };
 		10D87CCA1A93FCCE007CD3A5 /* YXEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CC81A93FCCE007CD3A5 /* YXEasing.m */; };
-		10D87CCD1A94046D007CD3A5 /* YouXianMingLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */; };
 		10D87D091A940DD7007CD3A5 /* POPAnimatableProperty.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CD61A940DD7007CD3A5 /* POPAnimatableProperty.mm */; };
 		10D87D0A1A940DD7007CD3A5 /* POPAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CD81A940DD7007CD3A5 /* POPAnimation.mm */; };
 		10D87D0B1A940DD7007CD3A5 /* POPAnimationEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10D87CDA1A940DD7007CD3A5 /* POPAnimationEvent.mm */; };
@@ -329,8 +328,6 @@
 		10D87CC61A93FCCE007CD3A5 /* Easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Easing.h; sourceTree = "<group>"; };
 		10D87CC71A93FCCE007CD3A5 /* YXEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXEasing.h; sourceTree = "<group>"; };
 		10D87CC81A93FCCE007CD3A5 /* YXEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXEasing.m; sourceTree = "<group>"; };
-		10D87CCB1A94046D007CD3A5 /* YouXianMingLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouXianMingLog.h; sourceTree = "<group>"; };
-		10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouXianMingLog.m; sourceTree = "<group>"; };
 		10D87CD31A940DD7007CD3A5 /* POP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POP.h; sourceTree = "<group>"; };
 		10D87CD41A940DD7007CD3A5 /* POPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPAction.h; sourceTree = "<group>"; };
 		10D87CD51A940DD7007CD3A5 /* POPAnimatableProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPAnimatableProperty.h; sourceTree = "<group>"; };
@@ -942,15 +939,6 @@
 			name = Animator;
 			sourceTree = "<group>";
 		};
-		10DD0A081B4425F7000B3EE7 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				10D87CCB1A94046D007CD3A5 /* YouXianMingLog.h */,
-				10D87CCC1A94046D007CD3A5 /* YouXianMingLog.m */,
-			);
-			name = Log;
-			sourceTree = "<group>";
-		};
 		10DD0A091B442615000B3EE7 /* WeatherNumberMeaningTransform */ = {
 			isa = PBXGroup;
 			children = (
@@ -1023,7 +1011,6 @@
 				102B85E21C3DF253001699A9 /* Networking */,
 				10DD0A071B4425D7000B3EE7 /* Animator */,
 				10DD0A051B44259C000B3EE7 /* GetWeatherData */,
-				10DD0A081B4425F7000B3EE7 /* Log */,
 				10DD0A091B442615000B3EE7 /* WeatherNumberMeaningTransform */,
 				10DD79141AA9D89E00051B0D /* ARCGPathFromString */,
 				10E169BF1A9695C800200B79 /* File */,
@@ -1261,7 +1248,6 @@
 				10D87D171A940DD7007CD3A5 /* POPPropertyAnimation.mm in Sources */,
 				10E16A531A9765FF00200B79 /* MinTempContLabel.m in Sources */,
 				10AB28D31A908F3F00CE545D /* Clouds.m in Sources */,
-				10D87CCD1A94046D007CD3A5 /* YouXianMingLog.m in Sources */,
 				10D87CC91A93FCCE007CD3A5 /* Easing.c in Sources */,
 				1089D2751A99FF820025C8A1 /* TemperatureCountLabel.m in Sources */,
 				10AB295E1A91E7A900CE545D /* NSString+StringHeight.m in Sources */,

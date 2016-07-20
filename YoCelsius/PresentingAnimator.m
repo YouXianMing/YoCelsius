@@ -37,10 +37,8 @@
     // 关键帧动画
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
     keyAnimation.keyPath              = @"position";
-    keyAnimation.values               = [YXEasing calculateFrameFromPoint:startPoint
-                                                                  toPoint:endPoint
-                                                                     func:ExponentialEaseOut
-                                                               frameCount:duration * 60.f];
+    keyAnimation.values               = [YXEasing calculateFrameFromPoint:startPoint toPoint:endPoint
+                                                                     func:ExponentialEaseOut frameCount:duration * 60.f];
     keyAnimation.duration             = duration;
     toView.center                     = container.center;
     [toView.layer addAnimation:keyAnimation forKey:nil];

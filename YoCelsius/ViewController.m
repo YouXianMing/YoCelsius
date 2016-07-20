@@ -9,37 +9,19 @@
 //
 
 #import "ViewController.h"
-
-// 管理定位的view
 #import "MapManager.h"
-
-// 天气的view
 #import "WeatherView.h"
 #import "SearchView.h"
-
-// 网络Model数据
 #import "CurrentWeatherData.h"
 #import "CurrentConditions.h"
-
-// 获取网络数据
 #import "GetWeatherData.h"
-
-// 控制器
 #import "ForecastController.h"
-
-// 动画生成器
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
-
-// 更新 + 变黑
 #import "UpdatingView.h"
 #import "FadeBlackView.h"
-
 #import "FailedLongPressView.h"
 #import "TWMessageBarManager.h"
-
-// 将度数转换为弧度
-#define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
 
 @interface ViewController ()<MapManagerLocationDelegate, UITableViewDelegate, GetWeatherDataDelegate, WeatherViewDelegate, UIViewControllerTransitioningDelegate, FailedLongPressViewDelegate>
 
@@ -48,9 +30,7 @@
 @property (nonatomic, strong) GetWeatherData       *getWeatherData;
 @property (nonatomic, strong) FadeBlackView        *fadeBlackView;
 @property (nonatomic, strong) UpdatingView         *upDatingView;
-
-@property (nonatomic, strong) FailedLongPressView  *failedView;  // 加载失败后显示的view
-
+@property (nonatomic, strong) FailedLongPressView  *failedView;
 @property (nonatomic)         BOOL                  firstTimeLoadingData;
 
 @end
@@ -60,9 +40,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    // 获取10天天气
-    // http://api.openweathermap.org/data/2.5/forecast/daily?lat=39.907501&lon=116.397232&cnt=10
     
     // 天气的view
     self.weatherView                     = [[WeatherView alloc] initWithFrame:self.view.bounds];
@@ -111,10 +88,7 @@
         forecastCV.transitioningDelegate  = self;
         forecastCV.modalPresentationStyle = UIModalPresentationCustom;
         forecastCV.weatherCondition       = condition;
-        
-        [self presentViewController:forecastCV
-                           animated:YES
-                         completion:^{}];
+        [self presentViewController:forecastCV animated:YES completion:nil];
         
     } afterDelaySecs:0.05f];
 }
@@ -149,9 +123,7 @@
     
     NSLog(@"定位成功 - 并开始获取网路数据");
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    [self performSelector:@selector(delayRunEvent:)
-               withObject:location
-               afterDelay:0.3f];
+    [self performSelector:@selector(delayRunEvent:) withObject:location afterDelay:0.3f];
 }
 
 - (void)mapManager:(MapManager *)manager didFailed:(NSError *)error {
@@ -256,6 +228,7 @@
         } afterDelaySecs:1.f];
         
     } else {
+        
         NSLog(@"获取数据失败");
         
         [self.upDatingView showFailed];
@@ -265,7 +238,6 @@
             [self.upDatingView hide];
             
         } afterDelaySecs:2.51f];
-        
         
         [GCDQueue executeInMainQueue:^{
             
@@ -297,6 +269,7 @@
 }
 
 #pragma mark - 定制转场动画
+
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {

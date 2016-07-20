@@ -11,12 +11,10 @@
 
 @interface Weather : NSObject
 
-
 @property (nonatomic, strong) NSNumber       *weatherId;       // Weather condition id
 @property (nonatomic, strong) NSString       *main;            // Group of weather parameters (Rain, Snow, Extreme etc.)
 @property (nonatomic, strong) NSString       *icon;            // Weather icon id
 @property (nonatomic, strong) NSString       *descriptionInfo; // Weather condition within the group
-
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

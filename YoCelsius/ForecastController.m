@@ -15,14 +15,10 @@
 
 @interface ForecastController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UIButton            *button;
-
 @property (nonatomic, strong) UITableView         *tableView;
 @property (nonatomic)         CGFloat              cellHeight;
-
 @property (nonatomic, strong) NSMutableArray      *weatherDataArray;
 @property (nonatomic, strong) ShowDownView        *showDownView;
-
 @property (nonatomic, strong) ForecastWeatherView *forecastView;
 
 @end
@@ -49,8 +45,7 @@
             [indexPathArray addObject:path];
         }
         
-        [self.tableView insertRowsAtIndexPaths:indexPathArray
-                              withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
         
     } afterDelaySecs:0.30f];
     
@@ -105,9 +100,7 @@
      
         [GCDQueue executeInMainQueue:^{
             
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+            [self dismissViewControllerAnimated:YES completion:nil];
             
         } afterDelaySecs:0.15f];
     }
