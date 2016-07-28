@@ -135,11 +135,6 @@
         
         [self.fadeBlackView hide];
         [self.upDatingView hide];
-        
-    } afterDelaySecs:2.5f];
-    
-    [GCDQueue executeInMainQueue:^{
-        
         [self.failedView show];
         
     } afterDelaySecs:2.5f];
@@ -158,25 +153,19 @@
     
     [GCDQueue executeInMainQueue:^{
         
-        [self.fadeBlackView hide];
-        [self.upDatingView hide];
-        
-    } afterDelaySecs:1.5];
-    
-    [GCDQueue executeInMainQueue:^{
-        
-        [self.failedView show];
-        
-    } afterDelaySecs:1.5f];
-    
-    [GCDQueue executeInMainQueue:^{
-        
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Failed to locate"
-                                                       description:@"Please turn on your Locations Service."
+                                                       description:@"Please turn on your Location Service."
                                                               type:TWMessageBarMessageTypeError
                                                           callback:^{}];
+    }];
+    
+    [GCDQueue executeInMainQueue:^{
         
-    } afterDelaySecs:0.f];
+        [self.fadeBlackView hide];
+        [self.upDatingView hide];
+        [self.failedView show];
+        
+    } afterDelaySecs:1.5];
 }
 
 /**
@@ -218,11 +207,6 @@
             [self.weatherView show];
             [self.fadeBlackView hide];
             [self.upDatingView hide];
-            
-        } afterDelaySecs:1.f];
-        
-        [GCDQueue executeInMainQueue:^{
-            
             [self.failedView remove];
             
         } afterDelaySecs:1.f];
@@ -236,11 +220,6 @@
             
             [self.fadeBlackView hide];
             [self.upDatingView hide];
-            
-        } afterDelaySecs:2.51f];
-        
-        [GCDQueue executeInMainQueue:^{
-            
             [self.failedView show];
             
         } afterDelaySecs:2.51f];
@@ -261,7 +240,6 @@
     } afterDelaySecs:1.f];
 }
 
-
 - (void)pressEvent:(FailedLongPressView *)view {
     
     [self.failedView hide];
@@ -270,17 +248,15 @@
 
 #pragma mark - 定制转场动画
 
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
     
-    // 推出控制器的动画
     return [PresentingAnimator new];
 }
 
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     
-    // 退出控制器动画
     return [DismissingAnimator new];
 }
 
