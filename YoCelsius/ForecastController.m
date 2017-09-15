@@ -68,6 +68,11 @@
     self.tableView.separatorStyle                 = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[ForecastCell class] forCellReuseIdentifier:@"ForecastCell"];
     
+    if (@available(iOS 11.0, *)) {
+        
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
     [self.view addSubview:self.tableView];
 }
 

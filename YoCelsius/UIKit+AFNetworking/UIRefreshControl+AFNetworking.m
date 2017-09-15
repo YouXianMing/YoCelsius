@@ -72,7 +72,6 @@
 
     if (task) {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
 #pragma clang diagnostic ignored "-Warc-repeated-use-of-weak"
         if (task.state == NSURLSessionTaskStateRunning) {
             [self.refreshControl beginRefreshing];
@@ -92,7 +91,6 @@
 - (void)af_beginRefreshing {
     dispatch_async(dispatch_get_main_queue(), ^{
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
         [self.refreshControl beginRefreshing];
 #pragma clang diagnostic pop
     });
@@ -101,7 +99,6 @@
 - (void)af_endRefreshing {
     dispatch_async(dispatch_get_main_queue(), ^{
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
         [self.refreshControl endRefreshing];
 #pragma clang diagnostic pop
     });

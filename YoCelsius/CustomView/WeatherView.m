@@ -54,6 +54,11 @@
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.tableView];
     
+    if (@available(iOS 11.0, *)) {
+        
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
     if (iPhone4_4s) {
         
         // 显示控件
