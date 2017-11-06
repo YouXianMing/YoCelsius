@@ -1,6 +1,6 @@
 # [YoCelsius](https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8) 
 
-> 一款天气预报的应用,点击查看 [最美应用](http://zuimeia.com/community/app/18582/?platform=1) 介绍。视频 [优酷](http://v.youku.com/v_show/id_XOTE2NTExNzcy.html?f=23580549) 或者 [YouTube](https://youtu.be/VexnA55e9K4)
+> 一款天气预报的应用
 
 ![one.gif](http://images.cnitblog.com/blog2015/607542/201504/211608037347783.gif) ![two.gif](http://images.cnitblog.com/blog2015/607542/201504/211608153124546.gif) 
 
