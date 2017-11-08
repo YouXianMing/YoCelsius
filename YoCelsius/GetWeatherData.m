@@ -11,18 +11,9 @@
 #import "GetWeatherData.h"
 #import "CurrentConditions.h"
 #import "CurrentWeatherData.h"
-#import "Networking.h"
+#import "Networking+YoCelsius.h"
 
-static NSString *appIdKey = @"8c0e04b52e6da9e67c51a102d6269a60";
-
-typedef enum : NSUInteger {
-    
-    kWeather = 0x11,
-    kDaily,
-    
-} EGetWeatherDataValue;
-
-@interface GetWeatherData () <AbsNetworkingDelegate>
+@interface GetWeatherData () <NetworkingDelegate>
 
 @property (nonatomic, strong) CurrentConditions  *currentConditions;
 @property (nonatomic, strong) CurrentWeatherData *currentWeatherData;
@@ -35,53 +26,30 @@ typedef enum : NSUInteger {
 
 - (void)startGetLocationWeatherData {
     
-    if (self.location == nil) {
+    if (self.location == nil || self.networkWeather.isRunning || self.networkDaily.isRunning) {
         
         return;
     }
     
-    NSString *baseUrl   = @"http://api.openweathermap.org/data/2.5/weather";
-    NSString *latStr    = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
-    NSString *lonStr    = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
-    NSString *urlString = [NSString stringWithFormat:@"%@?lat=%@&lon=%@&APPID=%@", baseUrl, latStr, lonStr, appIdKey];
-    
-    // 请求1
-    self.networkWeather                  = [Networking new];
-    self.networkWeather.urlString        = urlString;
-    self.networkWeather.tag              = kWeather;
-    self.networkWeather.delegate         = self;
-    self.networkWeather.timeoutInterval  = @(8.f);
-    self.networkWeather.method           = [PostMethod type];
-    self.networkWeather.requestBodyType  = [HttpBodyType type];
-    self.networkWeather.responseDataType = [JsonDataType type];
+    self.networkWeather = [Networking networkingWithNetworkConfig:weather()
+                                                 requestParameter:@{@"lat" : [NSString stringWithFormat:@"%f", self.location.coordinate.latitude],
+                                                                    @"lon" : [NSString stringWithFormat:@"%f", self.location.coordinate.longitude]}
+                                                         delegate:self];
     [self.networkWeather startRequest];
-    
-    //  请求2
-    self.networkDaily                  = [Networking new];
-    self.networkDaily.tag              = kDaily;
-    self.networkDaily.delegate         = self;
-    self.networkDaily.timeoutInterval  = @(8.f);
-    self.networkDaily.method           = [PostMethod type];
-    self.networkDaily.requestBodyType  = [HttpBodyType type];
-    self.networkDaily.responseDataType = [JsonDataType type];
 }
 
-- (void)requestSucess:(Networking *)networking data:(id)data {
+- (void)networkingRequestSucess:(Networking *)networking tag:(NSInteger)tag data:(id)data {
     
-    if (networking.tag == kWeather) {
+    if (tag == kWeather) {
         
-        // 请求1结果
         CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
             
             self.currentWeatherData = currentData;
-            
-            NSString *baseUrl   = @"http://api.openweathermap.org/data/2.5/forecast/daily";
-            NSString *urlString = [NSString stringWithFormat:@"%@?id=%@&cnt=%@&APPID=%@",
-                                   baseUrl, self.currentWeatherData.cityId, @"14", appIdKey];
-            
-            self.networkDaily.urlString = urlString;
-            
+            self.networkDaily       = [Networking networkingWithNetworkConfig:forecastDaily()
+                                                             requestParameter:@{@"id"  : self.currentWeatherData.cityId,
+                                                                                @"cnt" : @"14"}
+                                                                     delegate:self];
             [self.networkDaily startRequest];
             
         } else {
@@ -89,9 +57,8 @@ typedef enum : NSUInteger {
             [_delegate weatherData:nil sucess:NO];
         }
         
-    } else if (networking.tag == kDaily) {
+    } else if (tag == kForecastDaily) {
         
-        // 请求2结果
         CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
             
@@ -106,7 +73,7 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)requestFailed:(Networking *)networking error:(NSError *)error {
+- (void)networkingRequestFailed:(Networking *)networking tag:(NSInteger)tag error:(NSError *)error {
     
     [_delegate weatherData:nil sucess:NO];
 }

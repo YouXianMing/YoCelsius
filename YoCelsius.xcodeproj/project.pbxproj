@@ -58,9 +58,6 @@
 		109606B11C93EA3A00CCB3AD /* AbsResponseDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606A71C93EA3A00CCB3AD /* AbsResponseDataSerializer.m */; };
 		109606B21C93EA3A00CCB3AD /* AbsNetworkingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606A91C93EA3A00CCB3AD /* AbsNetworkingIndicator.m */; };
 		109606B31C93EA3A00CCB3AD /* AbsNetworkingReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606AB1C93EA3A00CCB3AD /* AbsNetworkingReachability.m */; };
-		109606BA1C93EA4500CCB3AD /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606B51C93EA4500CCB3AD /* Networking.m */; };
-		109606BB1C93EA4500CCB3AD /* NetworkingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606B71C93EA4500CCB3AD /* NetworkingIndicator.m */; };
-		109606BC1C93EA4500CCB3AD /* NetworkingReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 109606B91C93EA4500CCB3AD /* NetworkingReachability.m */; };
 		10AB28D21A908F3F00CE545D /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28BD1A908F3F00CE545D /* City.m */; };
 		10AB28D31A908F3F00CE545D /* Clouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28BF1A908F3F00CE545D /* Clouds.m */; };
 		10AB28D41A908F3F00CE545D /* Coord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AB28C11A908F3F00CE545D /* Coord.m */; };
@@ -153,6 +150,13 @@
 		10E1F5381A908C3200AED5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E1F5371A908C3200AED5D6 /* ViewController.m */; };
 		10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E1F53C1A908C3200AED5D6 /* Images.xcassets */; };
 		10F6530B1B8310D2004E45FC /* NSString+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F6530A1B8310D2004E45FC /* NSString+Color.m */; };
+		C57270A21FB29E56000DC72A /* ResponseDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270981FB29E54000DC72A /* ResponseDataSerializer.m */; };
+		C57270A31FB29E56000DC72A /* ResponseDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C572709D1FB29E56000DC72A /* ResponseDataManager.m */; };
+		C57270A41FB29E56000DC72A /* RequestParameterSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C572709E1FB29E56000DC72A /* RequestParameterSerializer.m */; };
+		C57270A51FB29E56000DC72A /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A01FB29E56000DC72A /* Networking.m */; };
+		C57270A61FB29E56000DC72A /* NetworkingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A11FB29E56000DC72A /* NetworkingInfo.m */; };
+		C57270AA1FB2A11F000DC72A /* Networking+YoCelsius.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */; };
+		C57270AD1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,12 +265,6 @@
 		109606A91C93EA3A00CCB3AD /* AbsNetworkingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsNetworkingIndicator.m; sourceTree = "<group>"; };
 		109606AA1C93EA3A00CCB3AD /* AbsNetworkingReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsNetworkingReachability.h; sourceTree = "<group>"; };
 		109606AB1C93EA3A00CCB3AD /* AbsNetworkingReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsNetworkingReachability.m; sourceTree = "<group>"; };
-		109606B41C93EA4500CCB3AD /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
-		109606B51C93EA4500CCB3AD /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
-		109606B61C93EA4500CCB3AD /* NetworkingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingIndicator.h; sourceTree = "<group>"; };
-		109606B71C93EA4500CCB3AD /* NetworkingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingIndicator.m; sourceTree = "<group>"; };
-		109606B81C93EA4500CCB3AD /* NetworkingReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingReachability.h; sourceTree = "<group>"; };
-		109606B91C93EA4500CCB3AD /* NetworkingReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingReachability.m; sourceTree = "<group>"; };
 		10AB28831A908ECC00CE545D /* YoCelsius.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoCelsius.pch; sourceTree = "<group>"; };
 		10AB28BC1A908F3F00CE545D /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		10AB28BD1A908F3F00CE545D /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
@@ -465,6 +463,20 @@
 		10F653081B831018004E45FC /* SimpleNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleNSLog.h; sourceTree = "<group>"; };
 		10F653091B8310D2004E45FC /* NSString+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Color.h"; sourceTree = "<group>"; };
 		10F6530A1B8310D2004E45FC /* NSString+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Color.m"; sourceTree = "<group>"; };
+		C57270981FB29E54000DC72A /* ResponseDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDataSerializer.m; sourceTree = "<group>"; };
+		C57270991FB29E54000DC72A /* NetworkingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingInfo.h; sourceTree = "<group>"; };
+		C572709A1FB29E54000DC72A /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		C572709B1FB29E55000DC72A /* RequestParameterSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParameterSerializer.h; sourceTree = "<group>"; };
+		C572709C1FB29E55000DC72A /* ResponseDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDataSerializer.h; sourceTree = "<group>"; };
+		C572709D1FB29E56000DC72A /* ResponseDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDataManager.m; sourceTree = "<group>"; };
+		C572709E1FB29E56000DC72A /* RequestParameterSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParameterSerializer.m; sourceTree = "<group>"; };
+		C572709F1FB29E56000DC72A /* ResponseDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDataManager.h; sourceTree = "<group>"; };
+		C57270A01FB29E56000DC72A /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		C57270A11FB29E56000DC72A /* NetworkingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingInfo.m; sourceTree = "<group>"; };
+		C57270A81FB2A11F000DC72A /* Networking+YoCelsius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Networking+YoCelsius.h"; sourceTree = "<group>"; };
+		C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Networking+YoCelsius.m"; sourceTree = "<group>"; };
+		C57270AB1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoCelsiusRequestParameterSerializer.h; sourceTree = "<group>"; };
+		C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusRequestParameterSerializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +549,7 @@
 		102B85E21C3DF253001699A9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C57270A71FB2A104000DC72A /* Networking+YoCelsius */,
 				109606BD1C93EA4900CCB3AD /* Networking */,
 				1096069B1C93EA2D00CCB3AD /* AbsNetworking */,
 				102B85E11C3DEFC4001699A9 /* AFNetworking 3.x */,
@@ -599,12 +612,16 @@
 		109606BD1C93EA4900CCB3AD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				109606B41C93EA4500CCB3AD /* Networking.h */,
-				109606B51C93EA4500CCB3AD /* Networking.m */,
-				109606B61C93EA4500CCB3AD /* NetworkingIndicator.h */,
-				109606B71C93EA4500CCB3AD /* NetworkingIndicator.m */,
-				109606B81C93EA4500CCB3AD /* NetworkingReachability.h */,
-				109606B91C93EA4500CCB3AD /* NetworkingReachability.m */,
+				C572709A1FB29E54000DC72A /* Networking.h */,
+				C57270A01FB29E56000DC72A /* Networking.m */,
+				C57270991FB29E54000DC72A /* NetworkingInfo.h */,
+				C57270A11FB29E56000DC72A /* NetworkingInfo.m */,
+				C572709B1FB29E55000DC72A /* RequestParameterSerializer.h */,
+				C572709E1FB29E56000DC72A /* RequestParameterSerializer.m */,
+				C572709C1FB29E55000DC72A /* ResponseDataSerializer.h */,
+				C57270981FB29E54000DC72A /* ResponseDataSerializer.m */,
+				C572709F1FB29E56000DC72A /* ResponseDataManager.h */,
+				C572709D1FB29E56000DC72A /* ResponseDataManager.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1043,6 +1060,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C57270A71FB2A104000DC72A /* Networking+YoCelsius */ = {
+			isa = PBXGroup;
+			children = (
+				C57270A81FB2A11F000DC72A /* Networking+YoCelsius.h */,
+				C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */,
+				C57270AB1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.h */,
+				C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */,
+			);
+			name = "Networking+YoCelsius";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1130,6 +1158,7 @@
 				10DD79191AA9D89E00051B0D /* ARCGPathFromString.m in Sources */,
 				100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */,
 				1026BD4B1C5F5834004FB93B /* UIView+SetRect.m in Sources */,
+				C57270A61FB29E56000DC72A /* NetworkingInfo.m in Sources */,
 				100149551C43F65F006D9153 /* UIImageView+AFNetworking.m in Sources */,
 				10AB28D81A908F3F00CE545D /* Sys.m in Sources */,
 				10D87D131A940DD7007CD3A5 /* POPDecayAnimation.mm in Sources */,
@@ -1141,6 +1170,7 @@
 				10D87D321A948E7A007CD3A5 /* AnimatedLineView.m in Sources */,
 				10AB29621A91EAD900CE545D /* LabelView.m in Sources */,
 				10AB28D71A908F3F00CE545D /* MainInfo.m in Sources */,
+				C57270A21FB29E56000DC72A /* ResponseDataSerializer.m in Sources */,
 				104405DD1AA14AF4008DF810 /* SnowView.m in Sources */,
 				10D87D161A940DD7007CD3A5 /* POPMath.mm in Sources */,
 				107DC83B1AA6960C00BEB3DF /* LineAnimationView.m in Sources */,
@@ -1148,7 +1178,7 @@
 				104C0F9F1AAEE5D7000773FE /* PressAnimationButton.m in Sources */,
 				10E169B01A957DEA00200B79 /* WindSpeedView.m in Sources */,
 				10D87D141A940DD7007CD3A5 /* POPGeometry.mm in Sources */,
-				109606BA1C93EA4500CCB3AD /* Networking.m in Sources */,
+				C57270A51FB29E56000DC72A /* Networking.m in Sources */,
 				10E16A501A9765CC00200B79 /* MinTempCount.m in Sources */,
 				10E169C21A9695C800200B79 /* NSString+File.m in Sources */,
 				10D87D0F1A940DD7007CD3A5 /* POPAnimator.mm in Sources */,
@@ -1160,6 +1190,7 @@
 				10E1A3A91AAFDA2400ED7025 /* TWMessageBarManager.m in Sources */,
 				10BD57081A9E9D4200A6F83D /* ForecastController.m in Sources */,
 				10E01A571AA43573000676BF /* TapTitleView.m in Sources */,
+				C57270AD1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m in Sources */,
 				10AB28D21A908F3F00CE545D /* City.m in Sources */,
 				10DE2F7B1A93661F00CFC713 /* CircleView.m in Sources */,
 				107DC8401AA6C96500BEB3DF /* RainView.m in Sources */,
@@ -1186,7 +1217,6 @@
 				10D87D261A94202A007CD3A5 /* ConfigAttributedString.m in Sources */,
 				10AB28DB1A908F3F00CE545D /* WeatherInfo.m in Sources */,
 				10D87CCA1A93FCCE007CD3A5 /* YXEasing.m in Sources */,
-				109606BC1C93EA4500CCB3AD /* NetworkingReachability.m in Sources */,
 				104405DE1AA14AF4008DF810 /* CALayer+MaskLayer.m in Sources */,
 				104405E61AA15256008DF810 /* UpdatingView.m in Sources */,
 				10E1E71B1A9C49E8000D6549 /* TitleMoveLabel.m in Sources */,
@@ -1230,9 +1260,9 @@
 				10E01A501AA3FDA0000676BF /* SearchView.m in Sources */,
 				107DC8481AA6DB3400BEB3DF /* WeatherNumberMeaningTransform.m in Sources */,
 				10E16A4D1A97622500200B79 /* MaxTempCountLabel.m in Sources */,
+				C57270A41FB29E56000DC72A /* RequestParameterSerializer.m in Sources */,
 				10AB28DA1A908F3F00CE545D /* Weather.m in Sources */,
 				107DC8451AA6D2D400BEB3DF /* ForecastWeatherView.m in Sources */,
-				109606BB1C93EA4500CCB3AD /* NetworkingIndicator.m in Sources */,
 				107DC8801AA7242900BEB3DF /* LineBackgroundView.m in Sources */,
 				109606B11C93EA3A00CCB3AD /* AbsResponseDataSerializer.m in Sources */,
 				1001494F1C43F65F006D9153 /* AFURLSessionManager.m in Sources */,
@@ -1240,12 +1270,14 @@
 				1047D0FE1C4736A9009ADED6 /* GCDQueue.m in Sources */,
 				100149561C43F65F006D9153 /* UIProgressView+AFNetworking.m in Sources */,
 				10D87D271A94202A007CD3A5 /* NSString+RichText.m in Sources */,
+				C57270A31FB29E56000DC72A /* ResponseDataManager.m in Sources */,
 				10D87D091A940DD7007CD3A5 /* POPAnimatableProperty.mm in Sources */,
 				10BF93D21AA0819800858386 /* PathDirectionView.m in Sources */,
 				10BD569E1A9DE10300A6F83D /* GetWeatherData.m in Sources */,
 				10D87D0A1A940DD7007CD3A5 /* POPAnimation.mm in Sources */,
 				1089D26F1A993B3F0025C8A1 /* ChangeColorLabel.m in Sources */,
 				10D87D181A940DD7007CD3A5 /* POPSpringAnimation.mm in Sources */,
+				C57270AA1FB2A11F000DC72A /* Networking+YoCelsius.m in Sources */,
 				10D87D171A940DD7007CD3A5 /* POPPropertyAnimation.mm in Sources */,
 				10E16A531A9765FF00200B79 /* MinTempContLabel.m in Sources */,
 				10AB28D31A908F3F00CE545D /* Clouds.m in Sources */,
