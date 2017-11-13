@@ -157,6 +157,7 @@
 		C57270A61FB29E56000DC72A /* NetworkingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A11FB29E56000DC72A /* NetworkingInfo.m */; };
 		C57270AA1FB2A11F000DC72A /* Networking+YoCelsius.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */; };
 		C57270AD1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */; };
+		C5A953101FB925E500B5E992 /* YoCelsiusNetworkingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -477,6 +478,8 @@
 		C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Networking+YoCelsius.m"; sourceTree = "<group>"; };
 		C57270AB1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoCelsiusRequestParameterSerializer.h; sourceTree = "<group>"; };
 		C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusRequestParameterSerializer.m; sourceTree = "<group>"; };
+		C5A9530E1FB925E500B5E992 /* YoCelsiusNetworkingInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoCelsiusNetworkingInfo.h; sourceTree = "<group>"; };
+		C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusNetworkingInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1065,6 +1068,8 @@
 			children = (
 				C57270A81FB2A11F000DC72A /* Networking+YoCelsius.h */,
 				C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */,
+				C5A9530E1FB925E500B5E992 /* YoCelsiusNetworkingInfo.h */,
+				C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */,
 				C57270AB1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.h */,
 				C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */,
 			);
@@ -1154,6 +1159,7 @@
 				10E1E7231A9C93A2000D6549 /* WeatherIconView.m in Sources */,
 				10D87D201A941C04007CD3A5 /* HumidityCount.m in Sources */,
 				10AB28D41A908F3F00CE545D /* Coord.m in Sources */,
+				C5A953101FB925E500B5E992 /* YoCelsiusNetworkingInfo.m in Sources */,
 				10D87D0D1A940DD7007CD3A5 /* POPAnimationRuntime.mm in Sources */,
 				10DD79191AA9D89E00051B0D /* ARCGPathFromString.m in Sources */,
 				100BFAE51C22A346008C5523 /* CGRectStoreValue.m in Sources */,
@@ -1424,7 +1430,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/YoCelsius.pch";

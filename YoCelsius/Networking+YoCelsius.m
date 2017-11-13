@@ -8,6 +8,7 @@
 
 #import "Networking+YoCelsius.h"
 #import "YoCelsiusRequestParameterSerializer.h"
+#import "YoCelsiusNetworkingInfo.h"
 
 @implementation NetworkConfig
 
@@ -30,7 +31,7 @@
                                               responseSerializer:[AFJSONResponseSerializer serializer]];
     networking.timeoutInterval = @(8.f);
     networking.serviceInfo     = config.functionName;
-    networking.networkingInfo  = [NetworkingInfo new];
+    networking.networkingInfo  = [YoCelsiusNetworkingInfo new];
     
     return networking;
 }
