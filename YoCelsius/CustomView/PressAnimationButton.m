@@ -100,9 +100,9 @@
                          
                          if (finished == YES) {
                              
-                             if (_delegate && ([_delegate respondsToSelector:@selector(finishedEventWith:)])) {
+                             if (self->_delegate && ([self->_delegate respondsToSelector:@selector(finishedEventWith:)])) {
                                  
-                                 [_delegate finishedEventWith:self];
+                                 [self->_delegate finishedEventWith:self];
                              }
                          }
                      }];

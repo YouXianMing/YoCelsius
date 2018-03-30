@@ -49,7 +49,7 @@
                                            initializer:^(POPMutableAnimatableProperty *prop) {
                                                prop.writeBlock      = ^(id obj, const CGFloat values[]) {
                                                    NSNumber *number = @(values[0]);
-                                                   [_delegate numberCount:self currentNumber:number];
+                                                   [self->_delegate numberCount:self currentNumber:number];
                                                };
                                            }];
         

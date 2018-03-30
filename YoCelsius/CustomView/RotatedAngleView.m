@@ -44,7 +44,7 @@
         
     [UIView animateWithDuration:duration animations:^{
         
-        self.transform = CGAffineTransformRotate(_defaultTransform, RADIAN(angle));
+        self.transform = CGAffineTransformRotate(self->_defaultTransform, RADIAN(angle));
         
     } completion:^(BOOL finished) {
         
@@ -60,7 +60,7 @@
     
     [UIView animateWithDuration:duration animations:^{
         
-        self.transform = CGAffineTransformRotate(_defaultTransform, 0);
+        self.transform = CGAffineTransformRotate(self->_defaultTransform, 0);
         
     } completion:^(BOOL finished) {
         

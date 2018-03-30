@@ -8,13 +8,14 @@
  */
 
 #import <CoreGraphics/CoreGraphics.h>
-#import "POPDefines.h"
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 #else
 #import <AppKit/AppKit.h>
 #endif
+
+#import "POPDefines.h"
 
 #if SCENEKIT_SDK_AVAILABLE
 #import <SceneKit/SceneKit.h>
@@ -120,7 +121,7 @@ extern CGColorRef POPCGColorRGBACreate(const CGFloat components[]) CF_RETURNS_RE
 /**
  Takes a color reference and returns a CGColor.
  */
-extern CGColorRef POPCGColorWithColor(id color);
+extern CGColorRef POPCGColorWithColor(id color) CF_RETURNS_NOT_RETAINED;
 
 #if TARGET_OS_IPHONE
 

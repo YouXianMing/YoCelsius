@@ -8,11 +8,12 @@
  */
 
 #import "POPAnimatableProperty.h"
-#import "POPCGUtils.h"
-#import "POPAnimationRuntime.h"
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "POPAnimationRuntime.h"
+#import "POPCGUtils.h"
+#import "POPDefines.h"
 #import "POPLayerExtras.h"
 
 // common threshold definitions
@@ -63,6 +64,7 @@ NSString * const kPOPShapeLayerStrokeEnd = @"shapeLayer.strokeEnd";
 NSString * const kPOPShapeLayerStrokeColor = @"shapeLayer.strokeColor";
 NSString * const kPOPShapeLayerFillColor = @"shapeLayer.fillColor";
 NSString * const kPOPShapeLayerLineWidth = @"shapeLayer.lineWidth";
+NSString * const kPOPShapeLayerLineDashPhase = @"shapeLayer.lineDashPhase";
 
 // NSLayoutConstraint
 NSString * const kPOPLayoutConstraintConstant = @"layoutConstraint.constant";
@@ -86,6 +88,7 @@ NSString * const kPOPScrollViewContentOffset = @"scrollView.contentOffset";
 NSString * const kPOPScrollViewContentSize = @"scrollView.contentSize";
 NSString * const kPOPScrollViewZoomScale = @"scrollView.zoomScale";
 NSString * const kPOPScrollViewContentInset = @"scrollView.contentInset";
+NSString * const kPOPScrollViewScrollIndicatorInsets = @"scrollView.scrollIndicatorInsets";
 
 // UITableView
 NSString * const kPOPTableViewContentOffset = kPOPScrollViewContentOffset;
@@ -163,12 +166,14 @@ NSString * const kPOPSCNNodeScaleXY = @"scnnode.scale.xy";
 typedef struct
 {
   NSString *name;
-  pop_animatable_read_block readBlock;
-  pop_animatable_write_block writeBlock;
+  POPAnimatablePropertyReadBlock readBlock;
+  POPAnimatablePropertyWriteBlock writeBlock;
   CGFloat threshold;
 } _POPStaticAnimatablePropertyState;
 typedef _POPStaticAnimatablePropertyState POPStaticAnimatablePropertyState;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wglobal-constructors"
 static POPStaticAnimatablePropertyState _staticStates[] =
 {
   /* CALayer */
@@ -545,6 +550,16 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     },
     0.01
   },
+    
+    {kPOPShapeLayerLineDashPhase,
+        ^(CAShapeLayer *obj, CGFloat values[]) {
+            values[0] = obj.lineDashPhase;
+        },
+        ^(CAShapeLayer *obj, const CGFloat values[]) {
+            obj.lineDashPhase = values[0];
+        },
+        0.01
+    },
 
   {kPOPLayoutConstraintConstant,
     ^(NSLayoutConstraint *obj, CGFloat values[]) {
@@ -681,6 +696,19 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     },
     ^(UIScrollView *obj, const CGFloat values[]) {
       obj.contentInset = values_to_edge_insets(values);
+    },
+    kPOPThresholdPoint
+  },
+
+  {kPOPScrollViewScrollIndicatorInsets,
+    ^(UIScrollView *obj, CGFloat values[]) {
+      values[0] = obj.scrollIndicatorInsets.top;
+      values[1] = obj.scrollIndicatorInsets.left;
+      values[2] = obj.scrollIndicatorInsets.bottom;
+      values[3] = obj.scrollIndicatorInsets.right;
+    },
+    ^(UIScrollView *obj, const CGFloat values[]) {
+      obj.scrollIndicatorInsets = values_to_edge_insets(values);
     },
     kPOPThresholdPoint
   },
@@ -1087,6 +1115,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
 #endif
 
 };
+#pragma clang diagnostic pop
 
 static NSUInteger staticIndexWithName(NSString *aName)
 {
@@ -1118,12 +1147,12 @@ static NSUInteger staticIndexWithName(NSString *aName)
   return _state->name;
 }
 
-- (pop_animatable_read_block)readBlock
+- (POPAnimatablePropertyReadBlock)readBlock
 {
   return _state->readBlock;
 }
 
-- (pop_animatable_write_block)writeBlock
+- (POPAnimatablePropertyWriteBlock)writeBlock
 {
   return _state->writeBlock;
 }
@@ -1141,7 +1170,7 @@ static NSUInteger staticIndexWithName(NSString *aName)
  Concrete immutable property class.
  */
 @interface POPConcreteAnimatableProperty : POPAnimatableProperty
-- (instancetype)initWithName:(NSString *)name readBlock:(pop_animatable_read_block)read writeBlock:(pop_animatable_write_block)write threshold:(CGFloat)threshold;
+- (instancetype)initWithName:(NSString *)name readBlock:(POPAnimatablePropertyReadBlock)read writeBlock:(POPAnimatablePropertyWriteBlock)write threshold:(CGFloat)threshold;
 @end
 
 @implementation POPConcreteAnimatableProperty
@@ -1149,7 +1178,7 @@ static NSUInteger staticIndexWithName(NSString *aName)
 // default synthesis
 @synthesize name, readBlock, writeBlock, threshold;
 
-- (instancetype)initWithName:(NSString *)aName readBlock:(pop_animatable_read_block)aReadBlock writeBlock:(pop_animatable_write_block)aWriteBlock threshold:(CGFloat)aThreshold
+- (instancetype)initWithName:(NSString *)aName readBlock:(POPAnimatablePropertyReadBlock)aReadBlock writeBlock:(POPAnimatablePropertyWriteBlock)aWriteBlock threshold:(CGFloat)aThreshold
 {
   self = [super init];
   if (nil != self) {
