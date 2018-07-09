@@ -4,6 +4,12 @@
 
 ![one.gif](http://images.cnitblog.com/blog2015/607542/201504/211608037347783.gif) ![two.gif](http://images.cnitblog.com/blog2015/607542/201504/211608153124546.gif) 
 
+> 广告
+
+美记（本人独立开发作品，感兴趣的朋友支持一下吧 ^_^）
+https://itunes.apple.com/cn/app/%E7%BE%8E%E8%AE%B0/id1390862464
+
+
 > 特点
 
 * 本人编写了几乎所有的交互动画效果，想学习动画的开发人员可以作为参考
