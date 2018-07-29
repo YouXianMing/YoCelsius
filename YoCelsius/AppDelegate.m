@@ -30,7 +30,7 @@
      https://github.com/YouXianMing/Swift-Animations
      https://github.com/YouXianMing/YoCelsius
      
-     独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/cn/app/美记/id1390862464
+     2015.2月份老项目,没有适配iPhoneX,不足之处敬请谅解!
      */
     
     // Init window.
