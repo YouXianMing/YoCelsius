@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     /*
-     Lateast no warning version : Xcode 9.4.1 (9F2000)
+     Lateast no warning version : Xcode 10.0 (10A255)
      QQ    705786299
      Email YouXianMing1987@126.com
      
