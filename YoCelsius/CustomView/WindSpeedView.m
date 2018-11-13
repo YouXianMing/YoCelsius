@@ -84,7 +84,7 @@
         
     } else {
         
-        self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(15, 90, 93, 15)];
+        self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 155, 93, 15)];
     }
     
     [self addSubview:self.windCountLabel];
@@ -113,7 +113,7 @@
         
     } else {
         
-        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 90.f)];
     }
     
     [self addSubview:self.line];

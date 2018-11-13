@@ -113,27 +113,27 @@
     
     // 创建出线条
     {
-        self.grayLine1                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - Width / 2.f, Width, 0.5)];
+        self.grayLine1                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width / 2.f, Width, 0.5)];
         self.grayLine1.backgroundColor = [UIColor blackColor];
         self.grayLine1.alpha           = 0.1;
         [self.tableView addSubview:self.grayLine1];
         
-        self.grayLine2                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - 1, Width, 0.5)];
+        self.grayLine2                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - 1, Width, 0.5)];
         self.grayLine2.backgroundColor = [UIColor blackColor];
         self.grayLine2.alpha           = 0.1;
         [self.tableView addSubview:self.grayLine2];
         
-        self.grayLine3                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - Width, Width, 0.5)];
+        self.grayLine3                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width, Width, 0.5)];
         self.grayLine3.backgroundColor = [UIColor blackColor];
         self.grayLine3.alpha           = 0.1;
         [self.tableView addSubview:self.grayLine3];
         
-        self.grayLine4                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - Width - Width / 2.f, Width, 0.5)];
+        self.grayLine4                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width - Width / 2.f, Width, 0.5)];
         self.grayLine4.backgroundColor = [UIColor blackColor];
         self.grayLine4.alpha           = 0.1;
         [self.tableView addSubview:self.grayLine4];
         
-        self.vLine                     = [[UpToDownView alloc] initWithFrame:CGRectMake(Width / 2.f - 1, Height - Width - Width / 2.f, 0.5, Width + Width / 2.f)];
+        self.vLine                     = [[UpToDownView alloc] initWithFrame:CGRectMake(Width / 2.f - 1, Height - NavigationBarDelta - Width - Width / 2.f, 0.5, Width + Width / 2.f)];
         self.vLine.backgroundColor     = [UIColor blackColor];
         self.vLine.alpha               = 0.1;
         [self.tableView addSubview:self.vLine];

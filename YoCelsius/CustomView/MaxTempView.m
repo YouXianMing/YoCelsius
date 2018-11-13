@@ -75,8 +75,10 @@
         
     } else {
         
+        gridOffsetX = 30;
+        gridOffsetY = 53;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
-        self.gridView.gridLength = 23;
+        self.gridView.gridLength = 30;
     }
     
     [self.gridView buildView];
