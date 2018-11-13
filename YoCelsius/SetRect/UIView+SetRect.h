@@ -60,24 +60,8 @@
 
 #define  iPhoneXSeries (Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)
 
-#if __iPhoneXSeries == true
-
-/**
- *  Status bar delta shift for X*series.
- */
-#define  StatusBarDelta      44.f
-
-/**
- *  Navigation bar delta for X* series.
- */
-#define  NavigationBarDelta  145.f
-
-#else
-
-#define  StatusBarDelta      0.f
-#define  NavigationBarDelta  0.f
-
-#endif
+#define StatusBarDelta ((CGFloat)((Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)?44.f:0.f))
+#define  NavigationBarDelta ((CGFloat)((Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)?145.f:0.f))
 
 @interface UIView (SetRect)
 
