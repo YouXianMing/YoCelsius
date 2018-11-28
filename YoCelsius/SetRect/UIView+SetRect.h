@@ -58,6 +58,11 @@
  */
 #define  iPhone6_6sPlus (Width == 414.f && Height == 736.f)
 
+#define  iPhoneXSeries (Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)
+
+#define StatusBarDelta ((CGFloat)((Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)?44.f:0.f))
+#define  NavigationBarDelta ((CGFloat)((Width == 375.f && Height == 812.f) || (Width == 414.f && Height == 896.f)?145.f:0.f))
+
 @interface UIView (SetRect)
 
 /*----------------------

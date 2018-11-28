@@ -41,8 +41,10 @@
     
     [super viewDidLoad];
     
+    CGRect rectWeatherView = CGRectMake(0, StatusBarDelta, Width, Height - StatusBarDelta);
+    
     // 天气的view
-    self.weatherView                     = [[WeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView                     = [[WeatherView alloc] initWithFrame:rectWeatherView];
     self.weatherView.layer.masksToBounds = YES;
     self.weatherView.delegate            = self;
     [self.weatherView buildView];

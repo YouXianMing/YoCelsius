@@ -58,9 +58,11 @@
 
 - (void)initTableView {
     
+    CGRect rectTableView = CGRectMake(0, StatusBarDelta, Width, Height - StatusBarDelta);
+    
     // cell高度
     self.cellHeight           = Width / 4.f;
-    self.tableView            = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView            = [[UITableView alloc] initWithFrame:rectTableView style:UITableViewStylePlain];
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
     self.tableView.showsHorizontalScrollIndicator = NO;
@@ -133,13 +135,13 @@
     
     if (section == 0) {
         
-        ForecastWeatherView *titleView = [[ForecastWeatherView alloc] initWithFrame:CGRectMake(0, 0, Width, Height - Width * 1.5)];
+        ForecastWeatherView *titleView = [[ForecastWeatherView alloc] initWithFrame:CGRectMake(0, 0, Width, Height - NavigationBarDelta - StatusBarDelta - Width * 1.5)];
         [titleView buildView];
         
         titleView.cityName    = self.weatherCondition.city.name;
         titleView.countryCode = self.weatherCondition.city.country;
         
-        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - Width * 1.5 - 1, Width, 0.5)];
+        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - StatusBarDelta - Width * 1.5 - 1, Width, 0.5)];
         line.backgroundColor = [UIColor blackColor];
         line.alpha           = 0.1f;
         [titleView addSubview:line];
@@ -154,7 +156,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    return Height - Width * 1.5;
+    return Height - NavigationBarDelta - StatusBarDelta - Width * 1.5;
 }
 
 @end

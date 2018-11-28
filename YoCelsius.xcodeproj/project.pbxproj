@@ -158,6 +158,7 @@
 		C57270AA1FB2A11F000DC72A /* Networking+YoCelsius.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270A91FB2A11F000DC72A /* Networking+YoCelsius.m */; };
 		C57270AD1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */; };
 		C5A953101FB925E500B5E992 /* YoCelsiusNetworkingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */; };
+		F526B585219B5D1100186214 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F526B584219B5D1100186214 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -481,6 +482,7 @@
 		C57270AC1FB2A43B000DC72A /* YoCelsiusRequestParameterSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusRequestParameterSerializer.m; sourceTree = "<group>"; };
 		C5A9530E1FB925E500B5E992 /* YoCelsiusNetworkingInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoCelsiusNetworkingInfo.h; sourceTree = "<group>"; };
 		C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusNetworkingInfo.m; sourceTree = "<group>"; };
+		F526B584219B5D1100186214 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -990,6 +992,7 @@
 			isa = PBXGroup;
 			children = (
 				10E1F5301A908C3200AED5D6 /* Info.plist */,
+				F526B584219B5D1100186214 /* Launch Screen.storyboard */,
 				10E1F5311A908C3200AED5D6 /* main.m */,
 				10E1F53C1A908C3200AED5D6 /* Images.xcassets */,
 				10AB28831A908ECC00CE545D /* YoCelsius.pch */,
@@ -1138,6 +1141,7 @@
 			files = (
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
+				F526B585219B5D1100186214 /* Launch Screen.storyboard in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
 				10E1E71D1A9C8134000D6549 /* Weather&Time.ttf in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,

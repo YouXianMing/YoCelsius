@@ -49,8 +49,8 @@
         
     } else {
         
-        circleRect = CGRectMake(0, 0, 90, 90);
-        rotateRect = CGRectMake(25, 15, circleRect.size.width, circleRect.size.height);
+        circleRect = CGRectMake(0, 0, 115, 115);
+        rotateRect = CGRectMake(25, 15 + StatusBarDelta, circleRect.size.width, circleRect.size.height);
     }
         
     // 移动的头部位

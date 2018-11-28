@@ -146,6 +146,7 @@
         
     } else {
         
+        redViewWidth = 135;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 44)];
     }
     
