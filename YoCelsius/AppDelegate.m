@@ -21,16 +21,6 @@
     
     /*
      Lateast no warning version : Xcode 10.0 (10A255)
-     QQ    705786299
-     Email YouXianMing1987@126.com
-     
-     http://www.cnblogs.com/YouXianMing/
-     https://github.com/YouXianMing
-     https://github.com/YouXianMing/Animations
-     https://github.com/YouXianMing/Swift-Animations
-     https://github.com/YouXianMing/YoCelsius
-     
-     2015.2月份老项目,没有适配iPhoneX,不足之处敬请谅解!
      */
     
     // Init window.
