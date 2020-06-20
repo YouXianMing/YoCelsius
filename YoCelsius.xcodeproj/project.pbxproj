@@ -161,13 +161,24 @@
 		C5948851249DF557008DA36E /* NSString+JSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = C594884C249DF557008DA36E /* NSString+JSONData.m */; };
 		C5948852249DF557008DA36E /* NSArray+JSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = C594884D249DF557008DA36E /* NSArray+JSONData.m */; };
 		C5948855249DF59B008DA36E /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5948853249DF59A008DA36E /* DeviceInfo.m */; };
-		C594885C249DF60D008DA36E /* Maqiao.json in Resources */ = {isa = PBXBuildFile; fileRef = C5948857249DF60D008DA36E /* Maqiao.json */; };
 		C594885D249DF60D008DA36E /* Haidian.json in Resources */ = {isa = PBXBuildFile; fileRef = C5948858249DF60D008DA36E /* Haidian.json */; };
 		C594885E249DF60D008DA36E /* NewYork.json in Resources */ = {isa = PBXBuildFile; fileRef = C5948859249DF60D008DA36E /* NewYork.json */; };
-		C594885F249DF60D008DA36E /* Cupertino.json in Resources */ = {isa = PBXBuildFile; fileRef = C594885A249DF60D008DA36E /* Cupertino.json */; };
-		C5948860249DF60D008DA36E /* Columbia.json in Resources */ = {isa = PBXBuildFile; fileRef = C594885B249DF60D008DA36E /* Columbia.json */; };
 		C5948879249DFD2F008DA36E /* YoCelsius-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C5948878249DFD2F008DA36E /* YoCelsius-bg.png */; };
 		C5A953101FB925E500B5E992 /* YoCelsiusNetworkingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */; };
+		C5B2F723249E0BCE0082A47C /* Amatepec.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F715249E0BCC0082A47C /* Amatepec.json */; };
+		C5B2F724249E0BCE0082A47C /* Shijiazhuang.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F716249E0BCC0082A47C /* Shijiazhuang.json */; };
+		C5B2F725249E0BCE0082A47C /* Northwest.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F717249E0BCC0082A47C /* Northwest.json */; };
+		C5B2F726249E0BCE0082A47C /* Australia.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F718249E0BCC0082A47C /* Australia.json */; };
+		C5B2F727249E0BCE0082A47C /* Wako.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F719249E0BCC0082A47C /* Wako.json */; };
+		C5B2F728249E0BCE0082A47C /* Maqiao.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71A249E0BCC0082A47C /* Maqiao.json */; };
+		C5B2F729249E0BCE0082A47C /* Kohlu.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71B249E0BCD0082A47C /* Kohlu.json */; };
+		C5B2F72A249E0BCE0082A47C /* Arthur's Pass.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71C249E0BCD0082A47C /* Arthur's Pass.json */; };
+		C5B2F72B249E0BCE0082A47C /* Hinganghāt.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71D249E0BCD0082A47C /* Hinganghāt.json */; };
+		C5B2F72C249E0BCE0082A47C /* Fushan.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71E249E0BCE0082A47C /* Fushan.json */; };
+		C5B2F72D249E0BCE0082A47C /* Yicheng.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F71F249E0BCE0082A47C /* Yicheng.json */; };
+		C5B2F72E249E0BCE0082A47C /* Osterley.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F720249E0BCE0082A47C /* Osterley.json */; };
+		C5B2F72F249E0BCE0082A47C /* Gaoqiao.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F721249E0BCE0082A47C /* Gaoqiao.json */; };
+		C5B2F730249E0BCE0082A47C /* Yerbogachën.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B2F722249E0BCE0082A47C /* Yerbogachën.json */; };
 		F526B585219B5D1100186214 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F526B584219B5D1100186214 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -497,14 +508,25 @@
 		C594884E249DF557008DA36E /* NSData+JSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+JSONData.h"; path = "JSONKit/NSData+JSONData.h"; sourceTree = "<group>"; };
 		C5948853249DF59A008DA36E /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		C5948854249DF59B008DA36E /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
-		C5948857249DF60D008DA36E /* Maqiao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Maqiao.json; sourceTree = "<group>"; };
 		C5948858249DF60D008DA36E /* Haidian.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Haidian.json; sourceTree = "<group>"; };
 		C5948859249DF60D008DA36E /* NewYork.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewYork.json; sourceTree = "<group>"; };
-		C594885A249DF60D008DA36E /* Cupertino.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cupertino.json; sourceTree = "<group>"; };
-		C594885B249DF60D008DA36E /* Columbia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Columbia.json; sourceTree = "<group>"; };
 		C5948878249DFD2F008DA36E /* YoCelsius-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YoCelsius-bg.png"; sourceTree = "<group>"; };
 		C5A9530E1FB925E500B5E992 /* YoCelsiusNetworkingInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoCelsiusNetworkingInfo.h; sourceTree = "<group>"; };
 		C5A9530F1FB925E500B5E992 /* YoCelsiusNetworkingInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoCelsiusNetworkingInfo.m; sourceTree = "<group>"; };
+		C5B2F715249E0BCC0082A47C /* Amatepec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Amatepec.json; sourceTree = "<group>"; };
+		C5B2F716249E0BCC0082A47C /* Shijiazhuang.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Shijiazhuang.json; sourceTree = "<group>"; };
+		C5B2F717249E0BCC0082A47C /* Northwest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Northwest.json; sourceTree = "<group>"; };
+		C5B2F718249E0BCC0082A47C /* Australia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Australia.json; sourceTree = "<group>"; };
+		C5B2F719249E0BCC0082A47C /* Wako.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Wako.json; sourceTree = "<group>"; };
+		C5B2F71A249E0BCC0082A47C /* Maqiao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Maqiao.json; sourceTree = "<group>"; };
+		C5B2F71B249E0BCD0082A47C /* Kohlu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kohlu.json; sourceTree = "<group>"; };
+		C5B2F71C249E0BCD0082A47C /* Arthur's Pass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Arthur's Pass.json"; sourceTree = "<group>"; };
+		C5B2F71D249E0BCD0082A47C /* Hinganghāt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Hinganghāt.json"; sourceTree = "<group>"; };
+		C5B2F71E249E0BCE0082A47C /* Fushan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Fushan.json; sourceTree = "<group>"; };
+		C5B2F71F249E0BCE0082A47C /* Yicheng.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Yicheng.json; sourceTree = "<group>"; };
+		C5B2F720249E0BCE0082A47C /* Osterley.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Osterley.json; sourceTree = "<group>"; };
+		C5B2F721249E0BCE0082A47C /* Gaoqiao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Gaoqiao.json; sourceTree = "<group>"; };
+		C5B2F722249E0BCE0082A47C /* Yerbogachën.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Yerbogachën.json"; sourceTree = "<group>"; };
 		F526B584219B5D1100186214 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -944,11 +966,22 @@
 		C5948856249DF5CE008DA36E /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
-				C594885B249DF60D008DA36E /* Columbia.json */,
-				C594885A249DF60D008DA36E /* Cupertino.json */,
 				C5948858249DF60D008DA36E /* Haidian.json */,
-				C5948857249DF60D008DA36E /* Maqiao.json */,
 				C5948859249DF60D008DA36E /* NewYork.json */,
+				C5B2F715249E0BCC0082A47C /* Amatepec.json */,
+				C5B2F71C249E0BCD0082A47C /* Arthur's Pass.json */,
+				C5B2F718249E0BCC0082A47C /* Australia.json */,
+				C5B2F71E249E0BCE0082A47C /* Fushan.json */,
+				C5B2F721249E0BCE0082A47C /* Gaoqiao.json */,
+				C5B2F71D249E0BCD0082A47C /* Hinganghāt.json */,
+				C5B2F71B249E0BCD0082A47C /* Kohlu.json */,
+				C5B2F71A249E0BCC0082A47C /* Maqiao.json */,
+				C5B2F717249E0BCC0082A47C /* Northwest.json */,
+				C5B2F720249E0BCE0082A47C /* Osterley.json */,
+				C5B2F716249E0BCC0082A47C /* Shijiazhuang.json */,
+				C5B2F719249E0BCC0082A47C /* Wako.json */,
+				C5B2F722249E0BCE0082A47C /* Yerbogachën.json */,
+				C5B2F71F249E0BCE0082A47C /* Yicheng.json */,
 			);
 			name = Jsons;
 			sourceTree = "<group>";
@@ -1308,8 +1341,7 @@
 				TargetAttributes = {
 					10E1F52B1A908C3200AED5D6 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = KQ9F6NJ3VQ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1337,20 +1369,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B2F72A249E0BCE0082A47C /* Arthur's Pass.json in Resources */,
+				C5B2F725249E0BCE0082A47C /* Northwest.json in Resources */,
 				10AB29661A91F26900CE545D /* Lato-Thin.ttf in Resources */,
+				C5B2F72E249E0BCE0082A47C /* Osterley.json in Resources */,
 				10AB29581A91DD3900CE545D /* Lato-Bold.ttf in Resources */,
+				C5B2F72F249E0BCE0082A47C /* Gaoqiao.json in Resources */,
+				C5B2F729249E0BCE0082A47C /* Kohlu.json in Resources */,
+				C5B2F727249E0BCE0082A47C /* Wako.json in Resources */,
+				C5B2F728249E0BCE0082A47C /* Maqiao.json in Resources */,
 				F526B585219B5D1100186214 /* Launch Screen.storyboard in Resources */,
+				C5B2F72C249E0BCE0082A47C /* Fushan.json in Resources */,
+				C5B2F72D249E0BCE0082A47C /* Yicheng.json in Resources */,
 				C594885E249DF60D008DA36E /* NewYork.json in Resources */,
+				C5B2F730249E0BCE0082A47C /* Yerbogachën.json in Resources */,
+				C5B2F726249E0BCE0082A47C /* Australia.json in Resources */,
 				10E1F53D1A908C3200AED5D6 /* Images.xcassets in Resources */,
+				C5B2F723249E0BCE0082A47C /* Amatepec.json in Resources */,
+				C5B2F724249E0BCE0082A47C /* Shijiazhuang.json in Resources */,
 				C594885D249DF60D008DA36E /* Haidian.json in Resources */,
 				10E1E71D1A9C8134000D6549 /* Weather&Time.ttf in Resources */,
 				C5948879249DFD2F008DA36E /* YoCelsius-bg.png in Resources */,
 				10AB294F1A91D90700CE545D /* Lato-Regular.ttf in Resources */,
+				C5B2F72B249E0BCE0082A47C /* Hinganghāt.json in Resources */,
 				1089D27A1A9A03F50025C8A1 /* Lato-ThinItalic.ttf in Resources */,
-				C594885C249DF60D008DA36E /* Maqiao.json in Resources */,
 				10AB29681A91F2DE00CE545D /* Lato-Light.ttf in Resources */,
-				C5948860249DF60D008DA36E /* Columbia.json in Resources */,
-				C594885F249DF60D008DA36E /* Cupertino.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1625,9 +1668,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KQ9F6NJ3VQ;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/YoCelsius.pch";
 				INFOPLIST_FILE = YoCelsius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1649,9 +1692,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KQ9F6NJ3VQ;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/YoCelsius.pch";
 				INFOPLIST_FILE = YoCelsius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

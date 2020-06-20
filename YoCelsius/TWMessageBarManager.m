@@ -259,7 +259,7 @@ static UIColor *kTWDefaultMessageBarStyleSheetInfoStrokeColor = nil;
             if (animated)
             {
                 [UIView animateWithDuration:kTWMessageBarManagerDismissAnimationDuration animations:^{
-                    currentMessageView.frame = CGRectMake(currentMessageView.frame.origin.x, -currentMessageView.frame.size.height, currentMessageView.frame.size.width, currentMessageView.frame.size.height);
+                    currentMessageView.frame = CGRectMake(currentMessageView.frame.origin.x, -currentMessageView.frame.size.height - DeviceInfo.fringeScreenTopSafeHeight, currentMessageView.frame.size.width, currentMessageView.frame.size.height);
                 } completion:^(BOOL finished) {
                     [currentMessageView removeFromSuperview];
                 }];
@@ -306,7 +306,7 @@ static UIColor *kTWDefaultMessageBarStyleSheetInfoStrokeColor = nil;
             [self messageBarViewController].statusBarStyle = messageView.statusBarStyle;
 
             [UIView animateWithDuration:kTWMessageBarManagerDismissAnimationDuration animations:^{
-                [messageView setFrame:CGRectMake(messageView.frame.origin.x, messageView.frame.origin.y + [messageView height], [messageView width], [messageView height])]; // slide down
+                [messageView setFrame:CGRectMake(messageView.frame.origin.x, messageView.frame.origin.y + [messageView height] + DeviceInfo.fringeScreenTopSafeHeight, [messageView width], [messageView height])]; // slide down
             }];
             [self performSelector:@selector(itemSelected:) withObject:messageView afterDelay:messageView.duration];
             
@@ -345,7 +345,7 @@ static UIColor *kTWDefaultMessageBarStyleSheetInfoStrokeColor = nil;
         messageView.hit = YES;
         
         [UIView animateWithDuration:kTWMessageBarManagerDismissAnimationDuration animations:^{
-            [messageView setFrame:CGRectMake(messageView.frame.origin.x, messageView.frame.origin.y - [messageView height], [messageView width], [messageView height])]; // slide back up
+            [messageView setFrame:CGRectMake(messageView.frame.origin.x, messageView.frame.origin.y - [messageView height] - DeviceInfo.fringeScreenTopSafeHeight, [messageView width], [messageView height])]; // slide back up
         } completion:^(BOOL finished) {
             self.messageVisible = NO;
             [messageView removeFromSuperview];

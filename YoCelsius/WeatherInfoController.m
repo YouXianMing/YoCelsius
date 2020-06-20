@@ -147,7 +147,6 @@
 - (void)delayRunEvent:(id)object {
     
     self.getWeatherData.location = object;
-    // [self.getWeatherData startGetLocationWeatherData];
     [self.getWeatherData startGetLocalRandomData];
 }
 

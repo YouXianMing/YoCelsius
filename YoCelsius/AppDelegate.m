@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     /*
-     Lateast no warning version : Xcode 10.0 (10A255)
+     Lateast no warning version : Xcode 11.4.1 (11E503a)
      */
     
     // Init window.

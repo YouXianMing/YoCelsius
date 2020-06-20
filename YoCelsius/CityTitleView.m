@@ -153,9 +153,7 @@
     self.redView.backgroundColor = [UIColor redColor];
     [self addSubview:self.redView];
     self.redViewStoreValue = [CGRectStoreValue new];
-    [self moveToLeftWithMidRect:self.redView.frame
-                   moveDistance:30.f
-                 withStoreValue:self.redViewStoreValue];
+    [self moveToLeftWithMidRect:self.redView.frame moveDistance:30.f withStoreValue:self.redViewStoreValue];
     self.redView.frame = self.redViewStoreValue.startRect;
     self.redView.alpha = 0.f;
     
@@ -324,20 +322,17 @@
     // 表述类型
     if (type == __RAIN) {
         
-        self.weatherConditionView = [[RainView alloc] initWithFrame:CGRectMake(0, 0, Width / 2.f, Height - Width - Width / 2.f)];
+        self.weatherConditionView = [[RainView alloc] initWithFrame:CGRectMake(0, DeviceInfo.isFringeScreen ? -70 : 0.f, Width / 2.f, Height - Width - Width / 2.f)];
         [self.weatherConditionView configType:__RAIN];
         [self.weatherConditionView show];
         [self addSubview:self.weatherConditionView];
         
     } else if (type == __SNOW) {
         
-        self.weatherConditionView = [[SnowView alloc] initWithFrame:CGRectMake(0, 0, Width / 2.f, Height - Width - Width / 2.f)];
+        self.weatherConditionView = [[SnowView alloc] initWithFrame:CGRectMake(0, DeviceInfo.isFringeScreen ? -70 : 0.f, Width / 2.f, Height - Width - Width / 2.f)];
         [self.weatherConditionView configType:__SNOW];
         [self.weatherConditionView show];
         [self addSubview:self.weatherConditionView];
-        
-    } else if (type == __NONE) {
-        
     }
     
     [UIView animateWithDuration:duration animations:^{

@@ -8,7 +8,7 @@
 
 #import "YoCelsiusRequestParameterSerializer.h"
 
-static NSString *appIdKey = @"8c0e04b52e6da9e67c51a102d6269a60";
+static NSString *appIdKey = @"YC_8c0e04b52e6da9e67c51a102d6269a60";
 
 @implementation YoCelsiusRequestParameterSerializer
 

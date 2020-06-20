@@ -13,12 +13,6 @@
 
 @protocol GetWeatherDataDelegate <NSObject>
 
-/**
- *  Get the weatherData.
- *
- *  @param object The Data.
- *  @param sucess Sucess or not.
- */
 - (void)weatherData:(id)object sucess:(BOOL)sucess;
 
 @end
@@ -27,24 +21,9 @@
 
 @property (nonatomic, weak)  id<GetWeatherDataDelegate> delegate;
 
-/**
- *  地址信息
- */
 @property (nonatomic, strong) CLLocation  *location;
-
-/**
- *  城市ID号码
- */
 @property (nonatomic, strong) NSString    *cityId;
 
-/**
- *  开始获取网络数据 (开始获取定位数据的信息)
- */
-- (void)startGetLocationWeatherData;
-
-/**
- *  获取本地写死的数据
- */
 - (void)startGetLocalRandomData;
 
 @end

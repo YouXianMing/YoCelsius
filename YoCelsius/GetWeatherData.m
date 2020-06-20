@@ -25,8 +25,6 @@
 @property (nonatomic, strong) Networking         *networkWeather;
 @property (nonatomic, strong) Networking         *networkDaily;
 
-@property (nonatomic, strong) NSMutableDictionary *datas;
-
 @end
 
 @implementation GetWeatherData
@@ -40,11 +38,9 @@
     
     self.networkWeather = [Networking networkingWithNetworkConfig:weather()
                                                  requestParameter:@{@"lon" : [NSString stringWithFormat:@"%f", self.location.coordinate.longitude],
-                                                                    @"lat" : [NSString stringWithFormat:@"%f", self.location.coordinate.latitude],}
+                                                                    @"lat" : [NSString stringWithFormat:@"%f", self.location.coordinate.latitude]}
                                                          delegate:self];
     [self.networkWeather startRequest];
-    
-    self.datas = [NSMutableDictionary dictionary];
 }
 
 - (void)networkingRequestSucess:(Networking *)networking tag:(NSInteger)tag data:(id)data {
@@ -53,8 +49,6 @@
         
         CurrentWeatherData *currentData = [[CurrentWeatherData alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
-            
-            self.datas[@"CurrentWeatherData"] = data;
             
             self.currentWeatherData = currentData;
             self.networkDaily       = [Networking networkingWithNetworkConfig:forecastDaily()
@@ -72,11 +66,7 @@
         
         CurrentConditions *currentData = [[CurrentConditions alloc] initWithDictionary:data];
         if (currentData.cod.integerValue == 200) {
-                        
-            self.datas[@"CurrentConditions"] = data;
-            
-            // NSLog(@"\n\n%@\n\n", self.datas.toJSONString);
-            
+                                    
             self.currentConditions = currentData;
             
             [_delegate weatherData:@{@"WeatherData"       : self.currentWeatherData,
@@ -96,14 +86,27 @@
 
 - (void)startGetLocalRandomData {
     
-    NSArray *datasPaths = @[@"Maqiao.json".bundleFile,
-                            @"Columbia.json".bundleFile,
-                            @"Cupertino.json".bundleFile,
+    NSArray *datasPaths = @[@"Yicheng.json".bundleFile,
+                            @"Arthur's Pass.json".bundleFile,
                             @"Haidian.json".bundleFile,
-                            @"NewYork.json".bundleFile];
+                            @"NewYork.json".bundleFile,
+                            @"Amatepec.json".bundleFile,
+                            @"Australia.json".bundleFile,
+                            @"Fushan.json".bundleFile,
+                            @"Gaoqiao.json".bundleFile,
+                            @"Hinganghāt.json".bundleFile,
+                            @"Kohlu.json".bundleFile,
+                            @"Maqiao.json".bundleFile,
+                            @"Northwest.json".bundleFile,
+                            @"Osterley.json".bundleFile,
+                            @"Shijiazhuang.json".bundleFile,
+                            @"Wako.json".bundleFile,
+                            @"Yerbogachën.json".bundleFile];
     
-    NSData       *data = [[NSData alloc] initWithContentsOfFile:datasPaths[arc4random() % datasPaths.count]];
-    NSDictionary *dic  = [data toListProperty];
+    static NSInteger index = 0;
+    NSData       *data     = [[NSData alloc] initWithContentsOfFile:datasPaths[index % datasPaths.count]];
+    NSDictionary *dic      = [data toListProperty];
+    index                 += 1;
     
     CurrentWeatherData *weatherData = [[CurrentWeatherData alloc] initWithDictionary:dic[@"CurrentWeatherData"]];
     CurrentConditions  *conditions  = [[CurrentConditions alloc] initWithDictionary:dic[@"CurrentConditions"]];
