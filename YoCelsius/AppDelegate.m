@@ -9,7 +9,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "WeatherInfoController.h"
 
 @interface AppDelegate ()
 
@@ -26,11 +26,8 @@
     // Init window.
     self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor    = [UIColor whiteColor];
-    self.window.rootViewController = [ViewController new];
+    self.window.rootViewController = [WeatherInfoController new];
     [self.window makeKeyAndVisible];
-    
-    // Hide statusBar.
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
     
     return YES;
 }

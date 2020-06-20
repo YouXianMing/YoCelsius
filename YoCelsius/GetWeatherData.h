@@ -42,4 +42,9 @@
  */
 - (void)startGetLocationWeatherData;
 
+/**
+ *  获取本地写死的数据
+ */
+- (void)startGetLocalRandomData;
+
 @end

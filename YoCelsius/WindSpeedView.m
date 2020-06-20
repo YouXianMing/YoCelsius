@@ -35,19 +35,19 @@
     CGFloat windOffsetY = 40;
     CGRect windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
     
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         windOffsetX = 40;
         windOffsetY = 40;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 60, 60);
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         windOffsetX = 40;
         windOffsetY = 50;
         windFrame = CGRectMake(windOffsetX, windOffsetY, 65, 65);
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         windOffsetX = 40;
         windOffsetY = 55;
@@ -70,15 +70,15 @@
     
     
     // 创建出风速变化的标签
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 120, 93, 15)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 143, 93, 15)];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.windCountLabel = [[WindSpeedCountLabel alloc] initWithFrame:CGRectMake(45, 155, 93, 15)];
         
@@ -99,15 +99,15 @@
     self.windCountLabel.alpha = 0.f;
     
     // 创建出支柱
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 60.f)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 70.f)];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2.f, 75.f)];
         
@@ -126,18 +126,9 @@
     CGFloat gapFromCenter = 3.f;
     
     self.lineStoreValue = [CGRectStoreValue new];
-    CGRect startRect = CGRectMake(self.line.x,
-                                  self.line.y + self.line.height + gapFromCenter * 2 * 2,
-                                  self.line.width,
-                                  0);
-    CGRect midRect = CGRectMake(self.line.x,
-                                self.line.y + gapFromCenter,
-                                self.line.width,
-                                self.line.height);
-    CGRect endRect = CGRectMake(self.line.x,
-                                self.line.y,
-                                self.line.width,
-                                0);
+    CGRect startRect    = CGRectMake(self.line.x, self.line.y + self.line.height + gapFromCenter * 2 * 2, self.line.width, 0);
+    CGRect midRect      = CGRectMake(self.line.x, self.line.y + gapFromCenter, self.line.width, self.line.height);
+    CGRect endRect      = CGRectMake(self.line.x, self.line.y, self.line.width, 0);
     self.lineStoreValue.startRect = startRect;
     self.lineStoreValue.midRect   = midRect;
     self.lineStoreValue.endRect   = endRect;

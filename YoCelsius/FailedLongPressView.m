@@ -75,7 +75,7 @@
     self.pressButton.animationWidth     = Width - 110;
     self.pressButton.text               = @"Long Press To Update";
     self.pressButton.center             = self.center;
-    self.pressButton.y                  = self.height - 60;
+    self.pressButton.y                  = self.height - 60 - DeviceInfo.fringeScreenBottomSafeHeight;
     self.pressButton.delegate           = self;
     
     self.pressButtonStoreValue           = [FailedLongPressViewStoreValue new];

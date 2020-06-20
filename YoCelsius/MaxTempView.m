@@ -52,21 +52,21 @@
     self.gridView       = [[GridView alloc] initWithFrame:CGRectZero];
     self.gridView.alpha = 0.f;
     
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         gridOffsetX = 30;
         gridOffsetY = 45;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 23;
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         gridOffsetX = 30;
         gridOffsetY = 50;
         self.gridView.origin     = CGPointMake(gridOffsetX, gridOffsetY);
         self.gridView.gridLength = 26;
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         gridOffsetX = 30;
         gridOffsetY = 53;

@@ -97,15 +97,15 @@
     [self addSubview:self.baseLabel];
     
     // 黑色的view
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 44)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 60)];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.blackView = [[UIView alloc] initWithFrame:CGRectMake(-30, 22, 5 + 30, 60)];
         
@@ -129,17 +129,17 @@
     // 红色的view
     CGFloat redViewWidth = 100;
     
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         redViewWidth = 100;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 44)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         redViewWidth = 135;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 60)];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         redViewWidth = 135;
         self.redView = [[UIView alloc] initWithFrame:CGRectMake(Width - redViewWidth, 22, redViewWidth + 100, 60)];
@@ -160,7 +160,7 @@
     self.redView.alpha = 0.f;
     
     // 年份的view
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 12.f)];
         self.updateYearLabel.text = @"2015.03.21";
@@ -168,7 +168,7 @@
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:10];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
@@ -176,7 +176,7 @@
         self.updateYearLabel.textColor = [UIColor whiteColor];
         self.updateYearLabel.font = [UIFont fontWithName:LATO_LIGHT size:16];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.updateYearLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, Width - 40, 18)];
         self.updateYearLabel.text = @"2015.03.21";
@@ -202,7 +202,7 @@
     self.updateYearLabel.alpha = 0.f;
     
     // 小时的view
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 45, Width - 8, 14.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
@@ -210,7 +210,7 @@
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:12];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
@@ -218,7 +218,7 @@
         self.updateHourLabel.textColor = [UIColor whiteColor];
         self.updateHourLabel.font = [UIFont fontWithName:LATO_REGULAR size:16];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.updateHourLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, Width - 8, 20.f)];
         self.updateHourLabel.textAlignment = NSTextAlignmentRight;
@@ -244,19 +244,19 @@
     self.updateHourLabel.alpha = 0.f;
     
     // 城市label
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 16, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:26.f];
 
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_LIGHT size:30.f];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 17, Width - 10, 40)];
         self.cityNameLabel.text = @"San Francisco";
@@ -280,19 +280,19 @@
     self.cityNameLabel.alpha = 0.f;
     
     // 天气描述用的label
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:14.f];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";
         self.weatherDesLabel.font = [UIFont fontWithName:LATO_THIN size:16.f];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         self.weatherDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 62, Width - 10, 20)];
         self.weatherDesLabel.text = @"broken clouds";

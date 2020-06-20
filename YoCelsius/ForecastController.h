@@ -13,9 +13,6 @@
 
 @interface ForecastController : UIViewController
 
-/**
- *  天气预报
- */
 @property (nonatomic, strong) CurrentConditions *weatherCondition;
 
 @end

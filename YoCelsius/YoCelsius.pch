@@ -25,13 +25,14 @@
 #import "Networking.h"
 #import "AppColor.h"
 #import "UIView+SetRect.h"
+#import "UIView+DebugFrame.h"
 #import "FontInfomation.h"
 #import "AddedFont.h"
 #import "GCD.h"
 #import "YXEasing.h"
 #import "POP.h"
 #import "NSString+File.h"
-#import "SimpleNSLog.h"
+#import "DeviceInfo.h"
 #endif
 
 #endif

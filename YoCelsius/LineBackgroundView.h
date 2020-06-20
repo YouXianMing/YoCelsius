@@ -10,7 +10,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface LineBackgroundView : UIView
 
 @property (nonatomic) CGFloat            lineWidth;
@@ -18,9 +17,6 @@
 @property (nonatomic, strong) UIColor   *lineColor;
 
 - (void)buildView;
-+ (instancetype)createViewWithFrame:(CGRect)frame
-                          LineWidth:(CGFloat)width
-                            lineGap:(CGFloat)lineGap
-                          lineColor:(UIColor *)color;
++ (instancetype)createViewWithFrame:(CGRect)frame LineWidth:(CGFloat)width lineGap:(CGFloat)lineGap lineColor:(UIColor *)color;
 
 @end

@@ -38,10 +38,7 @@
 
 - (void)initViews {
     
-    self.lineBackgroundView = [LineBackgroundView createViewWithFrame:self.bounds
-                                                            LineWidth:4
-                                                              lineGap:4
-                                                            lineColor:[[UIColor blackColor] colorWithAlphaComponent:0.015]];
+    self.lineBackgroundView = [LineBackgroundView createViewWithFrame:self.bounds LineWidth:4 lineGap:4 lineColor:[[UIColor blackColor] colorWithAlphaComponent:0.015]];
     [self addSubview:self.lineBackgroundView];
 }
 
@@ -55,9 +52,12 @@
 
 - (void)buildView {
     
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, DeviceInfo.fringeScreenTopSafeHeight, Width, ForecastWeatherView.viewHeight - DeviceInfo.fringeScreenTopSafeHeight)];
+    [self addSubview:contentView];
+    
     self.countryCodeBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(15, 15, 37, 22)];
     self.countryCodeBackgroundView.backgroundColor = [UIColor redColor];
-    [self addSubview:self.countryCodeBackgroundView];
+    [contentView addSubview:self.countryCodeBackgroundView];
     
     self.countryCodeLabel = [[UILabel alloc] initWithFrame:self.countryCodeBackgroundView.bounds];
     self.countryCodeLabel.textAlignment = NSTextAlignmentCenter;
@@ -71,40 +71,41 @@
     self.forecastLabel.font      = [UIFont fontWithName:LATO_LIGHT size:LATO_16];
     self.forecastLabel.textColor = [UIColor blackColor];
     [self.forecastLabel sizeToFit];
-    [self addSubview:self.forecastLabel];
+    [contentView addSubview:self.forecastLabel];
     
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
-        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
-                                                                            self.countryCodeBackgroundView.x + 30, 0, 0)];
+        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x, self.countryCodeBackgroundView.x + 30, 0, 0)];
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:24];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
-        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
-                                                                            self.countryCodeBackgroundView.x + 30, 0, 0)];
+        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x, self.countryCodeBackgroundView.x + 30, 0, 0)];
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_THIN size:40];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
-        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
-                                                                            self.countryCodeBackgroundView.x + 30, 0, 0)];
+        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x, self.countryCodeBackgroundView.x + 30, 0, 0)];
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_LIGHT size:47.f];
         
     } else {
         
-        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x,
-                                                                            self.countryCodeBackgroundView.x + 30, 0, 0)];
+        self.cityNameLabel      = [[UILabel alloc] initWithFrame:CGRectMake(self.countryCodeBackgroundView.x, self.countryCodeBackgroundView.x + 30, 0, 0)];
         self.cityNameLabel.text = @"";
         self.cityNameLabel.font = [UIFont fontWithName:LATO_REGULAR size:24];
         
     }
     
     [self.cityNameLabel sizeToFit];
-    [self addSubview:self.cityNameLabel];
+    [contentView addSubview:self.cityNameLabel];
+}
+
++ (CGFloat)viewHeight {
+    
+    return 110 + DeviceInfo.fringeScreenTopSafeHeight;
 }
 
 @synthesize cityName = _cityName;

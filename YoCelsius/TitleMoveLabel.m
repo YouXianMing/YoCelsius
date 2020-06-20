@@ -95,15 +95,15 @@
     titleMove.text            = text;
     titleMove.textColor       = [UIColor blackColor];
     
-    if (iPhone4_4s || iPhone5_5s) {
+    if (Screen_Size_Small) {
         
         titleMove.font    = [UIFont fontWithName:LATO_BOLD size:LATO_14];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         titleMove.font    = [UIFont fontWithName:LATO_LIGHT size:17];
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         titleMove.font    = [UIFont fontWithName:LATO_LIGHT size:20];
         

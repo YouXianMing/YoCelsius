@@ -13,22 +13,12 @@
 
 @interface ForecastWeatherView : UIView
 
-/**
- *  城市编号码
- */
 @property (nonatomic, strong) NSString *countryCode;
-
-/**
- *  城市名字
- */
 @property (nonatomic, strong) NSString *cityName;
-
-/**
- *  创建出view
- */
 - (void)buildView;
-
 - (void)show;
 - (void)hide;
+
+@property (nonatomic, class, readonly) CGFloat viewHeight;
 
 @end

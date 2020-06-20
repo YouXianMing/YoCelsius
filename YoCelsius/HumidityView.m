@@ -32,17 +32,17 @@
     CGRect circleRect = CGRectZero;
     CGRect rotateRect = CGRectZero;
     
-    if (iPhone5_5s || iPhone4_4s) {
+    if (Screen_Size_Small) {
         
         circleRect = CGRectMake(0, 0, 100, 100);
         rotateRect = CGRectMake(37, 40, circleRect.size.width, circleRect.size.height);
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         circleRect = CGRectMake(0, 0, 110, 110);
         rotateRect = CGRectMake(40, 50, circleRect.size.width, circleRect.size.height);
         
-    } else if (iPhone6_6sPlus) {
+    } else if (Screen_Size_Big) {
         
         circleRect = CGRectMake(0, 0, 115, 115);
         rotateRect = CGRectMake(45, 55, circleRect.size.width, circleRect.size.height);
@@ -50,7 +50,7 @@
     } else {
         
         circleRect = CGRectMake(0, 0, 115, 115);
-        rotateRect = CGRectMake(25, 15 + StatusBarDelta, circleRect.size.width, circleRect.size.height);
+        rotateRect = CGRectMake(35, 50, circleRect.size.width, circleRect.size.height);
     }
         
     // 移动的头部位

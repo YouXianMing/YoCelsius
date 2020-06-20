@@ -41,9 +41,6 @@
     return self;
 }
 
-/**
- *  创建出view
- */
 - (void)buildView {
     
     self.movetitleLabel = [TitleMoveLabel withText:@"Sunrise/Sunset"];
@@ -51,11 +48,15 @@
     [self addSubview:self.movetitleLabel];
     
     // 日出的view
-    if (iPhone5_5s || iPhone4_4s) {
+    if (Screen_Size_Small) {
         
         self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(45, 50, 40, 80)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
+        
+        self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
+        
+    } else if (Screen_Size_Big) {
         
         self.sunriseView = [[SunriseView alloc] initWithFrame:CGRectMake(50, 55, 50, 100)];
         
@@ -75,11 +76,11 @@
     self.sunriseView.frame = self.sunriseViewStoreValue.startRect;
     
     // 日出时间标签
-    if (iPhone5_5s || iPhone4_4s) {
+    if (Screen_Size_Small) {
         
         self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 40, 20)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.sunriseTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 50, 25)];
         
@@ -94,11 +95,11 @@
     [self.sunriseView addSubview:self.sunriseTimeLabel];
     
     // 日落的view
-    if (iPhone5_5s || iPhone4_4s) {
+    if (Screen_Size_Small) {
         
         self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(95, 40, 40, 80)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.sunsetView = [[SunsetView alloc] initWithFrame:CGRectMake(110, 60, 50, 100)];
         
@@ -118,11 +119,11 @@
     self.sunsetView.frame = self.sunsetViewStoreValue.startRect;
     
     // 日落时间标签
-    if (iPhone5_5s || iPhone4_4s) {
+    if (Screen_Size_Small) {
         
         self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 40, 20)];
         
-    } else if (iPhone6_6s) {
+    } else if (Screen_Size_Middle) {
         
         self.sunsetTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
         
@@ -137,9 +138,6 @@
     [self.sunsetView addSubview:self.sunsetTimeLabel];
 }
 
-/**
- *  显示
- */
 - (void)show {
     
     [self.movetitleLabel show];
@@ -166,9 +164,6 @@
     }];
 }
 
-/**
- *  隐藏
- */
 - (void)hide {
     
     CGFloat duration = 0.75f;

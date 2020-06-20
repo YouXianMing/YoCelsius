@@ -47,13 +47,7 @@
 
 - (void)buildView {
     
-    // 加载用tableView
-    
-    CGRect rectTableView = CGRectMake(0, StatusBarDelta, Width, Height - StatusBarDelta);
-
-    rectTableView = self.bounds;
-    
-    self.tableView                 = [[UITableView alloc] initWithFrame:rectTableView style:UITableViewStylePlain];
+    self.tableView                 = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate        = self;
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
@@ -64,106 +58,93 @@
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
-    if (iPhone4_4s) {
+    CGFloat itemWidth   = Width / 2.f;
+    CGFloat safeHeight  = Height - DeviceInfo.fringeScreenTopSafeHeight - DeviceInfo.fringeScreenBottomSafeHeight;
+    CGFloat titleHeight = DeviceInfo.isFringeScreen ? (safeHeight - itemWidth * 3 > 105 ? 105 : safeHeight - itemWidth * 3) : Height - itemWidth * 3;
+    CGFloat gap         = DeviceInfo.isFringeScreen ? (safeHeight - titleHeight - itemWidth * 3) / 2.f : 0.f;
+
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, DeviceInfo.fringeScreenTopSafeHeight, Width, safeHeight)];
+    [self.tableView addSubview:contentView];
+    
+    UIView *titleContentView = [[UIView alloc] initWithFrame:CGRectMake(0, gap, Width, titleHeight)];
+    UIView *itemContentView  = [[UIView alloc] initWithFrame:CGRectMake(0, titleContentView.bottom, Width, itemWidth * 3)];
+    
+    [contentView addSubview:titleContentView];
+    [contentView addSubview:itemContentView];
         
-        // 显示控件
-        self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(0, Height - Width / 2.f, Width / 2.f, Width / 2.f)];
-        [self.humidityView buildView];
-        [self.tableView addSubview:self.humidityView];
+    if (Screen_Size_Small) {
         
-        self.sunInfoView = [[SunInfoView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width / 2.f, Width / 2.f, Width / 2.f)];
-        [self.sunInfoView buildView];
-        [self.tableView addSubview:self.sunInfoView];
-        
-        self.temperatureView = [[TemperatureView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - Width, Width / 2.f, Width / 2.f)];
-        [self.temperatureView buildView];
-        [self.tableView addSubview:self.temperatureView];
-        
-        self.weatherIconView = [[WeatherIconView alloc] initWithFrame:CGRectMake(0, Height - Width, Width / 2.f, Width / 2.f)];
-        [self.weatherIconView buildView];
-        [self.tableView addSubview:self.weatherIconView];
+        exit(0);
         
     } else {
         
-        // 显示控件
-        self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(0, Height - Width - NavigationBarDelta, Width / 2.f, Width / 2.f)];
-        [self.humidityView buildView];
-        [self.tableView addSubview:self.humidityView];
-        
-        self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - NavigationBarDelta - Width / 2.f, Width / 2.f, Width / 2.f)];
-        [self.windSpeedView buildView];
-        [self.tableView addSubview:self.windSpeedView];
-        
-        self.maxTempView = [[MaxTempView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width / 2.f, Width / 2.f, Width / 2.f)];
-        [self.maxTempView buildView];
-        [self.tableView addSubview:self.maxTempView];
-        
-        self.sunInfoView = [[SunInfoView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - NavigationBarDelta - Width, Width / 2.f, Width / 2.f)];
-        [self.sunInfoView buildView];
-        [self.tableView addSubview:self.sunInfoView];
-        
-        self.temperatureView = [[TemperatureView alloc] initWithFrame:CGRectMake(Width / 2.f, Height - NavigationBarDelta - Width - Width / 2.f, Width / 2.f, Width / 2.f)];
-        [self.temperatureView buildView];
-        [self.tableView addSubview:self.temperatureView];
-        
-        self.weatherIconView = [[WeatherIconView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width - Width / 2.f, Width / 2.f, Width / 2.f)];
+        self.weatherIconView = [[WeatherIconView alloc] initWithFrame:CGRectMake(0, 0, itemWidth, itemWidth)];
         [self.weatherIconView buildView];
-        [self.tableView addSubview:self.weatherIconView];
+        [itemContentView addSubview:self.weatherIconView];
+        
+        self.temperatureView = [[TemperatureView alloc] initWithFrame:CGRectMake(itemWidth, 0, itemWidth, itemWidth)];
+        [self.temperatureView buildView];
+        [itemContentView addSubview:self.temperatureView];
+        
+        self.humidityView = [[HumidityView alloc] initWithFrame:CGRectMake(0, itemWidth, itemWidth, itemWidth)];
+        [self.humidityView buildView];
+        [itemContentView addSubview:self.humidityView];
+        
+        self.sunInfoView = [[SunInfoView alloc] initWithFrame:CGRectMake(itemWidth, itemWidth, itemWidth, itemWidth)];
+        [self.sunInfoView buildView];
+        [itemContentView addSubview:self.sunInfoView];
+        
+        self.maxTempView = [[MaxTempView alloc] initWithFrame:CGRectMake(0, itemWidth * 2, itemWidth, itemWidth)];
+        [self.maxTempView buildView];
+        [itemContentView addSubview:self.maxTempView];
+        
+        self.windSpeedView = [[WindSpeedView alloc] initWithFrame:CGRectMake(itemWidth, itemWidth * 2, itemWidth, itemWidth)];
+        [self.windSpeedView buildView];
+        [itemContentView addSubview:self.windSpeedView];
     }
     
     // 创建出线条
     {
-        self.grayLine1                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width / 2.f, Width, 0.5)];
+        self.grayLine1                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, itemWidth * 0, Width, 0.5)];
         self.grayLine1.backgroundColor = [UIColor blackColor];
         self.grayLine1.alpha           = 0.1;
-        [self.tableView addSubview:self.grayLine1];
+        [itemContentView addSubview:self.grayLine1];
         
-        self.grayLine2                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - 1, Width, 0.5)];
+        self.grayLine2                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, itemWidth * 1, Width, 0.5)];
         self.grayLine2.backgroundColor = [UIColor blackColor];
         self.grayLine2.alpha           = 0.1;
-        [self.tableView addSubview:self.grayLine2];
+        [itemContentView addSubview:self.grayLine2];
         
-        self.grayLine3                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width, Width, 0.5)];
+        self.grayLine3                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, itemWidth * 2, Width, 0.5)];
         self.grayLine3.backgroundColor = [UIColor blackColor];
         self.grayLine3.alpha           = 0.1;
-        [self.tableView addSubview:self.grayLine3];
+        [itemContentView addSubview:self.grayLine3];
         
-        self.grayLine4                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, Height - NavigationBarDelta - Width - Width / 2.f, Width, 0.5)];
+        self.grayLine4                 = [[LeftToRightView alloc] initWithFrame:CGRectMake(0, itemWidth * 3, Width, 0.5)];
         self.grayLine4.backgroundColor = [UIColor blackColor];
         self.grayLine4.alpha           = 0.1;
-        [self.tableView addSubview:self.grayLine4];
+        [itemContentView addSubview:self.grayLine4];
         
-        self.vLine                     = [[UpToDownView alloc] initWithFrame:CGRectMake(Width / 2.f - 1, Height - NavigationBarDelta - Width - Width / 2.f, 0.5, Width + Width / 2.f)];
+        self.vLine                     = [[UpToDownView alloc] initWithFrame:CGRectMake(itemWidth - 1, 0, 0.5, itemWidth * 3)];
         self.vLine.backgroundColor     = [UIColor blackColor];
         self.vLine.alpha               = 0.1;
-        [self.tableView addSubview:self.vLine];
+        [itemContentView addSubview:self.vLine];
     }
     
     // 标题
-    
-    CGRect rectCityTitleView = CGRectMake(0, StatusBarDelta, Width, Height - Width - NavigationBarDelta - StatusBarDelta - Width / 2.f);
-    
-    NSLog(@"width: %0.f", Width);
-    NSLog(@"height: %0.f", Height);
-
-    NSLog(@"status bar delta: %0.f", StatusBarDelta);
-    NSLog(@"navigation bar delta: %0.f", NavigationBarDelta);
-
-    NSLog(@"width: %d", iPhoneXSeries);
-
-    self.cityTitleView = [[CityTitleView alloc] initWithFrame:rectCityTitleView];
+    self.cityTitleView = [[CityTitleView alloc] initWithFrame:titleContentView.bounds];
     [self.cityTitleView buildView];
-    [self.tableView addSubview:self.cityTitleView];
+    [titleContentView addSubview:self.cityTitleView];
     
     // 显示进入更多天气的view的提示信息
-    self.showDownView = [[ShowDownView alloc] initWithFrame:CGRectMake(0, 0, 30.f, 30.f / 3.f)];
+    self.showDownView        = [[ShowDownView alloc] initWithFrame:CGRectMake(0, 0, 30.f, 30.f / 3.f)];
     self.showDownView.center = self.middlePoint;
-    self.showDownView.y = Height + 20.f;
+    self.showDownView.y      = DeviceInfo.isFringeScreen ? Height + 5.f : Height + 20.f;
     [self.tableView addSubview:self.showDownView];
     self.showDownView.layer.transform = CATransform3DConcat(self.showDownView.layer.transform, CATransform3DMakeRotation(M_PI,1.0, 0.0, 0.0));
     
     // tableView上面加载的view
-    self.shapeWordView           = [[ShapeWordView alloc] initWithFrame:CGRectMake(0, -60, Width, 60)];
+    self.shapeWordView           = [[ShapeWordView alloc] initWithFrame:CGRectMake(0, DeviceInfo.isFringeScreen ? -30 : -60, Width, 60)];
     self.shapeWordView.text      = @"Release To Refresh";
     self.shapeWordView.font      = [UIFont fontWithName:LATO_THIN size:20.f];
     self.shapeWordView.lineWidth = 0.5f;
