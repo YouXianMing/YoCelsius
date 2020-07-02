@@ -1,4 +1,4 @@
-# [YoCelsius](https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8) 
+# YoCelsius
 
 > 一款天气预报的应用
 
