@@ -33,7 +33,10 @@
 @property (readwrite, nonatomic, strong, setter = af_setURLSessionTask:) NSURLSessionDataTask *af_URLSessionTask;
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 @implementation UIWebView (_AFNetworking)
+#pragma clang diagnostic pop
 
 - (NSURLSessionDataTask *)af_URLSessionTask {
     return (NSURLSessionDataTask *)objc_getAssociatedObject(self, @selector(af_URLSessionTask));
@@ -47,7 +50,10 @@
 
 #pragma mark -
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 @implementation UIWebView (AFNetworking)
+#pragma clang diagnostic pop
 
 - (AFHTTPSessionManager  *)sessionManager {
     static AFHTTPSessionManager *_af_defaultHTTPSessionManager = nil;

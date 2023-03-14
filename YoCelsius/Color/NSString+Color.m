@@ -68,7 +68,6 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
           @"darkcyan":             @"008B8B" ,
           @"darkgoldenrod":        @"B8860B" ,
           @"darkgray":             @"A9A9A9" ,
-          @"darkgreen":            @"006400" ,
           @"darkkhaki":            @"BDB76B" ,
           @"darkmagenta":          @"8B008B" ,
           @"darkolivegreen":       @"556B2F" ,
